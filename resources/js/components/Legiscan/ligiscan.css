@@ -1,0 +1,17 @@
+.myflex {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}
+.is-active{
+    background-color: red;
+}
+.btnsubmit{
+        background-color:#2a4b79 ;
+       color: white;
+}
+.tbl_container{
+    max-height: 450px;
+    overflow: auto;
+}

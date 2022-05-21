@@ -1,0 +1,33 @@
+.brandTitle{
+    font-weight: bold;
+    font-size: 20px;
+    color: var(--official-color);
+}
+.leftSide{
+
+}
+.rightSide{
+
+}
+.leftTopBar{
+
+    background-color:#2a4b79 ;
+    padding: 15px;
+    color: white;
+  
+}
+.inputBar{
+    border:solid 2px #2a4b79;
+    text-align: center;
+    border-radius: 5px;
+}
+.leftRow{
+    cursor:pointer;
+}
+.inputBottom{
+    width: 100%;
+    height: 100px;
+
+    position: relative;
+    z-index: 1;
+}
