@@ -11,16 +11,31 @@ class AmityChannelController extends Controller
 {
     public function create(Request $request)
     {
+
+        $users=explode('_',$request->channel_id);
+        $newId=$users[1].'_'.$users[0];
+
+        $channel=null;
         $data=$request->except(['token']);
         $data['user_id']=auth()->user()->id;
         if (amityChannel::where('channel_id',$request->channel_id)->exists()) {
             amityChannel::where('channel_id', $request->channel_id)->update($data);
+            $channel=amityChannel::where('channel_id', $request->channel_id)->first();
         }
         else
         {
-            amityChannel::create($data);
+            if (amityChannel::where('channel_id',$newId)->exists())
+            {
+                $data['channel_id']=$newId;
+                $channel=amityChannel::create($data);
+            }else
+            {
+                $channel=amityChannel::create($data);
+            }
+
         }
-        return response()->json(['message' => "Channel Update",'data'=>amityChannel::where('channel_id', $request->channel_id)->first()]);
+//        $channel=amityChannel::where('channel_id', $request->channel_id)->first();
+        return response()->json(['message' => "Channel Update",'data'=>$channel]);
 
 
 
