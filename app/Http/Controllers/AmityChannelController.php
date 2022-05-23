@@ -19,15 +19,24 @@ class AmityChannelController extends Controller
         $data=$request->except(['token']);
         $data['user_id']=auth()->user()->id;
         if (amityChannel::where('channel_id',$request->channel_id)->exists()) {
-            amityChannel::where('channel_id', $request->channel_id)->update($data);
+            $data['user_id']=auth()->user()->id;
+            amityChannel::where('channel_id', $request->channel_id)->where('user_id',auth()->user()->id)->update($data);
             $channel=amityChannel::where('channel_id', $request->channel_id)->first();
         }
         else
         {
             if (amityChannel::where('channel_id',$newId)->exists())
             {
-                $data['channel_id']=$newId;
-                $channel=amityChannel::create($data);
+                $c=amityChannel::where('channel_id',$newId)->where('user_id',auth()->user()->id)->first();
+                if (amityChannel::where('channel_id',$newId)->where('user_id',auth()->user()->id)->exists())
+                {
+                    $channel=$c;
+                }else
+                {
+                    $data['channel_id']=$newId;
+                    $channel=amityChannel::create($data);
+                }
+
             }else
             {
                 $channel=amityChannel::create($data);
@@ -72,6 +81,10 @@ class AmityChannelController extends Controller
     public function list(Request $request)
     {
         $list=amityChannel::where("user_id",auth()->user()->id)->where('deleted_at',null)->get();
+        foreach ($list as $i)
+        {
+
+        }
         if (Request::capture()->expectsJson())
         {
             return response()->json(['list'=>$list]);
@@ -79,7 +92,7 @@ class AmityChannelController extends Controller
     }
     public function allUsers(Request $request)
     {
-        $list=User::where('id','!=','121')->get();
+        $list=User::where('id','!=','121')->where('id','!=',auth()->user()->id)->get();
 
         if (Request::capture()->expectsJson())
         {
