@@ -29,7 +29,9 @@
                     <a href="{{route('admin.dashboard')}}"><i class="fa fa-th-large"></i> <span class="nav-label">Dashboard</span></a>
                 </li>
 
-
+                <li>
+                    <a href="{{route('daily.create')}}" target="_blank"><i class="fa fa-camera"></i> <span class="nav-label">Streaming</span></a>
+                </li>
 
 
 

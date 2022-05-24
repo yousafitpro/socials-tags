@@ -15,7 +15,13 @@ class DailyroomController extends Controller
 
         if ($res->ok())
         {
-            return response()->json(['code'=>'200','data'=>$res->json()]);
+            if (Request::capture()->expectsJson())
+            {
+                return response()->json(['code'=>'200','data'=>$res->json()]);
+            }
+
+            return view('daily.daily')->with($res->json());
+
         }
     }
     public function delete($name)

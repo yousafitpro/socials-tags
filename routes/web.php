@@ -71,7 +71,17 @@ Route::get('queue-work', function () {
     Artisan::call('queue:work');
     echo 'success';
 });
+Route::group([
+    'middleware'=>'auth',
+    'prefix'=>'daily'
+
+], function ($router) {
+
+    Route::any('create',[App\Http\Controllers\DailyroomController::class, 'create'])->name('daily.create');
+    Route::get('delete/{name}',[App\Http\Controllers\DailyroomController::class, 'delete']);
+});
 //Route::get('queue-work', function () {
 //    Artisan::call('queue:work --stop-when-empty', []);
 //    echo 'success';
 //});
+include('webIncludes/hooks.php');
