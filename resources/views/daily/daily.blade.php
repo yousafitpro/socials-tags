@@ -13,7 +13,7 @@
 
     }
     .myIframe{
-        width: 90vw;
+        width: 100%;
         height: 85vh;
     }
 </style>
@@ -21,16 +21,20 @@
 <div class="topBox" ></div>
 <div class="container-fluid">
     <div class="row">
-        <div class="col-md-4">
+        <div class="col-4">
             <a href="{{route('daily.delete',$room->name)}}" class="form-control btn btn-danger">End Room</a>
         </div>
-        <div class="col-md-4">
+        <div class="col-4">
 
-                <a onclick="coppyLink('{{$room->url}}')" href="{{route('daily.delete',$room->name)}}" class="form-control btn btn-success">Coppy Link</a>
+                <a  id="btnCoppy" class="form-control btn btn-info">Streaming</a>
+
+        </div>
+        <div class="col-4">
+
+            <a onclick="coppyLink('{{$room->url}}')" id="btnCoppy" class="form-control btn btn-success">Coppy Link</a>
 
         </div>
 
-        <div class="col-md-4"></div>
     </div>
 </div>
 </body>
@@ -43,8 +47,12 @@
 <script>
     function coppyLink(url)
     {
-        alert(url)
+
         navigator.clipboard.writeText(url);
+        $("#btnCoppy").text("Coppied")
+        setTimeout(function (){
+            $("#btnCoppy").text("Coppy Link")
+        },2000)
     }
     const MY_IFRAME = document.createElement('iframe');
     MY_IFRAME.setAttribute('class','myIframe')
