@@ -26,7 +26,7 @@
         </div>
         <div class="col-4">
 
-                <a  id="btnCoppy" class="form-control btn btn-info">Streaming</a>
+                <a   class="form-control btn btn-info">Streaming</a>
 
         </div>
         <div class="col-4">
