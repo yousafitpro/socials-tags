@@ -46,7 +46,7 @@ class DailyroomController extends Controller
 
         if ($res->ok())
         {
-            return redirect(url('Dashboard'));
+            return redirect('https://www.google.com/');
         }
     }
 }
