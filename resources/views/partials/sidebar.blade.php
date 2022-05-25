@@ -30,7 +30,7 @@
                 </li>
 
                 <li>
-                    <a href="{{route('daily.create')}}" target="_blank"><i class="fa fa-camera"></i> <span class="nav-label">Streaming</span></a>
+                    <a href="{{route('daily.create')}}" target="_blank"><i class="fa fa-video-camera"></i> <span class="nav-label">Streaming</span></a>
                 </li>
 
 

@@ -15,6 +15,12 @@ class CreateDailyroomsTable extends Migration
     {
         Schema::create('dailyrooms', function (Blueprint $table) {
             $table->id();
+            $table->bigInteger('user_id');
+            $table->string('url')->nullable();
+            $table->string('room_id')->nullable();
+            $table->string('name')->nullable();
+            $table->string('status')->nullable()->default('created');
+            $table->softDeletes();
             $table->timestamps();
         });
     }
