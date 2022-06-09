@@ -24,6 +24,7 @@ class DailyroomController extends Controller
         {
 
             $res=$res->json();
+
          $dr=new dailyroom();
          $dr->user_id=auth()->user()->id;
          $dr->url=$res['url'];
