@@ -92,7 +92,7 @@ class AmityChannelController extends Controller
     }
     public function allUsers(Request $request)
     {
-        $list=User::where('id','!=','121')->where('id','!=',auth()->user()->id)->get();
+        $list=User::where('amity_user_id','!=',null)->where('id','!=',auth()->user()->id)->get();
 
         if (Request::capture()->expectsJson())
         {

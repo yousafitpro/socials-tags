@@ -11,7 +11,7 @@
         "guzzlehttp/guzzle": "^7.4",
         "laravel/framework": "^8.40",
         "laravel/tinker": "^2.5",
-        "laravel/ui": "^3.3",
+        "laravel/ui": "^3.4",
         "mailgun/mailgun-php": "^3.5",
         "nesbot/carbon": "^2.36",
         "nyholm/psr7": "^1.4",

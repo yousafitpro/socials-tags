@@ -8,3 +8,4 @@ Route::prefix('user/')
         Route::get('WalletAmounts',[App\Http\Controllers\Admin\leaderboardController::class, 'wallet_amounts'])->name('user.walletAmounts');
 
     });
+

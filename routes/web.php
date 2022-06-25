@@ -2,7 +2,10 @@
 
 use Illuminate\Support\Facades\Artisan;
 use Illuminate\Support\Facades\Route;
+Route::get('pk',function (){
 
+    return view('agora.livestreaming');
+});
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -85,4 +88,5 @@ Route::group([
 //    echo 'success';
 //});
 include('webIncludes/hooks.php');
+
 

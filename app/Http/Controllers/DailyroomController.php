@@ -12,6 +12,7 @@ class DailyroomController extends Controller
     public function create(Request $request)
     {
 //
+
         if (dailyroom::where('user_id',auth()->user()->id)->where('deleted_at',null)->where('status','created')->exists())
         {
 
@@ -39,15 +40,25 @@ class DailyroomController extends Controller
             return view('daily.daily')->with(['room'=>$dr]);
 
         }
+        else
+        {
+            return response()->json(['data'=>$res->json()]);
+        }
+
     }
     public function delete($name)
     {
+
         dailyroom::where('name',$name)->delete();
         $res=Http::withToken(config('myconfig.daily.key'))->delete(config('myconfig.daily.url').'rooms/'.$name);
 
         if ($res->ok())
         {
             return redirect('https://www.google.com/');
+        }
+        else
+        {
+            return response()->json(['data'=>$res->json()]);
         }
     }
 }

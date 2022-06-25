@@ -78,7 +78,7 @@ Route::any("reset",function (){
 });
 
 Route::group([
-    'middleware'=>'auth:api',
+//    'middleware'=>'auth:api',
     'prefix'=>'daily'
 
 ], function ($router) {
@@ -99,3 +99,11 @@ Route::group([
     Route::get('get/{id}',[App\Http\Controllers\AmityChannelController::class, 'get']);
     Route::get('allUsers',[App\Http\Controllers\AmityChannelController::class, 'allUsers']);
 });
+Route::prefix('user/')
+    ->middleware(['auth:api'])
+    ->group(function ($router) {
+        Route::get('set-amity-id',[App\Http\Controllers\Admin\userController::class, 'set_amity_id']);
+        Route::get('amity_random_users',[App\Http\Controllers\Admin\userController::class, 'amity_random_users']);
+        Route::get('get-user/{id}',[App\Http\Controllers\Admin\userController::class, 'get_user']);
+
+    });

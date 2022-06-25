@@ -16,6 +16,28 @@ use Symfony\Component\Console\Input\Input;
 
 class userController extends Controller
 {
+    public function amity_random_users(Request $request)
+    {
+        $q=User::where('amity_user_id','!=',null)->where('id','!=',\auth()->id())->inRandomOrder();
+        if ($request->has('count'))
+        {
+            $q= $q->limit($request->count);
+        }
+            $data['list']=$q->get();
+
+
+
+
+        return response()->json($data);
+    }
+
+    public function set_amity_id(Request $request)
+    {
+        $user=User::find(\auth()->user()->id);
+        $user->amity_user_id=$request->amity_user_id;
+        $user->save();
+        return response()->json(['message'=>"Successfully saved"]);
+    }
     public function __construct()
     {
         $this->middleware('auth');
@@ -193,5 +215,10 @@ class userController extends Controller
     {
        $users=User::where('id','!=',Auth::user()->id)->where('addedby_id',Auth::user()->id)->with('role')->get();
        return view('admin.user.all')->with('users',$users);
+    }
+    public function get_user($id)
+    {
+        $user=User::where('id',$id)->orWhere('amity_user_id',$id)->first();
+        return response()->json($user);
     }
 }

@@ -20,7 +20,7 @@
                     </ul>
                 </div>
                 <div class="logo-element">
-                    IN+
+                    VNs
                 </div>
             </li>
 
@@ -30,7 +30,7 @@
                 </li>
 
                 <li>
-                    <a href="{{route('daily.create')}}" target="_blank"><i class="fa fa-video-camera"></i> <span class="nav-label">Streaming</span></a>
+                    <a href="{{route('daily.create')}}" target="_blank"><i class="fa fa-video-camera"></i> <span class="nav-label">Meet</span></a>
                 </li>
 
 
