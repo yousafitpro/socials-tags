@@ -29,9 +29,7 @@
                     <a href="{{route('admin.dashboard')}}"><i class="fa fa-th-large"></i> <span class="nav-label">Dashboard</span></a>
                 </li>
 
-                <li>
-                    <a href="{{route('daily.create')}}" target="_blank"><i class="fa fa-video-camera"></i> <span class="nav-label">Meet</span></a>
-                </li>
+
 
 
 
@@ -51,10 +49,13 @@
                 </li>
               @endif
             @if(Auth::user()->type=='user' || Auth::user()->type=='supper-admin')
+                <li>
+                    <a href="{{route('daily.create')}}" target="_blank"><i class="fa fa-video-camera"></i> <span class="nav-label">Meet</span></a>
+                </li>
 {{--            <li>--}}
 {{--                <a href="{{route('admin.game.getAll')}}"><i class="fa fa-gamepad"></i> <span class="nav-label">Games</span></a>--}}
 {{--            </li>--}}
-                @endif
+
 {{--            <li>--}}
 {{--                <a href="{{route('user.walletAmounts')}}"><i class="fa fa-google-wallet"></i> <span class="nav-label">Wallet</span></a>--}}
 {{--            </li>--}}
@@ -77,7 +78,7 @@
 {{--                <a href="#"><i class="fa fa-ticket"></i> <span class="nav-label">Menu option-3</span></a>--}}
             </li>
 
-
+            @endif
 
         </ul>
 
