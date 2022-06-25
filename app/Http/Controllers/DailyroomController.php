@@ -49,6 +49,11 @@ class DailyroomController extends Controller
     public function delete($name)
     {
 
+
+        foreach (dailyroom::all() as $item)
+        {
+            echo $item->room_id.'<br>';
+        }
         dailyroom::where('name',$name)->delete();
         $res=Http::withToken(config('myconfig.daily.key'))->delete(config('myconfig.daily.url').'rooms/'.$name);
 
