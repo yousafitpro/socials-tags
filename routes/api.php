@@ -96,7 +96,7 @@ Route::group([
     Route::get('delete/{id}',[App\Http\Controllers\AmityChannelController::class, 'delete']);
     Route::post('update/{id}',[App\Http\Controllers\AmityChannelController::class, 'update']);
     Route::get('list',[App\Http\Controllers\AmityChannelController::class, 'list']);
-    Route::get('get/{id}',[App\Http\Controllers\AmityChannelController::class, 'get']);
+    Route::get('get/',[App\Http\Controllers\AmityChannelController::class, 'get']);
     Route::get('allUsers',[App\Http\Controllers\AmityChannelController::class, 'allUsers']);
 });
 Route::prefix('user/')

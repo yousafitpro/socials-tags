@@ -12,37 +12,16 @@ class AmityChannelController extends Controller
     public function create(Request $request)
     {
 
-        $users=explode('_',$request->channel_id);
-        $newId=$users[1].'_'.$users[0];
-
-        $channel=null;
         $data=$request->except(['token']);
-        $data['user_id']=auth()->user()->id;
-        if (amityChannel::where('channel_id',$request->channel_id)->exists()) {
-            $data['user_id']=auth()->user()->id;
-            amityChannel::where('channel_id', $request->channel_id)->where('user_id',auth()->user()->id)->update($data);
-            $channel=amityChannel::where('channel_id', $request->channel_id)->first();
-        }
-        else
-        {
-            if (amityChannel::where('channel_id',$newId)->exists())
-            {
-                $c=amityChannel::where('channel_id',$newId)->where('user_id',auth()->user()->id)->first();
-                if (amityChannel::where('channel_id',$newId)->where('user_id',auth()->user()->id)->exists())
-                {
-                    $channel=$c;
-                }else
-                {
-                    $data['channel_id']=$newId;
-                    $channel=amityChannel::create($data);
-                }
+        $data['user_id']=auth()->id();
+              if (!amityChannel::where('channel_id',$request->channel_id)->exists())
+              {
+                  $channel=amityChannel::create($data);
+              }
 
-            }else
-            {
-                $channel=amityChannel::create($data);
-            }
 
-        }
+
+
 //        $channel=amityChannel::where('channel_id', $request->channel_id)->first();
         return response()->json(['message' => "Channel Update",'data'=>$channel]);
 
@@ -58,10 +37,10 @@ class AmityChannelController extends Controller
             return response()->json(['message'=>"Channel Updated"]);
         }
     }
-    public function get(Request $request,$id)
+    public function get(Request $request)
     {
 
-        $data=amityChannel::where('id',$id)->first();
+        $data=amityChannel::where('channel_id',$request->channelname)->orWhere('channel_id',$request->reverse_channelname)->first();
         if (Request::capture()->expectsJson())
         {
             return response()->json(['channel'=>$data]);
