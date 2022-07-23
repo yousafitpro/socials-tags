@@ -69,7 +69,9 @@ Route::any("reset",function (){
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
-
+Route::get('/privacy-policy', function (){
+    return view('home.privacy_policy');
+})->name('privacy_policy');
 Route::get('queue-work', function () {
     Artisan::call('queue:work');
     echo 'success';
