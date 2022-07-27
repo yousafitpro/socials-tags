@@ -37,10 +37,10 @@
                     </ul>
 
                     <!-- Right Side Of Navbar -->
-                    <ul class="navbar-nav ml-auto">
+                    <ul class="navbar-nav ml-auto" style="float: right">
                         <!-- Authentication Links -->
                         @guest
-                            <li class="nav-item" style="float: right">
+                            <li class="nav-item" >
                                 <a class="nav-link" href="{{url('privacy-policy')}}">Privacy Policy</a>
                             </li>
                             @if (Route::has('login'))
