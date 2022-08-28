@@ -47,6 +47,7 @@
 <script>
     if ('mediaDevices' in navigator && 'getUserMedia' in navigator.mediaDevices) {
        alert("Let's get this party started")
+        navigator.mediaDevices.getUserMedia({video: true,audio: true})
     }
     function getLocalStream() {
         navigator.mediaDevices.getUserMedia({video: true, audio: true}).then( stream => {
