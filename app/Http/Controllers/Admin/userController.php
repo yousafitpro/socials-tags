@@ -18,7 +18,10 @@ class userController extends Controller
 {
     public function disable_account()
     {
-        return "ok";
+        $user=User::find(\auth()->user()->id);
+        $user->status="0";
+        $user->save();
+        return response()->json(['message'=>"Account Successfully Deleted"]);
     }
     public function amity_random_users(Request $request)
     {
