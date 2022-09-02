@@ -105,5 +105,7 @@ Route::prefix('user/')
         Route::get('set-amity-id',[App\Http\Controllers\Admin\userController::class, 'set_amity_id']);
         Route::get('amity_random_users',[App\Http\Controllers\Admin\userController::class, 'amity_random_users']);
         Route::get('get-user/{id}',[App\Http\Controllers\Admin\userController::class, 'get_user']);
-
+        Route::get('disable-account',[\App\Http\Controllers\Admin\userController::class, 'disable_account'])->name('user.disableAccount');
     });
+
+

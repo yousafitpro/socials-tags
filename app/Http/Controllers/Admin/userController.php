@@ -18,7 +18,7 @@ class userController extends Controller
 {
     public function disable_account()
     {
-
+        return "ok";
     }
     public function amity_random_users(Request $request)
     {
