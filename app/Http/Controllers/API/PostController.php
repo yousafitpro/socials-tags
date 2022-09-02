@@ -161,6 +161,10 @@ class PostController extends Controller
 //          Mail::to($to)->send(new messageEmail(auth()->user()->email,$request->subject,$request->contentdata,$attachment))->onQueue('default');
 
             dispatch(new SendCustomEmailJob(auth()->user()->email,auth()->user()->fname.' '.auth()->user()->lname,$to,$request->subject,$attachment,'emails.compose',['contentData'=>$request->contentdata,'attachments'=>[$attachment]]));
+            if (Request::capture()->expectsJson())
+            {
+                return response()->json(['message'=>"Message Sent"]);
+            }
             return redirect()->route('official.officials');
         }
         catch (Exception $e)

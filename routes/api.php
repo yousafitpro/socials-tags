@@ -23,7 +23,7 @@ Route::group([
     Route::get('getAll',[App\Http\Controllers\API\PostController::class, 'getALL']);
     Route::post('composemessage',[App\Http\Controllers\API\PostController::class, 'composemessage']);
 });
-
+//asdasd
 Route::group([
     'namespace' => 'App\Http\Controllers\API',
     'middleware'=>'auth:api'
