@@ -16,6 +16,10 @@ use Symfony\Component\Console\Input\Input;
 
 class userController extends Controller
 {
+    public function disable_account()
+    {
+
+    }
     public function amity_random_users(Request $request)
     {
         $q=User::where('amity_user_id','!=',null)->where('id','!=',\auth()->id())->inRandomOrder();

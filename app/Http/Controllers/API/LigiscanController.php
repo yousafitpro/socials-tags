@@ -96,7 +96,7 @@ class LigiscanController extends Controller
 
     public function addToMoniteredBill(Request $request)
     {
-        if(moniteredbill::where("bill_number",$request->id)->exists())
+        if(moniteredbill::where("bill_number",$request->id)->where('user_id',\auth()->user()->id)->exists())
         {
             return response()->json(['message'=>'Bill already existed']);
         }
