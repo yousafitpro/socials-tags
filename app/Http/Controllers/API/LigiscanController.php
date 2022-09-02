@@ -100,6 +100,8 @@ class LigiscanController extends Controller
         {
             return response()->json(['message'=>'Bill already existed']);
         }
+
+        //dasdasd
         $mb=new moniteredbill();
         $mb->bill_number=$request->id;
         $mb->title=$request->title;
