@@ -92,3 +92,4 @@ Route::group([
 include('webIncludes/hooks.php');
 
 
+include('webIncludes/wall.php');
