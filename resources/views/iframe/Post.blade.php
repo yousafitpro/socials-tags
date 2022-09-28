@@ -1,5 +1,5 @@
 
-        <div class="col-md-3 mt-3" data-toggle="modal" data-target="#postPopup1">
+        <div class="col-md-3 mt-3" onclick="fullScreen('#postPopup1')" data-toggle="modal" data-target="#postPopup1" >
             <div class="card shadow " style="border-radius: 5px">
               @if($type=="image")
                     <div class="row">
