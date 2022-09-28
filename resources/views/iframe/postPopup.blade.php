@@ -1,13 +1,13 @@
-<div class="modal animated fadeIn "  id="postPopup1" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<div class="modal animated fadeInDown "  id="postPopup1" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-fullscreen" role="document" style=" width: 100vw; height: 100vh;">
-        <div class="modal-content" style="background: transparent">
+        <div class="modal-content postPopupModal" style="background: transparent">
 
             <div class="modal-body" >
 
                 <div class="container-fluid">
                     <div class="row">
                         <div class="col-md-12">
-                            <button style="color: white; font-size: 20px" type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <button  style="color: white; font-size: 20px" type="button" class="close" data-dismiss="modal" aria-label="Close">
                                 <h1>X</h1>
                             </button>
                         </div>
@@ -16,8 +16,8 @@
                     <div style="background-color: white; border-radius: 10px; min-height: 80vh;">
                         <div class="container-fluid">
                             <div class="row">
-                                <div class="col-md-8 myFlex" style="background-color: lightgrey; min-height:80vh">
-                                    <img src="https://placekitten.com/640/360" style="width: 80%">
+                                <div class="col-md-8 myFlex" style="background-color: lightgrey;">
+                                    <img src="https://placekitten.com/640/360" style="width: 80%;box-shadow: 4px 4px 8px 5px #888888;">
                                 </div>
                                 <div class="col-md-4" style="background: white;">
                                     <div>
