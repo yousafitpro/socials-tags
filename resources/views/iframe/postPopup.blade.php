@@ -17,7 +17,7 @@
                         <div class="container-fluid">
                             <div class="row">
                                 <div class="col-md-8 myFlex" style="background-color: lightgrey;">
-                                    <img src="https://placekitten.com/640/360" style="width: 80%;box-shadow: 4px 4px 8px 5px #888888;">
+                                    <img src="https://placekitten.com/640/360" style="width: 80%; margin-bottom: 30px; margin-top:10px;box-shadow: 4px 4px 8px 5px #888888;">
                                 </div>
                                 <div class="col-md-4" style="background: white;">
                                     <div>
