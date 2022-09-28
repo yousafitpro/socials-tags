@@ -1,0 +1,55 @@
+.wallPostModalImage{
+    width: 80%;
+    margin-bottom: 32px;
+    margin-top:10px;
+    box-shadow: 4px 4px 8px 5px #888888;
+
+}
+.wallPostModalInnerRight{
+    background-color: lightgrey;
+}
+
+.wallPostModalInner{
+    background-color: white;
+    border-radius: 10px;
+    height: 80vh;
+    overflow: hidden;
+
+    background-color: lightgrey;
+
+}
+.wallPostModalInnerLeft{
+   background-color: white;
+    height:90vh;
+
+}
+.wallPostModalInnerLeftText
+{
+    font-size: 35px;
+    color: lightgrey;
+}
+@media only screen and (max-width: 768px) {
+    /* For mobile phones: */
+    .wallPostModalInner{
+        background-color: white;
+        border-radius: 10px;
+        min-height: 80vh;
+        overflow: auto;
+
+
+    }
+    .wallPostModalImage{
+        width: 100%;
+        box-shadow:none;
+
+    }
+    .wallPostModalInnerRight{
+        background-color:white;
+        padding: 0;
+        margin-top: -10px;
+    }
+    .wallPostModalInnerLeftText{
+        font-size: 17px;
+
+    }
+}
