@@ -9,7 +9,7 @@
 <script>
     function fullScreen(id)
     {
-        document.querySelector(id).requestFullscreen();
+        // document.querySelector(id).requestFullscreen();
     }
     function exitFullScreen()
     {

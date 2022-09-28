@@ -20,7 +20,7 @@
 }
 .wallPostModalInnerLeft{
    background-color: white;
-    height:90vh;
+    min-height:80vh;
 
 }
 .wallPostModalInnerLeftText

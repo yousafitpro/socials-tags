@@ -22,23 +22,33 @@
                                    </div>
                                 </div>
                                 <div class="col-md-4 wallPostModalInnerLeft" >
-                                    <div>
-                                        <br>
-                                        @if($category=="youtube")
-                                            <img src="{{asset('wall/youtube.png')}}" style="width: 30px">
-                                        @elseif($category=="native")
-                                            <img src="{{asset('wall/comment.png')}}" style="width: 30px">
-                                        @endif
-                                        <label style="font-weight: bold;">Jaron Mays</label><br>
-                                        <small>6 days ago</small>
-                                    </div>
-                                    <small></small>
-                                    <span  class="wallPostModalInnerLeftText">US Senate Candidate, Gary Chambers Jr, Panders to Black Voters By Smoking Weed</span>
-                               <div style="bottom: 0px">
-                                   <img src="{{asset('wall/youtube.png')}}" style="width: 30px">
-                               </div>
+                                 <div >
+                                     <div>
+                                         <br>
+                                         @if($category=="youtube")
+                                             <img src="{{asset('wall/youtube.png')}}" style="width: 30px">
+                                         @elseif($category=="native")
+                                             <img src="{{asset('wall/comment.png')}}" style="width: 30px">
+                                         @endif
+                                         <label style="font-weight: bold;">Jaron Mays</label><br>
+                                         <small>6 days ago</small>
+                                     </div>
+
+                                     <div>
+                                         <span  class="wallPostModalInnerLeftText">US Senate Candidate, Gary Chambers Jr, Panders to Black Voters By Smoking Weed</span>
+
+                                     </div>
+
+                                 </div>
                                 </div>
                             </div>
+                        </div>
+                        <div style="position: absolute;bottom: 20; right: 50;">
+
+                            <img src="{{asset('icon/fb.png')}}" style="width: 30px">
+                            <img src="{{asset('icon/tw.png')}}" style="width: 30px">
+                            <img src="{{asset('icon/in.png')}}" style="width: 30px">
+                            <img src="{{asset('icon/link.png')}}" style="width: 20px">
                         </div>
                     </div>
                 </div>
