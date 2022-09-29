@@ -28,6 +28,10 @@
     font-size: 35px;
     color: lightgrey;
 }
+.wallPostModalCloseBox {
+    color: white;
+    font-size: 40px
+}
 @media only screen and (max-width: 768px) {
     /* For mobile phones: */
     .wallPostModalInner{
@@ -52,4 +56,9 @@
         font-size: 17px;
 
     }
+    .wallPostModalCloseBox {
+font-size: 26px;
+
+    }
+    /*sa*/
 }
