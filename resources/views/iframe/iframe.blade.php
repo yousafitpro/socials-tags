@@ -12,14 +12,14 @@
     <div class="row">
 
 
-        @include('iframe.Post',['type'=>'image','category'=>'youtube'])
-        @include('iframe.Post',['type'=>'text','category'=>'native'])
-        @include('iframe.Post',['type'=>'image','category'=>'youtube'])
-        @include('iframe.Post',['type'=>'image','category'=>'youtube'])
-        @include('iframe.Post',['type'=>'image','category'=>'youtube'])
-        @include('iframe.Post',['type'=>'text','category'=>'native'])
-        @include('iframe.Post',['type'=>'text','category'=>'native'])
-        @include('iframe.Post',['type'=>'image','category'=>'youtube'])
+        @include('iframe.Post',['type'=>'image','category'=>'youtube','id'=>'1'])
+        @include('iframe.Post',['type'=>'text','category'=>'native','id'=>'3'])
+        @include('iframe.Post',['type'=>'image','category'=>'youtube','id'=>'4'])
+        @include('iframe.Post',['type'=>'image','category'=>'youtube','id'=>'5'])
+        @include('iframe.Post',['type'=>'image','category'=>'youtube','id'=>'6'])
+        @include('iframe.Post',['type'=>'text','category'=>'native','id'=>'7'])
+        @include('iframe.Post',['type'=>'text','category'=>'native','id'=>'8'])
+        @include('iframe.Post',['type'=>'image','category'=>'youtube','id'=>'9'])
     </div>
 </div>
 </body>

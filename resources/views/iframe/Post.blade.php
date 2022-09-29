@@ -1,5 +1,5 @@
 
-        <div class="col-md-3 mt-3" onclick="fullScreen('#postPopup1')" data-toggle="modal" data-target="#postPopup1" >
+        <div class="col-md-3 mt-3" onclick="fullScreen('#b{{$id}}')" data-toggle="modal" data-target="#b{{$id}}" >
             <div class="card shadow " style="border-radius: 5px">
               @if($type=="image")
                     <div class="row">
@@ -20,7 +20,7 @@
                     </div>
                   @elseif($type=="text")
                     <div class="p-3 text-center" style="color: gray">
-                  <h3>2021 Wisconsin politics: Pandemic feuds, election reviews and resignations</h3>
+                  <h3>{{$type}}2021 Wisconsin politics: Pandemic feuds, election reviews and resignations</h3>
                     </div>
                   @endif
                   <div class="p-3">
