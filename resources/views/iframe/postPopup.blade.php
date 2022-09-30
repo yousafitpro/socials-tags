@@ -57,11 +57,12 @@
 
                                             <div>
                                                 <br>
-                                               <div style="overflow: auto; max-height: 70vh;">
+                                               <div style="overflow: auto; max-height: 60vh;">
                                                     <span  class="wallPostModalInnerLeftText">
                                                   @if($category=='native')
                                                             {{$p->content}}
-                                                      <br> <br> <br>
+
+                                                      <br> <br> <br><br> <br> <br> <br>
                                                         @else
                                                             {{Str::limit($p->content,150)}}
 
