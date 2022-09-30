@@ -1,6 +1,6 @@
 <div class="modal animated fadeInDown "  id="b{{$id}}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-fullscreen" role="document" style=" width: 100vw; height: 100vh;">
-        <div class="modal-content postPopupModal" style="background:black">
+        <div class="modal-content postPopupModal" style="background:black; height: 100vh">
 
             <div class="modal-body wallPostModalPopupBody" >
 
@@ -81,7 +81,7 @@
                                 </div>
                             </div>
                             @endif
-                        <div style="position: absolute;bottom: 20; right: 50;">
+                        <div style="position: absolute;bottom: 40; right: 50;">
 
                             <img src="{{asset('icon/fb.png')}}" style="width: 30px">
                             <img src="{{asset('icon/tw.png')}}" style="width: 30px">
