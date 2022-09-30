@@ -19,6 +19,10 @@
 .wallPostModalInnerRight{
     background-color: lightgrey;
 }
+.myScroller {
+
+    scrollbar-width: thin;
+}
 
 .wallPostModalInner{
     background-color: white;

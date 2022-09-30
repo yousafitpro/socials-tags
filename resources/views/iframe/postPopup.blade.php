@@ -51,7 +51,7 @@
                                             <img src="{{asset($p->image)}}" class="wallPostModalPopupImage">
                                         </div>
                                     </div>
-                                    <div class="col-md-4 wallPostModalInnerLeft" >
+                                    <div class="col-md-4 wallPostModalInnerLeft myScroller" >
                                         <div >
                                             <div>
                                                 <br>

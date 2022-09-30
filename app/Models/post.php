@@ -20,4 +20,8 @@ class post extends Model
     {
         return $this->hasOne(User::class,'role_id', 'id');
     }
+    public function image_url()
+    {
+        return asset($this->image);
+    }
 }
