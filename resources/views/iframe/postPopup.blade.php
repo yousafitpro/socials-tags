@@ -7,7 +7,7 @@
                 <div class="container-fluid">
                     <div class="row">
                         <div class="col-md-8">
-                            <div style="margin-top: 25px; position: absolute">
+                            <div style="margin-top: 35px; position: absolute">
 
                                 <img src="{{asset('icon/fb.png')}}" style="width: 30px; border-radius: 5px; border: solid 1px grey">
                                 <img src="{{asset('icon/tw.png')}}" style="width: 30px; border-radius: 5px; border: solid 1px grey">
