@@ -86,7 +86,7 @@
                             <img src="{{asset('icon/fb.png')}}" style="width: 30px">
                             <img src="{{asset('icon/tw.png')}}" style="width: 30px">
                             <img src="{{asset('icon/in.png')}}" style="width: 30px">
-                            <img src="{{asset('icon/link.png')}}" style="width: 20px">
+                            <img src="{{asset('icon/link.png')}}" style="width: 30px">
                         </div>
                     </div>
                 </div>
