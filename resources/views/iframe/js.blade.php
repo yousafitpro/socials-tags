@@ -10,7 +10,7 @@
     function fullScreen(id)
     {
         // document.querySelector(id).requestFullscreen();
-        window.open('https://votersnews.com/wall/iframe','_system')
+        window.open('https://votersnews.com/wall/iframe','_top')
     }
     function exitFullScreen()
     {
