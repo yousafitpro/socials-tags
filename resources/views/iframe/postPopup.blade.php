@@ -20,8 +20,11 @@
                                    <div class="row">
                                     <div class="col-md-12"  >
 
-                                        <div style="height: 100%; width: 100%; font-size: 30px; min-height: 80vh" class="myFlex" >
-                                            {{Str::limit($p->content,150)}}
+                                        <div style="height: 100%; width: 100%; font-size: 30px; min-height: 80vh; overflow: auto" class="myFlex" >
+                                            <div style="max-height: 80vh; overflow: auto">
+                                                {{Str::limit($p->content,150)}}
+
+                                            </div>
                                         </div>
                                     </div>
                                    </div>
@@ -49,10 +52,16 @@
                                             </div>
 
                                             <div>
-                                                <span  class="wallPostModalInnerLeftText">
+                                                <br>
+                                               <div style="overflow: auto; max-height: 70vh;">
+                                                    <span  class="wallPostModalInnerLeftText">
                                                   {{Str::limit($p->content,100)}}
 
+
+
                                                 </span>
+                                                   <br>
+                                               </div>
 
                                             </div>
 
