@@ -64,7 +64,7 @@
                         </li>
 
             <li>
-                <a href="{{route('admin.post.getAll')}}"><i class="fa fa-pencil-square-o"></i> <span class="nav-label">Manage Posts</span></a>
+                <a href="{{route('admin.post.getAll')}}"><i class="fa fa-pencil-square-o"></i> <span class="nav-label">Manage Wall Posts</span></a>
             </li>
             <li>
                 <a href="{{ route('ligiscan.search') }}"><i class="fa fa-users"></i> <span class="nav-label">legiscan</span></a>

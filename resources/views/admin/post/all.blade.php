@@ -15,7 +15,7 @@
         <table class="table  table-bordered table-hover dataTables-example" >
             <thead>
             <tr>
-                <th>Title</th>
+                <th>Content</th>
                 <th>Actions</th>
             </tr>
             </thead>
@@ -23,7 +23,7 @@
 
             @foreach($posts as $post)
             <tr class="center">
-                <td>{{$post->title}}</td>
+                <td>{{Str::substr($post->content,0,100)}}</td>
                 <td width="50px">
                     <div class="dropdown dropdown-menu-bottom">
                         <i class="fa fa-cogs" data-toggle="dropdown"></i>
@@ -59,7 +59,7 @@
             </tbody>
             <tfoot>
             <tr>
-                <th>Title</th>
+                <th>Content</th>
                 <th>Actions</th>
             </tr>
             </tfoot>

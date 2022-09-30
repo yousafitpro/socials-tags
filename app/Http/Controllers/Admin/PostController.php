@@ -24,16 +24,10 @@ class PostController extends Controller
     public function add(Request $request)
     {
 
-        $data['user_name']=auth()->user()->fname.' '.auth()->user()->lname;
-        $data['user_image']=asset(\auth()->user()->profile_image);
-        $validator = Validator::make($request->all(), [
-            'title'=>'required',
-        ]);
 
-        if ($validator->fails())
-        {
-            return Redirect::route('admin.post.add')->withErrors($validator)->withInput();
-        }
+
+
+
             if (!$request->hasFile('image') && !$request->hasFile('video') && $request->contentdata==""  )
             {
                 Session::put('error-msg','You must add at least one of the following fields to the body: text, image or video');
@@ -42,8 +36,9 @@ class PostController extends Controller
 
 
         $post=new post();
-        $post->title=$request->title;
         $post->link=$request->link;
+        $post->title="";
+        $post->username=$request->username;
         $post->content=$request->contentdata;
         $post->save();
         if($request->hasFile('image'))
@@ -69,51 +64,29 @@ class PostController extends Controller
             $post->save();
         }
 
-        if($request->hasFile('video'))
-        {
-            $validator = Validator::make($request->all(), [
-                'video'=>'required|mimes:mp4,mov,ogg,qt | max:10000',
-            ]);
-
-            if ($validator->fails())
-            {
-
-                $post->delete();
-                return Redirect::route('admin.post.add')->withErrors($validator)->withInput()->withInput();
-            }
-            $file = $request->file('video');
-            $extension = $file->getClientOriginalExtension();
-            Storage::disk('public')->delete($post->video);
-            $path = $request->file('video')->storeAs($this->src,'video'.$post->id.'.'.$extension);
-
-            $post->video= $path;
-            $data['video']=asset($path);
-            $post->save();
-        }
-
-        if ($request->contentdata!="")
-        {
-            $data['text']=$request->contentdata;
-        }
-        if ($request->contentdata!="")
-        {
-            $data['link']=$request->link;
-        }
+//        if($request->hasFile('video'))
+//        {
+//            $validator = Validator::make($request->all(), [
+//                'video'=>'required|mimes:mp4,mov,ogg,qt | max:10000',
+//            ]);
+//
+//            if ($validator->fails())
+//            {
+//
+//                $post->delete();
+//                return Redirect::route('admin.post.add')->withErrors($validator)->withInput()->withInput();
+//            }
+//            $file = $request->file('video');
+//            $extension = $file->getClientOriginalExtension();
+//            Storage::disk('public')->delete($post->video);
+//            $path = $request->file('video')->storeAs($this->src,'video'.$post->id.'.'.$extension);
+//
+//            $post->video= $path;
+//            $data['video']=asset($path);
+//            $post->save();
+//        }
 
 
-        $response=Http::post('https://api.walls.io/v1/posts?access_token='.Config::get('myconfig.Walls.key'),$data);
-
-        $response=$response->json();
-        if ($response==null)
-        {
-            Session::put('error-msg','Sorry Post Cannot be created');
-            Storage::disk('public')->delete($post->image);
-            Storage::disk('public')->delete($post->video);
-            $post->delete();
-            return \redirect()->back();
-        }
-        $post->external_post_id=$response['data']['result']['id'];
-        $post->save();
 
             Session::put('success-msg','Post Successfully Added');
 
@@ -139,14 +112,7 @@ class PostController extends Controller
 
         $data['user_name']=auth()->user()->fname.' '.auth()->user()->lname;
         $data['user_image']=asset(\auth()->user()->profile_image);
-        $validator = Validator::make($request->all(), [
-            'title'=>'required',
-        ]);
 
-        if ($validator->fails())
-        {
-            return Redirect::route('admin.post.add')->withErrors($validator)->withInput();
-        }
         if (!$request->hasFile('image') && !$request->hasFile('video') && $request->contentdata==""  )
         {
             Session::put('error-msg','You must add at least one of the following fields to the body: text, image or video');
@@ -155,7 +121,8 @@ class PostController extends Controller
 
 
         $post=post::find($id);
-        $post->title=$request->title;
+        $post->title="";
+        $post->username=$request->username;
         $post->link=$request->link;
         $post->content=$request->contentdata;
         $post->save();
@@ -205,26 +172,7 @@ class PostController extends Controller
             $post->save();
         }
 
-        if ($request->contentdata!="")
-        {
-            $data['text']=$request->contentdata;
-        }
-        if ($request->contentdata!="")
-        {
-            $data['link']=$request->link;
-        }
 
-
-        $response=Http::post('https://api.walls.io/v1/posts?access_token='.Config::get('myconfig.Walls.key'),$data);
-
-        $response=$response->json();
-        if ($response==null)
-        {
-            Session::put('error-msg','Sorry Post Cannot be Updated');
-            return \redirect()->back();
-        }
-        $post->external_post_id=$response['data']['result']['id'];
-        $post->save();
 
         Session::put('success-msg','Post Successfully Updated');
 

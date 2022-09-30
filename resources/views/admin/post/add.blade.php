@@ -21,18 +21,33 @@
                 <br>
                 <br>
                 <br>
+
                <div class="row">
                    <div class="col-md-1"></div>
                    <div class="col-md-10">
                        <div class="row">
                            <div class="col-md-2">
                                <label >
-                                   Video
+                              Category
                                </label>
                                <br>
                            </div>
                            <div class="col-md-6">
-                               <input name="video" accept="video/*" type="file" class="form-control btn btn-primary btn-outline">
+                               <select name="category" class="form-control">
+                                   <option value="native">Native</option>
+                               </select>
+                           </div>
+                       </div><br>
+                       <div class="row">
+                           <div class="col-md-2">
+                               <label >
+                                  Username
+                               </label>
+                               <br>
+                           </div>
+                           <div class="col-md-6">
+
+                               <input name="username" value="{{old('username')}}" required class="form-control">
                            </div>
                        </div><br>
                        <div class="row">
@@ -49,7 +64,7 @@
                        <div class="row">
                            <div class="col-md-2">
                                <label >
-                                  Link
+                                 Redirect Link
                                </label>
                                <br>
                            </div>
@@ -58,17 +73,7 @@
                                <input name="link" value="{{old('link')}}" placeholder="Past link here..." class="form-control">
                            </div>
                        </div><br>
-                       <div class="row">
-                           <div class="col-md-2">
-                               <label >
-                                  Title  <small style="color:red">(required)</small>
-                               </label>
-                               <br>
-                           </div>
-                           <div class="col-md-6">
-                           <input name="title" value="{{old('title')}}" class="form-control">
-                           </div>
-                       </div><br>
+
 
                        <div class="row">
                            <div class="col-md-2">
@@ -78,7 +83,7 @@
                                <br>
                            </div>
                            <div class="col-md-10">
-                               <textarea class="summernote" name="contentdata" style="height: 40vh">{{old('contentdata')}}</textarea>
+                               <textarea  name="contentdata" class="form-control" style="height: 40vh">{{old('contentdata')}}</textarea>
 
 
                            </div>
