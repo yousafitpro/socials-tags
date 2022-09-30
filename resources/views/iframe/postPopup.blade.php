@@ -22,7 +22,11 @@
 
                                         <div style="height: 100%; width: 100%; font-size: 30px; min-height: 80vh; overflow: auto" class="myFlex" >
                                             <div style="max-height: 80vh; overflow: auto">
-                                                {{Str::limit($p->content,150)}}
+                                                @if($category=='native')
+                                                    {{$p->content}}
+                                                @else
+                                                    {{Str::limit($p->content,150)}}
+                                                    @endif
 
                                             </div>
                                         </div>
@@ -55,7 +59,13 @@
                                                 <br>
                                                <div style="overflow: auto; max-height: 70vh;">
                                                     <span  class="wallPostModalInnerLeftText">
-                                                  {{Str::limit($p->content,100)}}
+                                                  @if($category=='native')
+                                                            {{$p->content}}
+                                                      <br> <br> <br>
+                                                        @else
+                                                            {{Str::limit($p->content,150)}}
+
+                                                        @endif
 
 
 
