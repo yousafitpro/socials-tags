@@ -85,7 +85,7 @@
 
                             <img src="{{asset('icon/fb.png')}}" style="width: 30px; border-radius: 5px; border: solid 1px grey">
                             <img src="{{asset('icon/tw.png')}}" style="width: 30px; border-radius: 5px; border: solid 1px grey">
-                            <img src="{{asset('icon/in.png')}}" style="width: 30px; border-radius: 5px;border: border: solid 1px grey">
+                            <img src="{{asset('icon/in.png')}}" style="width: 30px; border-radius: 5px;border:solid 1px grey">
                             <img src="{{asset('icon/link.png')}}" style="width: 30px; border-radius: 5px; border: solid 1px grey">
                         </div>
                     </div>
