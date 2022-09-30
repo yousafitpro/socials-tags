@@ -11,7 +11,7 @@
     {
         // document.querySelector(id).requestFullscreen();
         setTimeout(function (){
-            window.open('https://votersnews.com/wall/iframe','_system','width=100,scrollbars=yes,status=yes,titlebar=yes,menubar=yes')
+            window.open('https://votersnews.com/wall/iframe','_self','fullscreen=yes')
 
         },1000)
     }
