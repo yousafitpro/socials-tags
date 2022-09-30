@@ -31,6 +31,7 @@
                         <ul class="dropdown-menu">
 {{--                            <li><a href="#" data-toggle="modal" data-target="#deleteModel">Delete</a></li>--}}
                             <li><a href="{{route('admin.post.getOne',$post->id)}}">Edit/View</a></li>
+                            <li><a href="#" onclick="deletePost('{{route('admin.post.deleteOne',$post->id)}}')">Delete</a></li>
                         </ul>
                     </div>
                 </td>
@@ -66,6 +67,24 @@
         </table>
     </div>
     <script>
+        function deletePost(url)
+        {
+            swal({
+                title: "Confirmation!",
+                text: "Are you want to delete this post permanently ?",
+                icon: "warning",
+                buttons: ["No", "Yes"],
+                dangerMode: true,
+            })
+                .then((res) => {
+                    if (res) {
+
+                        window.location.href=url
+                    } else {
+
+                    }
+                });
+        }
         $(document).ready(function(){
             $('.dataTables-example').DataTable({
                 pageLength: 25,

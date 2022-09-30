@@ -28,6 +28,7 @@ class CreatePostsTable extends Migration
             $table->string('type')->nullable()->default('text');
             $table->timestamp('schedule')->nullable();
             $table->longText('content')->nullable();
+            $table->softDeletes();
             $table->timestamps();
         });
     }
