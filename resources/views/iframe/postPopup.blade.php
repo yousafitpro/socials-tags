@@ -6,7 +6,16 @@
 
                 <div class="container-fluid">
                     <div class="row">
-                        <div class="col-md-12">
+                        <div class="col-md-8">
+                            <div style="margin-top: 25px">
+
+                                <img src="{{asset('icon/fb.png')}}" style="width: 30px; border-radius: 5px; border: solid 1px grey">
+                                <img src="{{asset('icon/tw.png')}}" style="width: 30px; border-radius: 5px; border: solid 1px grey">
+                                <img src="{{asset('icon/in.png')}}" style="width: 30px; border-radius: 5px;border:solid 1px grey">
+                                <img src="{{asset('icon/link.png')}}" style="width: 30px; border-radius: 5px; border: solid 1px grey">
+                            </div>
+                        </div>
+                        <div class="col-md-4">
                             <button onclick="exitFullScreen()"   type="button" class="close " data-dismiss="modal" aria-label="Close" style="color: white; padding: 25px; margin-top: 10px">
                                 <h1 class="wallPostModalCloseBox">X</h1>
                             </button>
@@ -81,13 +90,7 @@
                                 </div>
                             </div>
                             @endif
-                        <div style="position: absolute;bottom: 2%; right: 30;">
 
-                            <img src="{{asset('icon/fb.png')}}" style="width: 30px; border-radius: 5px; border: solid 1px grey">
-                            <img src="{{asset('icon/tw.png')}}" style="width: 30px; border-radius: 5px; border: solid 1px grey">
-                            <img src="{{asset('icon/in.png')}}" style="width: 30px; border-radius: 5px;border:solid 1px grey">
-                            <img src="{{asset('icon/link.png')}}" style="width: 30px; border-radius: 5px; border: solid 1px grey">
-                        </div>
                     </div>
                 </div>
             </div>
