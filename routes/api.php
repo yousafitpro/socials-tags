@@ -109,4 +109,4 @@ Route::prefix('user/')
     });
 
 
-include('api.php');
+include('api/wallposts.php');
