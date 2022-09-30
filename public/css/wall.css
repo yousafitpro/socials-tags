@@ -39,7 +39,8 @@
     font-size: 40px
 }
 .wallPostCard {
-    border-radius: 6px
+    border-radius: 6px;
+    overflow: hidden;
 }
 
 @media only screen and (max-width: 768px) {
