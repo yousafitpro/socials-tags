@@ -13,7 +13,7 @@
         setTimeout(function (){
             window.open('https://votersnews.com/wall/iframe','_blank','scrollbars=yes,status=yes,titlebar=yes,menubar=yes')
 
-        })
+        },1000)
     }
     function exitFullScreen()
     {
