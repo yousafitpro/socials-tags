@@ -1,10 +1,10 @@
 
         <div class="col-md-3 mt-3" onclick="fullScreen('#b{{$id}}')" data-toggle="modal" data-target="#b{{$id}}" >
-            <div class="card shadow " style="border-radius: 5px">
+            <div class="card shadow wallPostCard" >
               @if($type=="image")
                     <div class="row">
                         <div class="col-md-12">
-                            <img src="{{asset($p->image)}}" style="width: 100%; border-radius: 5px">
+                            <img src="{{asset($p->image)}}" style="width: 100%" class="wallPostModalImage">
                         </div>
                     </div>
                     <div class="p-3">

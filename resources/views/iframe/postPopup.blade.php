@@ -32,7 +32,7 @@
                                 <div class="row">
                                     <div class="col-md-8  wallPostModalInnerRight">
                                         <div class="myFlex" style="height: 100%; width: 100%">
-                                            <img src="{{asset($p->image)}}" class="wallPostModalImage">
+                                            <img src="{{asset($p->image)}}" class="wallPostModalPopupImage">
                                         </div>
                                     </div>
                                     <div class="col-md-4 wallPostModalInnerLeft" >

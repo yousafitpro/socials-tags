@@ -1,8 +1,13 @@
 .wallPostModalImage{
+    width: 100%;
+    border-top-left-radius:5px ;
+    border-top-right-radius:5px ;
+
+}
+.wallPostModalPopupImage{
     width: 80%;
-    margin-bottom: 32px;
-    margin-top:10px;
-    box-shadow: 4px 4px 8px 5px #888888;
+    border-radius: 5px;
+
 
 }
 .wallPostModalInnerRight{
@@ -32,6 +37,10 @@
     color: white;
     font-size: 40px
 }
+.wallPostCard {
+    border-radius: 6px
+}
+
 @media only screen and (max-width: 768px) {
     /* For mobile phones: */
     .wallPostModalInner{
@@ -42,9 +51,12 @@
 
 
     }
-    .wallPostModalImage{
+
+    .wallPostModalPopupImage{
         width: 100%;
         box-shadow:none;
+        border-radius: 0px;
+
 
     }
     .wallPostModalInnerRight{
