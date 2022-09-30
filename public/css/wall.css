@@ -2,12 +2,13 @@
     width: 100%;
     border-top-left-radius:5px ;
     border-top-right-radius:5px ;
+    margin-top: -10px;
 
 }
 .wallPostModalPopupImage{
     width: 80%;
     border-radius: 5px;
-    margin-top: -10px;
+
 
 }
 .wallPostModalInnerRight{
