@@ -54,6 +54,13 @@
 
 
     }
+    .wallPostModalSocialIcon{
+        width: 30px;
+        border-radius: 5px;
+        border: solid 1px grey
+
+
+    }
     .wallPostModalPopupBody{
         padding: 0; margin: 0
     }

@@ -83,10 +83,10 @@
                             @endif
                         <div style="position: absolute;bottom: 2%; right: 100;">
 
-                            <img src="{{asset('icon/fb.png')}}" style="width: 30px; border-radius: 5px; border: solid 1px grey">
-                            <img src="{{asset('icon/tw.png')}}" style="width: 30px; border-radius: 5px">
-                            <img src="{{asset('icon/in.png')}}" style="width: 30px; border-radius: 5px">
-                            <img src="{{asset('icon/link.png')}}" style="width: 30px; border-radius: 5px">
+                            <img src="{{asset('icon/fb.png')}}" class="wallPostModalSocialIcon">
+                            <img src="{{asset('icon/tw.png')}}" class="wallPostModalSocialIcon">
+                            <img src="{{asset('icon/in.png')}}" class="wallPostModalSocialIcon">
+                            <img src="{{asset('icon/link.png')}}" class="wallPostModalSocialIcon">
                         </div>
                     </div>
                 </div>
