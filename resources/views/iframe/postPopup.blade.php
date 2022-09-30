@@ -21,7 +21,7 @@
                                     <div class="col-md-12"  >
 
                                         <div style="height: 100%; width: 100%; font-size: 30px; min-height: 80vh" class="myFlex" >
-                                            {{$p->content}}
+                                            {{Str::limit($p->content,150)}}
                                         </div>
                                     </div>
                                    </div>
@@ -50,7 +50,7 @@
 
                                             <div>
                                                 <span  class="wallPostModalInnerLeftText">
-                                                    {{$p->content}}
+                                                  {{Str::limit($p->content,100)}}
 
                                                 </span>
 

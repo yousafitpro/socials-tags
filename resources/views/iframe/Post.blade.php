@@ -12,7 +12,7 @@
                             <div class="col-md-12">
 
                                 <small >
-                              {{$p->content}}
+                                    {{Str::limit($p->content,100)}}
                                 </small>
                             </div>
                         </div><br>
@@ -21,7 +21,7 @@
                     </div>
                   @elseif($type=="text")
                     <div class="p-3 text-center" style="color: gray">
-                  <h3>{{$p->content}}</h3>
+                  <h3>{{Str::limit($p->content,100)}}</h3>
                     </div>
                   @endif
                   <div class="p-3">
