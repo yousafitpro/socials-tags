@@ -83,10 +83,10 @@
                             @endif
                         <div style="position: absolute;bottom: 40; right: 50;">
 
-                            <img src="{{asset('icon/fb.png')}}" style="width: 30px">
-                            <img src="{{asset('icon/tw.png')}}" style="width: 30px">
-                            <img src="{{asset('icon/in.png')}}" style="width: 30px">
-                            <img src="{{asset('icon/link.png')}}" style="width: 30px">
+                            <img src="{{asset('icon/fb.png')}}" style="width: 30px; border-radius: 5px">
+                            <img src="{{asset('icon/tw.png')}}" style="width: 30px; border-radius: 5px">
+                            <img src="{{asset('icon/in.png')}}" style="width: 30px; border-radius: 5px">
+                            <img src="{{asset('icon/link.png')}}" style="width: 30px; border-radius: 5px">
                         </div>
                     </div>
                 </div>
