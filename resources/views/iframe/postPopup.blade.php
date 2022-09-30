@@ -7,7 +7,7 @@
                 <div class="container-fluid">
                     <div class="row">
                         <div class="col-md-12">
-                            <button onclick="exitFullScreen()"   type="button" class="close " data-dismiss="modal" aria-label="Close" style="color: white">
+                            <button onclick="exitFullScreen()"   type="button" class="close " data-dismiss="modal" aria-label="Close" style="color: white; padding: 15px">
                                 <h1 class="wallPostModalCloseBox">X</h1>
                             </button>
                         </div>
