@@ -11,6 +11,13 @@
 
 
 }
+.wallPostModalSocialIcon{
+    width: 30px;
+    border-radius: 5px;
+    border: solid 1px grey
+
+
+}
 .wallPostModalInnerRight{
     background-color: lightgrey;
 }
@@ -55,10 +62,6 @@
 
     }
     .wallPostModalSocialIcon{
-        width: 30px;
-        border-radius: 5px;
-        border: solid 1px grey
-
 
     }
     .wallPostModalPopupBody{
