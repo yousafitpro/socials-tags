@@ -2,7 +2,7 @@
     <div class="modal-fullscreen" role="document" style=" width: 100vw; height: 100vh;">
         <div class="modal-content postPopupModal" style="background:black">
 
-            <div class="modal-body" >
+            <div class="modal-body wallPostModalPopupBody" >
 
                 <div class="container-fluid">
                     <div class="row">
@@ -62,7 +62,7 @@
                                                   @if($category=='native')
                                                             {{$p->content}}
 
-                                                      <br> <br> <br><br> <br> <br> <br>
+                                                      <br> <br> <br><br> <br><br> <br>
                                                         @else
                                                             {{Str::limit($p->content,150)}}
 
