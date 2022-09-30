@@ -81,7 +81,7 @@
                                 </div>
                             </div>
                             @endif
-                        <div style="position: absolute;bottom: 5%; right: 100;">
+                        <div style="position: absolute;bottom: 2%; right: 100;">
 
                             <img src="{{asset('icon/fb.png')}}" style="width: 30px; border-radius: 5px">
                             <img src="{{asset('icon/tw.png')}}" style="width: 30px; border-radius: 5px">
