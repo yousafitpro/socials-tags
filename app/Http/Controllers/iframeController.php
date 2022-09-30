@@ -9,7 +9,7 @@ class iframeController extends Controller
 {
     public function iframe()
     {
-        $data['posts']=post::all();
+        $data['posts']=post::where('id','!=','sdadas')->inRandomOrder()->get();
         return view('iframe.iframe',$data);
     }
 }
