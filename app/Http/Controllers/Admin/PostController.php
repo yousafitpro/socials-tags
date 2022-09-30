@@ -26,7 +26,7 @@ class PostController extends Controller
 
 
 
-
+             $type='text';
 
             if (!$request->hasFile('image') && !$request->hasFile('video') && $request->contentdata==""  )
             {
@@ -43,6 +43,7 @@ class PostController extends Controller
         $post->save();
         if($request->hasFile('image'))
         {
+            $type='image';
             $validator = Validator::make($request->all(), [
                 'image'=>'required|mimes:jpeg,png,jpg | max:10000',
             ]);
@@ -63,7 +64,8 @@ class PostController extends Controller
              $data['image']=asset($path);
             $post->save();
         }
-
+        $post->type=$type;
+        $post->save();
 //        if($request->hasFile('video'))
 //        {
 //            $validator = Validator::make($request->all(), [

@@ -5,8 +5,8 @@
         </div>
         @endif
     <div class="col-{{$type=='text'?'9':'7'}}">
-        <label style="font-size: 13px; color: gray; font-weight: bold">Prof BlackTruth</label><div></div>
-        <small>6 days ago</small>
+        <label style="font-size: 13px; color: gray; font-weight: bold">{{$username}}</label><div></div>
+        <small>{{ \Carbon\Carbon::parse($p->created_at)->diffForhumans() }}</small>
     </div>
     <div class="col-3">
         @if($category=="youtube")

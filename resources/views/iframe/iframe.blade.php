@@ -12,14 +12,16 @@
     <div class="row">
 
 
-        @include('iframe.Post',['type'=>'image','category'=>'youtube','id'=>'1'])
-        @include('iframe.Post',['type'=>'text','category'=>'native','id'=>'3'])
-        @include('iframe.Post',['type'=>'image','category'=>'youtube','id'=>'4'])
-        @include('iframe.Post',['type'=>'image','category'=>'youtube','id'=>'5'])
-        @include('iframe.Post',['type'=>'image','category'=>'youtube','id'=>'6'])
-        @include('iframe.Post',['type'=>'text','category'=>'native','id'=>'7'])
-        @include('iframe.Post',['type'=>'text','category'=>'native','id'=>'8'])
-        @include('iframe.Post',['type'=>'image','category'=>'youtube','id'=>'9'])
+        @foreach($posts as $p)
+            @include('iframe.Post',['type'=>$p->type,'category'=>$p->category,'id'=>$p->id,'username'=>$p->username])
+        @endforeach
+{{--        @include('iframe.Post',['type'=>'text','category'=>'native','id'=>'3'])--}}
+{{--        @include('iframe.Post',['type'=>'image','category'=>'youtube','id'=>'4'])--}}
+{{--        @include('iframe.Post',['type'=>'image','category'=>'youtube','id'=>'5'])--}}
+{{--        @include('iframe.Post',['type'=>'image','category'=>'youtube','id'=>'6'])--}}
+{{--        @include('iframe.Post',['type'=>'text','category'=>'native','id'=>'7'])--}}
+{{--        @include('iframe.Post',['type'=>'text','category'=>'native','id'=>'8'])--}}
+{{--        @include('iframe.Post',['type'=>'image','category'=>'youtube','id'=>'9'])--}}
     </div>
 </div>
 </body>

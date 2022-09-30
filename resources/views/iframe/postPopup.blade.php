@@ -21,7 +21,7 @@
                                     <div class="col-md-12"  >
 
                                         <div style="height: 100%; width: 100%; font-size: 30px; min-height: 80vh" class="myFlex" >
-                                            US Senate Candidate, Gary Chambers Jr, Panders to Black Voters By Smoking Weed
+                                            {{$p->content}}
                                         </div>
                                     </div>
                                    </div>
@@ -32,7 +32,7 @@
                                 <div class="row">
                                     <div class="col-md-8  wallPostModalInnerRight">
                                         <div class="myFlex" style="height: 100%; width: 100%">
-                                            <img src="https://placekitten.com/640/360" class="wallPostModalImage">
+                                            <img src="{{asset($p->image)}}" class="wallPostModalImage">
                                         </div>
                                     </div>
                                     <div class="col-md-4 wallPostModalInnerLeft" >
@@ -44,13 +44,15 @@
                                                 @elseif($category=="native")
                                                     <img src="{{asset('wall/comment.png')}}" style="width: 30px">
                                                 @endif
-                                                <label style="font-weight: bold;">Jaron Mays</label><br>
-                                                <small>6 days ago</small>
+                                                <label style="font-weight: bold;">{{$username}}</label><br>
+                                                <small>{{ \Carbon\Carbon::parse($p->created_at)->diffForhumans() }}</small>
                                             </div>
 
                                             <div>
                                                 <span  class="wallPostModalInnerLeftText">
-                                                    US Senate Candidate, Gary Chambers Jr, Panders to Black Voters By Smoking Weed</span>
+                                                    {{$p->content}}
+
+                                                </span>
 
                                             </div>
 

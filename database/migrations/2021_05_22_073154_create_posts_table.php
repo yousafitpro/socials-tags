@@ -25,6 +25,7 @@ class CreatePostsTable extends Migration
             $table->string('username')->nullable();
             $table->string('video')->nullable();
             $table->string('category')->nullable()->default('native');
+            $table->string('type')->nullable()->default('text');
             $table->timestamp('schedule')->nullable();
             $table->longText('content')->nullable();
             $table->timestamps();

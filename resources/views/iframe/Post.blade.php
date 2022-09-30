@@ -4,15 +4,16 @@
               @if($type=="image")
                     <div class="row">
                         <div class="col-md-12">
-                            <img src="https://placekitten.com/640/360" style="width: 100%; border-radius: 5px">
+                            <img src="{{asset($p->image)}}" style="width: 100%; border-radius: 5px">
                         </div>
                     </div>
                     <div class="p-3">
                         <div class="row">
                             <div class="col-md-12">
 
-                                <small >MoT #211: As Stacey Abrams Sinks Bootlicks Attack Black Media
-                                    Stacey Abrams is falling behind and the shills at MSNBC are blaming black male "patriarchy, misogyny" and attacking new black media by name.</small>
+                                <small >
+                              {{$p->content}}
+                                </small>
                             </div>
                         </div><br>
 
@@ -20,7 +21,7 @@
                     </div>
                   @elseif($type=="text")
                     <div class="p-3 text-center" style="color: gray">
-                  <h3>{{$type}}2021 Wisconsin politics: Pandemic feuds, election reviews and resignations</h3>
+                  <h3>{{$p->content}}</h3>
                     </div>
                   @endif
                   <div class="p-3">
