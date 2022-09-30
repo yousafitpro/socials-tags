@@ -9,11 +9,8 @@
 <script>
     function fullScreen(id)
     {
-        // document.querySelector(id).requestFullscreen();
-        setTimeout(function (){
-            window.open('https://votersnews.com/wall/iframe','_self','fullscreen=yes,location=yes,toolbar=yes')
+        document.querySelector(id).requestFullscreen();
 
-        },1000)
     }
     function exitFullScreen()
     {
