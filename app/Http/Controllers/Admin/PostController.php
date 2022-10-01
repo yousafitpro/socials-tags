@@ -182,7 +182,7 @@ class PostController extends Controller
     }
     public function getAll()
     {
-        $posts=post::where('user_id',Auth::user()->id)->with('user')->get();
+        $posts=post::where('user_id',Auth::user()->id)->with('user')->where('deleted_at',null)->get();
         return view('admin.post.all')->with('posts',$posts);
     }
 }
