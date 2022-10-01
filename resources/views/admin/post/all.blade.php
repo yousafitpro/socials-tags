@@ -15,6 +15,7 @@
         <table class="table  table-bordered table-hover dataTables-example" >
             <thead>
             <tr>
+                <th>Thumb Nail</th>
                 <th>Content</th>
                 <th>Actions</th>
             </tr>
@@ -23,6 +24,11 @@
 
             @foreach($posts as $post)
             <tr class="center">
+                <td>
+                    @if($post->image)
+                    <img src="{{asset($post->image)}}" style="width: 100px;">
+                        @endif
+                </td>
                 <td>{{Str::substr($post->content,0,100)}}</td>
                 <td width="50px">
                     <div class="dropdown dropdown-menu-bottom">
