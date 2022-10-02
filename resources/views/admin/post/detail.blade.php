@@ -7,15 +7,15 @@
            <div style="height:{{!request('top_nave',false)?'90vh':'100vh'}}; overflow: auto">
         <div class="container-fluid">
             <div class="row">
-                <div class="col-md-6 offset-3">
+                <div class="col-md-6 offset-md-3">
                     <div class="card shadow wallPostCard" >
 
                         <div class="row">
                             <div class="col-md-12 ">
                                 <br>
-                                <div style="width: 100%" class="myFlex">
+                                <div style="width: 100%; overflow: hidden; margin-top: -25px; max-height: 40vh; overflow: hidden" class="myFlex">
 
-                                    <img src="{{asset($post->image)}}" style=" max-height:40vh " class="wallPostModalImage">
+                                    <img src="{{asset($post->image)}}" style="width: 100%; height: 100% " class="wallPostModalImage">
 
                                 </div>
                             </div>
@@ -23,7 +23,7 @@
 
 <br>
                         <div class="row">
-                            <div class="col-md-6 offset-3">
+                            <div class="col-md-12">
                                 <div class="p-2">
                                     <div class="row">
                                         @if($post->type=="image")
