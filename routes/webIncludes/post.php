@@ -9,3 +9,7 @@ Route::prefix('admin/post/')
         Route::post('update/{id}',[App\Http\Controllers\Admin\PostController::class, 'update'])->name('admin.post.update');
         Route::get('getAll',[App\Http\Controllers\Admin\PostController::class, 'getALL'])->name('admin.post.getAll');
     });
+Route::prefix('admin/post/')
+    ->group(function ($router) {
+        Route::get('post-detail/{id}',[App\Http\Controllers\Admin\PostController::class, 'post_detail'])->name('admin.post.detail');
+    });

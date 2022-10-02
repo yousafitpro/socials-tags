@@ -28,7 +28,7 @@
                                     <div class="row">
                                         <div class="col-md-2">
                                             <label >
-                                                Image
+                                              Thumbnail
                                             </label>
                                             <br>
                                         </div>
@@ -59,7 +59,7 @@
                                         </div>
                                         <div class="col-md-6">
 
-                                            <input name="username" value="{{$post->username}}" required class="form-control">
+                                            <input name="username" value="{{$post->username}}" required class="form-control ">
                                         </div>
                                     </div><br>
                                     <div class="row">
@@ -70,7 +70,21 @@
                                             <br>
                                         </div>
                                         <div class="col-md-10">
-                                            <textarea class="form-control" name="contentdata" style="height: 40vh">{{$post->content}}</textarea>
+                                            <textarea class="form-control summernote" name="contentdata" style="height: 30vh">{{$post->content}}</textarea>
+
+
+                                        </div>
+                                    </div>
+                                    <br>
+                                    <div class="row">
+                                        <div class="col-md-2">
+                                            <label class="text-right" >
+                                                Long Content
+                                            </label>
+                                            <br>
+                                        </div>
+                                        <div class="col-md-10">
+                                            <textarea  name="longdata"  class="form-control summernote" style="height:40vh">{!! $post->longcontent !!}</textarea>
 
 
                                         </div>

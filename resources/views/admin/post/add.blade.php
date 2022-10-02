@@ -33,8 +33,9 @@
                                <br>
                            </div>
                            <div class="col-md-6">
-                               <select name="category" class="form-control">
+                               <select name="category" id="category" onchange="onCategoryChange()" class="form-control">
                                    <option value="native">Native</option>
+                                   <option value="youtube">Youtube</option>
                                </select>
                            </div>
                        </div><br>
@@ -53,7 +54,7 @@
                        <div class="row">
                            <div class="col-md-2">
                                <label >
-                                   Image
+                                 Thumbnail
                                </label>
                                <br>
                            </div>
@@ -61,18 +62,21 @@
                                <input name="image" accept="image/*"  type="file" class="form-control btn btn-primary btn-outline">
                            </div>
                        </div><br>
-                       <div class="row">
-                           <div class="col-md-2">
-                               <label >
-                                 Redirect Link
-                               </label>
-                               <br>
-                           </div>
-                           <div class="col-md-6">
-                               <small>(open on click Post)</small> <br>
-                               <input name="link" value="{{old('link')}}" placeholder="Past link here..." class="form-control">
-                           </div>
-                       </div><br>
+                  <div id="redirectLink">
+                      <div class="row" >
+                          <div class="col-md-2">
+                              <label >
+                                  Redirect Link
+                              </label>
+                              <br>
+                          </div>
+                          <div class="col-md-6">
+                              <small>(open on click Post)</small> <br>
+                              <input name="link" value="{{old('link')}}" placeholder="Past link here..." class="form-control">
+                          </div>
+                      </div>
+                  </div>
+                       <br>
 
 
                        <div class="row">
@@ -83,7 +87,21 @@
                                <br>
                            </div>
                            <div class="col-md-10">
-                               <textarea  name="contentdata" class="form-control" style="height: 40vh">{{old('contentdata')}}</textarea>
+                               <textarea  name="contentdata" class="form-control summernote" style="height:0vh">{{old('contentdata')}}</textarea>
+
+
+                           </div>
+                       </div>
+                       <br>
+                       <div class="row">
+                           <div class="col-md-2">
+                               <label class="text-right" >
+                                   Long Content
+                               </label>
+                               <br>
+                           </div>
+                           <div class="col-md-10">
+                               <textarea  name="longdata"  class="form-control summernote" style="height:40vh">{{old('longdata')}}</textarea>
 
 
                            </div>
@@ -107,7 +125,15 @@
     </div>
 
     <script>
-
+    function onCategoryChange()
+    {
+        $("#redirectLink").css("display",'block')
+     var cate=$("#category").val()
+        if(cate=='native')
+        {
+            $("#redirectLink").css("display",'none')
+        }
+    }
        function addPost()
         {
             alert($('#summernote').code())

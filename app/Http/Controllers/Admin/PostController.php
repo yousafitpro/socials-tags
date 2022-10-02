@@ -36,11 +36,23 @@ class PostController extends Controller
 
 
         $post=new post();
-        $post->link=$request->link;
+
+
+
         $post->title="";
         $post->username=$request->username;
         $post->content=$request->contentdata;
+        $post->longcontent=$request->longdata;
         $post->save();
+        if ($request->category=='native')
+        {
+            $post->link=url('admin/post/post-detail/'.$post->id);
+            }
+        else
+        {
+            $post->link=$request->link;
+        }
+
         if($request->hasFile('image'))
         {
             $type='image';
@@ -127,6 +139,7 @@ class PostController extends Controller
         $post->username=$request->username;
         $post->link=$request->link;
         $post->content=$request->contentdata;
+        $post->longcontent=$request->longdata;
         $post->save();
         if($request->hasFile('image'))
         {
@@ -184,5 +197,11 @@ class PostController extends Controller
     {
         $posts=post::where('user_id',Auth::user()->id)->with('user')->where('deleted_at',null)->get();
         return view('admin.post.all')->with('posts',$posts);
+    }
+    public function post_detail($id)
+    {
+        $data['post']=post::find($id);
+
+        return view('admin.post.detail',$data);
     }
 }
