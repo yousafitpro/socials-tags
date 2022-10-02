@@ -31,17 +31,11 @@
                                                 <img src="https://www.placecage.com/640/360" style="width: 40px; height: 40px; border-radius: 50%">
                                             </div>
                                         @endif
-                                        <div class="col-{{$post->type=='text'?'9':'7'}}">
+                                        <div class="col-{{$post->type=='text'?'12':'11'}}">
                                             <label style="font-size: 13px; color: gray; font-weight: bold">{{$post->username}}</label><div></div>
                                             <small>{{ \Carbon\Carbon::parse($post->created_at)->diffForhumans() }}</small>
                                         </div>
-                                        <div class="col-4">
-                                            @if($post->category=="youtube")
-                                                <img src="{{asset('wall/youtube.png')}}">
-                                            @elseif($post->category=="native")
-                                                <img src="{{asset('wall/comment.png')}}">
-                                            @endif
-                                        </div>
+
                                     </div>                                </div>
                             </div>
                         </div>
