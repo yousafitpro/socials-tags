@@ -82,7 +82,7 @@
                        <div class="row">
                            <div class="col-md-2">
                                <label class="text-right" >
-                                   Content
+                                 Short  Content
                                </label>
                                <br>
                            </div>
