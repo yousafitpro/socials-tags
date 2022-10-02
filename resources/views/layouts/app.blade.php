@@ -18,6 +18,16 @@
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
 </head>
+<style>
+    .myFlex {
+        padding: 0;
+        margin: 0;
+        list-style: none;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+</style>
 <body style="height: 100vh; overflow: hidden">
     <div id="app">
         @if(!request('top_nave',false))

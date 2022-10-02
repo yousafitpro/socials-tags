@@ -11,8 +11,11 @@
                     <div class="card shadow wallPostCard" >
 
                         <div class="row">
-                            <div class="col-md-12">
-                                <img src="{{asset($post->image)}}" style="width: 100%; max-height:40vh " class="wallPostModalImage">
+                            <div class="col-md-12 ">
+                                <div style="width: 100%" class="myFlex">
+                                    <img src="{{asset($post->image)}}" style=" max-height:40vh " class="wallPostModalImage">
+
+                                </div>
                             </div>
                         </div>
 
