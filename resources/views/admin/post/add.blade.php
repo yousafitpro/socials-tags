@@ -125,7 +125,9 @@
     </div>
 
     <script>
-        $("#redirectLink").css("display",'none')
+setTimeout(function (){
+    $("#redirectLink").css("display",'none')
+},1000)
     function onCategoryChange()
     {
         $("#redirectLink").css("display",'block')
