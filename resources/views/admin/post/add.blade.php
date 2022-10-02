@@ -125,6 +125,7 @@
     </div>
 
     <script>
+        $("#redirectLink").css("display",'none')
     function onCategoryChange()
     {
         $("#redirectLink").css("display",'block')
