@@ -12,7 +12,9 @@
 
                         <div class="row">
                             <div class="col-md-12 ">
+                                <br>
                                 <div style="width: 100%" class="myFlex">
+
                                     <img src="{{asset($post->image)}}" style=" max-height:40vh " class="wallPostModalImage">
 
                                 </div>
