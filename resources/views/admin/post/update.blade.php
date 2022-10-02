@@ -70,7 +70,7 @@
                                             <br>
                                         </div>
                                         <div class="col-md-10">
-                                            <textarea class="form-control summernote" name="contentdata" style="height: 30vh">{{$post->content}}</textarea>
+                                            <textarea class="form-control" name="contentdata" style="height: 30vh">{{$post->content}}</textarea>
 
 
                                         </div>

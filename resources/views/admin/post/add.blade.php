@@ -87,7 +87,7 @@
                                <br>
                            </div>
                            <div class="col-md-10">
-                               <textarea  name="contentdata" class="form-control summernote" style="height:0vh">{{old('contentdata')}}</textarea>
+                               <textarea  name="contentdata" class="form-control" style="height:0vh">{{old('contentdata')}}</textarea>
 
 
                            </div>
