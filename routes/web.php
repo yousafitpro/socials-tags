@@ -23,7 +23,11 @@ Route::get('/', function () {
     return view('welcome');
 });
 Route::get('/test', function () {
-    return view('auth.passwords.confirm');
+//    return view('auth.passwords.confirm');
+    $data=encrypt("12121212");
+
+    $data=decrypt($data);
+    dd($data);
 });
 Auth::routes();
 

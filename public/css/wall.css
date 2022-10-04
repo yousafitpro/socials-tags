@@ -37,6 +37,24 @@
    background-color: white;
     min-height:80vh;
 
+
+}
+.wallPostModalInnerLeftTextOuter{
+    overflow: auto;
+    max-height: 60vh;
+    scrollbar-width: thin;
+
+}
+.wallPostModalInnerLeftTextOuter::-webkit-scrollbar {
+    width: 10px;
+}
+.wallPostModalInnerLeftTextOuter::-webkit-scrollbar-track {
+    background: #CFD8DC;
+}
+.wallPostModalInnerLeftTextOuter::-webkit-scrollbar-thumb {
+    background-color: #90A4AE;
+    border-radius: 6px;
+    border: 3px solid #CFD8DC;
 }
 .wallPostModalInnerLeftText
 {
