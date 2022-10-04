@@ -55,11 +55,11 @@
                                         <div >
                                             <div>
                                                 <br>
-                                                @if($category=="youtube")
-                                                    <img src="{{asset('wall/youtube.png')}}" style="width: 30px">
-                                                @elseif($category=="native")
-                                                    <img src="{{asset('wall/comment.png')}}" style="width: 30px">
-                                                @endif
+{{--                                                @if($category=="youtube")--}}
+{{--                                                    <img src="{{asset('wall/youtube.png')}}" style="width: 30px">--}}
+{{--                                                @elseif($category=="native")--}}
+{{--                                                    <img src="{{asset('wall/comment.png')}}" style="width: 30px">--}}
+{{--                                                @endif--}}
 {{--                                                <label style="font-weight: bold;">{{$username}}</label><br>--}}
 {{--                                                <small>{{ \Carbon\Carbon::parse($p->created_at)->diffForhumans() }}</small>--}}
 {{--                                            --}}
