@@ -67,7 +67,8 @@
 
     }
     .wallPostModalPopupBody{
-        padding: 0; margin: 0
+        padding: 0; margin: 0;
+        padding-bottom: 20px;
     }
     .wallPostModalPopupImage{
         width: 100%;
