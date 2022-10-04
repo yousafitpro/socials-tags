@@ -21,7 +21,7 @@
                         <div class="col-md-4">
 
 
-                                <span onclick="exitFullScreen('close','')" class="wallPostModalCloseBox" data-dismiss="modal" aria-label="Close" type="button" class="close " style="width: 30px; border-radius: 5px;  float: right">X</span>
+                                <span onclick="exitFullScreen('close','')" class="wallPostModalCloseBox" data-dismiss="modal" aria-label="Close" type="button" class="close " style="width: 30px; border-radius: 5px;  float: right; margin-top: -10px">X</span>
 
                         </div>
                     </div>
