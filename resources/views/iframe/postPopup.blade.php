@@ -5,9 +5,8 @@
             <div class="modal-body wallPostModalPopupBody" >
 
                 <div class="container-fluid">
-                    <div class="row">
+                    <div class="row" style="margin-top: 20px">
                         <div class="col-md-8">
-                            <div style="margin-top: 35px;">
 
                                 <img src="{{asset('icon/fb.png')}}" style="width: 30px; border-radius: 5px; border: solid 1px grey">
                                 <img src="{{asset('icon/tw.png')}}" style="width: 30px; border-radius: 5px; border: solid 1px grey">
@@ -17,13 +16,13 @@
                                 <img onclick="exitFullScreen('link','{{$p->link}}')"  data-dismiss="modal" src="{{asset('icon/book2.png')}}"  style="width: 30px; border-radius: 5px; border: solid 1px grey">
 
 
-                            </div>
+
                         </div>
                         <div class="col-md-4">
 
-                            <button onclick="exitFullScreen('close','')"   type="button" class="close " data-dismiss="modal" aria-label="Close" style="color: white; padding: 25px; margin-top: 10px; float: right">
-                                <h1 class="wallPostModalCloseBox">X</h1>
-                            </button>
+
+                                <span onclick="exitFullScreen('close','')" class="wallPostModalCloseBox" data-dismiss="modal" aria-label="Close" type="button" class="close " style="width: 30px; border-radius: 5px;  float: right">X</span>
+
                         </div>
                     </div>
 
