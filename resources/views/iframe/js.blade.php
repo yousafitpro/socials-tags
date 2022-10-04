@@ -25,8 +25,9 @@
         }
         if(type=='link')
         {
+
             document.exitFullscreen();
-            window.open(data)
+            window.open(data,'_blank')
         }
         if(type=='copy')
         {
