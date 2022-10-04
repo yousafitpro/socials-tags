@@ -76,7 +76,7 @@
 
                                             <div>
                                                 <br>
-                                               <div  class="wallPostModalInnerLeftTextOuter" >
+                                               <div style="overflow: auto; max-height: 60vh;" >
                                                     <span  class="wallPostModalInnerLeftText">
                                                   @if($category=='native')
                                                             {{$p->content}}
