@@ -24,9 +24,9 @@
                   <h3>{{Str::limit($p->content,100)}}</h3>
                     </div>
                   @endif
-                  <div class="p-3">
-                  @include('iframe.postBottom')
-                  </div>
+{{--                  <div class="p-3">--}}
+{{--                  @include('iframe.postBottom')--}}
+{{--                  </div>--}}
 
             </div>
         </div>
