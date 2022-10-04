@@ -81,7 +81,7 @@
                                                   @if($category=='native')
                                                             {{$p->content}}
 
-                                                      <br> <br> <br><br> <br><br> <br>
+                                                      <br> <br>
                                                         @else
                                                             {{Str::limit($p->content,150)}}
 
