@@ -9,7 +9,7 @@
 
 <body>
 <div class="container-fluid">
-    <div class="row">
+    <div class="row" style="padding-bottom: 30px">
 
 
         @foreach($posts as $p)
