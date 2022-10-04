@@ -14,6 +14,8 @@
 
         @foreach($posts as $p)
             @include('iframe.Post',['type'=>$p->type,'category'=>$p->category,'id'=>$p->id,'username'=>$p->username])
+       <br>
+            <br>
         @endforeach
 {{--        @include('iframe.Post',['type'=>'text','category'=>'native','id'=>'3'])--}}
 {{--        @include('iframe.Post',['type'=>'image','category'=>'youtube','id'=>'4'])--}}
