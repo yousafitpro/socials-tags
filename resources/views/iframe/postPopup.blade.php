@@ -5,7 +5,7 @@
             <div class="modal-body wallPostModalPopupBody" >
 
                 <div class="container-fluid">
-                    <div class="row" style="margin-top: 20px">
+                    <div class="row" style="margin-top: 30px">
                         <div class="col-md-8">
 
                                 <img src="{{asset('icon/fb.png')}}" style="width: 30px; border-radius: 5px; border: solid 1px grey">
