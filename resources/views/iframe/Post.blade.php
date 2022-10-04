@@ -15,7 +15,7 @@
                                     {{Str::limit($p->content,100)}}
                                 </small>
                             </div>
-                        </div><br>
+                        </div>
 
 
                     </div>
