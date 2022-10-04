@@ -60,8 +60,9 @@
                                                 @elseif($category=="native")
                                                     <img src="{{asset('wall/comment.png')}}" style="width: 30px">
                                                 @endif
-                                                <label style="font-weight: bold;">{{$username}}</label><br>
-                                                <small>{{ \Carbon\Carbon::parse($p->created_at)->diffForhumans() }}</small>
+{{--                                                <label style="font-weight: bold;">{{$username}}</label><br>--}}
+{{--                                                <small>{{ \Carbon\Carbon::parse($p->created_at)->diffForhumans() }}</small>--}}
+{{--                                            --}}
                                             </div>
 
                                             <div>
