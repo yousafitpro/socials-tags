@@ -27,7 +27,7 @@
         {
 
             document.exitFullscreen();
-            window.open(data,'_blank')
+            window.open(data,'_parent')
         }
         if(type=='copy')
         {
