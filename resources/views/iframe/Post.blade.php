@@ -24,10 +24,11 @@
                     <div class="p-3 text-center" style="color: gray">
                   <h3>{{Str::limit($p->content,100)}}</h3>
                     </div>
+                    <small>{{ \Carbon\Carbon::parse($p->created_at)->diffForhumans() }}</small>
                   @endif
-                  <div class="pl-3">
-                  @include('iframe.postBottom')
-                  </div>
+{{--                  <div class="pl-3">--}}
+{{--                  @include('iframe.postBottom')--}}
+{{--                  </div>--}}
 
             </div>
         </div>
