@@ -2,7 +2,7 @@
     <div class="modal-fullscreen" role="document" style=" width: 100vw; height: 100vh;">
         <div class="modal-content postPopupModal" style="background:black; height: 100vh">
 
-            <div class="modal-body wallPostModalPopupBody" >
+            <div class="modal-body wallPostModalPopupBody" style="padding-bottom: 20px" >
 
                 <div class="container-fluid">
                     <div class="row" style="margin-top: 30px">
