@@ -26,9 +26,7 @@
                     </div>
 
                   @endif
-                <div class="p-3">
-                    <small>{{ \Carbon\Carbon::parse($p->created_at)->diffForhumans() }}</small>
-                </div>
+
 {{--                  <div class="pl-3">--}}
 {{--                  @include('iframe.postBottom')--}}
 {{--                  </div>--}}
