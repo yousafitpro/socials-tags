@@ -15,7 +15,7 @@
                                     {{Str::limit($p->content,100)}}
                                 </small>
                             </div>
-                        </div>
+                        </div><br>
 
 
                     </div>
@@ -24,7 +24,7 @@
                   <h3>{{Str::limit($p->content,100)}}</h3>
                     </div>
                   @endif
-                  <div class="p-3">
+                  <div class="p-1">
                   @include('iframe.postBottom')
                   </div>
 
