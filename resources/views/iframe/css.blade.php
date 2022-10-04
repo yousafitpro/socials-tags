@@ -15,4 +15,7 @@
         transform:scaleY(1); // implicit, but good to specify explicitly
     transform-origin:top; // keep the top of the element in the same place. this is optional.
     }
+    .coppyIcon:active {
+        width: 10px;
+    }
 </style>

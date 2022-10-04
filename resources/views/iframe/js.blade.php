@@ -1,5 +1,9 @@
 <!-- jQuery library -->
-<script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.slim.min.js"></script>
+<script
+    src="https://code.jquery.com/jquery-3.6.0.min.js"
+    integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+    crossorigin="anonymous"
+></script>
 
 <!-- Popper JS -->
 <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
@@ -12,8 +16,34 @@
         document.querySelector(id).requestFullscreen();
 
     }
-    function exitFullScreen()
+    function exitFullScreen(type,data)
     {
-        document.exitFullscreen();
+
+        if(type=='close')
+        {
+            document.exitFullscreen();
+        }
+        if(type=='link')
+        {
+            document.exitFullscreen();
+            window.open(data)
+        }
+        if(type=='copy')
+        {
+
+            var copyText = document.getElementById(data+"myInput");
+
+            // Select the text field
+            copyText.select();
+            copyText.setSelectionRange(0, 99999); // For mobile devices
+
+            // Copy the text inside the text field
+            navigator.clipboard.writeText(copyText.value);
+            document.exitFullscreen();
+            alert("Coppied: "+copyText.value)
+
+        }
+
+
     }
 </script>

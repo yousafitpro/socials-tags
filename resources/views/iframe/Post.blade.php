@@ -1,6 +1,7 @@
 
-        <div class="col-md-3 mt-3" onclick="fullScreen('#b{{$id}}')" data-toggle="modal" data-target="#b{{$id}}" >
+        <div class="col-md-3 mt-3" onclick="fullScreen('#b{{$p->id}}')" data-toggle="modal" data-target="#b{{$p->id}}" >
             <div class="card shadow wallPostCard" >
+                <input value="{{$p->link}}" hidden id="{{$p->id}}myInput">
               @if($type=="image")
                     <div class="row">
                         <div class="col-md-12">
