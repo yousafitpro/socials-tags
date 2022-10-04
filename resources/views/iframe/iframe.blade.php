@@ -9,25 +9,14 @@
 
 <body>
 <div class="container-fluid">
-    <div class="row" style="padding-bottom: 30px">
+    <div class="row" style="padding-bottom: 50px">
 
 
         @foreach($posts as $p)
             @include('iframe.Post',['type'=>$p->type,'category'=>$p->category,'id'=>$p->id,'username'=>$p->username])
 
         @endforeach
-            <br>
-            <br>
-            <br>
-            <br>
-            <br>
-            <br>
-            <br>
-            <br>
-            <br>
-            <br>
-            <br>
-            <br>
+
 {{--        @include('iframe.Post',['type'=>'text','category'=>'native','id'=>'3'])--}}
 {{--        @include('iframe.Post',['type'=>'image','category'=>'youtube','id'=>'4'])--}}
 {{--        @include('iframe.Post',['type'=>'image','category'=>'youtube','id'=>'5'])--}}
