@@ -1,5 +1,5 @@
 
-        <div class="col-md-3 mt-3" onclick="fullScreen('#b{{$p->id}}')" data-toggle="modal" data-target="#b{{$p->id}}" >
+        <div class="col-md-3 mt-3"  >
             <div class="card shadow wallPostCard" >
                 <input value="{{$p->link}}" hidden id="{{$p->id}}myInput">
               @if($type=="image")
@@ -28,9 +28,22 @@
 
                   @endif
 
-{{--                  <div class="pl-3">--}}
-{{--                  @include('iframe.postBottom')--}}
-{{--                  </div>--}}
+
+                      <div class="row" style="margin-bottom: 4px">
+
+
+                          <div class="col-4 myflex">
+                              <img class="clickOpacity" onclick="fullScreen('#b{{$p->id}}')" data-toggle="modal" data-target="#b{{$p->id}}" src="{{asset('wall/view.png')}}" style="width: 65px">
+                          </div>
+                          <div class="col-4 myflex">
+                              <img class="clickOpacity" src="{{asset('wall/save.png')}}" style="width: 65px">
+                          </div>
+                          <div class="col-4 myflex">
+                              <img class="clickOpacity" src="{{asset('wall/share.png')}}" style="width: 65px">
+                          </div>
+                      </div>
+
+
 
             </div>
         </div>
