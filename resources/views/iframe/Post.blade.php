@@ -29,7 +29,7 @@
                   @endif
 
 
-                      <div class="row" style="margin-bottom: 4px">
+                      <div class="row" style="margin-bottom: 8px">
 
 
                           <div class="col-4 myflex">
