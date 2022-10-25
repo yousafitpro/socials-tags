@@ -19,7 +19,7 @@
 
             <script>
                function shareNow(title,text,url){
-
+alert(text)
          navigator.share({
              title:title,
              text:text,
