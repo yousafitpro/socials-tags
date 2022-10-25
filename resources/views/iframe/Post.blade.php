@@ -40,7 +40,11 @@
                           </div>
 {{--                          xzZX--}}
                           <div class="col-4 myflex">
+                              @if($type=="image")
                               <img class="clickOpacity" onclick="shareWithImage('This is one','{!! Str::limit($p->content,200) !!}','{{$p->link}}','{{asset($p->image)}}')" src="{{asset('wall/share.png')}}" style="width: 65px">
+                              @else
+                              <img class="clickOpacity" onclick="shareNow('This is one','{!! Str::limit($p->content,200) !!}','{{$p->link}}')" src="{{asset('wall/share.png')}}" style="width: 65px">
+                               @endif
                           </div>
                       </div>
 
