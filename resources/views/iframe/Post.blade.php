@@ -40,7 +40,7 @@
                           </div>
 {{--                          xzZX--}}
                           <div class="col-4 myflex">
-                              <img class="clickOpacity" onclick="shareNow('This is one','{{Str::limit($p->content,100)}}','{{$p->link}}')" src="{{asset('wall/share.png')}}" style="width: 65px">
+                              <img class="clickOpacity" onclick="shareNow('This is one','{!! Str::limit($p->content,100) !!}','{{$p->link}}')" src="{{asset('wall/share.png')}}" style="width: 65px">
                           </div>
                       </div>
 
