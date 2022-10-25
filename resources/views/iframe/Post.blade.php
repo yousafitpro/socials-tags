@@ -39,7 +39,7 @@
                               <img class="clickOpacity" src="{{asset('wall/save.png')}}" style="width: 65px">
                           </div>
                           <div class="col-4 myflex">
-                              <img class="clickOpacity" src="{{asset('wall/share.png')}}" style="width: 65px">
+                              <img class="clickOpacity" onclick="shareNow('{{Str::limit($p->content,30)}}','{{$p->content}}','{{$p->link}}')" src="{{asset('wall/share.png')}}" style="width: 65px">
                           </div>
                       </div>
 

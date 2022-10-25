@@ -16,18 +16,18 @@
             @include('iframe.Post',['type'=>$p->type,'category'=>$p->category,'id'=>$p->id,'username'=>$p->username])
 
         @endforeach
-            <button onclick="shareNow()">click to Share</button>
+
             <script>
-               function shareNow(){
-                   alert("started")
+               function shareNow(title,text,url){
+alert("asdasdasd")
          navigator.share({
-             title:'sdfsdfsdf',
-             text:'sdfsdfsdfsdfsdfsdfsdfsdfsdf',
-             url:'https://developer.mozilla.org/en-US/docs/Web/API/Navigator/share'
+             title:title,
+             text:text,
+             url:url
          }).then(function (data){
-             alert("success")
+
          }).catch(function (error){
-             alert("error")
+
          })
                 }
             </script>
