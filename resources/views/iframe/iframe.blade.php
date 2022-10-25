@@ -8,33 +8,29 @@
 </head>
 
 <body>
-
 <div class="container-fluid">
     <div class="row" style="padding-bottom: 50px">
 
 
         @foreach($posts as $p)
             @include('iframe.Post',['type'=>$p->type,'category'=>$p->category,'id'=>$p->id,'username'=>$p->username])
-<button onclick="shareNow()">click to Share</button>
-        @endforeach
-        <script>
-            function shareNow()
-            {
-                alert("started")
-                navigator.share({
-                    "Hello",
-                    "sdfsf",
-                    url
-                })
-                    .then(function (data){
-                        alert("ok")
-                    })
-                    .catch(function (error){
-                        alert("no")
-                    })
-            }
-        </script>
 
+        @endforeach
+            <button onclick="shareNow()">click to Share</button>
+            <script>
+               function shareNow(){
+                   alert("started")
+         navigator.share({
+             title:'sdfsdfsdf',
+             text:'sdfsdfsdfsdfsdfsdfsdfsdfsdf',
+             url:'https://developer.mozilla.org/en-US/docs/Web/API/Navigator/share'
+         }).then(function (data){
+             alert("success")
+         }).catch(function (error){
+             alert("error")
+         })
+                }
+            </script>
 {{--        @include('iframe.Post',['type'=>'text','category'=>'native','id'=>'3'])--}}
 {{--        @include('iframe.Post',['type'=>'image','category'=>'youtube','id'=>'4'])--}}
 {{--        @include('iframe.Post',['type'=>'image','category'=>'youtube','id'=>'5'])--}}
