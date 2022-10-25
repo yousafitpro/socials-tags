@@ -25,9 +25,9 @@
              text:text,
              url:url
          }).then(function (data){
-
+             alert("Success! Successfully Shared")
          }).catch(function (error){
-
+           alert("Sorry! Cannot be shared")
          })
                 }
             </script>
