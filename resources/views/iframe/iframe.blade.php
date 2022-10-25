@@ -8,14 +8,32 @@
 </head>
 
 <body>
+
 <div class="container-fluid">
     <div class="row" style="padding-bottom: 50px">
 
 
         @foreach($posts as $p)
             @include('iframe.Post',['type'=>$p->type,'category'=>$p->category,'id'=>$p->id,'username'=>$p->username])
-
+<button onclick="shareNow()">click to Share</button>
         @endforeach
+        <script>
+            function shareNow()
+            {
+                alert("started")
+                navigator.share({
+                    "Hello",
+                    "sdfsf",
+                    url
+                })
+                    .then(function (data){
+                        alert("ok")
+                    })
+                    .catch(function (error){
+                        alert("no")
+                    })
+            }
+        </script>
 
 {{--        @include('iframe.Post',['type'=>'text','category'=>'native','id'=>'3'])--}}
 {{--        @include('iframe.Post',['type'=>'image','category'=>'youtube','id'=>'4'])--}}
