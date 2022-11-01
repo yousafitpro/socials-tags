@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\User;
 use Illuminate\Http\Request;
 
 class socialConnectController extends Controller
@@ -13,6 +14,7 @@ class socialConnectController extends Controller
     }
     public function socialConnections()
     {
+        dd(User::all());
         return view('social.socialConnections');
     }
 }
