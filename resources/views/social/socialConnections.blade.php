@@ -25,7 +25,7 @@
                                     <button class="btn btn-outline-primary form-control" onclick="connect('{{$c->name}}','{{$c->id}}')">Connect</button>
                                     @endif
                                     @if($c->status!="Disconnected")
-                                        <a href="{{url('social-connect/disconnect-connection',$c->id)}}" onclick="return confirm('Are you sure ?')" class="btn btn-outline-success form-control">Connected</a>
+                                        <a href="{{url('social-connect/disconnect-connection',$c->id)}}" onclick="return confirm('Are you sure you want to Disconnect  ?')" class="btn btn-outline-success form-control">Connected</a>
                                     @endif
                             </div>
                         </div>
