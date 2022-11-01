@@ -14,7 +14,7 @@
             appId      : '1406523236791020',
             cookie     : true,
             xfbml      : true,
-            version    : 'v2.8'
+            version    : 'v15.0'
         });
 
         FB.AppEvents.logPageView();
@@ -30,7 +30,7 @@
     }(document, 'script', 'facebook-jssdk'));
 function login()
 {
-    alert("ok")
+
     FB.login()
 }
 </script>
