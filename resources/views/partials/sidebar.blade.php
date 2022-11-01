@@ -26,7 +26,7 @@
 
           @if(Auth::user()->type=='supper-admin')
                 <li>
-                    <a href="{{route('admin.dashboard')}}"><i class="fa fa-th-large"></i> <span class="nav-label">Dashboard</span></a>
+                    <a href="{{route('admin.dashboard')}}"><i class="fa fa-th-large"></i> <span class="nav-label">Dashboard 34</span></a>
                 </li>
 
                 <li>
