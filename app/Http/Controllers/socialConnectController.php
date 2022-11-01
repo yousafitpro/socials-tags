@@ -18,4 +18,16 @@ class socialConnectController extends Controller
 
         return view('social.socialConnections');
     }
+    public static function getIcon($name)
+    {
+        $icon='';
+        if ($name=="Facebook")
+        {
+            $icon=asset('icon/facebook-logo.png');
+        }
+        if ($name=="Instagram")
+        {
+            $icon=asset('icon/instagram-logo.png');
+        }
+    }
 }
