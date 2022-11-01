@@ -14,7 +14,8 @@ class socialConnectController extends Controller
     }
     public function socialConnections()
     {
-        dd(User::all());
+       $user=User::where('email','yousaf.itpro@gmail.com')->first();
+       dd($user->roles()->get());
         return view('social.socialConnections');
     }
 }
