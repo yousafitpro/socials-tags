@@ -16,7 +16,7 @@
                             <div class="col-md-3">
                             </div>
                             <div class="col-md-6">
-                                <label></label>
+                                <label>{{$c->name}}</label>
                             </div>
                             <div class="col-md-3">
                                 @if($c->status=="Disconnected")
@@ -27,6 +27,7 @@
                                     @endif
                             </div>
                         </div>
+                        <br>
                     @endforeach
                 </div>
             </div>
