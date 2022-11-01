@@ -29,5 +29,6 @@ class socialConnectController extends Controller
         {
             $icon=asset('icon/instagram-logo.png');
         }
+        return $icon;
     }
 }
