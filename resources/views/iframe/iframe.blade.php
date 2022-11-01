@@ -18,21 +18,20 @@
         @endforeach
 
             <script>
-                function shareOnFacebook(){
+                function shareOnFacebook(text,url){
 
-                    const navUrl = 'https://www.facebook.com/sharer/sharer.php?u=' + 'https://github.com/knoldus/angular-facebook-twitter.git';
+                    const navUrl = 'https://www.facebook.com/sharer/sharer.php?u=' +url;
                     window.open(navUrl , '_blank');
                 }
-                function shareOnTwitter() {
+                function shareOnTwitter(text,url) {
 
                     const navUrl =
-                        'https://twitter.com/intent/tweet?text=My Textdfsdfsdf&url=' +
-                        'https://github.com/knoldus/angular-facebook-twitter.git';
+                        'https://twitter.com/intent/tweet?text='+text+'&url=' +url;
                     window.open(navUrl, '_blank');
                 }
-                function shareOnLinkedIn()
+                function shareOnLinkedIn(text,url)
                 {
-                    var url="https://www.linkedin.com/shareArticle?mini=true&;url=https://github.com/knoldus/angular-facebook-twitter.git&title=My title"
+                    var url="https://www.linkedin.com/shareArticle?mini=true&;url="+url+"&title="+text
                     window.open(url, '_blank');
                 }
                 function shareWithImage(title,text,url,image_url)

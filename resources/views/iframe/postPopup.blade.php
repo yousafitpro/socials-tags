@@ -8,9 +8,9 @@
                     <div class="row" style="margin-top: 30px">
                         <div class="col-md-8">
 
-                                <img onclick="shareOnFacebook()" src="{{asset('icon/fb.png')}}" style="width: 30px; border-radius: 5px; border: solid 1px grey">
-                                <img onclick="shareOnTwitter()" src="{{asset('icon/tw.png')}}" style="width: 30px; border-radius: 5px; border: solid 1px grey">
-                                <img onclick="shareOnLinkedIn()" src="{{asset('icon/in.png')}}" style="width: 30px; border-radius: 5px;border:solid 1px grey">
+                                <img onclick="shareOnFacebook('{{Str::limit($p->content,100)}}','{{$p->link}}')" src="{{asset('icon/fb.png')}}" style="width: 30px; border-radius: 5px; border: solid 1px grey">
+                                <img onclick="shareOnTwitter('{{Str::limit($p->content,100)}}','{{$p->link}}')" src="{{asset('icon/tw.png')}}" style="width: 30px; border-radius: 5px; border: solid 1px grey">
+                                <img onclick="shareOnLinkedIn('{{Str::limit($p->content,100)}}','{{$p->link}}')" src="{{asset('icon/in.png')}}" style="width: 30px; border-radius: 5px;border:solid 1px grey">
                                 <img src="{{asset('icon/link.png')}}"  data-dismiss="modal" id="copyIcon" onclick="exitFullScreen('copy','{{$p->id}}')" style="width: 30px; border-radius: 5px; border: solid 1px grey" class="coppyIcon">
 
                                 <img onclick="exitFullScreen('link','{{$p->link}}')"  data-dismiss="modal" src="{{asset('icon/book2.png')}}"  style="width: 30px; border-radius: 5px; border: solid 1px grey">
