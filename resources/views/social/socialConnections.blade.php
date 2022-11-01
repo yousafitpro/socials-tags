@@ -75,7 +75,7 @@
                     $.ajax({
                         url:"{{url('social-connect/save-facebook-token')}}",
                         method:'get',
-                        data: {"_token": "{{ csrf_token() }}",'access_token':response.authResponse.accessToken,'userid':response.authResponse.userID,'expire_in':response.authResponse.expiresIn,'expire_at':response.authResponse.expiresIn,'expire_at':data_access_expiration_time},
+                        data: {"_token": "{{ csrf_token() }}",'access_token':response.authResponse.accessToken,'userid':response.authResponse.userID,'expire_in':response.authResponse.expiresIn,'expire_at':response.authResponse.expiresIn,'expire_at':response.authResponse.data_access_expiration_time},
                         beforeSend:function(){
 
                         },
