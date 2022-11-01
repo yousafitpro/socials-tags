@@ -9,9 +9,10 @@
             <?php
                 $connections=\App\Models\socialconnection::where('user_id',auth()->user()->id)->get();
                 ?>
-            <div class="card">
-                <div class="card-body">
+
                     @foreach($connections as $c)
+                <div class="card">
+                    <div class="card-body">
                         <div class="row">
                             <div class="col-md-3">
                             </div>
@@ -27,10 +28,11 @@
                                     @endif
                             </div>
                         </div>
+                    </div>
+                </div>
                         <br>
                     @endforeach
-                </div>
-            </div>
+
         </div>
     </div>
 </div>
