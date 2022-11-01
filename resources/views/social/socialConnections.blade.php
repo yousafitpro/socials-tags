@@ -15,6 +15,7 @@
                     <div class="card-body">
                         <div class="row">
                             <div class="col-md-2">
+                                <img src="{{asset('icon/facebook-logo.png')}}" style="width: 50px">
                             </div>
                             <div class="col-md-7">
                                 <label style="font-size: 20px">{{$c->name}}</label>
