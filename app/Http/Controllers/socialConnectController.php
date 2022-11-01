@@ -11,4 +11,8 @@ class socialConnectController extends Controller
     {
         return view('social.facebook-login');
     }
+    public function socialConnections()
+    {
+        return view('social.socialConnections');
+    }
 }

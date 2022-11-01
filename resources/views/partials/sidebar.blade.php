@@ -29,6 +29,10 @@
                     <a href="{{route('admin.dashboard')}}"><i class="fa fa-th-large"></i> <span class="nav-label">Dashboard</span></a>
                 </li>
 
+                <li>
+                    <a href="{{url('social-connect/index')}}"><i class="fa fa-link"></i> <span class="nav-label">Social Connections</span></a>
+                </li>
+
 
 
 
