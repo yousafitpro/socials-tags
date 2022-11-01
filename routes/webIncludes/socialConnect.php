@@ -4,6 +4,6 @@ Route::prefix('social-connect')
         Route::get('facebook/login',[App\Http\Controllers\socialConnectController::class, 'connectFacebook']);
         Route::get('index',[App\Http\Controllers\socialConnectController::class, 'socialConnections']);
         Route::post('save-facebook-token',[App\Http\Controllers\socialConnectController::class, 'saveFacebookToken']);
-        Route::post('disconnect-connection/{id}',[App\Http\Controllers\socialConnectController::class, 'disconnect_connection']);
+        Route::get('disconnect-connection/{id}',[App\Http\Controllers\socialConnectController::class, 'disconnect_connection']);
 
     });
