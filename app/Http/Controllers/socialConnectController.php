@@ -28,6 +28,13 @@ class socialConnectController extends Controller
 
         return view('social.socialConnections');
     }
+    public function disconnect_connection($id)
+    {
+        $c=socialconnection::find($id);
+        $c->status="Disconnected";
+        $c->save();
+        return redirect()->back();
+    }
     public static function getIcon($name)
     {
         $icon='';
