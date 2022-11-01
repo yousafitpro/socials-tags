@@ -22,7 +22,7 @@
                             </div>
                             <div class="col-md-3">
                                 @if($c->status=="Disconnected")
-                                    <button class="btn btn-outline-primary form-control" onclick="connect('{{$c->name}}')">Connect</button>
+                                    <button class="btn btn-outline-primary form-control" onclick="connect('{{$c->name}}','{{$c->id}}')">Connect</button>
                                     @endif
                                     @if($c->status!="Disconnected")
                                         <button class="btn btn-outline-success form-control">Connected</button>
@@ -58,14 +58,14 @@
             js.src = "https://connect.facebook.net/en_US/sdk.js";
             fjs.parentNode.insertBefore(js, fjs);
         }(document, 'script', 'facebook-jssdk'));
-        function connect(name)
+        function connect(name,id)
         {
             if(name=="Facebook")
             {
-                facebookLogin();
+                facebookLogin(id);
             }
         }
-        function facebookLogin()
+        function facebookLogin(con_id)
         {
 
             FB.login(function(response) {
@@ -75,7 +75,7 @@
                     $.ajax({
                         url:"{{url('social-connect/save-facebook-token')}}",
                         method:'post',
-                        data: {"_token": "{{ csrf_token() }}",'access_token':response.authResponse.accessToken,'userid':response.authResponse.userID,'expire_in':response.authResponse.expiresIn,'expire_at':response.authResponse.expiresIn,'expire_at':response.authResponse.data_access_expiration_time},
+                        data: {"_token": "{{ csrf_token() }}",'con_id':con_id,'access_token':response.authResponse.accessToken,'userid':response.authResponse.userID,'expire_in':response.authResponse.expiresIn,'expire_at':response.authResponse.expiresIn,'expire_at':response.authResponse.data_access_expiration_time},
                         beforeSend:function(){
 
                         },
