@@ -72,6 +72,26 @@
                 console.log("data",response)
                 if (response.authResponse) {
                     console.log("Success",response)
+                    $.ajax({
+                        url:"{{url('social-connect/save-facebook-token')}}",
+                        method:'get',
+                        data: {"_token": "{{ csrf_token() }}",'access_token':response.authResponse.accessToken,'userid':response.authResponse.userID,'expire_in':response.authResponse.expiresIn,'expire_at':response.authResponse.expiresIn,'expire_at':data_access_expiration_time},
+                        beforeSend:function(){
+
+                        },
+                        success:function(response){
+
+
+
+                        },
+                        error: function (jqXHR, textStatus, errorThrown) {
+
+
+                        },
+                        complete:function(data){
+
+                        }
+                    })
                     // The person logged into your app
                 } else {
                     console.log("error".response)

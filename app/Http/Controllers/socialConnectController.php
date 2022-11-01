@@ -13,6 +13,16 @@ class socialConnectController extends Controller
     {
         return view('social.facebook-login');
     }
+    public function saveFacebookToken(Request $request)
+    {
+        $sc=socialconnection::find($request->con_id);
+        $sc->access_token=$request->access_token;
+        $sc->userid=$request->userid;
+        $sc->expire_in=$request->expire_in;
+        $sc->expire_at=$request->expire_at;
+        $sc->status="Connected";
+        $sc->save();
+    }
     public function socialConnections()
     {
 
