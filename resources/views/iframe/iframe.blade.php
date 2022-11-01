@@ -18,6 +18,22 @@
         @endforeach
 
             <script>
+                function shareOnFacebook(){
+                    const navUrl = 'https://www.facebook.com/sharer/sharer.php?u=' + 'https://github.com/knoldus/angular-facebook-twitter.git';
+                    window.open(navUrl , '_blank');
+                }
+                function shareOnTwitter() {
+
+                    const navUrl =
+                        'https://twitter.com/intent/tweet?text=My Textdfsdfsdf&url=' +
+                        'https://github.com/knoldus/angular-facebook-twitter.git';
+                    window.open(navUrl, '_blank');
+                }
+                function shareOnLinkedIn()
+                {
+                    var url="https://www.linkedin.com/shareArticle?mini=true&;url=https://github.com/knoldus/angular-facebook-twitter.git&title=My title"
+                    window.open(url, '_blank');
+                }
                 function shareWithImage(title,text,url,image_url)
                 {
                     makeImage(image_url).then(function (data){
