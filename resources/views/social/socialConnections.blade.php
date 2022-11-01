@@ -14,7 +14,7 @@
                         <div class="col-md-6">
                         </div>
                         <div class="col-md-3">
-                            <button class="btn btn-outline-primary">Connect</button>
+                            <button class="btn btn-outline-primary form-control">Connect</button>
                         </div>
                     </div>
                 </div>
