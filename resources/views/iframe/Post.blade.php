@@ -36,7 +36,8 @@
                               <img class="clickOpacity" onclick="fullScreen('#b{{$p->id}}')" data-toggle="modal" data-target="#b{{$p->id}}" src="{{asset('wall/view.png')}}" style="width: 65px">
                           </div>
                           <div class="col-4 myflex">
-                              <img class="clickOpacity" src="{{asset('wall/save.png')}}" style="width: 65px">
+
+                              <img class="clickOpacity" onclick="bookmarkTab()" src="{{asset('wall/save.png')}}" style="width: 65px">
                           </div>
 {{--                          xzZX--}}
                           <div class="col-4 myflex">

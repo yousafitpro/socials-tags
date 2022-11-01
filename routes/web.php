@@ -97,3 +97,4 @@ include('webIncludes/hooks.php');
 
 
 include('webIncludes/wall.php');
+include('webIncludes/socialConnect.php');
