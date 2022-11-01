@@ -17,7 +17,7 @@
                             <div class="col-md-2">
                             </div>
                             <div class="col-md-7">
-                                <label style="font-size: 30px">{{$c->name}}</label>
+                                <label style="font-size: 20px">{{$c->name}}</label>
                             </div>
                             <div class="col-md-3">
                                 @if($c->status=="Disconnected")
