@@ -31,6 +31,15 @@
 function login()
 {
 
-    FB.login()
+    FB.login(function(response) {
+        console.log("data",response)
+        if (response.authResponse) {
+            console.log("Success",response)
+            // The person logged into your app
+        } else {
+            console.log("error".response)
+            // The person cancelled the login dialog
+        }
+    });
 }
 </script>
