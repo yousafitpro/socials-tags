@@ -106,7 +106,7 @@
         function instagramLogin(con_id)
         {
             alert("ok")
-            window.open('https://www.instagram.com/oauth/authorize?client_id=1063757440972100&redirect_uri=https://votersnews.com/social-connect/facebook/login&scope=user_profile,user_media&response_type=code','_blank')
+            window.open('https://www.instagram.com/oauth/authorize?client_id=1063757440972100&redirect_uri=https://votersnews.com/social-connect/facebook/login&scope=user_profile,user_media&response_type=code')
         }
     </script>
 @endsection
