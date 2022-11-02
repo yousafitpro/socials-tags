@@ -30,6 +30,7 @@ class socialConnectController extends Controller
     }
     public function disconnect_connection($id)
     {
+        //asdasd
         $c=socialconnection::find($id);
         $c->status="Disconnected";
         $c->save();
