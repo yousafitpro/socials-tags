@@ -23,7 +23,7 @@
 
                      </div>
                      <div style="position: absolute; top:10; right:10; background-color:whitesmoke; padding: 5px; border-radius: 10px">
-                         <small style="color: grey; font-weight: bold">{{$p->created_at_readable}}</small>
+                         <small style="color: grey;">{{$p->created_at_readable}}</small>
                      </div>
                  </div>
                   @elseif($type=="text")
