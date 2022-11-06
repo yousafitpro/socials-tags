@@ -22,7 +22,10 @@
 
 
                      </div>
-                     <div style="position: absolute; top:10; right:10; background-color:whitesmoke; padding: 5px; border-radius: 10px">
+                     <div style="position: absolute; top:10; right:10; opacity: 0.7; height: 25px; width: 100px; background-color:whitesmoke; padding: 5px; border-radius: 10px">
+
+                     </div>
+                     <div style="position: absolute; top:12; right:18;">
                          <small style="color: grey;">{{$p->created_at_readable}}</small>
                      </div>
                  </div>
