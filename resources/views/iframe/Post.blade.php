@@ -3,24 +3,29 @@
             <div class="card shadow wallPostCard" >
                 <input value="{{$p->link}}" hidden id="{{$p->id}}myInput">
               @if($type=="image")
-                    <div class="row">
-                        <div class="col-md-12">
-                            <img src="{{asset($p->image)}}" style="width: 100%" class="wallPostModalImage">
-                        </div>
-                    </div>
-                    <div class="p-3">
-                        <div class="row">
-                            <div class="col-md-12">
+                 <div style="position: relative">
+                     <div class="row">
+                         <div class="col-md-12">
+                             <img src="{{asset($p->image)}}" style="width: 100%" class="wallPostModalImage">
+                         </div>
+                     </div>
+                     <div class="p-3">
+                         <div class="row">
+                             <div class="col-md-12">
 
-                                <small >
-                                    {{Str::limit($p->content,100)}}
-                                </small>
-                            </div>
-                        </div>
-                        <br>
+                                 <small >
+                                     {{Str::limit($p->content,100)}}
+                                 </small>
+                             </div>
+                         </div>
+                         <br>
 
 
-                    </div>
+                     </div>
+                     <div style="position: absolute; top:10; right:10; background-color:whitesmoke; padding: 5px; border-radius: 10px">
+                         <small>{{$p->created_at_readable}}</small>
+                     </div>
+                 </div>
                   @elseif($type=="text")
                     <div class="p-3 text-center" style="color: gray">
                   <h3>{{Str::limit($p->content,100)}}</h3>

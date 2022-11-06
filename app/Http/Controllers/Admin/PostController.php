@@ -114,6 +114,7 @@ class PostController extends Controller
     }
     public function deleteOne($id)
     {
+        //aSAs
         $post=post::find($id);
         if($post->delete())
         {
