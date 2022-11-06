@@ -10,7 +10,7 @@ class iframeController extends Controller
     public function iframe()
     {
 
-        $data['posts']=post::where('id','!=','sdadas')->inRandomOrder()->get();
+        $data['posts']=post::query()->latest()->get();
         foreach ($data['posts'] as $p)
         {
           $p->image_url=asset($p->image);
