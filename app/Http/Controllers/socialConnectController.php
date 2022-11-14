@@ -16,6 +16,7 @@ class socialConnectController extends Controller
     public function save_twitter_token(Request $request)
     {
         dd($request->code);
+        $re
     }
     public function saveFacebookToken(Request $request)
     {
