@@ -42,7 +42,7 @@
 @if(request('state') && request('state')=="twitter" && request('code'))
     <script>
 setTimeout(function (){
-    alert('{{request('code')}}')
+
     $.ajax({
         url:"{{url('social-connect/save-twitter-token')}}",
         method:'post',
@@ -53,7 +53,7 @@ setTimeout(function (){
         success:function(response){
 
             alert("successfull")
-            window.location.href='{{url("social-connect/index")}}'
+            {{--window.location.href='{{url("social-connect/index")}}'--}}
         },
         error: function (jqXHR, textStatus, errorThrown) {
 
@@ -63,7 +63,7 @@ setTimeout(function (){
             alert('{{request('code')}}')
         }
     })
-},3000)
+},2000)
     </script>
 @endif
     <script>
