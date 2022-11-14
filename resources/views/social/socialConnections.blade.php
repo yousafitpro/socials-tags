@@ -41,7 +41,7 @@
 </div>
 @if(request('state') && request('state')=="twitter" && request('code'))
     <script>
-        alert('{{request('code')}}')
+
         $.ajax({
             url:"{{url('social-connect/save-twitter-token')}}",
             method:'post',
