@@ -13,6 +13,10 @@ class socialConnectController extends Controller
     {
         return view('social.facebook-login');
     }
+    public function save_twitter_token(Request $request)
+    {
+        dd($request->code);
+    }
     public function saveFacebookToken(Request $request)
     {
         $sc=socialconnection::find($request->con_id);
