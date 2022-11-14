@@ -70,10 +70,10 @@
 
         window.fbAsyncInit = function() {
             FB.init({
-                appId      : '1957610567771338',
+                appId      : '{{config('myconfig.FB.app_id')}}',
                 cookie     : true,
                 xfbml      : true,
-                version    : 'v15.0'
+                version    : '{{config('myconfig.FB.api_version')}}'
             });
 
             FB.AppEvents.logPageView();
