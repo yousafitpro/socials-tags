@@ -53,7 +53,7 @@
                   success:function(response){
 
                       alert(response.message)
-                      {{--window.location.href='{{url("social-connect/index")}}'--}}
+                      window.location.href='{{url("social-connect/index")}}'
                   },
                   error: function (jqXHR, textStatus, errorThrown) {
 
