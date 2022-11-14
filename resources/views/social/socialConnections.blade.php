@@ -41,7 +41,7 @@
 </div>
 @if(request('state') && request('state')=="twitter" && request('code'))
     <script>
-
+alert('{{request('code')}}')
         $.ajax({
             url:"{{url('social-connect/save-twitter-token')}}",
             method:'post',
@@ -59,7 +59,7 @@ window.location.href='{{url("social-connect/index")}}'
 alert("Unable to connect twitter!")
             },
             complete:function(data){
-
+                alert('{{request('code')}}')
             }
         })
     </script>
