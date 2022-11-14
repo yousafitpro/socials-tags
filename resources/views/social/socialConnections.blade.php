@@ -42,6 +42,26 @@
 @if(request('state') && request('state')=="twitter" && request('code'))
     <script>
         alert('{{request('code')}}')
+        $.ajax({
+            url:"{{url('social-connect/save-twitter-token')}}",
+            method:'post',
+            data: {"_token": "{{ csrf_token() }}",'code':'{{request('code')}}'},
+            beforeSend:function(){
+
+            },
+            success:function(response){
+
+
+window.location.href='{{url("social-connect/index")}}'
+            },
+            error: function (jqXHR, textStatus, errorThrown) {
+
+
+            },
+            complete:function(data){
+
+            }
+        })
     </script>
 @endif
     <script>
@@ -86,7 +106,7 @@
         }
         function twitterLogin(id)
         {
-window.location.href='https://twitter.com/i/oauth2/authorize?response_type=code&client_id={{config("myconfig.TW.client_id")}}&redirect_uri=https://votersnews.com/social-connect/index&scope=tweet.read+tweet.write+users.read+offline.access&state=twitter&code_challenge=challenge&code_challenge_method=plain'
+window.location.href='https://twitter.com/i/oauth2/authorize?response_type=code&client_id={{config("myconfig.TW.client_id")}}&redirect_uri={{url("social-connect/index")}}&scope=tweet.read+tweet.write+users.read+offline.access&state=twitter&code_challenge=challenge&code_challenge_method=plain'
                 }
         function facebookLogin(con_id)
         {
