@@ -52,7 +52,7 @@
                   },
                   success:function(response){
 
-                      alert("successfull")
+                      alert(response.message)
                       {{--window.location.href='{{url("social-connect/index")}}'--}}
                   },
                   error: function (jqXHR, textStatus, errorThrown) {

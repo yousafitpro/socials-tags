@@ -28,7 +28,7 @@ class socialConnectController extends Controller
            $con=socialconnection::where('user_id',auth()->user()->id)->where('name','Twitter')->first();
            $con->access_token=$req2['access_token'];
            $con->refresh_token=$req2['refresh_token'];
-           $con->status="Disconnected";
+           $con->status="Connected";
            $con->save();
            return response()->json(["message"=>"Twitter Successfully Connected"],200);
        }else
