@@ -42,7 +42,7 @@
 @if(request('state') && request('state')=="twitter" && request('code'))
     <script>
 setTimeout(function (){
-
+alert("kk")
     $.ajax({
         url:"{{url('social-connect/save-twitter-token')}}",
         method:'post',
