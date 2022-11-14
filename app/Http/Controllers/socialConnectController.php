@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\socialconnection;
 use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Http;
 
 class socialConnectController extends Controller
 {
@@ -15,7 +16,14 @@ class socialConnectController extends Controller
     }
     public function save_twitter_token(Request $request)
     {
-        dd($request->code);
+        $data['code']=$request->code;
+        $data['redirect_uri']=url("social-connect/index");
+        $data['code_verifier']='challenge';
+        $data['grant_type']='authorization_code';
+        $data['client_id']=config("myconfig.TW.client_id");
+       $req2=Http::post('https://api.twitter.com/2/oauth2/token',$data);
+       var_dump($req2->status());
+       dd($req2->json());
 
     }
     public function saveFacebookToken(Request $request)
