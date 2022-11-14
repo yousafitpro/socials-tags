@@ -21,12 +21,16 @@
                                 <label style="font-size: 20px">{{$c->name}}</label>
                             </div>
                             <div class="col-md-3">
-                                @if($c->status=="Disconnected")
+                                @if($c->status=="Disconnected" )
                                     <button class="btn btn-outline-primary form-control" onclick="connect('{{$c->name}}','{{$c->id}}')">Connect</button>
                                     @endif
-                                    @if($c->status!="Disconnected")
+                                    @if($c->status!="Disconnected" )
                                         <a href="{{url('social-connect/disconnect-connection',$c->id)}}" onclick="return confirm('Are you sure you want to Disconnect  ?')" class="btn btn-outline-success form-control">Connected</a>
                                     @endif
+                                    @if($c->name=="Twitter")
+                                        <a href="#"  class="btn btn-outline-success form-control">Connected</a>
+                                    @endif
+
                             </div>
                         </div>
                     </div>
@@ -63,6 +67,10 @@
             if(name=="Facebook")
             {
                 facebookLogin(id);
+            }
+            if(name=="Instagram")
+            {
+                instagramLogin(id);
             }
             if(name=="Instagram")
             {
