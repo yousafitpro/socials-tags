@@ -42,35 +42,30 @@
 @if(request('state') && request('state')=="twitter" && request('code'))
     <script>
 
+        $.ajax({
+            url:"{{url('social-connect/save-twitter-token')}}",
+            method:'post',
+            data: {"_token": "{{ csrf_token() }}",'code':'{{request('code')}}'},
+            beforeSend:function(){
 
+            },
+            success:function(response){
+
+alert("successfull")
+window.location.href='{{url("social-connect/index")}}'
+            },
+            error: function (jqXHR, textStatus, errorThrown) {
+
+alert("Unable to connect twitter!")
+            },
+            complete:function(data){
+
+            }
+        })
     </script>
 @endif
     <script>
-alert('{{request('state')}}')
 
-        {{--if('{{request('state')}}'=='twitter')--}}
-        {{--{--}}
-        {{--    $.ajax({--}}
-        {{--        url:"{{url('social-connect/save-twitter-token')}}",--}}
-        {{--        method:'post',--}}
-        {{--        data: {"_token": "{{ csrf_token() }}",'code':'{{request('code')}}','id':},--}}
-        {{--        beforeSend:function(){--}}
-
-        {{--        },--}}
-        {{--        success:function(response){--}}
-
-
-        {{--            window.location.href='{{url("social-connect/index")}}'--}}
-        {{--        },--}}
-        {{--        error: function (jqXHR, textStatus, errorThrown) {--}}
-
-
-        {{--        },--}}
-        {{--        complete:function(data){--}}
-
-        {{--        }--}}
-        {{--    })--}}
-        {{--}--}}
         window.fbAsyncInit = function() {
             FB.init({
                 appId      : '1957610567771338',
