@@ -41,29 +41,29 @@
 </div>
 @if(request('state') && request('state')=="twitter" && request('code'))
     <script>
-setTimeout(function (){
-alert("kk")
-    $.ajax({
-        url:"{{url('social-connect/save-twitter-token')}}",
-        method:'post',
-        data: {"_token": "{{ csrf_token() }}",'code':'{{request('code')}}'},
-        beforeSend:function(){
+          $(document).ready(function (){
+              alert("kk")
+              $.ajax({
+                  url:"{{url('social-connect/save-twitter-token')}}",
+                  method:'post',
+                  data: {"_token": "{{ csrf_token() }}",'code':'{{request('code')}}'},
+                  beforeSend:function(){
 
-        },
-        success:function(response){
+                  },
+                  success:function(response){
 
-            alert("successfull")
-            {{--window.location.href='{{url("social-connect/index")}}'--}}
-        },
-        error: function (jqXHR, textStatus, errorThrown) {
+                      alert("successfull")
+                      {{--window.location.href='{{url("social-connect/index")}}'--}}
+                  },
+                  error: function (jqXHR, textStatus, errorThrown) {
 
-            alert("Unable to connect twitter!")
-        },
-        complete:function(data){
-            alert('{{request('code')}}')
-        }
-    })
-},2000)
+                      alert("Unable to connect twitter!")
+                  },
+                  complete:function(data){
+                      alert('{{request('code')}}')
+                  }
+              })
+          })
     </script>
 @endif
     <script>
