@@ -22,8 +22,21 @@ class socialConnectController extends Controller
         $data['grant_type']='authorization_code';
         $data['client_id']=config("myconfig.TW.client_id");
        $req2=Http::post('https://api.twitter.com/2/oauth2/token',$data);
-       var_dump($req2->status());
-       dd($req2->json());
+       if ($req2->status()=="200")
+       {
+           $req2=$req2->json();
+           $con=socialconnection::where('user_id',auth()->user()->id)->where('name','Twitter')->first();
+           $con->access_token=$req2['access_token'];
+           $con->refresh_token=$req2['refresh_token'];
+           $con->status="Disconnected";
+           $con->save();
+           return response()->json(["message"=>"Twitter Successfully Connected"],200);
+       }else
+       {
+           return response()->json(["message"=>"Twitter Cannot be Connected"],409);
+       }
+
+
 
     }
     public function saveFacebookToken(Request $request)
