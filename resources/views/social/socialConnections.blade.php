@@ -39,6 +39,11 @@
         </div>
     </div>
 </div>
+@if(request('state') && request('state')=="twitter" && request('code'))
+    <script>
+        alert('{{request('code')}}')
+    </script>
+@endif
     <script>
 
         window.fbAsyncInit = function() {
