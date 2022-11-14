@@ -24,6 +24,10 @@ return [
     'daily' =>[
         'url'=>env('dailUrl', 'none'),
         'key'=>env('dailKey', 'none')
+    ],
+    'TW' =>[
+        'client_id'=>env('TW_client_id', 'none'),
+        'brear_token'=>env('TW_brear_token', 'none')
     ]
 
 ];

@@ -21,15 +21,13 @@
                                 <label style="font-size: 20px">{{$c->name}}</label>
                             </div>
                             <div class="col-md-3">
-                                @if($c->status=="Disconnected" && $c->name!="Twitter")
+                                @if($c->status=="Disconnected" )
                                     <button class="btn btn-outline-primary form-control" onclick="connect('{{$c->name}}','{{$c->id}}')">Connect</button>
                                     @endif
-                                    @if($c->status!="Disconnected" && $c->name!="Twitter")
+                                    @if($c->status!="Disconnected" )
                                         <a href="{{url('social-connect/disconnect-connection',$c->id)}}" onclick="return confirm('Are you sure you want to Disconnect  ?')" class="btn btn-outline-success form-control">Connected</a>
                                     @endif
-                                    @if($c->name=="Twitter")
-                                        <a href="#"  class="btn btn-outline-success form-control">Connected</a>
-                                    @endif
+
 
                             </div>
                         </div>
@@ -76,7 +74,15 @@
             {
                 instagramLogin(id);
             }
+            if(name=="Twitter")
+            {
+                twitterLogin(id)
+            }
         }
+        function twitterLogin(id)
+        {
+window.location.href='https://twitter.com/i/oauth2/authorize?response_type=code&client_id={{config("myconfig.TW.client_id")}}&redirect_uri=https://votersnews.com/social-connect/index&scope=tweet.read+tweet.write+users.read+offline.access&state=twitter&code_challenge=challenge&code_challenge_method=plain'
+                }
         function facebookLogin(con_id)
         {
 
