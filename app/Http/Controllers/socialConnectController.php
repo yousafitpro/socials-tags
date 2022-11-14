@@ -47,6 +47,10 @@ class socialConnectController extends Controller
         {
             $icon=asset('icon/instagram-logo.png');
         }
+        if ($name=="Twitter")
+        {
+            $icon=asset('icon/Twitter-logo-png.png');
+        }
         return $icon;
     }
 }
