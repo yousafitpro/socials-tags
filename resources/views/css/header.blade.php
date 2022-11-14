@@ -24,5 +24,6 @@ $url="";
     <link href="{{ asset($url.'backend-theme/css/style.css')}}" rel="stylesheet">
     <!-- include summernote css/js -->
     <link href="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote.min.css" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 
 </head>
