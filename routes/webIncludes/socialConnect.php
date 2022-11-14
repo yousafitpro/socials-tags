@@ -10,3 +10,4 @@ Route::prefix('social-connect')
         Route::get('disconnect-connection/{id}',[App\Http\Controllers\socialConnectController::class, 'disconnect_connection']);
 
     });
+//asdasd
