@@ -1,6 +1,6 @@
 @extends('layouts.dashboard')
 @section('content')
-
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 <div class="container-fluid">
     <div class="row">
         <div class="col-md-6 offset-md-3">
