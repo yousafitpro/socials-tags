@@ -77,11 +77,13 @@
 
             <script>
                 function shareOnFacebook(text,url){
+                    var windowReference = window.open();
                     document.exitFullscreen();
                  setTimeout(function (){
                      alert("ok1")
                      const navUrl = 'https://www.facebook.com/sharer/sharer.php?u=' +url;
-                     window.open(navUrl , '_blank');
+                     windowReference.location = navUrl;
+                     // window.open(navUrl , '_blank');
                      alert("ok2")
                  },1000)
                 }
