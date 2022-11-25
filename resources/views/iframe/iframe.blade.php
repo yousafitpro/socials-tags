@@ -68,6 +68,21 @@
     </nav>
 @endif
 <div class="container-fluid">
+    <br>
+    <div class="row">
+
+        <div class="col-md-6 offset-md-3">
+            <div class="input-group mb-2">
+
+                <input type="text" class="form-control" style="text-align: center" placeholder="type here..." aria-label="Username" aria-describedby="basic-addon1">
+                <div class="input-group-prepend">
+                  <button class="btn btn-primary">Search</button>
+                </div>
+            </div>
+        </div>
+
+
+    </div>
     <div class="row" style="padding-bottom: 50px">
 
 
