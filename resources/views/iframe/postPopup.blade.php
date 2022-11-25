@@ -21,7 +21,7 @@
                             </a>
                                 <img src="{{asset('icon/link.png')}}"  data-dismiss="modal" id="copyIcon" onclick="exitFullScreen('copy','{{$p->id}}')" style="width: 30px; border-radius: 5px; border: solid 1px grey" class="coppyIcon">
 
-                            <a href="{{url($p->link)}}" target="_blank">
+                            <a href="{{url($p->link?$p->link:'')}}" target="_blank">
                                 <img    src="{{asset('icon/book2.png')}}"  style="width: 30px; border-radius: 5px; border: solid 1px grey">
 
                             </a>

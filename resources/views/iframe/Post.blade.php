@@ -44,10 +44,8 @@
                               <img class="clickOpacity" onclick="fullScreen('#b{{$p->id}}')" data-toggle="modal" data-target="#b{{$p->id}}" src="{{asset('wall/view.png')}}" style="width: 65px">
                           </div>
                           <div class="col-4 myflex">
-                               <a href="{{url($p->link)}}" target="_blank">
-                                   <img class="clickOpacity" onclick="bookmarkTab()" src="{{asset('icon/book2.png')}}" style="width: 65px">
 
-                               </a>
+                              <img class="clickOpacity" onclick="bookmarkTab()" src="{{asset('wall/save.png')}}" style="width: 65px">
                           </div>
 {{--                          xzZX--}}
                           <div class="col-4 myflex">
