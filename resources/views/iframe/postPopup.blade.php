@@ -7,9 +7,11 @@
                 <div class="container-fluid">
                     <div class="row" style="margin-top: 30px">
                         <div class="col-md-8">
-                            <a href="https://www.facebook.com/sharer/sharer.php?u={{$p->link}}" target="_blank">dasdasd</a>
-
+                            <a href="https://www.facebook.com/sharer/sharer.php?u={{$p->link}}" target="_blank">
                                 <img onclick="shareOnFacebook('{{Str::limit($p->content,100)}}','{{$p->link}}')" data-dismiss="modal" src="{{asset('icon/fb.png')}}" style="width: 30px; border-radius: 5px; border: solid 1px grey">
+
+                            </a>
+
                                 <img onclick="shareOnTwitter('{{Str::limit($p->content,100)}}','{{$p->link}}')" data-dismiss="modal" src="{{asset('icon/tw.png')}}" style="width: 30px; border-radius: 5px; border: solid 1px grey">
                                 <img onclick="shareOnLinkedIn('{{Str::limit($p->content,100)}}','{{$p->link}}')" data-dismiss="modal" src="{{asset('icon/in.png')}}" style="width: 30px; border-radius: 5px;border:solid 1px grey">
                                 <img src="{{asset('icon/link.png')}}"  data-dismiss="modal" id="copyIcon" onclick="exitFullScreen('copy','{{$p->id}}')" style="width: 30px; border-radius: 5px; border: solid 1px grey" class="coppyIcon">
