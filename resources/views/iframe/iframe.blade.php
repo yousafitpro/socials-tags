@@ -76,7 +76,7 @@
 
                 <input type="text" class="form-control" style="text-align: center" placeholder="type here..." aria-label="Username" aria-describedby="basic-addon1">
                 <div class="input-group-prepend">
-                  <button class="btn btn-primary" style="width: 80px"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
+                  <button class="btn btn-primary"  style="width: 80px"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
                           <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"/>
                       </svg></button>
                 </div>
@@ -85,15 +85,44 @@
 
 
     </div>
-    <div class="row" style="padding-bottom: 50px">
+    <div class="row ajaxDiv" style="padding-bottom: 50px">
 
 
-        @foreach($posts as $p)
-            @include('iframe.Post',['type'=>$p->type,'category'=>$p->category,'id'=>$p->id,'username'=>$p->username])
-
-        @endforeach
+        @include('iframe.Ajax-posts')
 
             <script>
+                var currentPage=2
+                var lastPage=parseInt('{{$lastPage}}')
+                function loadMore()
+                {
+
+                    if(currentPage>lastPage){
+alert("No More Posts")
+                        return;
+                    }
+
+                    $.ajax({
+                        url:"{{url('wall/index?type=web')}}&page="+currentPage,
+                        method:'get',
+                        data: {"_token": "{{ csrf_token() }}"},
+                        beforeSend:function(){
+                            $(".loadMoreBtn").text("Loading...")
+                        },
+                        success:function(response){
+
+                            $(".ajaxDiv").append(response)
+                            currentPage=currentPage+1;
+
+                        },
+                        error: function (jqXHR, textStatus, errorThrown) {
+
+
+                        },
+                        complete:function(data){
+                            $(".loadMoreBtn").text("Load More")
+                        }
+                    })
+                }
                 function shareOnFacebook(text,url){
 
                     document.exitFullscreen();
@@ -194,7 +223,9 @@
     <div class="row">
         <div class="col-md-4 offset-md-4">
             <div style="width: 100%" class="myflex">
-                <button class="btn-primary  btn-sm ">Load More <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-clockwise" viewBox="0 0 16 16">
+                <button class="btn-primary  btn-sm " onclick="loadMore()">
+                    <span class="loadMoreBtn">Load More</span>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-clockwise" viewBox="0 0 16 16">
                         <path fill-rule="evenodd" d="M8 3a5 5 0 1 0 4.546 2.914.5.5 0 0 1 .908-.417A6 6 0 1 1 8 2v1z"/>
                         <path d="M8 4.466V.534a.25.25 0 0 1 .41-.192l2.36 1.966c.12.1.12.284 0 .384L8.41 4.658A.25.25 0 0 1 8 4.466z"/>
                     </svg></button>
