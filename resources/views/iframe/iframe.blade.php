@@ -79,13 +79,12 @@
                 function shareOnFacebook(text,url){
 
                     document.exitFullscreen();
-                 setTimeout(function (){
 
                      const navUrl = 'https://www.facebook.com/sharer/sharer.php?u=' +url;
 
                      window.open(navUrl,'_top');
 
-                 },1000)
+
                 }
                 function shareOnTwitter(text,url) {
                     document.exitFullscreen();
