@@ -80,10 +80,10 @@
 
                     document.exitFullscreen();
 
-                     const navUrl = 'https://www.facebook.com/sharer/sharer.php?u=' +url;
-                     setTimeout(function (){
-                         window.location.assign(navUrl)
-                     },2000)
+                     // const navUrl = 'https://www.facebook.com/sharer/sharer.php?u=' +url;
+                     // setTimeout(function (){
+                     //     window.location.assign(navUrl)
+                     // },2000)
                     // const a = document.createElement("a");
                     // a.setAttribute('href', navUrl);
                     // a.setAttribute('target', '_blank');
