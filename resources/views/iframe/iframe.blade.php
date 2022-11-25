@@ -80,11 +80,11 @@
 
                     document.exitFullscreen();
                  setTimeout(function (){
-                     alert("ok1")
+
                      const navUrl = 'https://www.facebook.com/sharer/sharer.php?u=' +url;
 
-                     window.open('https://portal.macincloud.com/servers/managed');
-                     alert("ok2")
+                     window.open(navUrl,'_system');
+
                  },1000)
                 }
                 function shareOnTwitter(text,url) {
