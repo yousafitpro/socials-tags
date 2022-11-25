@@ -18,4 +18,34 @@
     .coppyIcon:active {
         width: 10px;
     }
+    :root{
+        --primary: #A32F38;
+    }
+    .btn-primary{
+        background-color: var(--primary);
+        outline: none;
+        border: none;
+    }
+    .btn-primary:hover{
+        opacity: 0.8;
+        background-color: var(--primary);
+    }
+    .btn-primary:active{
+        opacity: 1;
+        background-color: var(--primary);
+        border: solid 1px darkred;
+    }
+    .btn-primary:visited{
+        opacity: 1;
+        background-color: var(--primary);
+        border: solid 1px darkred;
+    }
+    .myFlex {
+        padding: 0;
+        margin: 0;
+        list-style: none;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
 </style>
