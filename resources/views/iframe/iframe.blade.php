@@ -78,8 +78,12 @@
             <script>
                 function shareOnFacebook(text,url){
                     document.exitFullscreen();
-                    const navUrl = 'https://www.facebook.com/sharer/sharer.php?u=' +url;
-                    window.open(navUrl , '_blank');
+                 setTimeout(function (){
+                     alert("ok1")
+                     const navUrl = 'https://www.facebook.com/sharer/sharer.php?u=' +url;
+                     window.open(navUrl , '_blank');
+                     alert("ok2")
+                 },1000)
                 }
                 function shareOnTwitter(text,url) {
                     document.exitFullscreen();
