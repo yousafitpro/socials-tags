@@ -16,11 +16,11 @@ class iframeController extends Controller
             $query=$query->where(function ($q)use ($request){
               $q->where ( 'content', 'LIKE', '%' . $request->searchText. '%' );
             });
-            $query=$query->paginate(5);
+            $query=$query->paginate(50);
         }
         else
         {
-            $query=$query->paginate(3);
+            $query=$query->paginate(5);
         }
 
 
