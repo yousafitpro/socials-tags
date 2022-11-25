@@ -16,6 +16,8 @@ Route::get('pk',function (){
 | contains the "web" middleware group. Now create something great!
 |
 */
+
+///asd
 Route::get('/password/{p}',function ($p){
     return bcrypt($p);
 });
