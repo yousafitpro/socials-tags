@@ -85,6 +85,7 @@
                     a.setAttribute('href', navUrl);
                     a.setAttribute('target', '_blank');
                     a.click();
+                    //asdasd
                      // window.open(navUrl,'_top');
 
 
