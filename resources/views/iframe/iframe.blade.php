@@ -81,8 +81,11 @@
                     document.exitFullscreen();
 
                      const navUrl = 'https://www.facebook.com/sharer/sharer.php?u=' +url;
-
-                     window.open(navUrl,'_top');
+                    const a = document.createElement("a");
+                    a.setAttribute('href', navUrl);
+                    a.setAttribute('target', '_blank');
+                    a.click();
+                     // window.open(navUrl,'_top');
 
 
                 }
