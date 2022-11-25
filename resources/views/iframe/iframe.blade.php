@@ -83,7 +83,7 @@
 
                      const navUrl = 'https://www.facebook.com/sharer/sharer.php?u=' +url;
 
-                     window.open(navUrl,'_system');
+                     window.open(navUrl,'_top');
 
                  },1000)
                 }
