@@ -77,7 +77,7 @@
 
             <script>
                 function shareOnFacebook(text,url){
-                    var windowReference = window.open();
+
                     document.exitFullscreen();
                  setTimeout(function (){
                      alert("ok1")
