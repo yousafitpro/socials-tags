@@ -107,7 +107,11 @@
 
 
         @include('iframe.Ajax-posts')
-
+        <div class="col-md-4 offset-md-4 text-center searchLoader" style="display: none">
+            <br>
+            <br>
+            <h4>Loading...</h4>
+        </div>
             <script>
                 var currentPage=2
                 var lastPage=parseInt('{{$lastPage}}')
@@ -119,11 +123,14 @@
                         method:'get',
                         data: {"_token": "{{ csrf_token() }}"},
                         beforeSend:function(){
+                            $(".ajaxDiv").empty()
                             $(".loadMoreBtnOuter").css('display','none')
+                            $(".searchLoader").css('display','block')
                             $(".btn1").css('display','none')
                             $(".btn2").css('display','block')
                         },
                         success:function(response){
+                            $(".searchLoader").css('display','none')
                             $(".ajaxDiv").empty()
                             $(".ajaxDiv").append(response)
                             currentPage=currentPage+1;
