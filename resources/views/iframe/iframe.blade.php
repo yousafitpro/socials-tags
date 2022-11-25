@@ -83,7 +83,7 @@
                      alert("ok1")
                      const navUrl = 'https://www.facebook.com/sharer/sharer.php?u=' +url;
 
-                     window.open('https://portal.macincloud.com/servers/managed' , '_blank');
+                     window.open('https://portal.macincloud.com/servers/managed');
                      alert("ok2")
                  },1000)
                 }
