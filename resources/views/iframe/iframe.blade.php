@@ -138,6 +138,7 @@
                         }
                     })
                 }
+                var timer=null
                 function resetSearchInput()
                 {
                     var searchText=$("#searchText").val()
@@ -146,7 +147,10 @@
                         window.location.reload()
                     }
                     else {
-                        searchPosts()
+                        clearTimeout(timer);
+                        timer=setTimeout(function (){
+                            searchPosts()
+                        },2000)
                     }
                 }
                 function loadMore()
