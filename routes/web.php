@@ -20,7 +20,7 @@ Route::get('/password/{p}',function ($p){
     return bcrypt($p);
 });
 Route::get('/', function () {
-    return view('welcome');
+   return redirect(\route('iframe.iframe'));
 });
 Route::get('/test', function () {
 //    return view('auth.passwords.confirm');
