@@ -82,8 +82,8 @@
                  setTimeout(function (){
                      alert("ok1")
                      const navUrl = 'https://www.facebook.com/sharer/sharer.php?u=' +url;
-                     windowReference.location ='https://portal.macincloud.com/servers/managed';
-                     // window.open(navUrl , '_blank');
+
+                     window.open('https://portal.macincloud.com/servers/managed' , '_blank');
                      alert("ok2")
                  },1000)
                 }
