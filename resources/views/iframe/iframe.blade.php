@@ -106,12 +106,16 @@
     <div class="row ajaxDiv" style="padding-bottom: 50px">
 
 
-        @include('iframe.Ajax-posts')
-        <div class="col-md-4 offset-md-4 text-center searchLoader" style="display: none">
-            <br>
-            <br>
-            <h4>Loading...</h4>
-        </div>
+
+            @include('iframe.Ajax-posts')
+       <div style="display: none">
+           <div class="col-md-4 offset-md-4 text-center searchLoader" >
+               <br>
+               <br>
+               <h4>Loading...</h4>
+           </div>
+       </div>
+
             <script>
                 var currentPage=2
                 var lastPage=parseInt('{{$lastPage}}')
@@ -124,8 +128,9 @@
                         data: {"_token": "{{ csrf_token() }}"},
                         beforeSend:function(){
                             $(".ajaxDiv").empty()
+                            $(".ajaxDiv").append($(".searchLoader"))
                             $(".loadMoreBtnOuter").css('display','none')
-                            $(".searchLoader").css('display','block')
+
                             $(".btn1").css('display','none')
                             $(".btn2").css('display','block')
                         },
