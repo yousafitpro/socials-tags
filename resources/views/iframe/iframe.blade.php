@@ -131,7 +131,8 @@
         function searchPosts()
         {
             var searchText=$("#searchText").val()
-
+            $(".ajaxDiv").empty()
+            $(".ajaxDiv").append($(".searchLoader"))
             $.ajax({
                 url:"{{url('wall/index?type=web')}}&searchText="+searchText,
                 method:'get',
