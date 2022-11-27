@@ -131,8 +131,8 @@
         function searchPosts()
         {
             var searchText=$("#searchText").val()
-            $(".ajaxDiv").empty()
-            $(".ajaxDiv").append($(".searchLoader"))
+
+
             $.ajax({
                 url:"{{url('wall/index?type=web')}}&searchText="+searchText,
                 method:'get',
@@ -147,7 +147,7 @@
                     $(".btn2").css('display','block')
                 },
                 success:function(response){
-                    $(".searchLoader").css('display','none')
+
                     $(".ajaxDiv").empty()
                     $(".ajaxDiv").append(response)
                     currentPage=currentPage+1;
