@@ -8,6 +8,6 @@
     <div class="col-md-4 offset-md-4 text-center">
         <br>
         <br>
-        <h4>No More Posts</h4>
+        <h4 style="color: gray">No More Posts</h4>
     </div>
 @endif
