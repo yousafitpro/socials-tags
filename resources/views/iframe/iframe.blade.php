@@ -108,182 +108,7 @@
 
 
             @include('iframe.Ajax-posts')
-       <div style="display: none">
-           <div class="col-md-4 offset-md-4 text-center searchLoader" >
-               <br>
-               <br>
-               <h4>Loading...</h4>
-           </div>
-       </div>
 
-            <script>
-                var currentPage=2
-                var lastPage=parseInt('{{$lastPage}}')
-                function searchPosts()
-                {
-                     var searchText=$("#searchText").val()
-                    $.ajax({
-                        url:"{{url('wall/index?type=web')}}&searchText="+searchText,
-                        method:'get',
-                        data: {"_token": "{{ csrf_token() }}"},
-                        beforeSend:function(){
-                            $(".ajaxDiv").empty()
-                            $(".ajaxDiv").append($(".searchLoader"))
-                            $(".loadMoreBtnOuter").css('display','none')
-
-                            $(".btn1").css('display','none')
-                            $(".btn2").css('display','block')
-                        },
-                        success:function(response){
-                            $(".searchLoader").css('display','none')
-                            $(".ajaxDiv").empty()
-                            $(".ajaxDiv").append(response)
-                            currentPage=currentPage+1;
-
-                        },
-                        error: function (jqXHR, textStatus, errorThrown) {
-
-
-                        },
-                        complete:function(data){
-                            $(".loadMoreBtn").text("Load More")
-                        }
-                    })
-                }
-                var timer=null
-                function resetSearchInput()
-                {
-                    var searchText=$("#searchText").val()
-                    if(searchText=='')
-                    {
-                        window.location.reload()
-                    }
-                    else {
-                        clearTimeout(timer);
-                        timer=setTimeout(function (){
-                            searchPosts()
-                        },2000)
-                    }
-                }
-                function loadMore()
-                {
-
-                    if(currentPage>lastPage){
-                            alert("No More Posts")
-                        return;
-                    }
-
-                    $.ajax({
-                        url:"{{url('wall/index?type=web')}}&page="+currentPage,
-                        method:'get',
-                        data: {"_token": "{{ csrf_token() }}"},
-                        beforeSend:function(){
-                            $(".loadMoreBtn").text("Loading...")
-                        },
-                        success:function(response){
-
-                            $(".ajaxDiv").append(response)
-                            currentPage=currentPage+1;
-
-                        },
-                        error: function (jqXHR, textStatus, errorThrown) {
-
-
-                        },
-                        complete:function(data){
-                            $(".loadMoreBtn").text("Load More")
-                        }
-                    })
-                }
-                function shareOnFacebook(text,url){
-
-                    document.exitFullscreen();
-
-                     // const navUrl = 'https://www.facebook.com/sharer/sharer.php?u=' +url;
-                     // setTimeout(function (){
-                     //     window.location.assign(navUrl)
-                     // },2000)
-                    // const a = document.createElement("a");
-                    // a.setAttribute('href', navUrl);
-                    // a.setAttribute('target', '_blank');
-                    // a.click();
-                    //asdasd
-                     // window.open(navUrl,'_top');
-
-
-                }
-                function shareOnTwitter(text,url) {
-                    document.exitFullscreen();
-                    const navUrl =
-                        'https://twitter.com/intent/tweet?text='+text+'&url=' +url;
-                    window.open(navUrl, '_blank');
-                }
-                var i=1;
-                function bookmarkTab() {
-                    if(i==1)
-                    {
-                         window.bookmarkTab();
-                    }
-                    i=i+1;
-                    // let createBookmark = browser.bookmarks.create({
-                    //     title: "bookmarks.create() on MDN",
-                    //     url: "https://developer.mozilla.org/Add-ons/WebExtensions/API/bookmarks/create",
-                    // });
-
-                    // createBookmark.then(onCreated);
-
-                    // console.log(tabInfo)
-                    // chrome.bookmarks.create({title: tabsTab.title, url: tabsTab.url}, function(bookmark) {
-                    //     currentBookmark = bookmark;
-                    //     // if(typeof callback === 'function'){
-                    //     //     // callback(tabsTab);
-                    //     // }
-                    // });
-                }
-                    function shareOnLinkedIn(text,url)
-                {
-                    document.exitFullscreen();
-                    var url="https://www.linkedin.com/shareArticle?mini=true&;url="+url+"&title="+text
-                    window.open(url, '_blank');
-                }
-                function shareWithImage(title,text,url,image_url)
-                {
-                    makeImage(image_url).then(function (data){
-                        navigator.share({
-                            files: [
-                                new File([data], 'file.png', {
-                                    type: data.type,
-                                }),
-                            ],
-                            title:title,
-                            text:text,
-                            url:url
-                        }).then(function (data){
-                            // alert("Success! Successfully Shared")
-                        }).catch(function (error){
-                            alert("Sorry! Cannot be shared")
-                        })
-                    })
-                }
-               function shareNow(title,text,url){
-
-                   navigator.share({
-             title:title,
-             text:text,
-             url:url
-         }).then(function (data){
-             // alert("Success! Successfully Shared")
-         }).catch(function (error){
-           alert("Sorry! Cannot be shared")
-         })
-                }
-                async function makeImage(image_url)
-                {
-                    //adasdas
-                    const blob = await fetch(image_url).then(r=>r.blob())
-                   return blob;
-                }
-            </script>
 {{--        @include('iframe.Post',['type'=>'text','category'=>'native','id'=>'3'])--}}
 {{--        @include('iframe.Post',['type'=>'image','category'=>'youtube','id'=>'4'])--}}
 {{--        @include('iframe.Post',['type'=>'image','category'=>'youtube','id'=>'5'])--}}
@@ -292,6 +117,184 @@
 {{--        @include('iframe.Post',['type'=>'text','category'=>'native','id'=>'8'])--}}
 {{--        @include('iframe.Post',['type'=>'image','category'=>'youtube','id'=>'9'])--}}
     </div>
+    <div style="display: none">
+        <div class="col-md-4 offset-md-4 text-center searchLoader" >
+            <br>
+            <br>
+            <h4>Loading...</h4>
+        </div>
+    </div>
+
+    <script>
+        var currentPage=2
+        var lastPage=parseInt('{{$lastPage}}')
+        function searchPosts()
+        {
+            var searchText=$("#searchText").val()
+
+            $.ajax({
+                url:"{{url('wall/index?type=web')}}&searchText="+searchText,
+                method:'get',
+                data: {"_token": "{{ csrf_token() }}"},
+                beforeSend:function(){
+                    $(".ajaxDiv").empty()
+                    $(".ajaxDiv").append($(".searchLoader"))
+
+                    $(".loadMoreBtnOuter").css('display','none')
+
+                    $(".btn1").css('display','none')
+                    $(".btn2").css('display','block')
+                },
+                success:function(response){
+                    $(".searchLoader").css('display','none')
+                    $(".ajaxDiv").empty()
+                    $(".ajaxDiv").append(response)
+                    currentPage=currentPage+1;
+
+                },
+                error: function (jqXHR, textStatus, errorThrown) {
+
+
+                },
+                complete:function(data){
+                    $(".loadMoreBtn").text("Load More")
+                }
+            })
+        }
+        var timer=null
+        function resetSearchInput()
+        {
+            var searchText=$("#searchText").val()
+            if(searchText=='')
+            {
+                window.location.reload()
+            }
+            else {
+                clearTimeout(timer);
+                timer=setTimeout(function (){
+                    searchPosts()
+                },2000)
+            }
+        }
+        function loadMore()
+        {
+
+            if(currentPage>lastPage){
+                alert("No More Posts")
+                return;
+            }
+
+            $.ajax({
+                url:"{{url('wall/index?type=web')}}&page="+currentPage,
+                method:'get',
+                data: {"_token": "{{ csrf_token() }}"},
+                beforeSend:function(){
+                    $(".loadMoreBtn").text("Loading...")
+                },
+                success:function(response){
+
+                    $(".ajaxDiv").append(response)
+                    currentPage=currentPage+1;
+
+                },
+                error: function (jqXHR, textStatus, errorThrown) {
+
+
+                },
+                complete:function(data){
+                    $(".loadMoreBtn").text("Load More")
+                }
+            })
+        }
+        function shareOnFacebook(text,url){
+
+            document.exitFullscreen();
+
+            // const navUrl = 'https://www.facebook.com/sharer/sharer.php?u=' +url;
+            // setTimeout(function (){
+            //     window.location.assign(navUrl)
+            // },2000)
+            // const a = document.createElement("a");
+            // a.setAttribute('href', navUrl);
+            // a.setAttribute('target', '_blank');
+            // a.click();
+            //asdasd
+            // window.open(navUrl,'_top');
+
+
+        }
+        function shareOnTwitter(text,url) {
+            document.exitFullscreen();
+            const navUrl =
+                'https://twitter.com/intent/tweet?text='+text+'&url=' +url;
+            window.open(navUrl, '_blank');
+        }
+        var i=1;
+        function bookmarkTab() {
+            if(i==1)
+            {
+                window.bookmarkTab();
+            }
+            i=i+1;
+            // let createBookmark = browser.bookmarks.create({
+            //     title: "bookmarks.create() on MDN",
+            //     url: "https://developer.mozilla.org/Add-ons/WebExtensions/API/bookmarks/create",
+            // });
+
+            // createBookmark.then(onCreated);
+
+            // console.log(tabInfo)
+            // chrome.bookmarks.create({title: tabsTab.title, url: tabsTab.url}, function(bookmark) {
+            //     currentBookmark = bookmark;
+            //     // if(typeof callback === 'function'){
+            //     //     // callback(tabsTab);
+            //     // }
+            // });
+        }
+        function shareOnLinkedIn(text,url)
+        {
+            document.exitFullscreen();
+            var url="https://www.linkedin.com/shareArticle?mini=true&;url="+url+"&title="+text
+            window.open(url, '_blank');
+        }
+        function shareWithImage(title,text,url,image_url)
+        {
+            makeImage(image_url).then(function (data){
+                navigator.share({
+                    files: [
+                        new File([data], 'file.png', {
+                            type: data.type,
+                        }),
+                    ],
+                    title:title,
+                    text:text,
+                    url:url
+                }).then(function (data){
+                    // alert("Success! Successfully Shared")
+                }).catch(function (error){
+                    alert("Sorry! Cannot be shared")
+                })
+            })
+        }
+        function shareNow(title,text,url){
+
+            navigator.share({
+                title:title,
+                text:text,
+                url:url
+            }).then(function (data){
+                // alert("Success! Successfully Shared")
+            }).catch(function (error){
+                alert("Sorry! Cannot be shared")
+            })
+        }
+        async function makeImage(image_url)
+        {
+            //adasdas
+            const blob = await fetch(image_url).then(r=>r.blob())
+            return blob;
+        }
+    </script>
     <div class="row">
         <div class="col-md-4 offset-md-4">
             <div style="width: 100%" class="myflex">
@@ -300,7 +303,8 @@
                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-clockwise" viewBox="0 0 16 16">
                         <path fill-rule="evenodd" d="M8 3a5 5 0 1 0 4.546 2.914.5.5 0 0 1 .908-.417A6 6 0 1 1 8 2v1z"/>
                         <path d="M8 4.466V.534a.25.25 0 0 1 .41-.192l2.36 1.966c.12.1.12.284 0 .384L8.41 4.658A.25.25 0 0 1 8 4.466z"/>
-                    </svg></button>
+                    </svg>
+                </button>
             </div>
         </div>
     </div>
