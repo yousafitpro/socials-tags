@@ -121,7 +121,7 @@
         <div class="col-md-4 offset-md-4 text-center searchLoader" >
             <br>
             <br>
-            <h4>Loading...</h4>
+            <h4 style="color: gray">Loading...</h4>
         </div>
     </div>
 
