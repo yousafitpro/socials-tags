@@ -117,13 +117,7 @@
 {{--        @include('iframe.Post',['type'=>'text','category'=>'native','id'=>'8'])--}}
 {{--        @include('iframe.Post',['type'=>'image','category'=>'youtube','id'=>'9'])--}}
     </div>
-    <div style="display: none">
-        <div class="col-md-4 offset-md-4 text-center searchLoader" >
-            <br>
-            <br>
-            <h4 style="color: gray">Loading...</h4>
-        </div>
-    </div>
+
 
     <script>
         var currentPage=2
@@ -139,8 +133,8 @@
                 data: {"_token": "{{ csrf_token() }}"},
                 beforeSend:function(){
                     $(".ajaxDiv").empty()
-                    $(".ajaxDiv").append($(".searchLoader"))
 
+                    $(".ajaxDiv").append('<div class="col-md-4 offset-md-4 text-center searchLoader" ><br><br><h4 style="color: gray">Loading...</h4></div>')
                     $(".loadMoreBtnOuter").css('display','none')
 
                     $(".btn1").css('display','none')

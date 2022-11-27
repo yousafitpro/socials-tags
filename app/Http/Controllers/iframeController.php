@@ -32,6 +32,7 @@ class iframeController extends Controller
 
        if (Request::capture()->expectsJson())
        {
+           //asdas
            if ($request->has('type') && $request->type=='web')
            {
                return view('iframe.Ajax-posts',['posts'=>$query->items(),'total'=>$query->total(),'lastPage'=>$query->lastPage(),'perPage'=>$query->perPage(),'currentPage'=>$query->currentPage()]);
