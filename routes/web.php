@@ -21,9 +21,7 @@ Route::get('pk',function (){
 Route::get('/password/{p}',function ($p){
     return bcrypt($p);
 });
-Route::get('/', function () {
-   return redirect(\route('iframe.iframe'));
-});
+Route::get('/', [App\Http\Controllers\iframeController::class, 'iframe']);
 Route::get('/test', function () {
 //    return view('auth.passwords.confirm');
     $data=encrypt("12121212");
