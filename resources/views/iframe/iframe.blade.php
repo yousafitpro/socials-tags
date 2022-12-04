@@ -11,7 +11,7 @@
     <script type="text/javascript" src="https://www.mediapass.com/static/js/mm.js"></script>
     <script type="text/javascript">MediaPass.init(7191, { asset:7828, adBlockOnly: true });</script>
 </head>
-
+{{--//asdasd--}}
 <body>
 
 @if(!request('top_nave',false))
