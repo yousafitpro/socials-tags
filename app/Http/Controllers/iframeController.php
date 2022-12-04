@@ -20,7 +20,7 @@ class iframeController extends Controller
         }
         else
         {
-            $query=$query->paginate(5);
+            $query=$query->paginate(50);
         }
 
 
