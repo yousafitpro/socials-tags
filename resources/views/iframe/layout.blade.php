@@ -11,7 +11,7 @@
     <script type="text/javascript">MediaPass.init(7191, { asset:7828, adBlockOnly: true });</script>
 
 </head>
-{{--//asdasd--}}
+
 <body>
 @include('iframe.css')
 @include('iframe.js')
