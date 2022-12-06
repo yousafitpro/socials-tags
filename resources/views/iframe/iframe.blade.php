@@ -1,6 +1,6 @@
 
 
-{{--@include('iframe.css')--}}
+@include('iframe.css')
 
     <!DOCTYPE html>
 
