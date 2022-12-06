@@ -2,12 +2,13 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <noscript><meta http-equiv="REFRESH" content="0; url=https://www.mediapass.com/subscription/noscriptredirect?key=7191&asset=7828&uri=votersnews.com"></noscript>
-    <script type="text/javascript" src="https://www.mediapass.com/static/js/mm.js"></script>
-    <script type="text/javascript">MediaPass.init(7191, { asset:7828, adBlockOnly: true });</script>
 
 </head>
 <body>
+<noscript><meta http-equiv="REFRESH" content="0; url=https://www.mediapass.com/subscription/noscriptredirect?key=7191&asset=7828&uri=votersnews.com"></noscript>
+<script type="text/javascript" src="https://www.mediapass.com/static/js/mm.js"></script>
+<script type="text/javascript">MediaPass.init(7191, { asset:7828, adBlockOnly: true });</script>
+
 
 <h2>HTML Links</h2>
 <p>HTML links are defined with the a tag:</p>
