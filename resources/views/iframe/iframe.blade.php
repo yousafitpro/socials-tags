@@ -12,10 +12,10 @@
     <script type="text/javascript">
 
         setTimeout(function (){
-            alert("ok")
+
             console.log(MediaPass)
             MediaPass.init(7191, { asset:7828 })
-        },3000)
+        },2000)
         ;</script>
 {{--asdasd--}}
 </head>
