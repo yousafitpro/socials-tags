@@ -9,7 +9,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <noscript><meta http-equiv="REFRESH" content="0; url=https://www.mediapass.com/subscription/noscriptredirect?key=7191&asset=7828&uri=votersnews.com"></noscript>
     <script type="text/javascript" src="https://www.mediapass.com/static/js/mm.js"></script>
-    <script type="text/javascript">MediaPass.init(7191, { asset:7828 });</script>
+    <script type="text/javascript">
+
+        setTimeout(function (){
+            alert("ok")
+            console.log(MediaPass)
+            MediaPass.init(7191, { asset:7828 })
+        },3000)
+        ;</script>
 {{--asdasd--}}
 </head>
 {{--//asdasd--}}
