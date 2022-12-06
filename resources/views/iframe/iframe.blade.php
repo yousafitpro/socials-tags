@@ -1,18 +1,6 @@
 @extends('iframe.layout')
 @section('content')
-    <!DOCTYPE html>
-<html>
-<head>
-    <noscript><meta http-equiv="REFRESH" content="0; url=https://www.mediapass.com/subscription/noscriptredirect?key=7191&asset=7828&uri=votersnews.com"></noscript>
-    <script type="text/javascript" src="https://www.mediapass.com/static/js/mm.js"></script>
-    <script type="text/javascript">MediaPass.init(7191, { asset:7828, adBlockOnly: true });</script>
 
-    <title>Voters News | Wall</title>
-    <link rel="icon" type="image/x-icon" href="{{asset('icon/fabicon.png')}}">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-</head>
-{{--//asdasd--}}
-<body>
 
 @if(!request('top_nave',false))
     <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm" >
@@ -310,9 +298,6 @@
     </div>
     <br>
 </div>
-</body>
-
-</html>
 
 
 @endsection
