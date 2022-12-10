@@ -1,4 +1,22 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
 
+    <title>My page title</title>
+    <noscript><meta http-equiv="REFRESH" content="0; url=https://www.mediapass.com/subscription/noscriptredirect?key=7191&asset=7828&uri=votersnews.com"></noscript>
+    <script type="text/javascript" src="https://www.mediapass.com/static/js/mm.js"></script>
+    <script type="text/javascript">MediaPass.init(7191, { asset:7828, adBlockOnly: true });</script>
+
+</head>
+<body>
+
+<h1>My First Heading</h1>
+<p>My first paragraph.</p>
+
+</body>
+</html>
 
 {{--@include('iframe.css')--}}
 
