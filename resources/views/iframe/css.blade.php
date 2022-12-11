@@ -1,6 +1,6 @@
 <!-- Latest compiled and minified CSS -->
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css">
-{{--<link rel="stylesheet" href="{{asset('css/wall.css')}}">--}}
+<link rel="stylesheet" href="{{asset('css/wall.css')}}">
 <style>
     .myFlex {
         display: flex;
@@ -40,5 +40,13 @@
         background-color: var(--primary);
         border: solid 1px darkred;
     }
-
+    /*aSAs*/
+    .myFlex {
+        padding: 0;
+        margin: 0;
+        list-style: none;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
 </style>
