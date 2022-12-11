@@ -1,26 +1,14 @@
-
-
-@include('iframe.css')
-
+@extends('iframe.layout')
+@section('content')
     <!DOCTYPE html>
-
 <html>
-
 <head>
-
-{{--    asdasd--}}
     <title>Voters News | Wall</title>
-
     <link rel="icon" type="image/x-icon" href="{{asset('icon/fabicon.png')}}">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <noscript><meta http-equiv="REFRESH" content="0; url=https://www.mediapass.com/subscription/noscriptredirect?key=7191&asset=7828&uri=votersnews.com"></noscript>
-    <script type="text/javascript" src="https://www.mediapass.com/static/js/mm.js"></script>
-    <script type="text/javascript">MediaPass.init(7191, { asset:7828, adBlockOnly: true });</script>
-
 </head>
-{{--//asdasd--}}
-<body>
 
+<body>
 @if(!request('top_nave',false))
     <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm" >
         <div class="container">
@@ -90,14 +78,14 @@
                 <input type="text" onkeyup="resetSearchInput()" class="form-control" id="searchText" style="text-align: center" placeholder="type here..." aria-label="Username" aria-describedby="basic-addon1">
                 <div class="input-group-prepend">
 
-                         <button class="btn btn-primary btn1"  style="width: 80px">
+                    <button class="btn btn-primary btn1"  style="width: 80px">
 
-                             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
 
-                                 <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"/>
-                             </svg>
+                            <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"/>
+                        </svg>
 
-                         </button>
+                    </button>
 
 
                     <button class="btn btn-primary btn2" onclick="window.location.reload()" style="display: none" >
@@ -119,15 +107,15 @@
 
 
 
-            @include('iframe.Ajax-posts')
+        @include('iframe.Ajax-posts')
 
-{{--        @include('iframe.Post',['type'=>'text','category'=>'native','id'=>'3'])--}}
-{{--        @include('iframe.Post',['type'=>'image','category'=>'youtube','id'=>'4'])--}}
-{{--        @include('iframe.Post',['type'=>'image','category'=>'youtube','id'=>'5'])--}}
-{{--        @include('iframe.Post',['type'=>'image','category'=>'youtube','id'=>'6'])--}}
-{{--        @include('iframe.Post',['type'=>'text','category'=>'native','id'=>'7'])--}}
-{{--        @include('iframe.Post',['type'=>'text','category'=>'native','id'=>'8'])--}}
-{{--        @include('iframe.Post',['type'=>'image','category'=>'youtube','id'=>'9'])--}}
+        {{--        @include('iframe.Post',['type'=>'text','category'=>'native','id'=>'3'])--}}
+        {{--        @include('iframe.Post',['type'=>'image','category'=>'youtube','id'=>'4'])--}}
+        {{--        @include('iframe.Post',['type'=>'image','category'=>'youtube','id'=>'5'])--}}
+        {{--        @include('iframe.Post',['type'=>'image','category'=>'youtube','id'=>'6'])--}}
+        {{--        @include('iframe.Post',['type'=>'text','category'=>'native','id'=>'7'])--}}
+        {{--        @include('iframe.Post',['type'=>'text','category'=>'native','id'=>'8'])--}}
+        {{--        @include('iframe.Post',['type'=>'image','category'=>'youtube','id'=>'9'])--}}
     </div>
 
 
@@ -317,10 +305,9 @@
     </div>
     <br>
 </div>
-@include('iframe.js')
 </body>
 
 </html>
 
 
-
+@endsection
