@@ -75,7 +75,7 @@
     </div>
 </div>
 
-@if((auth()->check()=='1' && auth()->user()->valid_till<today_date() || auth()->user()->valid_till=='renew' || auth()->user()->valid_till==null) || !auth()->check())
+@if((auth()->check() && (auth()->user()->valid_till<today_date() || auth()->user()->valid_till=='renew' || auth()->user()->valid_till==null)) || !auth()->check())
 
     <script>
 
