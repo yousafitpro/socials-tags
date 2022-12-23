@@ -34,6 +34,9 @@
                 </li>
 
 
+                <li>
+                    <a href="{{url('paypal/payments')}}"><i class="fa fa-product-hunt"></i> <span class="nav-label">Paypal Payments</span></a>
+                </li>
 
 
 

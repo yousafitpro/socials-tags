@@ -14,6 +14,11 @@ class paypalController extends Controller
     {
         return view('paypal.complete_payment');
     }
+    public function payments(Request $request)
+    {
+        $data['list']=paypalPayment::query()->latest('created_at')->with('user')->get();
+        return view('paypal.payments',$data);
+    }
     public function init_payment(Request $request)
     {
         $data=$request->except('_token');
