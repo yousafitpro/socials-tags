@@ -47,24 +47,31 @@
 
                </div>
 
-                  <hr>
-                    <div class="row" style="margin-top: 5px">
-                        <div class="col-1">
+                  <br>
+                  <br>
+                    <div style="width: 100%;">
+                        <div style="width: 10%; float: left">
 
                             <input style="zoom: 1.2;  margin-top: 3px" type="radio" name="memberType">
                         </div>
-                        <div class="col-6" style="font-size: 15px">
+
+                        <div style="width: 50%; float: left;text-align: left">
                             <strong>1 Month Membership</strong>
                         </div>
-                        <div class="col-5" style="text-align: right">
+
+                        <span style="width: 40%; float: left; text-align: right">
+
                             <strong style="color: gray">$4.99</strong>
                             /
-                            <strong>month</strong>
-                        </div>
+                            <strong>year</strong>
+</span>
+
+
                     </div>
-                    <br>
-                    <br>
-                    <br>
+
+<br>
+<br>
+<br>
                     <div class="row">
 
                         <div class="col-4 offset-4">
