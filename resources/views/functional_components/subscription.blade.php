@@ -43,6 +43,7 @@
                     </div>
 
                   <hr>
+                    <br>
                     <div class="row" style="margin-top: 5px">
                         <div class="col-1">
 
