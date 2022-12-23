@@ -27,19 +27,25 @@
                 <div style="min-height: 150px;">
                 <div class="container-fluid">
                     <br>
+               <div style="width: 100%;">
+                   <div style="width: 10%; float: left">
 
+                       <input style="zoom: 1.2;  margin-top: 3px" type="radio" name="memberType">
+                   </div>
 
-                            <input style="zoom: 1.2;  margin-top: 3px" type="radio" name="memberType">
+                   <div style="width: 60%; float: left;text-align: left">
+                       <strong>1 Year Membership</strong>
+                   </div>
 
-
-                            <strong>1 Year Membership</strong>
-
+                   <span style="width: 30%; float: left; text-align: right">
 
                             <strong style="color: gray">$39.99</strong>
                             /
                             <strong>year</strong>
+</span>
 
 
+               </div>
 
                   <hr>
                     <div class="row" style="margin-top: 5px">
