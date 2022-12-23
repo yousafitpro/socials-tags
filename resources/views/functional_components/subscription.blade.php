@@ -69,7 +69,7 @@
 
                             <strong style="color: gray">$4.99</strong>
                             /
-                            <strong>year</strong>
+                            <strong>month</strong>
 </span>
 
 
