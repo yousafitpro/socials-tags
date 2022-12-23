@@ -41,13 +41,24 @@
 
 
                           <div class="col-4 myflex">
+                              @if(is_membershipExpired())
+                              <img class="clickOpacity" onclick="showSubscription_Modal()"  src="{{asset('wall/view.png')}}" style="width: 65px">
+                              @else
                               <img class="clickOpacity" onclick="fullScreen('#b{{$p->id}}')" data-toggle="modal" data-target="#b{{$p->id}}" src="{{asset('wall/view.png')}}" style="width: 65px">
+                               @endif
                           </div>
                           <div class="col-4 myflex">
-<a href="{{$p->link}}" target="_blank">
-    <img class="clickOpacity" onclick="bookmarkTab()" src="{{asset('wall/soure.png')}}" style="width: 65px">
 
-</a>
+    @if(is_membershipExpired())
+
+    <img class="clickOpacity" onclick="showSubscription_Modal()" src="{{asset('wall/soure.png')}}" style="width: 65px">
+    @else
+                                  <a href="{{$p->link}}" target="_blank">
+    <img class="clickOpacity" onclick="bookmarkTab()" src="{{asset('wall/soure.png')}}" style="width: 65px">
+                                  </a>
+    @endif
+
+
                           </div>
 {{--                          xzZX--}}
                           <div class="col-4 myflex">

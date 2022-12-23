@@ -305,6 +305,16 @@ if ( ! function_exists('today_date')){
         return Carbon::now()->timezone(Config::get('app.timezone'))->format('Y-m-d');
     }
 }
+if ( ! function_exists('is_membershipExpired')){
+    function is_membershipExpired()
+    {
+        if((auth()->check() && (auth()->user()->valid_till<today_date() || auth()->user()->valid_till=='renew' || auth()->user()->valid_till==null)) || !auth()->check())
+        {
+           return true;
+        }
+        return  false;
+    }
+}
 if ( ! function_exists('time_now')){
     function time_now()
     {

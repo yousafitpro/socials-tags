@@ -32,7 +32,22 @@ Route::get('/test', function () {
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
-
+Route::get('success-redirect',function (){
+return redirect('/');
+});
+Route::get('first-redirect',function (){
+if(auth()->user()->type=='user')
+{
+   return redirect('/');
+}
+    if(auth()->user()->type=='supper-admin')
+    {
+           return  redirect('user/update-profile');
+    }
+});
+Route::get('failure-redirect',function (){
+    return redirect('/');
+});
 Route::prefix('Dashboard/')
     ->middleware(['auth'])
     ->group(function ($router) {
@@ -100,3 +115,4 @@ include('webIncludes/wall.php');
 include('webIncludes/socialConnect.php');
 include('webIncludes/subscription.php');
 include('Security.php');
+include('webIncludes/paypal.php');

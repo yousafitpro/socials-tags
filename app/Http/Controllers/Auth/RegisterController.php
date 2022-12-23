@@ -70,8 +70,10 @@ class RegisterController extends Controller
         $user=new User();
         $user->fname=$data['name'];
         $user->email=$data['email'];
+        $user->type='user';
         $user->password=Hash::make($data['password']);
         $user->save();
+
         return  $user;
     }
 }

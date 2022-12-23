@@ -13,7 +13,12 @@
 <script>
     function fullScreen(id)
     {
-        document.querySelector(id).requestFullscreen();
+
+        if(!checkSubscription())
+        {
+            document.querySelector(id).requestFullscreen();
+        }
+
 
     }
     function exitFullScreen(type,data)
