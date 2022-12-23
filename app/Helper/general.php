@@ -305,6 +305,7 @@ if ( ! function_exists('today_date')){
         return Carbon::now()->timezone(Config::get('app.timezone'))->format('Y-m-d');
     }
 }
+//asdasd
 if ( ! function_exists('is_membershipExpired')){
     function is_membershipExpired()
     {
