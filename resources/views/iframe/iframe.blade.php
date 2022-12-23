@@ -1,5 +1,6 @@
 @extends('iframe.layout')
 @section('content')
+    @include('functional_components.subscription')
     <!DOCTYPE html>
 <html>
 <head>
