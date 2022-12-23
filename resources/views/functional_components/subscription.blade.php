@@ -30,7 +30,7 @@
                     <div class="row">
                         <div class="col-1">
 
-                            <input style="  margin-top: 3px" type="radio" name="memberType">
+                            <input style="zoom: 1.5;  margin-top: 3px" type="radio" name="memberType">
                         </div>
                         <div class="col-6"  >
                             <strong>1 Year Membership</strong>
@@ -43,13 +43,12 @@
                     </div>
 
                   <hr>
-                    <br>
                     <div class="row" style="margin-top: 5px">
                         <div class="col-1">
 
-                            <input style="  margin-top: 3px" type="radio" name="memberType">
+                            <input style="zoom: 1.5;  margin-top: 3px" type="radio" name="memberType">
                         </div>
-                        <div class="col-6" style="font-size: 10px">
+                        <div class="col-6" style="font-size: 15px">
                             <strong>1 Month Membership</strong>
                         </div>
                         <div class="col-5" style="text-align: right">
