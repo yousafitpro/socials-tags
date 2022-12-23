@@ -49,7 +49,7 @@
 
                             <input style="zoom: 1.5;  margin-top: 3px" type="radio" name="memberType">
                         </div>
-                        <div class="col-6" style="font-size: 15px">
+                        <div class="col-6" style="font-size: 10px">
                             <strong>1 Month Membership</strong>
                         </div>
                         <div class="col-5" style="text-align: right">
