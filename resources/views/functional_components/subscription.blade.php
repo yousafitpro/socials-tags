@@ -36,7 +36,7 @@
                             <strong>1 Year Membership</strong>
                         </div>
                         <div class="col-6" style="text-align: right">
-                            <strong style="color: gray">$50.95</strong>
+                            <strong style="color: gray">$39.99</strong>
                             /
                             <strong>year</strong>
                         </div>
@@ -51,7 +51,7 @@
                             <strong>1 Month Membership</strong>
                         </div>
                         <div class="col-6" style="text-align: right">
-                            <strong style="color: gray">$7.95</strong>
+                            <strong style="color: gray">$4.99</strong>
                             /
                             <strong>month</strong>
                         </div>
