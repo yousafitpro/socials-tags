@@ -74,12 +74,12 @@
         </div>
     </div>
 </div>
-@if((auth()->check() && auth()->user()->valid_till<today_date() || auth()->user()->valid_till=='renew' || auth()->user()->valid_till==null) || !auth()->check())
+{{--@if((auth()->check() && auth()->user()->valid_till<today_date() || auth()->user()->valid_till=='renew' || auth()->user()->valid_till==null) || !auth()->check())--}}
 
-    <script>
+{{--    <script>--}}
 
-        $(document).ready(function(){
-            $("#subscriptionModal").modal();
-        });
-    </script>
-@endif
+{{--        $(document).ready(function(){--}}
+{{--            $("#subscriptionModal").modal();--}}
+{{--        });--}}
+{{--    </script>--}}
+{{--@endif--}}
