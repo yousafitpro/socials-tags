@@ -16,7 +16,7 @@
 
             </div>
             <div class="modal-body" style="padding: 0; margin: 0">
-            <div style="background-color: #127764; height: 150px; width: 100%; color: white; padding: 10px">
+            <div style="background-color: #127764; min-height: 150px; width: 100%; color: white; padding: 10px">
                <small>
                    <label>Digital Subscribers Receive:</label><br>
                   -> Unlimited access to all of our great content from any device at any time.<br>
