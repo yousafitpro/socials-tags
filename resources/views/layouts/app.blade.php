@@ -54,9 +54,9 @@
                             </li>
                             <!-- Authentication Links -->
                             @guest
-                                <li class="nav-item" >
-                                    <a class="nav-link" href="{{url('privacy-policy')}}">Privacy Policy</a>
-                                </li>
+{{--                                <li class="nav-item" >--}}
+{{--                                    <a class="nav-link" href="{{url('privacy-policy')}}">Privacy Policy</a>--}}
+{{--                                </li>--}}
 
 
                                 {{--                            @if (Route::has('login'))--}}
@@ -86,12 +86,12 @@
 
                             @endguest
                             @if(!auth()->check())
-                                <li class="nav-item" >
-                                    <a class="nav-link" href="{{url('register')}}">Register</a>
-                                </li>
-                                <li class="nav-item" >
-                                    <a class="nav-link" href="{{url('login')}}">Login</a>
-                                </li>
+{{--                                <li class="nav-item" >--}}
+{{--                                    <a class="nav-link" href="{{url('register')}}">Register</a>--}}
+{{--                                </li>--}}
+{{--                                <li class="nav-item" >--}}
+{{--                                    <a class="nav-link" href="{{url('login')}}">Login</a>--}}
+{{--                                </li>--}}
                             @endif
 
 

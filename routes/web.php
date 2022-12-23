@@ -35,6 +35,10 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 Route::get('success-redirect',function (){
 return redirect('/');
 });
+Route::get('logout',function (){
+    auth()->logout();
+    return redirect('/');
+});
 Route::get('first-redirect',function (){
 if(auth()->user()->type=='user')
 {

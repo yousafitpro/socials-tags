@@ -73,8 +73,11 @@
                             <a class="nav-link" href="{{url('login')}}">Login</a>
                         </li>
                     @endif
-
-
+                    @if(auth()->check())
+                    <li class="nav-item" >
+                        <a class="nav-link" href="{{url('logout')}}">Logout</a>
+                    </li>
+                    @endif
 
                 </ul>
             </div>
