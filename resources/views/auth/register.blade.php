@@ -8,7 +8,7 @@
             <div class="card">
                 <br>
 
-                <h3 class="text-center">Signup</h3>
+                <h3 class="text-center">Register</h3>
 
 
                 <div class="card-body">

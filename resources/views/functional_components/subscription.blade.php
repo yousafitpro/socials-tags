@@ -6,11 +6,7 @@
 
 
 <!-- Modal -->
-<script
-    src="https://code.jquery.com/jquery-3.5.1.js"
-    integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc="
-    crossorigin="anonymous">
-</script>
+
 <div class="modal fade"   id="subscriptionModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true" data-keyboard="false" data-backdrop="static">
     <div class="modal-dialog " role="document">
         <div class="modal-content">
@@ -21,6 +17,11 @@
 
             </div>
             <div class="modal-body" style="padding: 0; margin: 0">
+                @if(!auth()->check())
+                <div style="padding: 10px; color: darkred">
+                    <label>Please <a href="{{url('register')}}">register</a> yourself before subscription or <a href="{{url('login')}}">Login here </a> </label>
+                </div>
+                @endif
                 <div style="background-color: #127764; min-height: 150px; width: 100%; color: white; padding: 10px">
                     <small>
                         <label>Digital Subscribers Receive:</label><br>

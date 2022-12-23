@@ -37,6 +37,8 @@
                         <li class="nav-item" >
                             <a class="nav-link" href="{{url('privacy-policy')}}">Privacy Policy</a>
                         </li>
+
+
                         {{--                            @if (Route::has('login'))--}}
                         {{--                                <li class="nav-item">--}}
                         {{--                                    <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>--}}
@@ -50,19 +52,29 @@
                         {{--                                </li>--}}
                         {{--                            @endif--}}
                     @else
-                            <?php
-                        if (auth()->check())
-                        {
-                            ?>
-                        <li class="nav-item">
-                            <a class="nav-link" href="{{route('user.showProfile')}}">Go to Dashboard</a>
-                        </li>
-                            <?php
-                        }
-                            ?>
+{{--                            <?php--}}
+{{--                        if (auth()->check())--}}
+{{--                        {--}}
+{{--                            ?>--}}
+{{--                        <li class="nav-item">--}}
+{{--                            <a class="nav-link" href="{{route('user.showProfile')}}">Go to Dashboard</a>--}}
+{{--                        </li>--}}
+{{--                            <?php--}}
+{{--                        }--}}
+{{--                            ?>--}}
 
 
                     @endguest
+                    @if(!auth()->check())
+                    <li class="nav-item" >
+                        <a class="nav-link" href="{{url('register')}}">Register</a>
+                    </li>
+                    @endif
+
+                    <li class="nav-item" >
+                        <a class="nav-link" href="{{url('login')}}">Login</a>
+                    </li>
+
                 </ul>
             </div>
         </div>
