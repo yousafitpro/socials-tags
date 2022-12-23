@@ -33,11 +33,11 @@
                        <input style="zoom: 1.2;  margin-top: 3px" type="radio" name="memberType">
                    </div>
 
-                   <div style="width: 60%; float: left;text-align: left">
+                   <div style="width: 50%; float: left;text-align: left">
                        <strong>1 Year Membership</strong>
                    </div>
 
-                   <span style="width: 30%; float: left; text-align: right">
+                   <span style="width: 40%; float: left; text-align: right">
 
                             <strong style="color: gray">$39.99</strong>
                             /
