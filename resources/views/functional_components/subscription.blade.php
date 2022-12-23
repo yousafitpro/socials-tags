@@ -32,25 +32,26 @@
 
                             <input style="zoom: 1.5;  margin-top: 3px" type="radio" name="memberType">
                         </div>
-                        <div class="col-5">
+                        <div class="col-6"  >
                             <strong>1 Year Membership</strong>
                         </div>
-                        <div class="col-6" style="text-align: right">
+                        <div class="col-5" style="text-align: right;">
                             <strong style="color: gray">$39.99</strong>
                             /
                             <strong>year</strong>
                         </div>
                     </div>
                     <br>
+                    <br>
                     <div class="row">
                         <div class="col-1">
 
                             <input style="zoom: 1.5;  margin-top: 3px" type="radio" name="memberType">
                         </div>
-                        <div class="col-5">
+                        <div class="col-6" style="font-size: 15px">
                             <strong>1 Month Membership</strong>
                         </div>
-                        <div class="col-6" style="text-align: right">
+                        <div class="col-5" style="text-align: right">
                             <strong style="color: gray">$4.99</strong>
                             /
                             <strong>month</strong>
