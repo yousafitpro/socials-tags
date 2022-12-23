@@ -43,7 +43,7 @@
                     </div>
 
                   <hr>
-                    <div class="row" style="margin-top: 2px">
+                    <div class="row" style="margin-top: 5px">
                         <div class="col-1">
 
                             <input style="zoom: 1.5;  margin-top: 3px" type="radio" name="memberType">
