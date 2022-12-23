@@ -3,7 +3,7 @@
 
 
     @section('content')
-
+        @include('functional_components.subscription')
            <div style="height:{{!request('top_nave',false)?'90vh':'100vh'}}; overflow: auto">
         <div class="container-fluid">
             <div class="row">
@@ -51,5 +51,10 @@
                <br>
                <br>
            </div>
+        @if(is_membershipExpired())
+            <script>
+                showSubscription_Modal()
+            </script>
+            @endif
     @endsection
 
