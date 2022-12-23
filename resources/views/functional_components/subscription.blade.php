@@ -27,7 +27,6 @@
                 <div style="min-height: 150px;">
                 <div class="container-fluid">
                     <br>
-                    <div class="row">
 
 
                             <input style="zoom: 1.2;  margin-top: 3px" type="radio" name="memberType">
