@@ -111,7 +111,7 @@
     }
     function submitSubcriptionNowStep1()
     {
-        window.location.href='{{url('paypal/complete-payment')}}?amount='+G_amount+'&plan='+type
+        window.location.href='{{url('paypal/complete-payment')}}/'+type
     }
 
 
