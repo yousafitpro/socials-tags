@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\User;
+use App\Models\UserSetting;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use App\Http\Controllers\Controller;
@@ -119,9 +120,18 @@ class AuthController extends Controller
     protected function respondWithToken($token)
     {
 
+        if (auth('api')->check() && auth('api')->user()->id!=who_is_admin() && (auth('api')->user()->valid_till<today_date() || auth('api')->user()->valid_till=='renew' || auth('api')->user()->valid_till==null))
+        {
+            // SubscriptionController::autoRenewAUser(auth()->user());
+            ENVController::beforeLogin(auth('api')->user());
+            $p=UserSetting::where('user_id',auth('api')->user()->id)->first();
+            $p->is_membership_expired='true';
+            $p->save();
+        }
         return response()->json([
             'access_token' => $token,
             'token_type' => 'bearer',
+            'setting'=>UserSetting::where('user_id',auth('api')->user()->id)->first(),
             'user' =>auth('api')->user(),
             'expires_in' => Auth::guard('api')->factory()->getTTL() * 60
         ]);
