@@ -19,7 +19,7 @@
                     <a href="{{url('failure-redirect')}}">X</a>
                 </h3>
 
-            <h2 style="text-align: center"><span style="color: gray">{{request('amount')}} $</span>/ {{request('plan')}}</h2>
+            <h2 style="text-align: center"><span style="color: gray">{{$amount}} $</span>/ {{request('plan')}}</h2>
             <br>
             <div id="paypal-button-container"></div>
             </div>
