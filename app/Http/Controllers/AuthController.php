@@ -128,11 +128,12 @@ class AuthController extends Controller
             $p->is_membership_expired='true';
             $p->save();
         }
+        $user=auth('api')->user();
+        $user->setting=UserSetting::where('user_id',auth('api')->user()->id)->first()
         return response()->json([
             'access_token' => $token,
             'token_type' => 'bearer',
-            'setting'=>UserSetting::where('user_id',auth('api')->user()->id)->first(),
-            'user' =>auth('api')->user(),
+            'user' =>$user,
             'expires_in' => Auth::guard('api')->factory()->getTTL() * 60
         ]);
     }
