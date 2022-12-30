@@ -10,8 +10,9 @@ use Illuminate\Support\Facades\Config;
 
 class paypalController extends Controller
 {
-    public function complete_payment(Request $request)
+    public function complete_payment(Request $request,$plan)
     {
+        dd($plan);
         return view('paypal.complete_payment');
     }
     public function payments(Request $request)
