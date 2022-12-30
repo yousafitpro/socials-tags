@@ -43,7 +43,7 @@
 <script src="https://www.paypal.com/sdk/js?client-id=test&currency=USD&intent=capture&enable-funding=venmo" data-sdk-integration-source="integrationbuilder"></script>
 <script>
 
-    var G_amount='{{request('amount')}}'
+    var G_amount='{{$amount}}'
     const paypalButtonsComponent = paypal.Buttons({
         // optional styling for buttons
         // https://developer.paypal.com/docs/checkout/standard/customize/buttons-style-guide/
