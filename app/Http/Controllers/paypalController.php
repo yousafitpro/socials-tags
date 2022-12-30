@@ -12,8 +12,16 @@ class paypalController extends Controller
 {
     public function complete_payment(Request $request,$plan)
     {
-        dd($plan);
-        return view('paypal.complete_payment');
+        $amount=39.99;
+        if($plan=='month')
+        {
+            $amount=4.99;
+        }
+        if($plan=='year')
+        {
+            $amount=39.99;
+        }
+        return view('paypal.complete_payment',['amount'=>$amount,'plan'=>$plan]);
     }
     public function payments(Request $request)
     {
