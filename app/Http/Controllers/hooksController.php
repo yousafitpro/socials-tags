@@ -29,7 +29,7 @@ class hooksController extends Controller
         ];
 
         if (Auth::attempt($credentials)) {
-            return redirect($request->redirectUrl.'?is_from_login='.$request->is_from_login);
+            return redirect($request->redirectUrl);
         }
    abort(401);
         return redirect($request->redirectUrl);
