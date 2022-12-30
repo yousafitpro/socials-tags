@@ -129,7 +129,7 @@ class AuthController extends Controller
             $p->save();
         }
         $user=auth('api')->user();
-        $user->setting=UserSetting::where('user_id',auth('api')->user()->id)->first()
+        $user->setting=UserSetting::where('user_id',auth('api')->user()->id)->first();
         return response()->json([
             'access_token' => $token,
             'token_type' => 'bearer',
