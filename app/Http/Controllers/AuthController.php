@@ -119,17 +119,15 @@ class AuthController extends Controller
      */
     protected function respondWithToken($token)
     {
-        ENVController::beforeLogin(auth('api')->user());
+        $user=auth('api')->user();
+        $user->is_membership_expired=false;
+
         if (auth('api')->check() && auth('api')->user()->id!=who_is_admin() && (auth('api')->user()->valid_till<today_date() || auth('api')->user()->valid_till=='renew' || auth('api')->user()->valid_till==null))
         {
             // SubscriptionController::autoRenewAUser(auth()->user());
-
-            $p=UserSetting::where('user_id',auth('api')->user()->id)->first();
-            $p->is_membership_expired='true';
-            $p->save();
+            $user->is_membership_expired=true;
         }
-        $user=auth('api')->user();
-        $user->setting=auth('api')->user()->id;
+
         return response()->json([
             'access_token' => $token,
             'token_type' => 'bearer',
