@@ -1,8 +1,13 @@
 
+<!DOCTYPE html>
+<html>
 <head>
-{{--    <meta charset="UTF-8">--}}
-{{--    <meta name="viewport" content="width=device-width, initial-scale=1.0">--}}
+    <title>Payment Page</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
+<body>
+
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 <br>
 <br>
@@ -19,9 +24,9 @@
                     <a href="{{url('failure-redirect')}}">X</a>
                 </h3>
 
-            <h2 style="text-align: center"><span style="color: gray">{{$amount}}$</span>/ {{request('plan')}}</h2>
-            <br>
-            <div id="paypal-button-container"></div>
+                <h2 style="text-align: center"><span style="color: gray">{{$amount}}$</span>/ {{request('plan')}}</h2>
+                <br>
+                <div id="paypal-button-container"></div>
             </div>
 
         </div>
@@ -38,7 +43,7 @@
 <script src="https://www.paypal.com/sdk/js?client-id=test&currency=USD&intent=capture&enable-funding=venmo" data-sdk-integration-source="integrationbuilder"></script>
 <script>
 
-var G_amount='{{request('amount')}}'
+    var G_amount='{{request('amount')}}'
     const paypalButtonsComponent = paypal.Buttons({
         // optional styling for buttons
         // https://developer.paypal.com/docs/checkout/standard/customize/buttons-style-guide/
@@ -115,3 +120,7 @@ var G_amount='{{request('amount')}}'
             console.error('PayPal Buttons failed to render');
         });
 </script>
+</body>
+</html>
+
+
