@@ -33,6 +33,7 @@ Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 Route::get('success-redirect',function (){
+    sleep(2);
 return redirect('/');
 });
 Route::get('logout',function (){
@@ -50,6 +51,8 @@ if(auth()->user()->type=='user')
     }
 });
 Route::get('failure-redirect',function (){
+
+    sleep(2);
     return redirect('/');
 });
 Route::prefix('Dashboard/')

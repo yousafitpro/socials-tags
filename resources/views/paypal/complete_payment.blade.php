@@ -83,7 +83,7 @@
                 var status=details.status
                 var order_link=details.links[0].href
                 var plan='{{request('plan')}}'
-                var amount='{{request('amount')}}'
+                var amount='{{$amount}}'
                 $.ajax({
                     url:"{{url('paypal/init-payment')}}",
                     method:'post',
@@ -102,7 +102,9 @@
 
                     }
                 })
-                window.location.href='{{url('success-redirect')}}'
+                setTimeout(function (){
+                    window.location.href='{{url('success-redirect')}}'
+                },2000)
             };
 
             return actions.order.capture().then(captureOrderHandler);
@@ -111,6 +113,7 @@
         // handle unrecoverable errors
         onError: (err) => {
             console.error('An error ',err);
+            window.location.href='{{url('failure-redirect')}}'
         }
     });
 
