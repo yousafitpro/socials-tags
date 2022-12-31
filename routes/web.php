@@ -37,7 +37,7 @@ Route::get('success-redirect',function (){
 return redirect('/');
 });
 Route::get('failure-redirect',function (){
-dd("ok");
+
     sleep(2);
     return redirect('/');
 });
