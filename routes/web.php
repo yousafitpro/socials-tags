@@ -32,15 +32,8 @@ Route::get('/test', function () {
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
-Route::get('success-redirect',function (){
-    sleep(2);
-return redirect('/');
-});
-Route::get('failure-redirect',function (){
-
-    sleep(2);
-    return redirect('/');
-});
+Route::get('success-redirect',[App\Http\Controllers\iframeController::class, 'iframe']);
+Route::get('failure-redirect',[App\Http\Controllers\iframeController::class, 'iframe']);
 Route::get('logout',function (){
     auth()->logout();
     return redirect('/');
