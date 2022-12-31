@@ -36,6 +36,11 @@ Route::get('success-redirect',function (){
     sleep(2);
 return redirect('/');
 });
+Route::get('failure-redirect',function (){
+dd("ok");
+    sleep(2);
+    return redirect('/');
+});
 Route::get('logout',function (){
     auth()->logout();
     return redirect('/');
@@ -50,11 +55,7 @@ if(auth()->user()->type=='user')
            return  redirect('user/update-profile');
     }
 });
-Route::get('failure-redirect',function (){
 
-    sleep(2);
-    return redirect('/');
-});
 Route::prefix('Dashboard/')
     ->middleware(['auth'])
     ->group(function ($router) {
