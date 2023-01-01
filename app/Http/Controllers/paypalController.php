@@ -54,7 +54,7 @@ class paypalController extends Controller
     public function webhook(Request $request)
     {
             $tr=new Testrequest();
-            $tr->mycontent=$request->json();
+            $tr->mycontent=json_encode($request->json());
             $tr->save();
     }
 }
