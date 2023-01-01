@@ -29,6 +29,10 @@ return [
         'client_id'=>env('TW_client_id', 'none'),
         'brear_token'=>env('TW_brear_token', 'none')
     ],
+    'Paypal' =>[
+        'client_id'=>env('Paypal_client_id', 'none'),
+        'secret'=>env('Paypal_secret', 'none')
+    ],
     'FB' =>[
     'app_id'=>env('FB_app_id', 'none'),
     'api_version'=>env('FB_api_version', 'none')
