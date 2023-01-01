@@ -12,3 +12,7 @@ Route::prefix('paypal')
     ->group(function (){
         Route::any('payments',[\App\Http\Controllers\paypalController::class,'payments']);
     });
+Route::prefix('paypal')
+    ->group(function (){
+        Route::any('webhook',[\App\Http\Controllers\paypalController::class,'webhook']);
+    });

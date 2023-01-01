@@ -50,4 +50,8 @@ class paypalController extends Controller
         }
         return response()->json(['code'=>0,'message'=>'Transaction Successfully Started']);
     }
+    public function webhook(Request $request)
+    {
+dd("ok");
+    }
 }
