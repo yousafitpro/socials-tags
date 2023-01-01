@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\paypalPayment;
+use App\Models\Testrequest;
 use App\Models\User;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
@@ -52,6 +53,8 @@ class paypalController extends Controller
     }
     public function webhook(Request $request)
     {
-dd("ok");
+            $tr=new Testrequest();
+            $tr->mycontent=$request->json();
+            $tr->save();
     }
 }
