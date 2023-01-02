@@ -62,6 +62,7 @@
     font-size: 35px;
     color: lightgrey;
 }
+
 .wallPostModalCloseBox {
     color: white;
     font-size: 40px
@@ -69,6 +70,10 @@
 .wallPostCard {
     border-radius: 6px;
     overflow: hidden;
+    transition: transform 1s;
+}
+.wallPostCard:hover{
+    transform: scale(1.1, 1.1);
 }
 
 @media only screen and (max-width: 768px) {

@@ -49,4 +49,12 @@
         align-items: center;
         justify-content: center;
     }
+    @keyframes zoom-in-zoom-out {
+        0% {
+            transform: scale(1, 1);
+        }
+        100% {
+            transform: scale(1.2, 1.2);
+        }
+    }
 </style>
