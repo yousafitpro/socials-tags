@@ -53,6 +53,7 @@ class paypalController extends Controller
     }
     public function webhook(Request $request)
     {
+        //PAYMENT.CAPTURE.COMPLETED
             $tr=new Testrequest();
             $tr->mycontent="ok";
             $tr->save();
