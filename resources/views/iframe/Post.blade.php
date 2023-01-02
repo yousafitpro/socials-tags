@@ -1,5 +1,5 @@
 
-        <div class="col-md-3 mt-3"  >
+        <div class="col-xl-3 col-lg-4 col-md-6  col-sm-8    mt-3"  >
             <div class="card shadow wallPostCard" >
                 <input value="{{$p->link}}" hidden id="{{$p->id}}myInput">
               @if($type=="image")
