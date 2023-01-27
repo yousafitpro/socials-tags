@@ -18,7 +18,7 @@ class post extends Model
     }
     public function user()
     {
-        return $this->hasOne(User::class,'role_id', 'id');
+        return $this->belongsTo(User::class,);
     }
     public function image_url()
     {

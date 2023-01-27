@@ -24,11 +24,17 @@
                 </div>
             </li>
 
-          @if(Auth::user()->type=='supper-admin')
+          @if(Auth::user()->hasRole('admin'))
                 <li>
-                    <a href="{{route('admin.dashboard')}}"><i class="fa fa-th-large"></i> <span class="nav-label">Dashboard 34</span></a>
+                    <a href="{{route('admin.dashboard')}}"><i class="fa fa-th-large"></i> <span class="nav-label">Dashboard </span></a>
                 </li>
-
+            @endif
+            @if(Auth::user()->hasRole('creator') || Auth::user()->hasRole('admin'))
+                <li>
+                    <a href="{{route('admin.post.getAll')}}"><i class="fa fa-pencil-square-o"></i> <span class="nav-label">Manage Wall Posts</span></a>
+                </li>
+            @endif
+            @if(Auth::user()->hasRole('admin'))
                 <li>
                     <a href="{{url('social-connect/index')}}"><i class="fa fa-link"></i> <span class="nav-label">Social Connections</span></a>
                 </li>
@@ -55,10 +61,10 @@
                     </ul>
                 </li>
               @endif
-            @if(Auth::user()->type=='user' || Auth::user()->type=='supper-admin')
-                <li>
-                    <a href="{{route('daily.create')}}" target="_blank"><i class="fa fa-video-camera"></i> <span class="nav-label">Meet</span></a>
-                </li>
+            @if(Auth::user()->hasRole('user') || Auth::user()->hasRole('admin'))
+{{--                <li>--}}
+{{--                    <a href="{{route('daily.create')}}" target="_blank"><i class="fa fa-video-camera"></i> <span class="nav-label">Meet</span></a>--}}
+{{--                </li>--}}
 {{--            <li>--}}
 {{--                <a href="{{route('admin.game.getAll')}}"><i class="fa fa-gamepad"></i> <span class="nav-label">Games</span></a>--}}
 {{--            </li>--}}
@@ -66,19 +72,17 @@
 {{--            <li>--}}
 {{--                <a href="{{route('user.walletAmounts')}}"><i class="fa fa-google-wallet"></i> <span class="nav-label">Wallet</span></a>--}}
 {{--            </li>--}}
-                        <li>
-                            <a href="{{ route('official.search') }}"><i class="fa fa-users"></i> <span class="nav-label">Officials</span></a>
-                        </li>
+{{--                        <li>--}}
+{{--                            <a href="{{ route('official.search') }}"><i class="fa fa-users"></i> <span class="nav-label">Officials</span></a>--}}
+{{--                        </li>--}}
 
-            <li>
-                <a href="{{route('admin.post.getAll')}}"><i class="fa fa-pencil-square-o"></i> <span class="nav-label">Manage Wall Posts</span></a>
-            </li>
-            <li>
-                <a href="{{ route('ligiscan.search') }}"><i class="fa fa-users"></i> <span class="nav-label">legiscan</span></a>
-            </li>
-            <li>
-                <a href="{{ route('regulationsgov.search') }}"><i class="fa fa-users"></i> <span class="nav-label">RegulationsGov</span></a>
-            </li>
+
+{{--            <li>--}}
+{{--                <a href="{{ route('ligiscan.search') }}"><i class="fa fa-users"></i> <span class="nav-label">legiscan</span></a>--}}
+{{--            </li>--}}
+{{--            <li>--}}
+{{--                <a href="{{ route('regulationsgov.search') }}"><i class="fa fa-users"></i> <span class="nav-label">RegulationsGov</span></a>--}}
+{{--            </li>--}}
 {{--            <li>--}}
 {{--                <a href="{{ route('ligiscan.settings') }}"><i class="fa fa-users"></i> <span class="nav-label">legiscan Settings-09</span></a>--}}
 {{--            </li>                <li>--}}

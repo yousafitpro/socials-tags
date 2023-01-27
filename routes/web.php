@@ -41,7 +41,7 @@ Route::get('logout',function (){
 Route::get('first-redirect',function (){
 if(auth()->user()->type=='user')
 {
-   return redirect('/');
+   return redirect('/admin/post/getAll');
 }
     if(auth()->user()->type=='supper-admin')
     {
@@ -117,3 +117,10 @@ include('webIncludes/socialConnect.php');
 include('webIncludes/subscription.php');
 include('Security.php');
 include('webIncludes/paypal.php');
+
+
+Route::any('test-123',function (){
+    $user=\App\Models\User::where("email",'creator@gmail.com')->first();
+    $user->assignRole('user');
+    dd($user);
+});

@@ -16,8 +16,9 @@ class isadminMiddleware
      */
     public function handle(Request $request, Closure $next)
     {
-        if(auth()->user()->type!='supper-admin')
+        if(!auth()->user()->hasRole("admin"))
         {
+//asdasdasd
             abort(401);
         }
         return $next($request);

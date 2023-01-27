@@ -88,7 +88,7 @@ class userController extends Controller
     }
     public function addView()
     {
-        $roles=role::where('user_id',Auth::user()->id)->get();
+        $roles=role::all();
         return view('admin.user.add')->with(['roles'=>$roles]);
     }
     public function add(Request $request)
@@ -116,7 +116,7 @@ class userController extends Controller
           $user->lname=$request->lname;
           $user->email=$request->email;
           $user->phone=$request->phone;
-          $user->role_id=$request->role_id;
+          $user->assignRole($request->role_id);
           $user->type="user";
           $user->status='0';
           $user->address=$request->address;

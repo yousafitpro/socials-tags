@@ -19,6 +19,7 @@ class PostController extends Controller
 
     public function addView()
     {
+
         return view('admin.post.add');
     }
     public function add(Request $request)
@@ -196,7 +197,16 @@ class PostController extends Controller
     }
     public function getAll()
     {
-        $posts=post::where('user_id',Auth::user()->id)->with('user')->where('deleted_at',null)->get();
+
+        $posts=post::where('deleted_at',null);
+        if (!auth()->user()->hasRole('admin'))
+        {
+            $posts=$posts->where('user_id',Auth::user()->id);
+        }
+
+
+        $posts=$posts->with('user')->get();
+
         return view('admin.post.all')->with('posts',$posts);
     }
     public function post_detail($id)

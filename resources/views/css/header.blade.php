@@ -5,10 +5,11 @@ $url="";
 <head>
 
     <meta charset="utf-8">
+    <link rel="icon" type="image/x-icon" href="{{asset('icon/small-logo.png')}}">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-    <title>{{$webConfig->company_short_name}}</title>
+    <title>{{'Voters News'}}</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 {{--    <link href="{{ asset($url.'backend-theme/css/bootstrap.min.css')}}" rel="stylesheet">--}}
     <link href="{{ asset($url.'backend-theme/font-awesome/css/font-awesome.css')}}" rel="stylesheet">

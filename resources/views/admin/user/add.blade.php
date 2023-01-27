@@ -10,8 +10,8 @@
                     </div>
                     <div class="card-body">
                         @include('errorBars.errorsArray',['title' => 'Error','errors'=>$errors])
-                        <h3>Add New User</h3>
-                        <hr>
+
+
                         <form action="{{route('admin.user.add')}}" method="post" enctype="multipart/form-data">
                             @csrf
                             <div class="container-fluid">
@@ -68,7 +68,7 @@
                                         <label>Role: </label>
                                         <select name="role_id">
                                             @foreach($roles as $role)
-                                            <option value="{{$role->id}}">{{$role->name}}</option>
+                                            <option value="{{$role->name}}">{{$role->name}}</option>
                                                 @endforeach
                                         </select>
                                     </div>

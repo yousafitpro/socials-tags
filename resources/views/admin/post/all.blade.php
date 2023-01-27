@@ -16,7 +16,13 @@
             <thead>
             <tr>
                 <th>Thumb Nail</th>
-                <th>Content</th>
+                @if(auth()->user()->hasRole('admin'))
+                <th>Posted By</th>
+                @endif
+                <th>Title</th>
+                <th>Status</th>
+                <th>Clicks</th>
+                <th>Views</th>
                 <th>Actions</th>
             </tr>
             </thead>
@@ -24,12 +30,25 @@
 
             @foreach($posts as $post)
             <tr class="center">
-                <td>
+
+                <td class="myflex">
                     @if($post->image)
-                    <img src="{{asset($post->image)}}" style="width: 100px;">
+                    <img src="{{asset($post->image)}}" style="width: 50px;">
                         @endif
                 </td>
-                <td>{{Str::substr($post->content,0,100)}}</td>
+                @if(auth()->user()->hasRole('admin'))
+
+                    <td>
+
+                        {{$post->user?$post->user->fname.' '.$post->user->lname:''}}
+                    </td>
+                @endif
+                <td>{{Str::substr($post->content,0,50)}}</td>
+
+                <td>{{$post->status}}</td>
+                <td>{{$post->clicks}}</td>
+                <td>{{$post->views}}</td>
+
                 <td width="50px">
                     <div class="dropdown dropdown-menu-bottom">
                         <i class="fa fa-cogs" data-toggle="dropdown"></i>
@@ -37,6 +56,20 @@
                         <ul class="dropdown-menu">
 {{--                            <li><a href="#" data-toggle="modal" data-target="#deleteModel">Delete</a></li>--}}
                             <li><a href="{{route('admin.post.getOne',$post->id)}}">Edit/View</a></li>
+                            @if(auth()->user()->hasRole('admin'))
+                                @if($post->status=='Pending')
+                            <li><a href="{{url('Dashboard/Approve',$post->id)}}">Approve</a></li>
+                                @endif
+                                    @if($post->status=='Approved')
+                            <li><a href="{{url('Dashboard/Pause',$post->id)}}">Pause</a></li>
+                                    @endif
+                                    @if($post->status=='Paused')
+                            <li><a href="{{url('Dashboard/Resume',$post->id)}}">Resume</a></li>
+                                    @endif
+                                    @if($post->status=='Pending')
+                            <li><a href="{{url('Dashboard/Reject',$post->id)}}">Reject</a></li>
+                                        @endif
+                            @endif
                             <li><a href="#" onclick="deletePost('{{route('admin.post.deleteOne',$post->id)}}')">Delete</a></li>
                         </ul>
                     </div>
@@ -64,12 +97,7 @@
             </div>
             @endforeach
             </tbody>
-            <tfoot>
-            <tr>
-                <th>Content</th>
-                <th>Actions</th>
-            </tr>
-            </tfoot>
+
         </table>
     </div>
     <script>
@@ -91,32 +119,7 @@
                     }
                 });
         }
-        $(document).ready(function(){
-            $('.dataTables-example').DataTable({
-                pageLength: 25,
-                responsive: true,
-                dom: '<"html5buttons"B>lTfgitp',
-                buttons: [
-                    { extend: 'copy'},
-                    {extend: 'csv'},
-                    {extend: 'excel', title: 'ExampleFile'},
-                    {extend: 'pdf', title: 'ExampleFile'},
 
-                    {extend: 'print',
-                        customize: function (win){
-                            $(win.document.body).addClass('white-bg');
-                            $(win.document.body).css('font-size', '10px');
-
-                            $(win.document.body).find('table')
-                                .addClass('compact')
-                                .css('font-size', 'inherit');
-                        }
-                    }
-                ]
-
-            });
-
-        });
 
     </script>
 

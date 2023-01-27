@@ -15,6 +15,7 @@
         "mailgun/mailgun-php": "^3.5",
         "nesbot/carbon": "^2.36",
         "nyholm/psr7": "^1.4",
+        "spatie/laravel-permission": "^5.8",
         "symfony/http-client": "^5.3",
         "tymon/jwt-auth": "^1.0.0-rc.2"
     },
