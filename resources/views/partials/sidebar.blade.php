@@ -35,9 +35,7 @@
                 </li>
             @endif
             @if(Auth::user()->hasRole('admin'))
-                <li>
-                    <a href="{{url('social-connect/index')}}"><i class="fa fa-link"></i> <span class="nav-label">Social Connections</span></a>
-                </li>
+
 
 
                 <li>
@@ -52,6 +50,9 @@
                         <li><a href="{{route('admin.user.add')}}">Add New</a></li>
                         <li><a href="{{route('admin.user.getAll')}}">Users</a></li>
                     </ul>
+                </li>
+                <li>
+                    <a href="{{url('social-connect/index')}}"><i class="fa fa-link"></i> <span class="nav-label">Social Connections</span></a>
                 </li>
                 <li >
                     <a href="javascript:void"><i class="fa fa-cogs"></i> <span class="nav-label">Settings</span> <span class="fa arrow"></span></a>

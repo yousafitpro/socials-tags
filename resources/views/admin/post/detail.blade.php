@@ -13,6 +13,8 @@
         <div class="container-fluid">
             <div class="row">
                 <div class="col-md-6 offset-md-3">
+                    <a href="{{url('/')}}"><img src="{{asset('icon/arrow-back.png')}}" style="width: 20px"> Go Back To Home</a>
+                   <br><br>
                     <div class="card shadow wallPostCard" >
 
                         <div class="row">
@@ -33,11 +35,22 @@
                                     <div class="row">
 
                                         <div class="col-12">
-                                            <label style="font-size: 13px; color: gray; font-weight: bold">{{$post->username}}</label><div></div>
-                                            <small>{{ \Carbon\Carbon::parse($post->created_at)->diffForhumans() }}</small>
+                                           <div style="float: left">
+                                               <img src="{{url($post->user?$post->user->profile_image:'')}}" style="width: 40px; height: 40px; border-radius: 50%;">
+                                               <label style="font-size: 13px; margin-left: 10px; color: gray; font-weight: bold">{{$post->username}}</label><div></div>
+
+                                           </div>
+                                            <small style="float: right">{{ \Carbon\Carbon::parse($post->created_at)->diffForhumans() }}</small>
                                         </div>
 
                                     </div>                                </div>
+                            </div>
+                        </div>
+                        <div style="padding: 10px">
+                            <div class="row">
+                                <div class="col-md-12">
+                                    {!! $post->content !!}
+                                </div>
                             </div>
                         </div>
                         <div style="padding: 10px">
