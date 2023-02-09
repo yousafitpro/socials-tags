@@ -39,13 +39,17 @@ Route::get('logout',function (){
     return redirect('/');
 });
 Route::get('first-redirect',function (){
-if(auth()->user()->type=='user')
+    if(auth()->user()->hasRole('creator'))
 {
    return redirect('/admin/post/getAll');
 }
-    if(auth()->user()->type=='supper-admin')
+    else if(auth()->user()->hasRole('admin'))
     {
            return  redirect('user/update-profile');
+    }
+    else
+    {
+        return redirect('/');
     }
 });
 
