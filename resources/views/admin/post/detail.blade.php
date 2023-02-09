@@ -75,7 +75,7 @@
                         <div style="padding: 10px">
                             <div class="row">
                                 <div class="col-md-12">
-                                    <h3>{!! $post->content !!}</h3>
+                                    <h4>{!! $post->content !!}</h4>
                                 </div>
                             </div>
                         </div>
