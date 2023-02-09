@@ -3,6 +3,7 @@
 
 
     @section('content')
+
         <script
             src="https://code.jquery.com/jquery-3.5.1.js"
             integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc="
@@ -46,6 +47,31 @@
                                     </div>                                </div>
                             </div>
                         </div>
+
+                        <br>
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="p-2">
+                                    <div class="row">
+                                        <div class="col-1">
+                                            <img class="clickOpacity" style="max-width: 40px; min-width: 25px; width: 10vw; padding: 5px; border-radius: 20%; border:solid 1px lightgrey" src="{{asset('icon/comment.png')}}">
+                                        </div>
+
+                                        <div class="col-8">
+                                            <input class="form-control" placeholder="Enter comment here...">
+                                        </div>
+                                        <div class="col-1">
+                                            <img class="clickOpacity" style="max-width: 40px;min-width: 25px; width: 10vw; padding: 5px; border-radius: 20%; border:solid 1px lightgrey" src="{{asset('icon/send.png')}}">
+
+                                        </div>
+                                        <div class="col-1">
+                                            <img class="clickOpacity" style="max-width: 40px;min-width: 25px; width: 10vw; padding: 5px; border-radius: 20%; border:solid 1px lightgrey" src="{{asset('icon/like.png')}}">
+
+                                        </div>
+
+                                    </div>                                </div>
+                            </div>
+                        </div>
                         <div style="padding: 10px">
                             <div class="row">
                                 <div class="col-md-12">
@@ -60,6 +86,78 @@
                                 </div>
                             </div>
                         </div>
+                        <br>
+                        <div style="padding: 10px">
+                            <label style=" color: gray">Comments</label>
+                            <br>
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div class="p-2">
+                                        <div class="row">
+
+                                            <div class="col-12">
+                                                <div style="float: left">
+                                                    <img src="{{url($post->user?$post->user->profile_image:'')}}" style="width: 40px; height: 40px; border-radius: 50%;">
+                                                    <label style="font-size: 13px; margin-left: 10px; color: gray; font-weight: bold">{{$post->username}}</label><div></div>
+
+                                                </div>
+                                                <small style="float: right">{{ \Carbon\Carbon::parse($post->created_at)->diffForhumans() }}</small>
+                                            </div>
+
+                                        </div>                                </div>
+                                </div>
+                            </div>
+                            <small style=" color: grey">
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur vulputate massa risus, at laoreet justo lacinia quis. Phasellus vel quam tempus, sagittis purus ac, posuere ligula. Pellentesque non est elementum, fermentum justo nec, condimentum ligula. Fusce sodales ligula turpis, ut efficitur risus commodo non.
+                            </small>
+                            <br>
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div class="p-2">
+                                        <div class="row">
+
+                                            <div class="col-12">
+                                                <div style="float: left">
+                                                    <img src="{{url($post->user?$post->user->profile_image:'')}}" style="width: 40px; height: 40px; border-radius: 50%;">
+                                                    <label style="font-size: 13px; margin-left: 10px; color: gray; font-weight: bold">{{$post->username}}</label><div></div>
+
+                                                </div>
+                                                <small style="float: right">{{ \Carbon\Carbon::parse($post->created_at)->diffForhumans() }}</small>
+                                            </div>
+
+                                        </div>                                </div>
+                                </div>
+                            </div>
+                            <small style=" color: grey">
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur vulputate massa risus, at laoreet justo lacinia quis. Phasellus vel quam tempus, sagittis purus ac, posuere ligula. Pellentesque non est elementum, fermentum justo nec, condimentum ligula. Fusce sodales ligula turpis, ut efficitur risus commodo non.
+                            </small>
+                            <br>
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div class="p-2">
+                                        <div class="row">
+
+                                            <div class="col-12">
+                                                <div style="float: left">
+                                                    <img src="{{url($post->user?$post->user->profile_image:'')}}" style="width: 40px; height: 40px; border-radius: 50%;">
+                                                    <label style="font-size: 13px; margin-left: 10px; color: gray; font-weight: bold">{{$post->username}}</label><div></div>
+
+                                                </div>
+                                                <small style="float: right">{{ \Carbon\Carbon::parse($post->created_at)->diffForhumans() }}</small>
+                                            </div>
+
+                                        </div>                                </div>
+                                </div>
+                            </div>
+                            <small style=" color: grey">
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur vulputate massa risus, at laoreet justo lacinia quis. Phasellus vel quam tempus, sagittis purus ac, posuere ligula. Pellentesque non est elementum, fermentum justo nec, condimentum ligula. Fusce sodales ligula turpis, ut efficitur risus commodo non.
+                            </small>
+                            <br>
+                            <br>
+                            <br>
+                            <br>
+                        </div>
+
                     </div>
                 </div>
             </div>

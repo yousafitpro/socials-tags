@@ -8,7 +8,7 @@
                     <div class="row" style="margin-top: 30px">
                         <div class="col-md-8">
                             <a href="https://www.facebook.com/sharer/sharer.php?u={{$p->link}}" target="_blank">
-                                <img   src="{{asset('icon/fb.png')}}" style="width: 30px; border-radius: 5px; border: solid 1px grey">
+                                <img   src="{{asset('icon/fb.png')}}" class="clickOpacity" style="width: 30px; border-radius: 5px; border: solid 1px grey">
 
                             </a>
                             <a href="https://twitter.com/intent/tweet?text={{Str::limit($p->content,100)}}&url={{$p->link}}" target="_blank">

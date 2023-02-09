@@ -27,6 +27,12 @@
         align-items: center;
         justify-content: center;
     }
+    .clickOpacity:hover{
+        opacity: 0.5;
+    }
+    .clickOpacity:active{
+        opacity: 1;
+    }
 </style>
 <body style="height: 100vh; overflow: hidden">
     <div id="app">
