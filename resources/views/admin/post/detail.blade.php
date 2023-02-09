@@ -75,7 +75,7 @@
                         <div style="padding: 10px">
                             <div class="row">
                                 <div class="col-md-12">
-                                    <b><h4>{!! $post->content !!}</h4></b>
+                                    <b><h4 style="font-weight: bold">{!! $post->content !!}</h4></b>
                                 </div>
                             </div>
                         </div>
