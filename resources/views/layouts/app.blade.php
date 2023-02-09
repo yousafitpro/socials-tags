@@ -9,7 +9,7 @@
 
     <title>Voters News</title>
 
-
+    <link rel="icon" type="image/x-icon" href="{{asset('icon/small-logo.png')}}">
 
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
