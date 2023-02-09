@@ -54,18 +54,18 @@
                                 <div class="p-2">
                                     <div class="row">
                                         <div class="col-1">
-                                            <img class="clickOpacity" style="max-width: 40px; min-width: 25px; width: 10vw; padding: 5px; border-radius: 20%; border:solid 1px lightgrey" src="{{asset('icon/comment.png')}}">
+                                            <img class="clickOpacity" style="max-width: 40px; min-width: 25px; width: 8vw; padding: 5px; border-radius: 20%; border:solid 1px lightgrey" src="{{asset('icon/comment.png')}}">
                                         </div>
 
                                         <div class="col-8">
                                             <input class="form-control" placeholder="Enter comment here...">
                                         </div>
                                         <div class="col-1">
-                                            <img class="clickOpacity" style="max-width: 40px;min-width: 25px; width: 10vw; padding: 5px; border-radius: 20%; border:solid 1px lightgrey" src="{{asset('icon/send.png')}}">
+                                            <img class="clickOpacity" style="max-width: 40px;min-width: 25px; width: 8vw; padding: 5px; border-radius: 20%; border:solid 1px lightgrey" src="{{asset('icon/send.png')}}">
 
                                         </div>
                                         <div class="col-1">
-                                            <img class="clickOpacity" style="max-width: 40px;min-width: 25px; width: 10vw; padding: 5px; border-radius: 20%; border:solid 1px lightgrey" src="{{asset('icon/like.png')}}">
+                                            <img class="clickOpacity" style="max-width: 40px;min-width: 25px; width: 8vw; padding: 5px; border-radius: 20%; border:solid 1px lightgrey" src="{{asset('icon/like.png')}}">
 
                                         </div>
 
