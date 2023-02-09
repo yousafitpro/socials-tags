@@ -1,6 +1,8 @@
 <!-- Latest compiled and minified CSS -->
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css">
 <link rel="stylesheet" href="{{asset('css/wall.css')}}">
+<link rel="icon" type="image/x-icon" href="{{asset('icon/small-logo.png')}}">
+
 <style>
     .myFlex {
         display: flex;
