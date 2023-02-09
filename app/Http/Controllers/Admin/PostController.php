@@ -39,7 +39,7 @@ class PostController extends Controller
         $post=new post();
 
 
-
+///asdasd
         $post->title="";
         $post->username=$request->username;
         $post->content=$request->contentdata;
