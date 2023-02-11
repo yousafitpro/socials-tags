@@ -162,6 +162,8 @@
                <br>
              @include('partials.bottom-footer')
                <br>
+               <br>
+               <br>
            </div>
 
 
