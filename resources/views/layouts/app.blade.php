@@ -55,21 +55,17 @@
                     </button>
 
                     <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                        <!-- Left Side Of Navbar -->
-                        <ul class="navbar-nav mr-auto">
 
-                        </ul>
-                        {{--SAs--}}
-                        <!-- Right Side Of Navbar -->
-                        <ul class="navbar-nav ml-auto" style="float: right">
-                            <li class="nav-item">
-                                <a class="nav-link" href="{{url('/')}}">Home</a>
+                        <ul class="navbar-nav ml-auto" >
+                            <li class="nav-item" sty>
+                                <a class="nav-link"  href="{{url('/')}}">Home</a>
+                            </li>
+                            <li class="nav-item" >
+                                <a class="nav-link" href="{{url('privacy-policy')}}">Privacy Policy</a>
                             </li>
                             <!-- Authentication Links -->
                             @guest
-{{--                                <li class="nav-item" >--}}
-{{--                                    <a class="nav-link" href="{{url('privacy-policy')}}">Privacy Policy</a>--}}
-{{--                                </li>--}}
+
 
 
                                 {{--                            @if (Route::has('login'))--}}
@@ -99,21 +95,25 @@
 
                             @endguest
                             @if(!auth()->check())
-{{--                                <li class="nav-item" >--}}
-{{--                                    <a class="nav-link" href="{{url('register')}}">Register</a>--}}
-{{--                                </li>--}}
-{{--                                <li class="nav-item" >--}}
-{{--                                    <a class="nav-link" href="{{url('login')}}">Login</a>--}}
-{{--                                </li>--}}
+                                <li class="nav-item" >
+                                    <a class="nav-link" href="{{url('register')}}">Register</a>
+                                </li>
+                                <li class="nav-item" >
+                                    <a class="nav-link" href="{{url('login')}}">Login</a>
+                                </li>
                             @endif
-
-
+                            @if(auth()->check())
+                                <li class="nav-item pull-right" >
+                                    <a class="nav-link "  href="{{url('logout')}}">Logout</a>
+                                </li>
+                            @endif
 
                         </ul>
                     </div>
                 </div>
             </nav>
         @endif
+
         <main class="py-4">
             @yield('content')
         </main>

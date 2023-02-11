@@ -32,11 +32,12 @@
                     <li class="nav-item">
                         <a class="nav-link" href="{{url('/')}}">Home</a>
                     </li>
+                    <li class="nav-item" >
+                        <a class="nav-link" href="{{url('privacy-policy')}}">Privacy Policy</a>
+                    </li>
                     <!-- Authentication Links -->
                     @guest
-                        <li class="nav-item" >
-                            <a class="nav-link" href="{{url('privacy-policy')}}">Privacy Policy</a>
-                        </li>
+
 
 
                         {{--                            @if (Route::has('login'))--}}
