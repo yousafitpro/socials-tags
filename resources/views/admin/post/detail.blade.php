@@ -5,7 +5,7 @@
     @section('content')
 <style>
     .likeDiv {
-        border: solid 1px grey;
+
         width: 40px;
 
         border-radius: 10px;
@@ -60,21 +60,21 @@
                             </div>
                         </div>
 
-                        <br>
+                        <hr>
                         <div class="row">
                             <div class="col-md-12">
                                 <div class="p-3">
                                     <div class="row">
-                                        <div class="col-1" style="padding: 0;">
-                                            <img class="clickOpacity" style="max-width: 40px; min-width: 25px; width: 8vw; padding: 5px; border-radius: 20%; border:solid 1px lightgrey" src="{{asset('icon/comment.png')}}">
+                                        <div class="col-1 myflex" style="padding: 0;">
+                                            <img class="clickOpacity" style="max-width: 40px; min-width: 25px; width: 8vw; padding: 5px; border-radius: 20%; " src="{{asset('icon/comment.png')}}">
                                         </div>
 
-                                        <div class="col-8" style="padding: 0;">
-                                            <input id="commentInput" class="form-control" style="height: 40px" placeholder="Enter comment here...">
+                                        <div class="col-8 myflex" style="padding: 0;">
+                                            <input  id="commentInput" class="form-control" style="height: 40px; border: none; outline: none" placeholder="Enter comment here...">
                                         </div>
-                                        <div class="col-1" style="padding: 0;">
+                                        <div class="col-1 myflex" style="padding: 0;">
                                             <div id="addCommentBtn" onclick="addComment('{{$post->id}}')">
-                                                <img class="clickOpacity" style="max-width: 40px;min-width: 25px; width: 8vw; padding: 5px; border:solid 1px lightgrey" src="{{asset('icon/send.png')}}">
+                                                <img class="clickOpacity" style="max-width: 40px;min-width: 25px; width: 8vw; padding: 5px;" src="{{asset('icon/send.png')}}">
 
                                             </div>
 
@@ -89,6 +89,7 @@
                                     </div>                                </div>
                             </div>
                         </div>
+                        <hr>
                         <div class="row">
                             <div class="col-md-12">
                                 <div id="commentMsg">
