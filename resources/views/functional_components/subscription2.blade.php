@@ -84,12 +84,7 @@
                                 {{--                            <div id="paypal-button-container"></div>--}}
                                 <button class="btn form-control" onclick="{{auth()->check()?'submitSubcriptionNowStep1()':'alert("Please register or login first")'}}" style="background-color: #127764; color: white">Continue</button>
 
-                               <div style="text-align: center">
-                                   <br>
-                                   <a href="#" style="font-size: 16px"  data-dismiss="modal" aria-label="Close" >
-                                       Cancel
-                                   </a>
-                               </div>
+
                             </div>
 
                         </div>

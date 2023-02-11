@@ -21,7 +21,7 @@
         }
     }
 </style>
-  @include('functional_components.subscription')
+  @include('functional_components.subscription2')
            <div style="height:{{!request('top_nave',false)?'90vh':'100vh'}}; overflow: auto">
         <div class="container-fluid">
             <div class="row">
