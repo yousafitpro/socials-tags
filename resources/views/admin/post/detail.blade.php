@@ -120,7 +120,7 @@
                                     </div>
                                     <div class="col-md-8">
                                         <a href="{{url('admin/post/post-detail',$post->id)}}">
-                                            <h4>{!! $post->content !!}</h4>
+                                            <h4>{!! substr($post->content ,0,100)!!}</h4>
                                         </a>
                                     </div>
                                 </div>
