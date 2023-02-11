@@ -69,7 +69,7 @@
                                             <img class="clickOpacity" style="max-width: 40px; min-width: 25px; width: 8vw; padding: 5px; border-radius: 20%; border:solid 1px lightgrey" src="{{asset('icon/comment.png')}}">
                                         </div>
 
-                                        <div class="col-9" style="padding: 0;">
+                                        <div class="col-8" style="padding: 0;">
                                             <input id="commentInput" class="form-control" style="height: 40px" placeholder="Enter comment here...">
                                         </div>
                                         <div class="col-1" style="padding: 0;">
