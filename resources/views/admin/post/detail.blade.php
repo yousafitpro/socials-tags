@@ -74,7 +74,7 @@
                                         </div>
 
                                         <div class="col-2 myflex" style="padding: 0;">
-                                            <div id="addCommentBtn" onclick="addComment('{{$post->id}}')" style="float: right">
+                                            <div id="addCommentBtn" onclick="addComment('{{$post->id}}')" >
                                                 <img class="clickOpacity" style="max-width: 40px;min-width: 40px; width: 8vw; padding: 5px;" src="{{asset('icon/send.png')}}">
 
                                             </div>
