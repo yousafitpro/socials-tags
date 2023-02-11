@@ -116,11 +116,11 @@
                                 @foreach(related_posts($post->id) as $p)
                                 <div class="row">
                                     <div class="col-md-4">
-                                        <img src="{{asset($post->image)}}" style="width:60px;" class="wallPostModalImage">
+                                        <img src="{{asset($p->image)}}" style="width:60px;" class="wallPostModalImage">
                                     </div>
                                     <div class="col-md-8">
                                         <a href="{{url('admin/post/post-detail',$post->id)}}">
-                                            <h6>{!! substr($post->content ,0,100)!!}</h6>
+                                            <h6>{!! substr($p->content ,0,100)!!}</h6>
                                         </a>
                                     </div>
                                 </div>
