@@ -157,7 +157,11 @@
         <br>
                <br>
                <br>
+             @include('partials.bottom-footer')
+               <br>
            </div>
+
+
         @if(is_membershipExpired())
             <script>
                 showSubscription_Modal()
