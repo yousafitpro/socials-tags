@@ -3,7 +3,24 @@
 
 
     @section('content')
+<style>
+    .likeDiv {
+        border: solid 1px grey;
+        width: 40px;
 
+        border-radius: 10px;
+        padding: 5px
+    }
+    @media only screen and (max-width: 768px) {
+        /* For mobile phones: */
+        .likeDiv {
+            width: 40px;
+            zoom: 0.8;
+            padding: 3px;
+
+        }
+    }
+</style>
   @include('functional_components.subscription')
            <div style="height:{{!request('top_nave',false)?'90vh':'100vh'}}; overflow: auto">
         <div class="container-fluid">
@@ -63,9 +80,9 @@
 
                                         </div>
                                         <div class="col-1" style="padding: 0;">
-                                             <div style="background-color: lightblue">
-                                                 <img class="clickOpacity"  onclick="addLike('{{$post->id}}')" style="max-width: 40px;min-width: 25px; width: 8vw; padding: 5px; border-radius: 20%; border:solid 1px lightgrey" src="{{asset('icon/like.png')}}">
-
+                                             <div class="likeDiv" style="color: {{$post->like?'dodgerblue':'gray'}}" id="btnLike" class="clickOpacity"  onclick="addLike('{{$post->id}}')" >
+{{--                                                 <img  style="max-width: 40px;min-width: 25px; width: 8vw; padding: 5px; border-radius: 20%; border:solid 1px lightgrey" src="{{asset('icon/like.png')}}">--}}
+                                                 <i class="fa fa-thumbs-up" style="zoom: 2.1"></i>
                                              </div>
                                         </div>
 
@@ -192,7 +209,7 @@
 
 
 
-
+               $("#btnLike").css('color','dodgerblue')
                 $.ajax({
                     url:"{{route('admin.post.like',$post->id)}}",
                     method:'post',

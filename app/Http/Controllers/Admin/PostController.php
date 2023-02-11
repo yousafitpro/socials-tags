@@ -246,6 +246,10 @@ class PostController extends Controller
     public function post_detail($id)
     {
         $data['post']=post::find($id);
+        if(postLike::where('post_id',$id)->exists())
+        {
+            $data['post']->like=true;
+        }
 
         return view('admin.post.detail',$data);
     }
