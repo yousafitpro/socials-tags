@@ -54,7 +54,7 @@
     <img class="clickOpacity" onclick="showSubscription_Modal()" src="{{asset('wall/soure.png')}}" style="width: 65px">
     @else
                                   <a href="{{$p->link}}" >
-    <img class="clickOpacity" onclick="bookmarkTab()" src="{{asset('wall/soure.png')}}" style="width: 65px">
+    <img class="clickOpacity" onclick="bookmarkTab()" src="{{asset('wall/coment.png')}}" style="width: 65px">
                                   </a>
     @endif
 
