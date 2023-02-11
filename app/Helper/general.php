@@ -311,6 +311,12 @@ if ( ! function_exists('post_comments')){
         return \App\Models\postComment::where('post_id',$post_id)->latest()->get();
     }
 }
+if ( ! function_exists('related_posts')){
+    function related_posts($post_id)
+    {
+        return \App\Models\post::query()->get()->take(10);
+    }
+}
 //asdasd
 if ( ! function_exists('is_membershipExpired')){
     function is_membershipExpired()

@@ -8,10 +8,10 @@
            <div style="height:{{!request('top_nave',false)?'90vh':'100vh'}}; overflow: auto">
         <div class="container-fluid">
             <div class="row">
-                <div class="col-md-6 offset-md-3">
+                <div class="col-md-8">
                     <a href="{{url('/')}}"><img src="{{asset('icon/arrow-back.png')}}" style="width: 20px"> Go Back To Home</a>
                    <br><br>
-                    <div class="card shadow wallPostCard" >
+                    <div class="card  wallPostCard" >
 
                         <div class="row">
                             <div class="col-md-12 ">
@@ -63,8 +63,10 @@
 
                                         </div>
                                         <div class="col-1" style="padding: 0;">
-                                            <img class="clickOpacity" style="max-width: 40px;min-width: 25px; width: 8vw; padding: 5px; border-radius: 20%; border:solid 1px lightgrey" src="{{asset('icon/like.png')}}">
+                                             <div style="background-color: lightblue">
+                                                 <img class="clickOpacity"  onclick="addLike('{{$post->id}}')" style="max-width: 40px;min-width: 25px; width: 8vw; padding: 5px; border-radius: 20%; border:solid 1px lightgrey" src="{{asset('icon/like.png')}}">
 
+                                             </div>
                                         </div>
 
                                     </div>                                </div>
@@ -96,6 +98,38 @@
                         <div id="commentSection">
                         @include('admin.post.comments')
                         </div>
+
+                    </div>
+                </div>
+
+                <div class="col-md-4">
+                    <br>
+                    <br>
+                    <div class="card" >
+                     <div class="card-header">
+                         <div class="card-title">
+                             Related posts
+                         </div>
+                     </div>
+                        <div class="card-body">
+                            <div class="container-fluid">
+                                @foreach(related_posts($post->id) as $p)
+                                <div class="row">
+                                    <div class="col-md-4">
+                                        <img src="{{asset($post->image)}}" style="width:60px;" class="wallPostModalImage">
+                                    </div>
+                                    <div class="col-md-8">
+                                        <a href="{{url('admin/post/post-detail',$post->id)}}">
+                                            <h4>{!! $post->content !!}</h4>
+                                        </a>
+                                    </div>
+                                </div>
+                                    @endforeach
+                            </div>
+                        </div>
+
+                        <br>
+
 
                     </div>
                 </div>
@@ -133,6 +167,43 @@
                              $("#commentMsg").html('<h6  style="text-align: center; color: green">Comment Successfully Added</h6>')
                              $("#commentSection").empty()
                              $("#commentSection").append(response)
+
+
+
+
+
+                    },
+                    error: function (res) {
+                        console.log(res)
+                        $("#commentMsg").html('<h6  style="text-align: center; color:darkred">'+res.responseJSON+'</h6>')
+
+
+                    },
+                    complete:function(data){
+                        setTimeout(function (){
+                            $("#commentMsg").text('')
+                        },5000)
+                    }
+                })
+            }
+            function addLike(id)
+            {
+
+
+
+
+                $.ajax({
+                    url:"{{route('admin.post.like',$post->id)}}",
+                    method:'post',
+                    data: {"_token": "{{ csrf_token() }}"},
+                    beforeSend:function(){
+                        $("#commentMsg").html('<h6  style="text-align: center">Please wait...</h6>')
+                    },
+                    success:function(response){
+
+
+                        $("#commentMsg").html('<h6  style="text-align: center; color: green">Like Successfully Added</h6>')
+
 
 
 
