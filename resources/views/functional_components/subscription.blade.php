@@ -86,9 +86,7 @@
 
                                <div style="text-align: center">
                                    <br>
-                                   <a href="#" style="font-size: 16px"  data-dismiss="modal" aria-label="Close" >
-                                       Cancel
-                                   </a>
+
                                </div>
                             </div>
 
