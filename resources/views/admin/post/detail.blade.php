@@ -108,7 +108,7 @@
                     <div class="card" >
                      <div class="card-header">
                          <div class="card-title">
-                             Related posts
+                             Related News
                          </div>
                      </div>
                         <div class="card-body">
