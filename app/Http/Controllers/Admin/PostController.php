@@ -245,6 +245,7 @@ class PostController extends Controller
     }
     public function post_detail($id)
     {
+        ///asdasasd
         $data['post']=post::find($id);
         if(postLike::where('post_id',$id)->exists())
         {
