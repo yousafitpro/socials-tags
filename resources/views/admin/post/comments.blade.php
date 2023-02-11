@@ -14,7 +14,7 @@
                             <label style="font-size: 13px; margin-left: 10px; color: gray; font-weight: bold">{{$p->user->fname.' '.$p->user->lname}}</label><div></div>
 
                         </div>
-                        <small style="float: right">{{ \Carbon\Carbon::parse($post->created_at)->diffForhumans() }}</small>
+                        <small style="float: right">{{ \Carbon\Carbon::parse($p->created_at)->diffForhumans() }}</small>
                     </div>
 
                 </div>                                </div>
