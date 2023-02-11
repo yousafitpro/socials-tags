@@ -38,11 +38,11 @@ class PostController extends Controller
     }
     public function like(Request $request,$id)
     {
-//        if(postComment::where(['post_id'=>$id,
-//            'user_id'=>\auth()->user()->id])->exists())
-//        {
-//            return response()->json('Comment already added',409);
-//        }
+        if(postLike::where(['post_id'=>$id,
+            'user_id'=>\auth()->user()->id])->exists())
+        {
+            return response()->json('already liked',409);
+        }
         $com=postLike::create([
             'post_id'=>$id,
             'user_id'=>\auth()->user()->id,
