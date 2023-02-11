@@ -1,6 +1,6 @@
 <div style="width: 100%">
     <div class="text-center" style="zoom: 0.7">
-        <a href="{{url('/')}}"><h3 style="font-weight: bold; color:var(--primary)">Voters News</h3></a>
+        <a href="{{url('/')}}"><h3 style="font-weight: bold; color:#a42b35">Voters News</h3></a>
         <h4 style="font-weight: bold; color:grey">ⓒ Voters News, All Rights Reserved</h4>
         <h6 style="font-weight: bold; font-size:20px; color:grey">
             <a href="{{url('/')}}" style="text-decoration: underline 1px;margin-left: 5px"> Home</a>
