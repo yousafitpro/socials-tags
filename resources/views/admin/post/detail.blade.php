@@ -119,7 +119,7 @@
                                         <img src="{{asset($p->image)}}" style="width:60px;" class="wallPostModalImage">
                                     </div>
                                     <div class="col-md-8">
-                                        <a href="{{url('admin/post/post-detail',$post->id)}}">
+                                        <a href="{{url('admin/post/post-detail',$p->id)}}">
                                             <h6>{!! substr($p->content ,0,100)!!}</h6>
                                         </a>
                                     </div>
