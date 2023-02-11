@@ -69,11 +69,11 @@
                                             <img class="clickOpacity" style="max-width: 40px; min-width: 25px; width: 8vw; padding: 5px; border-radius: 20%; " src="{{asset('icon/comment.png')}}">
                                         </div>
 
-                                        <div class="col-6 " style="padding: 0;">
+                                        <div class="col-7 " style="padding: 0;">
                                             <input  id="commentInput" class="form-control" style="height: 40px; border: none; outline: none" placeholder="Enter comment here...">
                                         </div>
 
-                                        <div class="col-3 myflex" style="padding: 0;">
+                                        <div class="col-2 myflex" style="padding: 0;">
                                             <div id="addCommentBtn" onclick="addComment('{{$post->id}}')" style="float: right">
                                                 <img class="clickOpacity" style="max-width: 40px;min-width: 40px; width: 8vw; padding: 5px;" src="{{asset('icon/send.png')}}">
 
