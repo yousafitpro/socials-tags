@@ -20,7 +20,7 @@ class LigiscanController extends Controller
 {
    // ajax functions
 
-
+//asdsadasdasd
     // web functions
     public function settings()
     {
