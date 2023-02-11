@@ -314,7 +314,7 @@ if ( ! function_exists('post_comments')){
 if ( ! function_exists('related_posts')){
     function related_posts($post_id)
     {
-        return \App\Models\post::query()->get()->take(10);
+        return \App\Models\post::query()->where('id','!=',$post_id)->get()->take(10);
     }
 }
 //asdasd
