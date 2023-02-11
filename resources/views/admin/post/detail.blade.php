@@ -116,7 +116,7 @@
                                 @foreach(related_posts($post->id) as $p)
                                 <div class="row">
                                     <div class="col-md-4">
-                                        <img src="{{asset($p->image)}}" style="width:60px;" class="wallPostModalImage">
+                                        <img src="{{asset($p->image)}}" style="width:70px; height: 60px" class="wallPostModalImage">
                                     </div>
                                     <div class="col-md-8">
                                         <a href="{{url('admin/post/post-detail',$p->id)}}">
