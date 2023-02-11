@@ -4,12 +4,7 @@
 
     @section('content')
 
-        <script
-            src="https://code.jquery.com/jquery-3.5.1.js"
-            integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc="
-            crossorigin="anonymous">
-        </script>
-        @include('functional_components.subscription')
+  @include('functional_components.subscription')
            <div style="height:{{!request('top_nave',false)?'90vh':'100vh'}}; overflow: auto">
         <div class="container-fluid">
             <div class="row">
@@ -58,10 +53,13 @@
                                         </div>
 
                                         <div class="col-9" style="padding: 0;">
-                                            <input class="form-control" style="height: 40px" placeholder="Enter comment here...">
+                                            <input id="commentInput" class="form-control" style="height: 40px" placeholder="Enter comment here...">
                                         </div>
                                         <div class="col-1" style="padding: 0;">
-                                            <img class="clickOpacity" style="max-width: 40px;min-width: 25px; width: 8vw; padding: 5px; border:solid 1px lightgrey" src="{{asset('icon/send.png')}}">
+                                            <div id="addCommentBtn" onclick="addComment('{{$post->id}}')">
+                                                <img class="clickOpacity" style="max-width: 40px;min-width: 25px; width: 8vw; padding: 5px; border:solid 1px lightgrey" src="{{asset('icon/send.png')}}">
+
+                                            </div>
 
                                         </div>
                                         <div class="col-1" style="padding: 0;">
@@ -70,6 +68,14 @@
                                         </div>
 
                                     </div>                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div id="commentMsg">
+
+                                </div>
+
                             </div>
                         </div>
                         <div style="padding: 10px">
@@ -87,75 +93,8 @@
                             </div>
                         </div>
                         <br>
-                        <div style="padding: 10px">
-                            <label style=" color: gray">Comments</label>
-                            <br>
-                            <div class="row">
-                                <div class="col-md-12">
-                                    <div class="p-2">
-                                        <div class="row">
-
-                                            <div class="col-12">
-                                                <div style="float: left">
-                                                    <img src="{{url($post->user?$post->user->profile_image:'')}}" style="width: 40px; height: 40px; border-radius: 50%;">
-                                                    <label style="font-size: 13px; margin-left: 10px; color: gray; font-weight: bold">{{$post->username}}</label><div></div>
-
-                                                </div>
-                                                <small style="float: right">{{ \Carbon\Carbon::parse($post->created_at)->diffForhumans() }}</small>
-                                            </div>
-
-                                        </div>                                </div>
-                                </div>
-                            </div>
-                            <small style=" color: grey">
-                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur vulputate massa risus, at laoreet justo lacinia quis. Phasellus vel quam tempus, sagittis purus ac, posuere ligula. Pellentesque non est elementum, fermentum justo nec, condimentum ligula. Fusce sodales ligula turpis, ut efficitur risus commodo non.
-                            </small>
-                            <br>
-                            <div class="row">
-                                <div class="col-md-12">
-                                    <div class="p-2">
-                                        <div class="row">
-
-                                            <div class="col-12">
-                                                <div style="float: left">
-                                                    <img src="{{url($post->user?$post->user->profile_image:'')}}" style="width: 40px; height: 40px; border-radius: 50%;">
-                                                    <label style="font-size: 13px; margin-left: 10px; color: gray; font-weight: bold">{{$post->username}}</label><div></div>
-
-                                                </div>
-                                                <small style="float: right">{{ \Carbon\Carbon::parse($post->created_at)->diffForhumans() }}</small>
-                                            </div>
-
-                                        </div>                                </div>
-                                </div>
-                            </div>
-                            <small style=" color: grey">
-                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur vulputate massa risus, at laoreet justo lacinia quis. Phasellus vel quam tempus, sagittis purus ac, posuere ligula. Pellentesque non est elementum, fermentum justo nec, condimentum ligula. Fusce sodales ligula turpis, ut efficitur risus commodo non.
-                            </small>
-                            <br>
-                            <div class="row">
-                                <div class="col-md-12">
-                                    <div class="p-2">
-                                        <div class="row">
-
-                                            <div class="col-12">
-                                                <div style="float: left">
-                                                    <img src="{{url($post->user?$post->user->profile_image:'')}}" style="width: 40px; height: 40px; border-radius: 50%;">
-                                                    <label style="font-size: 13px; margin-left: 10px; color: gray; font-weight: bold">{{$post->username}}</label><div></div>
-
-                                                </div>
-                                                <small style="float: right">{{ \Carbon\Carbon::parse($post->created_at)->diffForhumans() }}</small>
-                                            </div>
-
-                                        </div>                                </div>
-                                </div>
-                            </div>
-                            <small style=" color: grey">
-                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur vulputate massa risus, at laoreet justo lacinia quis. Phasellus vel quam tempus, sagittis purus ac, posuere ligula. Pellentesque non est elementum, fermentum justo nec, condimentum ligula. Fusce sodales ligula turpis, ut efficitur risus commodo non.
-                            </small>
-                            <br>
-                            <br>
-                            <br>
-                            <br>
+                        <div id="commentSection">
+                        @include('admin.post.comments')
                         </div>
 
                     </div>
@@ -172,5 +111,47 @@
                 showSubscription_Modal()
             </script>
             @endif
+
+    <script>
+            function addComment(id)
+            {
+
+                var comment=$("#commentInput").val()
+                $("#commentInput").val('')
+
+
+                $.ajax({
+                    url:"{{route('admin.post.comment',$post->id)}}",
+                    method:'post',
+                    data: {"_token": "{{ csrf_token() }}",'comment':comment},
+                    beforeSend:function(){
+                        $("#commentMsg").html('<h6  style="text-align: center">Posting Comment...</h6>')
+                    },
+                    success:function(response){
+
+
+                             $("#commentMsg").html('<h6  style="text-align: center; color: green">Comment Successfully Added</h6>')
+                             $("#commentSection").empty()
+                             $("#commentSection").append(response)
+
+
+
+
+
+                    },
+                    error: function (res) {
+                        console.log(res)
+                        $("#commentMsg").html('<h6  style="text-align: center; color:darkred">'+res.responseJSON+'</h6>')
+
+
+                    },
+                    complete:function(data){
+                        setTimeout(function (){
+                            $("#commentMsg").text('')
+                        },5000)
+                    }
+                })
+            }
+        </script>
     @endsection
 

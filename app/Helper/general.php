@@ -305,6 +305,12 @@ if ( ! function_exists('today_date')){
         return Carbon::now()->timezone(Config::get('app.timezone'))->format('Y-m-d');
     }
 }
+if ( ! function_exists('post_comments')){
+    function post_comments($post_id)
+    {
+        return \App\Models\postComment::where('post_id',$post_id)->latest()->get();
+    }
+}
 //asdasd
 if ( ! function_exists('is_membershipExpired')){
     function is_membershipExpired()

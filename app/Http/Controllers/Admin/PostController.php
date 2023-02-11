@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use App\Models\post;
+use App\Models\postComment;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Config;
@@ -17,6 +18,23 @@ class PostController extends Controller
 {
     protected $src="src/post/files";
 
+
+    public function comment(Request $request,$id)
+    {
+        if(postComment::where(['post_id'=>$id,
+            'user_id'=>\auth()->user()->id])->exists())
+        {
+            return response()->json('Comment already added',409);
+        }
+        $com=postComment::create([
+            'post_id'=>$id,
+            'user_id'=>\auth()->user()->id,
+            'comment'=>$request->comment,
+            'type'=>'user'
+        ]);
+        $data['post']=post::find($id);
+        return view('admin.post.comments',$data);
+    }
     public function addView()
     {
 
@@ -125,7 +143,7 @@ class PostController extends Controller
     }
     public function update(Request $request,$id)
     {
-
+//ascas
         $data['user_name']=auth()->user()->fname.' '.auth()->user()->lname;
         $data['user_image']=asset(\auth()->user()->profile_image);
 
