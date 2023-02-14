@@ -13,7 +13,7 @@ Route::group([
     Route::post('register', 'AuthController@register');
 });
 
-
+//asdasdasd
 Route::any("reset",function (){
     $c1=\Illuminate\Support\Facades\Artisan::call('config:cache');
     $c2=\Illuminate\Support\Facades\Artisan::call('cache:clear');
