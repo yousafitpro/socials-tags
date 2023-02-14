@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/laravel-8-auth.iml" filepath="$PROJECT_DIR$/.idea/laravel-8-auth.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/socials-tags.iml" filepath="$PROJECT_DIR$/.idea/socials-tags.iml" />
     </modules>
   </component>
 </project>
