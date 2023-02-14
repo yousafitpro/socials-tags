@@ -37,6 +37,7 @@ class SocialTagDashbaord extends Controller
 //                $message = 'Email is not verified';
 //            }
         }
+///asdasdasd
      Session::put('message',$message);
         return back()
             ->withInput();
