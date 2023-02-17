@@ -7,18 +7,19 @@
             <a href="index.html"><i data-feather="home"></i>Dashboard</a>
         </li>
         <li class="sidebar-title">
-            Apps
+            General
         </li>
         <li>
-            <a href="email.html"><i data-feather="inbox"></i>Email</a>
+            <a href="email.html"><i data-feather="share-2"></i>Social Profiles</a>
         </li>
         <li>
-            <a href="calendar.html"><i data-feather="calendar"></i>Calendar</a>
+            <a href="calendar.html"><i data-feather="mail"></i>Customers</a>
         </li>
         <li>
-            <a href="social.html"><i data-feather="user"></i>Social</a>
-        </li><li>
-            <a href="file-manager.html"><i data-feather="message-circle"></i>File Manager</a>
+            <a href="social.html"><i data-feather="edit"></i>Publish</a>
+        </li>
+        <li>
+            <a href="file-manager.html"><i data-feather="message-square"></i>Manage Posts</a>
         </li>
         <li class="sidebar-title">
             Elements
