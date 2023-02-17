@@ -11,7 +11,7 @@
 
     <!-- Title -->
     <title>|Promotomedia</title>
-
+    <link rel="icon" href="{{asset('icons/logo.png')}}" type="image/x-icon"/>
     <!-- Styles -->
     @include('circle-layout.css')
 </head>

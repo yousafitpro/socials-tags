@@ -17,7 +17,7 @@
             </ul>
         </div>
         <div class="logo">
-            <a class="navbar-brand" href="index.html"></a>
+            <img src="{{asset('icons/logo.png')}}" style="width: 40px">
         </div>
         <div class="" id="headerNav">
             <ul class="navbar-nav">
