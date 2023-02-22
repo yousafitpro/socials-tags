@@ -35,7 +35,7 @@ class SocialTagDashbaord extends Controller
     }
     public function post_login(Request $request)
     {
-        ///sdfsdfsdfsdfdfsdffsdfsdfsdfsdfsdf
+        ///sdfsdfsdfsdfdfsdffsdfsdfsdfsdfsdfsdfsdf
         $message = 'Wrong Credentials';
         $data = $request->only('email', 'password');
         $email = $request->email;
