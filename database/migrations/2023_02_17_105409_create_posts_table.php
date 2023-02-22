@@ -15,6 +15,13 @@ class CreatePostsTable extends Migration
     {
         Schema::create('posts', function (Blueprint $table) {
             $table->id();
+            $table->bigInteger('user_id');
+            $table->json('platforms')->nullable();
+            $table->longText('title')->nullable();
+            $table->longText('post_content')->nullable();
+            $table->string('is_scheduled')->nullable();
+            $table->timestamps('scheduled_time')->nullable();
+            $table->softDeletes();
             $table->timestamps();
         });
     }

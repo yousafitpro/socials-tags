@@ -15,6 +15,14 @@ class CreateProductsTable extends Migration
     {
         Schema::create('products', function (Blueprint $table) {
             $table->id();
+            $table->bigInteger('user_id');
+            $table->string('name')->nullable();
+            $table->text('description')->nullable();
+            $table->string('is_expired')->nullable();
+            $table->string('is_connected')->nullable();
+            $table->longText('identity_id_1')->nullable();
+            $table->longText('identity_user_id')->nullable();
+            $table->longText('identity_username')->nullable();
             $table->timestamps();
         });
     }

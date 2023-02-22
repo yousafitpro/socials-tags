@@ -14,6 +14,14 @@
     <link rel="icon" href="{{asset('icons/logo.png')}}" type="image/x-icon"/>
     <!-- Styles -->
     @include('circle-layout.css')
+    <style>
+        .myFlex {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100%;
+        }
+    </style>
 </head>
 <body>
 
@@ -31,5 +39,8 @@
 
 <!-- Javascripts -->
 @include('circle-layout.js')
+<script>
+    $("#zero-conf").DataTable();
+</script>
 </body>
 </html>

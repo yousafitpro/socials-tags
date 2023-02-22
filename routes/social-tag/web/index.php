@@ -9,4 +9,9 @@ Route::prefix('My-Dashboard')
     ->group(function () {
 
         Route::get('index',[\App\Http\Controllers\SocialTagDashbaord::class,'index']);
+        Route::get('customers',[\App\Http\Controllers\SocialTagDashbaord::class,'customers']);
+        Route::get('posts',[\App\Http\Controllers\SocialTagDashbaord::class,'posts']);
+        Route::get('posts',[\App\Http\Controllers\SocialTagDashbaord::class,'posts']);
+        Route::get('social-profiles',[\App\Http\Controllers\SocialTagDashbaord::class,'social_profiles']);
+        Route::post('publish-post',[\App\Http\Controllers\SocialTagDashbaord::class,'publish_post']);
     });

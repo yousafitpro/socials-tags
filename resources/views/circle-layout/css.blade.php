@@ -3,7 +3,7 @@
 <link href="{{asset('theme/assets/plugins/font-awesome/css/all.min.css')}}" rel="stylesheet">
 <link href="{{asset('theme/assets/plugins/perfectscroll/perfect-scrollbar.css')}}" rel="stylesheet">
 <link href="{{asset('theme/assets/plugins/apexcharts/apexcharts.css')}}" rel="stylesheet">
-
+<link href="{{asset('theme/assets/plugins/DataTables/datatables.min.css')}}" rel="stylesheet">
 
 <!-- Theme Styles -->
 <link href="{{asset('theme/assets/css/main.min.css')}}" rel="stylesheet">
@@ -14,4 +14,5 @@
 <!--[if lt IE 9]>
 <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
 <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+
 <![endif]-->

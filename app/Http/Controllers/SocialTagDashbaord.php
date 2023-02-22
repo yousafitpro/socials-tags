@@ -13,8 +13,29 @@ class SocialTagDashbaord extends Controller
 
         return view('circle-layout.pages.index');
     }
+    public function publish_post_view(Request $request)
+    {
+        return view('circle-layout.dashboard.publish');
+    }
+    public function publish_post(Request $request)
+    {
+        //return view('circle-layout.pages.index');
+    }
+    public function customers(Request $request)
+    {
+        return view('circle-layout.dashboard.customers');
+    }
+    public function posts(Request $request)
+    {
+        return view('circle-layout.dashboard.posts');
+    }
+    public function social_profiles(Request $request)
+    {
+        return view('circle-layout.dashboard.social_profiles');
+    }
     public function post_login(Request $request)
     {
+        ///sdfsdfsdfsdfdfsdffsdfsdf
         $message = 'Wrong Credentials';
         $data = $request->only('email', 'password');
         $email = $request->email;

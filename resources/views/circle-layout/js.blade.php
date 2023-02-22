@@ -6,3 +6,6 @@
 <script src="{{asset('theme/assets/plugins/apexcharts/apexcharts.min.js')}}"></script>
 <script src="{{asset('theme/assets/js/main.min.js')}}"></script>
 <script src="{{asset('theme/assets/js/pages/dashboard.js')}}"></script>
+
+<script src="{{asset('theme/assets/plugins/DataTables/datatables.min.js')}}"></script>
+<script src="{{asset('theme/assets/js/pages/datatables.js')}}"></script>
