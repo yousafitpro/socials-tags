@@ -11,7 +11,7 @@ class tripeAdvisorController extends Controller
     {
         //asdasdasdasdasd
         $data['list']=[];
-        print_r($_SERVER);
+
         if($request->has('searchKeywords') && $request->searchKeywords)
         {
            $req=Http::get('https://api.content.tripadvisor.com/api/v1/location/search?key=68A4811971BC462ABE1FC84460F5AD9A&searchQuery=f&language=en');
