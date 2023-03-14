@@ -10,7 +10,7 @@
     <!-- The above 6 meta tags *must* come first in the head; any other head content must come *after* these tags -->
 
     <!-- Title -->
-    <title>Circl - Responsive Admin Dashboard Template</title>
+    <title>Promotamedia | Login</title>
 
     <!-- Styles -->
     @include('circle-layout.css')
@@ -30,7 +30,7 @@
                         <img src="{{asset('theme/assets/images/logo@2x.png')}}" alt="">
                     </div>
                     <div class="authent-text">
-                        <p>Welcome to Circl</p>
+                        <p>Welcome to Promotamedia</p>
                         <p>Please Sign-in to your account.</p>
                     </div>
 
