@@ -15,3 +15,4 @@ class bingController extends Controller
         return view('circle-layout.Bing.index',$data);
     }
 }
+//asdasdasdad

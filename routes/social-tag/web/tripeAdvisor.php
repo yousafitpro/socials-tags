@@ -5,3 +5,4 @@ Route::prefix('Tripe-Advisor')
     ->group(function () {
         Route::any('/',[\App\Http\Controllers\tripeAdvisorController::class,'search']);
     });
+//assadasd
