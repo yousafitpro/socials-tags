@@ -78,7 +78,7 @@
                         </div>
                     </form>
                     <div class="authent-reg">
-                        <p>Not registered? <a href="register.html">Create an account</a></p>
+                        <p>Not registered? <a href="#">Create an account</a></p>
                     </div>
                 </div>
             </div>
