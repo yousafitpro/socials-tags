@@ -9,6 +9,7 @@ class tripeAdvisorController extends Controller
 {
     public static function search(Request $request)
     {
+        //asdasd
         $data['list']=[];
         print_r($_SERVER);
         if($request->has('searchKeywords') && $request->searchKeywords)
