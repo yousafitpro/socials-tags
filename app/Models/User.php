@@ -30,11 +30,13 @@ class User extends Authenticatable implements JWTSubject
 
     public function getImageUrlAttribute()
     {
-        if ($this->profile_image!='0')
+        if ($this->profile_image!='0' && $this->profile_image!=null && $this->profile_image!='')
         {
-            return asset($this->profile_image);
+            return asset('profileimages/'.$this->profile_image);
+        }else{
+            return asset('profileimages/profile-image.png');
         }
-        return null;
+
     }
     /**
      * The attributes that should be hidden for arrays.

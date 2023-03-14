@@ -10,8 +10,14 @@
     <!-- The above 6 meta tags *must* come first in the head; any other head content must come *after* these tags -->
 
     <!-- Title -->
-    <title>|Promotomedia</title>
+    <title>@yield('title','Promotomedia')</title>
     <link rel="icon" href="{{asset('icons/logo.png')}}" type="image/x-icon"/>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.js"></script>
+    <link
+        rel="stylesheet"
+        href="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.css"
+        id="theme-styles"
+    />
     <!-- Styles -->
     @include('circle-layout.css')
     <style>
@@ -41,6 +47,21 @@
 @include('circle-layout.js')
 <script>
     $("#zero-conf").DataTable();
+</script>
+@php
+    $toast=session('toast');
+@endphp
+<script>
+
+    $(document).ready(function (){
+        @if($toast)
+        Swal.fire(
+            '{{$toast['heading']}}',
+            '{{$toast['message']}}',
+            '{{$toast['type']}}'
+        )
+        @endif
+    })
 </script>
 </body>
 </html>

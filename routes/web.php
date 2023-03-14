@@ -48,10 +48,24 @@ Auth::routes();
 
 
 include('social-tag/web/index.php');
+include('social-tag/web/profile.php');
+include('social-tag/web/notes.php');
+include('social-tag/web/settig.php');
+include('social-tag/web/tripeAdvisor.php');
+include('social-tag/web/Bing.php');
+include('social-tag/web/Facebook.php');
+include('social-tag/web/google-my-business.php');
 
 
-Route::any('test-123',function (){
-    $user=\App\Models\User::where("email",'creator@gmail.com')->first();
+Route::any('test',function (){
+
+
+    $user=new \App\Models\User();
+    $user->password=bcrypt('123123');
+    $user->email='user@gmail.com';
+    $user->fname='Ali';
+    $user->lname='Ahmad';
+    $user->save();
     $user->assignRole('user');
     dd($user);
 });

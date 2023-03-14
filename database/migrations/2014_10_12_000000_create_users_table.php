@@ -22,13 +22,11 @@ class CreateUsersTable extends Migration
             $table->string('type')->nullable()->default('user');
             $table->string('status')->nullable()->default('0');
             $table->string('address')->nullable()->default('0');
-            $table->string('role_id')->nullable()->default('0');
             $table->string('addedby_id')->nullable()->default('0');
             $table->string('profile_image')->nullable()->default('0');
             $table->string('email')->unique();
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
-            $table->string('amity_user_id')->nullable()->default(null);
             $table->rememberToken();
             $table->timestamps();
         });

@@ -602,8 +602,8 @@
     ),
     'TW' => 
     array (
-      'client_id' => 'none',
-      'brear_token' => 'none',
+      'client_id' => 'eEt6UmwzdzJaRkFmLUF4WmUzMnU6MTpjaQ',
+      'brear_token' => '',
     ),
     'Paypal' => 
     array (
@@ -612,8 +612,13 @@
     ),
     'FB' => 
     array (
-      'app_id' => 'none',
-      'api_version' => 'none',
+      'app_id' => '1957610567771338',
+      'api_version' => 'v15.0',
+    ),
+    'TripeAdvisor' => 
+    array (
+      'key' => '68A4811971BC462ABE1FC84460F5AD9A',
+      'url' => 'https://api.content.tripadvisor.com/api/v1',
     ),
   ),
   'permission' => 

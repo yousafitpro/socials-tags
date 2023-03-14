@@ -14,4 +14,5 @@ Route::prefix('My-Dashboard')
         Route::get('posts',[\App\Http\Controllers\SocialTagDashbaord::class,'posts']);
         Route::get('social-profiles',[\App\Http\Controllers\SocialTagDashbaord::class,'social_profiles']);
         Route::post('publish-post',[\App\Http\Controllers\SocialTagDashbaord::class,'publish_post']);
+        Route::get('publish-post',[\App\Http\Controllers\SocialTagDashbaord::class,'publish_post_view']);
     });

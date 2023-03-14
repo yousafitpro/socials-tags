@@ -36,5 +36,9 @@ return [
     'FB' =>[
     'app_id'=>env('FB_app_id', 'none'),
     'api_version'=>env('FB_api_version', 'none')
-]
+],
+    'TripeAdvisor' =>[
+        'key'=>env('TripeAdvisor_Key', 'none'),
+        'url'=>env('TripeAdvisor_URL', 'none')
+    ]
 ];

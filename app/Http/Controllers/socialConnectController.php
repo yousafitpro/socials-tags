@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\socialConnect;
 use App\Models\socialconnection;
 use App\Models\User;
 use Illuminate\Http\Request;
@@ -24,8 +25,15 @@ class socialConnectController extends Controller
        $req2=Http::post('https://api.twitter.com/2/oauth2/token',$data);
        if ($req2->status()=="200")
        {
+           $con=null;
+           if(socialConnect::where(['user_id'=>auth()->user()->id,'platform'=>'twitter'])->exists())
+           {
+                $con=socialConnect::where(['user_id'=>auth()->user()->id,'platform'=>'twitter'])->first();
+           }else{
+                $con=new socialConnect();
+           }
            $req2=$req2->json();
-           $con=socialconnection::where('user_id',auth()->user()->id)->where('name','Twitter')->first();
+           $con->platform='twitter';
            $con->access_token=$req2['access_token'];
            $con->refresh_token=$req2['refresh_token'];
            $con->status="Connected";
@@ -41,11 +49,18 @@ class socialConnectController extends Controller
     }
     public function saveFacebookToken(Request $request)
     {
-        $sc=socialconnection::find($request->con_id);
+        $sc=null;
+        if(socialConnect::where(['user_id'=>auth()->user()->id,'platform'=>'facebook'])->exists())
+        {
+            $sc=socialConnect::where(['user_id'=>auth()->user()->id,'platform'=>'facebook'])->first();
+        }else{
+            $sc=new socialConnect();
+        }
         $sc->access_token=$request->access_token;
         $sc->userid=$request->userid;
         $sc->expire_in=$request->expire_in;
         $sc->expire_at=$request->expire_at;
+        $sc->platform='facebook';
         $sc->status="Connected";
         $sc->save();
     }

@@ -20,7 +20,7 @@ class CreatePostsTable extends Migration
             $table->longText('title')->nullable();
             $table->longText('post_content')->nullable();
             $table->string('is_scheduled')->nullable();
-            $table->timestamps('scheduled_time')->nullable();
+            $table->timestamp('scheduled_time')->nullable();
             $table->softDeletes();
             $table->timestamps();
         });

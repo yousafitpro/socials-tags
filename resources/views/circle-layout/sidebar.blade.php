@@ -21,6 +21,12 @@
         <li>
             <a href="{{url('My-Dashboard/posts')}}"><i data-feather="message-square"></i>Manage Posts</a>
         </li>
+        <li>
+            <a href="{{url('Notes')}}"><i data-feather="check-square"></i>Notes</a>
+        </li>
+        <li>
+            <a href="{{url('Settings/calendar')}}"><i data-feather="calendar"></i>Calendar</a>
+        </li>
 
     </ul>
 </div>

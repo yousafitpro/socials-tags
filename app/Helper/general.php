@@ -7,7 +7,13 @@ use App\Models\User;
 use Carbon\Carbon;
 use Illuminate\Support\Facades\Notification;
 use Illuminate\Support\Facades\Session;
+function saveImage($img, $path, $name = null)
+{
+    $name = $name ?: rand(1000, 9999) . time() . '.' . $img->getClientOriginalExtension();
+    $img->move($path, $name);
 
+    return $name;
+}
 if ( ! function_exists('countries_list')) {
     function countries_list()
     {

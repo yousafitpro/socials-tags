@@ -9,7 +9,7 @@
                     <a class="nav-link" href="#">Home</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Settings</a>
+                    <a class="nav-link" href="{{url('Settings')}}">Settings</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="#">Help</a>
@@ -105,10 +105,11 @@
                         </a>
                     </div>
                 </li>
+
                 <li class="nav-item dropdown">
-                    <a class="nav-link profile-dropdown" href="#" id="profileDropDown" role="button" data-bs-toggle="dropdown" aria-expanded="false"><img src="{{asset('theme/assets/images/avatars/profile-image.png')}}" alt=""></a>
+                    <a class="nav-link profile-dropdown" href="#" id="profileDropDown" role="button" data-bs-toggle="dropdown" aria-expanded="false"><img src="{{auth()->user()->image_url}}" style="width: 40px; height: 40px; border-radius: 20px;" alt=""></a>
                     <div class="dropdown-menu dropdown-menu-end profile-drop-menu" aria-labelledby="profileDropDown">
-                        <a class="dropdown-item" href="#"><i data-feather="user"></i>Profile</a>
+                        <a class="dropdown-item" href="{{url('profile/index')}}"><i data-feather="user"></i>Profile</a>
                         <a class="dropdown-item" href="#"><i data-feather="inbox"></i>Messages</a>
                         <a class="dropdown-item" href="#"><i data-feather="edit"></i>Activities<span class="badge rounded-pill bg-success">12</span></a>
                         <a class="dropdown-item" href="#"><i data-feather="check-circle"></i>Tasks</a>

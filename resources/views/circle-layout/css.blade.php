@@ -4,6 +4,7 @@
 <link href="{{asset('theme/assets/plugins/perfectscroll/perfect-scrollbar.css')}}" rel="stylesheet">
 <link href="{{asset('theme/assets/plugins/apexcharts/apexcharts.css')}}" rel="stylesheet">
 <link href="{{asset('theme/assets/plugins/DataTables/datatables.min.css')}}" rel="stylesheet">
+<link href="{{asset('theme/assets/plugins/fullcalendar/main.min.css')}}" rel="stylesheet">
 
 <!-- Theme Styles -->
 <link href="{{asset('theme/assets/css/main.min.css')}}" rel="stylesheet">
