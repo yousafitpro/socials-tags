@@ -26,9 +26,7 @@
                                     <div class="form-group row">
                                         <label class="col-sm-3 control-label">Content:*</label>
                                         <div class="col-sm-9">
-                                            <textarea class="form-control" style="height: 300px">
-
-                                            </textarea>
+                                            <textarea class="form-control" style="height: 300px"></textarea>
                                         </div>
                                     </div>
                                     <br>

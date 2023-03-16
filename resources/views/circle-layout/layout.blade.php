@@ -20,6 +20,7 @@
     />
     <!-- Styles -->
     @include('circle-layout.css')
+    @include('circle-layout.js')
     <style>
         .myFlex {
             display: flex;
@@ -44,7 +45,7 @@
 </div>
 
 <!-- Javascripts -->
-@include('circle-layout.js')
+
 <script>
     $("#zero-conf").DataTable();
 </script>
