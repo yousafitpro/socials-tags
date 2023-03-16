@@ -50,9 +50,9 @@ class socialConnectController extends Controller
     public function saveFacebookToken(Request $request)
     {
         $sc=null;
-        if(socialConnect::where(['user_id'=>auth()->user()->id,'platform'=>'facebook'])->exists())
+        if(socialConnect::where(['user_id'=>auth()->user()->id,'platform'=>'Facebook'])->exists())
         {
-            $sc=socialConnect::where(['user_id'=>auth()->user()->id,'platform'=>'facebook'])->first();
+            $sc=socialConnect::where(['user_id'=>auth()->user()->id,'platform'=>'Facebook'])->first();
         }else{
             $sc=new socialConnect();
         }
@@ -60,7 +60,6 @@ class socialConnectController extends Controller
         $sc->userid=$request->userid;
         $sc->expire_in=$request->expire_in;
         $sc->expire_at=$request->expire_at;
-        $sc->platform='facebook';
         $sc->status="Connected";
         $sc->save();
     }
