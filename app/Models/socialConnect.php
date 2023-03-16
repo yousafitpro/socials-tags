@@ -9,5 +9,5 @@ class socialConnect extends Model
 {
     use HasFactory;
     protected $guarded=[];
-    ///asdasd
+    ///asdasdasdsad
 }
