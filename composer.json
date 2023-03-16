@@ -17,7 +17,8 @@
         "nyholm/psr7": "^1.4",
         "spatie/laravel-permission": "^5.8",
         "symfony/http-client": "^5.3",
-        "tymon/jwt-auth": "^1.0.0-rc.2"
+        "tymon/jwt-auth": "^1.0.0-rc.2",
+        "facebook/php-business-sdk": "^8.0.3"
     },
     "require-dev": {
         "beyondcode/laravel-er-diagram-generator": "^1.5",
@@ -63,7 +64,10 @@
     "config": {
         "optimize-autoloader": true,
         "preferred-install": "dist",
-        "sort-packages": true
+        "sort-packages": true,
+        "allow-plugins": {
+            "php-http/discovery": true
+        }
     },
     "minimum-stability": "dev",
     "prefer-stable": true

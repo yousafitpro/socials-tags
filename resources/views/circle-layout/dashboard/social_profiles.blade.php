@@ -1,5 +1,10 @@
 @extends('circle-layout.layout')
 @section('content')
+    <?php
+
+        $social=my_social_profiles(auth()->user()->id);
+
+        ?>
     <div class="row">
         <div class="col-md-6 col-xl-3">
             <div class="card stat-widget">

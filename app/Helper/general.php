@@ -275,6 +275,26 @@ if ( ! function_exists('countries_list')) {
 
     }
 }
+if ( ! function_exists('my_social_profiles')) {
+    function my_social_profiles($user_id)
+    {
+        $data['temp']=null;
+        if(!\App\Models\socialConnect::where(['name'=>'Facebook','user_id'=>$user_id])->exists())
+        {
+            $data['Facebook']=\App\Models\socialConnect::create([
+               'name'=>'Facebook',
+               'platform'=>'Facebook',
+               'user_id'=>auth()->user()->id
+           ]);
+        }else{
+            $data['Facebook']=\App\Models\socialConnect::where(['name'=>'Facebook','user_id'=>$user_id])->first();
+        }
+
+        return $data;
+
+    }
+}
+
 if ( ! function_exists('dollar_to_cents')){
     function dollar_to_cents($dollars)
     {

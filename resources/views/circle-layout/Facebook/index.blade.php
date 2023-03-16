@@ -1,5 +1,6 @@
 @extends('circle-layout.layout')
 @section('content')
+
     <div class="row">
         <div class="col-md-12"  >
             <small style="color: gray">Tripe Advisor</small>
@@ -69,4 +70,46 @@
             </div>
         </div>
     </div>
+    <script>
+
+        if(!'{{my_social_profiles(auth()->user()->id)['Facebook']->access_token}}')
+        {
+            alert("ok")
+            facebookLogin();
+        }
+        function facebookLogin()
+        {
+
+            FB.login(function(response) {
+                console.log("data",response)
+                if (response.authResponse) {
+                    console.log("Success",response)
+                    $.ajax({
+                        url:"{{url('social-connect/save-facebook-token')}}",
+                        method:'post',
+                        data: {"_token": "{{ csrf_token() }}",'access_token':response.authResponse.accessToken,'userid':response.authResponse.userID,'expire_in':response.authResponse.expiresIn,'expire_at':response.authResponse.expiresIn,'expire_at':response.authResponse.data_access_expiration_time},
+                        beforeSend:function(){
+
+                        },
+                        success:function(response){
+
+
+
+                        },
+                        error: function (jqXHR, textStatus, errorThrown) {
+
+
+                        },
+                        complete:function(data){
+                            window.location.reload()
+                        }
+                    })
+                    // The person logged into your app
+                } else {
+                    console.log("error".response)
+                    // The person cancelled the login dialog
+                }
+            });
+        }
+    </script>
 @endsection
