@@ -132,7 +132,7 @@
 
                         },
                         complete:function(data){
-                            window.location.reload()
+                           // window.location.reload()
                         }
                     })
                     // The person logged into your app
