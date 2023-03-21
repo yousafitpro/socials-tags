@@ -87,13 +87,10 @@
         window.fbAsyncInit = function() {
             FB.init({
                 appId      : '191326023654222',
-                cookie     : true,
                 xfbml      : true,
-                version    : 'v15.0'
+                version    : 'v16.0'
             });
-
             FB.AppEvents.logPageView();
-
         };
 
         (function(d, s, id){
@@ -103,6 +100,7 @@
             js.src = "https://connect.facebook.net/en_US/sdk.js";
             fjs.parentNode.insertBefore(js, fjs);
         }(document, 'script', 'facebook-jssdk'));
+
         {{--if(!'{{my_social_profiles(auth()->user()->id)['Facebook']->access_token}}')--}}
         {{--{--}}
 
