@@ -56,6 +56,7 @@ include('social-tag/web/Bing.php');
 include('social-tag/web/Facebook.php');
 include('social-tag/web/google-my-business.php');
 include('social-tag/social-connect.php');
+include('social-tag/web/Users.php');
 
 
 Route::any('test',function (){

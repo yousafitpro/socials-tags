@@ -373,6 +373,18 @@ if ( ! function_exists('cutNum')) {
         return floor($num) . substr(str_replace(floor($num), '', $num), 0, $precision + 1);
     }
 }
+if ( ! function_exists('app_encrypt')) {
+    function app_encrypt($number)
+    {
+        return $number*123456;
+    }
+}
+if ( ! function_exists('app_decrypt')) {
+    function app_decrypt($number)
+    {
+        return $number/123456;
+    }
+}
 
 
 
