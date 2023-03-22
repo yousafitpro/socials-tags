@@ -10,7 +10,7 @@ class userController extends Controller
     public $SRC = 'profileimages/';
     public function index(Request $request)
     {
-        $data['list']=User::query()->latest()->get();
+        $data['list']=User::query()->where('id','!=',auth()->id())->latest()->get();
         return view('circle-layout.users.index',$data);
     }
 
