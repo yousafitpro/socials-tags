@@ -12,6 +12,9 @@
         <li>
             <a href="{{url('My-Dashboard/social-profiles')}}"><i data-feather="share-2"></i>Social Profiles</a>
         </li>
+        <li>
+            <a href="{{url('My-Dashboard/customers')}}"><i data-feather="mail"></i>Customers</a>
+        </li>
         @if(auth()->user()->hasRole('admin'))
             <li>
                 <a href="{{url('Users')}}"><i data-feather="users"></i>Users</a>
