@@ -84,13 +84,17 @@
         @endif
 
     <script>
+
         window.fbAsyncInit = function() {
             FB.init({
                 appId      : '191326023654222',
+                cookie     : true,
                 xfbml      : true,
                 version    : 'v16.0'
             });
+
             FB.AppEvents.logPageView();
+
         };
 
         (function(d, s, id){
