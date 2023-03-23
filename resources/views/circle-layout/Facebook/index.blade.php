@@ -93,15 +93,7 @@
                 version    : 'v16.0'
             });
 
-            FB.login(function(response) {
-                if (response.authResponse) {
-                    FB.api('/me', function(response) {
-                        console.log('Hello ' + response.name);
-                    });
-                } else {
-                    //login cancelled or not every permission accepted
-                }
-            }, {scope: 'manage_pages, read_stream'})
+            FB.AppEvents.logPageView();
 
         };
 
