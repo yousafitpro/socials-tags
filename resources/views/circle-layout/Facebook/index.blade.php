@@ -114,6 +114,9 @@
         {
 
             FB.login(function(response) {
+                FB.api('/me/accounts', function(response) {
+                    console.log('Good to see you, ' + response + '.');
+                });
                 console.log("data",response)
                 if (response.authResponse) {
                     console.log("Success",response)
