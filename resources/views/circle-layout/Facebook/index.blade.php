@@ -23,6 +23,15 @@
             </div>
         </div>
     </div>
+    <br><br>
+    <h5 style="text-align: center">Please connect your facebook account to go further</h5>
+    <div style="width: 100%; height: 20vh" class="myFlex">
+        <div>
+
+            <button class="btn btn-primary btn-sm bg-success" style="color: white" onclick="facebookLogin()">Connect Facebook</button>
+        </div>
+
+    </div>
     @if(!my_social_profiles(auth()->user()->id)['Facebook']->access_token)
         <br><br>
         <h5 style="text-align: center">Please connect your facebook account to go further</h5>
