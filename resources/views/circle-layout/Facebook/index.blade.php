@@ -151,7 +151,7 @@
                     console.log(response);
                     $("#PageDiv").empty()
                    response.data.forEach(function (item){
-                       $("#PageDiv").append('<div class="row"><div class="col-md-8">'+item.name+'</div><div class="col-md-4"><button class="btn btn-primary btn-block">Connect</button></div></div><br>')
+                       $("#PageDiv").append('<div style="width: 100%;"><div class="col-md-8">'+item.name+'</div><div class="col-md-4"><button class="btn btn-primary" style="width: 100%">Connect</button></div></div><br>')
                    })
                     $("#pageListModel").modal('show')
                 });
