@@ -14,14 +14,7 @@
                     </button>
                 </div>
                 <div class="modal-body">
-                    <div class="row">
-                        <div class="col-md-8">
-                            My bussiness 123
-                        </div>
-                        <div class="col-md-4">
-                            <button class="btn btn-primary btn-block">Connect</button>
-                        </div>
-                    </div>
+
                 </div>
 {{--                <div class="modal-footer">--}}
 {{--                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>--}}
@@ -113,9 +106,7 @@
         @endif
 
     <script>
-setTimeout(function (){
-    $("#pageListModel").modal('show')
-})
+
         window.fbAsyncInit = function() {
             FB.init({
                 appId      : '191326023654222',
@@ -147,6 +138,9 @@ setTimeout(function (){
             FB.login(function(response) {
                 FB.api('/me/accounts', function(response) {
                     console.log(response);
+                    $("PageDiv").empty()
+                    $("PageDiv").append('<div class="row"><div class="col-md-8">My bussiness 123</div><div class="col-md-4"><button class="btn btn-primary btn-block">Connect</button></div></div><br>')
+                    $("#pageListModel").modal('show')
                 });
                 console.log("data",response)
                 if (response.authResponse) {
