@@ -15,10 +15,10 @@
                 </div>
                 <div class="modal-body">
                     <div class="row">
-                        <div class="col-md-10">
+                        <div class="col-md-8">
                             My bussiness 123
                         </div>
-                        <div class="col-md-2">
+                        <div class="col-md-4">
                             <button class="btn btn-primary btn-block">Connect</button>
                         </div>
                     </div>
