@@ -150,7 +150,8 @@
 
 
                 console.log("Success",authResponse)
-                if (response.authResponse) {
+                authResponse=authResponse.authResponse
+                if (authResponse) {
                     FB.api('/me/accounts', function(response) {
                         console.log(response);
                         $("#PageDiv").empty()
