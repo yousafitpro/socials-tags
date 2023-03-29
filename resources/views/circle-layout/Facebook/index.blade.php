@@ -147,38 +147,40 @@
         {
 
             FB.login(function(authResponse) {
-                FB.api('/me/accounts', function(response) {
-                    console.log(response);
-                    $("#PageDiv").empty()
-                   response.data.forEach(function (item){
-                       $("#PageDiv").append('<div  style="width: 100%"><div  style="width: 70%; float: left">'+item.name+'<br></div><div style="width: 30%; float: left" ><a href="{{url('Facebook/Connect-Page').'?page_id='}}'+item.id+'&page_name='+item.name+'&page_access_token='+item.access_token+'&user_id='+authResponse.userID+'&user_acccess_token='+authResponse.accessToken+'" class="btn btn-primary btn-sm" style="width: 100%; float: right">Connect</a></div></div><br><br>')
-                   })
-                    $("#pageListModel").modal('show')
-                });
-                console.log("data",response)
+
+
+                console.log("Success",authResponse)
                 if (response.authResponse) {
-                    console.log("Success",response)
-                    $.ajax({
-                        url:"{{url('social-connect/save-facebook-token')}}",
-                        method:'post',
-                        data: {"_token": "{{ csrf_token() }}",'access_token':response.authResponse.accessToken,'userid':response.authResponse.userID,'expire_in':response.authResponse.expiresIn,'expire_at':response.authResponse.expiresIn,'expire_at':response.authResponse.data_access_expiration_time},
-                        beforeSend:function(){
+                    FB.api('/me/accounts', function(response) {
+                        console.log(response);
+                        $("#PageDiv").empty()
+                        response.data.forEach(function (item){
+                            $("#PageDiv").append('<div  style="width: 100%"><div  style="width: 70%; float: left">'+item.name+'<br></div><div style="width: 30%; float: left" ><a href="{{url('Facebook/Connect-Page').'?page_id='}}'+item.id+'&page_name='+item.name+'&page_access_token='+item.access_token+'&user_id='+authResponse.userID+'&user_acccess_token='+authResponse.accessToken+'" class="btn btn-primary btn-sm" style="width: 100%; float: right">Connect</a></div></div><br><br>')
+                        })
+                        $("#pageListModel").modal('show')
+                    });
+                    {{--console.log("Success",response)--}}
+                    {{--$.ajax({--}}
+                    {{--    url:"{{url('social-connect/save-facebook-token')}}",--}}
+                    {{--    method:'post',--}}
+                    {{--    data: {"_token": "{{ csrf_token() }}",'access_token':response.authResponse.accessToken,'userid':response.authResponse.userID,'expire_in':response.authResponse.expiresIn,'expire_at':response.authResponse.expiresIn,'expire_at':response.authResponse.data_access_expiration_time},--}}
+                    {{--    beforeSend:function(){--}}
 
-                        },
-                        success:function(response){
+                    {{--    },--}}
+                    {{--    success:function(response){--}}
 
-                       alert("Facebook Successfully Connected")
+                    {{--   alert("Facebook Successfully Connected")--}}
 
-                        },
-                        error: function (jqXHR, textStatus, errorThrown) {
+                    {{--    },--}}
+                    {{--    error: function (jqXHR, textStatus, errorThrown) {--}}
 
 
-                        },
-                        complete:function(data){
-                           // window.location.reload()
-                        }
-                    })
-                    // The person logged into your app
+                    {{--    },--}}
+                    {{--    complete:function(data){--}}
+                    {{--       // window.location.reload()--}}
+                    {{--    }--}}
+                    {{--})--}}
+                    {{--// The person logged into your app--}}
                 } else {
                     console.log("error".response)
                     // The person cancelled the login dialog
