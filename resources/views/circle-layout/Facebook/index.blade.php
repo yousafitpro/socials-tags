@@ -14,7 +14,7 @@
                     </button>
                 </div>
                 <div class="modal-body">
-                 <div id="PageDiv">
+                 <div id="PageDiv" class="container-fluid">
 
                  </div>
                 </div>
