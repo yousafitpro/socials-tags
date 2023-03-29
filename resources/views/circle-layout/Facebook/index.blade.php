@@ -152,6 +152,16 @@
                 console.log("Success",authResponse)
                 authResponse=authResponse.authResponse
                 if (authResponse) {
+
+                    FB.api(
+                        "/102871142388476/feed",
+                        function (response) {
+                            console.log("Feeds",response)
+                            if (response && !response.error) {
+                                /* handle the result */
+                            }
+                        }
+                    );
                     FB.api('/me/accounts', function(response) {
                         console.log(response);
                         $("#PageDiv").empty()
