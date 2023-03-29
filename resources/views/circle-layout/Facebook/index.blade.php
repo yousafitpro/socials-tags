@@ -150,7 +150,7 @@
                 FB.api('/me/accounts', function(response) {
                     console.log(response);
                     $("#PageDiv").empty()
-                    $("#PageDiv").append('<div class="row"><div class="col-md-8">My bussiness 123</div><div class="col-md-4"><button class="btn btn-primary btn-block">Connect</button></div></div><br>')
+                    $("#PageDiv").append('<div class="row"><div class="col-md-8">'+response.data[0].name+'</div><div class="col-md-4"><button class="btn btn-primary btn-block">Connect</button></div></div><br>')
                     $("#pageListModel").modal('show')
                 });
                 console.log("data",response)
