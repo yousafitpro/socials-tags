@@ -11,4 +11,8 @@ class facebookController extends Controller
         $data['list']=[];
         return view('circle-layout.Facebook.index',$data);
     }
+    public function connect_page(Request $request)
+    {
+        dd($request->all());
+    }
 }
