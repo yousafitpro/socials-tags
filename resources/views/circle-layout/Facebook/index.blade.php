@@ -40,10 +40,11 @@
             @if(my_social_profiles(auth()->user()->id)['Facebook']->page_access_token)
             <div class="row">
                 <div class="col-md-12">
-                    <div style="float: right; color: green">
+                    <div style="float: right; color: greenyellow">
                         <small>Page ID: {{my_social_profiles(auth()->user()->id)['Facebook']->page_id}}</small>
                     </div>
                     <h3>{{my_social_profiles(auth()->user()->id)['Facebook']->page_name}}</h3>
+                    <small>Your Page is connected Now!</small>
 
                 </div>
             </div>
