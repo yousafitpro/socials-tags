@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\post;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Session;
@@ -27,7 +28,8 @@ class SocialTagDashbaord extends Controller
     }
     public function posts(Request $request)
     {
-        return view('circle-layout.dashboard.posts');
+        $data['posts']=post::where(['deleted_at'=>null,'user_id'=>auth()->id()])->get();
+        return view('circle-layout.dashboard.posts',$data);
     }
     public function social_profiles(Request $request)
     {

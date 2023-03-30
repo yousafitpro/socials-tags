@@ -5,15 +5,20 @@
             <div class="card">
                 <div class="card-body">
                     <h5 class="card-title">All Posts</h5>
-                    <button class="btn btn-primary" type="button"  style="zoom: 0.8; float: right"  >
+                    <a href="{{url('My-Dashboard/publish-post')}}" class="btn btn-primary" type="button"  style="zoom: 0.8; float: right"  >
                         <i data-feather="plus"></i> Add New
-                    </button>
-
+                    </a>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
                     <table id="zero-conf" class="display" style="width:100%">
                         <thead>
                         <tr>
-                            <th>Title</th>
-                            <th>Description</th>
+                            <th>Title </th>
+<th>Description</th>
                             <th>Platforms</th>
                             <th>date</th>
                             <th>Actions</th>
@@ -21,18 +26,23 @@
                         </tr>
                         </thead>
                         <tbody>
+                        @foreach($posts as $p)
                         <tr>
-                            <td>some markup changes. Here’s how </td>
-                            <td>some markup changes. Here’s how you can put them to work with eithersome markup changes. Here’s how you can put them to work with either</td>
+                            <td>{{$p->title}}</td>
+                            <td>{!! $p->post_content !!}</td>
                             <td style="min-width: 200px">
+                                @if($p->facebook_post_id)
                                 <button class="btn btn-primary" type="button" style="zoom: 0.8"  >
                                     <i data-feather="facebook"></i>
                                 </button>
+                                @endif
+                                    @if($p->twitter_post_id)
                                 <button class="btn btn-primary" type="button"  style="zoom: 0.8; margin-top: 5px"  >
                                     <i data-feather="twitter"></i>
                                 </button>
+                                        @endif
                             </td>
-                            <td>12-12-2023</td>
+                            <td>{{$p->created_at}}</td>
                             <td>
                                 <div class="dropdown">
                                     <button class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false">
@@ -48,44 +58,14 @@
                             </td>
 
                         </tr>
-                        <tr>
-                            <td>some markup changes. Here’s how </td>
-                            <td>some markup changes. Here’s how you can put them to work with eithersome markup changes. Here’s how you can put them to work with either</td>
-                            <td style="min-width: 200px">
-                                <button class="btn btn-primary" type="button" style="zoom: 0.8"  >
-                                    <i data-feather="facebook"></i>
-                                </button>
-                                <button class="btn btn-primary" type="button"  style="zoom: 0.8; margin-top: 5px"  >
-                                    <i data-feather="twitter"></i>
-                                </button>
-                            </td>
-                            <td>12-12-2023</td>
-                            <td>
-                                <div class="dropdown">
-                                    <button class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false">
-
-                                    </button>
-                                    <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                                        <li><a class="dropdown-item" href="#">Edit /  View</a></li>
-                                        <li><a class="dropdown-item" href="#">Hide</a></li>
-                                        <li><a class="dropdown-item" href="#">Delete</a></li>
-
-                                    </ul>
-                                </div>
-                            </td>
-
-                        </tr>
+                       @endforeach
 
                         </tbody>
-                        <tfoot>
-                        <tr>
-                            <th>Name</th>
-                            <th>Email / Phone</th>
-                            <th>Platform</th>
-                            <th>date</th>
-                        </tr>
-                        </tfoot>
+
                     </table>
+                    <br>
+                    <br>
+                    <br>
                 </div>
             </div>
         </div>

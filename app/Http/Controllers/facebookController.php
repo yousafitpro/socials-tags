@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\post;
 use App\Models\socialConnect;
 use Illuminate\Http\Request;
 
@@ -30,5 +31,21 @@ class facebookController extends Controller
             ]
         ]);
 
+    }
+    public function create_post(Request $request)
+    {
+      $post=new post();
+      $post->title=$request->title;
+      $post->user_id=auth()->id();
+      $post->post_content=$request->post_content;
+      $post->link=$request->link;
+      $post->save();
+        return redirect()->back()->with([
+            'toast' => [
+                'heading' => 'Success!',
+                'message' => 'Post Successfully Created',
+                'type' => 'success',
+            ]
+        ]);
     }
 }

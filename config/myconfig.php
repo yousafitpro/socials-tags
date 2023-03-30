@@ -36,7 +36,8 @@ return [
     'FB' =>[
     'appId'=>env('FB_App_Id', 'none'),
     'secret'=>env('FB_Secret', 'none'),
-    'ApiVersion'=>env('FB_Api_Version', 'none')
+    'ApiVersion'=>env('FB_Api_Version', 'none'),
+    'ApiUrl'=>env('FB_Api_url', 'none')
 ],
     'TripeAdvisor' =>[
         'key'=>env('TripeAdvisor_Key', 'none'),

@@ -19,18 +19,23 @@
                                     <div class="form-group row">
                                         <label class="col-sm-3 control-label">Title:*</label>
                                         <div class="col-sm-9">
-                                            <input type="text" class="form-control" name="title" value="{{old('old_password')}}" required/>
+                                            <input type="text" class="form-control"  name="title" value="{{old('title')}}" required/>
                                         </div>
                                     </div>
                                     <br>
                                     <div class="form-group row">
                                         <label class="col-sm-3 control-label">Content:*</label>
                                         <div class="col-sm-9">
-                                            <textarea class="form-control" style="height: 300px"></textarea>
+                                            <textarea class="form-control" name="post_content" style="height: 200px">{{old('post_content')}}</textarea>
                                         </div>
                                     </div>
                                     <br>
-
+                                <div class="form-group row">
+                                    <label class="col-sm-3 control-label">Link:*</label>
+                                    <div class="col-sm-9">
+                                        <input type="text" class="form-control" name="link" value="{{old('link')}}"/>
+                                    </div>
+                                </div>
 
 
                             </div>
@@ -42,25 +47,25 @@
                         <br>
                         <br>
                         <div>
-                            <input style="zoom: 1.2;" type="checkbox">
-                            <img src="{{asset('social-icons/fb.png')}}" style="width: 30px; margin-top: -7px">
+                            <input style="zoom: 1.2;" type="checkbox" name="facebook">
+                            <img src="{{asset('social-icons/fb.png')}}"  style="width: 30px; margin-top: -7px">
                             <strong>Facebook</strong>
                         </div>
 
                         <div style="margin-top: 15px">
-                            <input style="zoom: 1.2;" type="checkbox">
+                            <input style="zoom: 1.2;" type="checkbox" name="instagram">
                             <img src="{{asset('social-icons/insta.png')}}" style="width: 30px; margin-top: -7px">
                             <strong>Instagram</strong>
                         </div>
 
                         <div style="margin-top: 15px">
-                            <input style="zoom: 1.2;" type="checkbox">
+                            <input style="zoom: 1.2;" type="checkbox" name="linkedin">
                             <img src="{{asset('social-icons/linkedin.png')}}" style="width: 30px; margin-top: -7px">
                             <strong>Linkedin</strong>
                         </div>
 
                         <div style="margin-top: 15px">
-                            <input style="zoom: 1.2;" type="checkbox">
+                            <input style="zoom: 1.2;" type="checkbox" name="twitter">
                             <img src="{{asset('social-icons/twitter.png')}}" style="width: 30px; margin-top: -7px">
                             <strong>Twitter</strong>
                         </div>
