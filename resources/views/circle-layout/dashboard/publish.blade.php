@@ -4,15 +4,15 @@
     <div class="card">
 
         <div class="card-body">
-
+            <form class="form-horizontal form-element" enctype="multipart/form-data" method="POST" action="{{route('changePasswordPost')}}">
+                @csrf
             <div class="container-fluid">
                 <div class="row">
 
                     <div class="col-md-8">
                         <div class="row">
                             <div class="col-12">
-                                <form class="form-horizontal form-element" enctype="multipart/form-data" method="POST" action="{{route('changePasswordPost')}}">
-                                    @csrf
+
 
                                     <br>
                                     <br>
@@ -31,28 +31,10 @@
                                     </div>
                                     <br>
 
-                                </form>
+
 
                             </div>
                         </div>
-
-                        {{--                  @if(auth()->user()->company)--}}
-                        {{--                        <br>--}}
-                        {{--                    <br>--}}
-                        {{--                        <div class="row">--}}
-                        {{--                            <div class="col-md-12">--}}
-                        {{--                      <form action="{{url('merchant/offer/update-offer-note')}}" method="post">--}}
-                        {{--                          @csrf--}}
-                        {{--                          <label>Offer Note</label>--}}
-                        {{--                          <textarea class="form-control" name="offer_note" style="min-height: 200px">@if(auth()->user()->company->offer_note!=null){{auth()->user()->company->offer_note}}@else Please find attached your invoice. Once you you review it, come back to this email and click pay button. Please note, convenience fee is extra charge that is charged by zpayd.com and is seperate from the enclosed bill--}}
-                        {{--                              @endif--}}
-                        {{--</textarea>--}}
-                        {{--                          <br>--}}
-                        {{--                          <button class="btn btn-primary pull-right">Update</button>--}}
-                        {{--                      </form>--}}
-                        {{--                            </div>--}}
-                        {{--                        </div>--}}
-                        {{--                      @endif--}}
                     </div>
                     <div class="col-md-4">
                         <strong>Platforms</strong>
@@ -93,6 +75,7 @@
                     </div>
                 </div>
             </div>
+            </form>
             <br>
 
         </div>
