@@ -196,7 +196,7 @@
                     console.log("error".response)
                     // The person cancelled the login dialog
                 }
-            });
+            },{scope: 'pages_show_list,pages_read_engagement,'});
         }
     </script>
 @endsection
