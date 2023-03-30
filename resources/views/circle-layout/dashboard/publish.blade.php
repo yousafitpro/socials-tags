@@ -4,7 +4,7 @@
     <div class="card">
 
         <div class="card-body">
-            <form class="form-horizontal form-element" enctype="multipart/form-data" method="POST" action="{{url('Facebook/Create-Post')}}">
+            <form class="form-horizontal form-element" onsubmit="confirm('Are you sure?')" enctype="multipart/form-data" method="POST" action="{{url('Facebook/Create-Post')}}">
                 @csrf
             <div class="container-fluid">
                 <div class="row">
@@ -73,7 +73,7 @@
                         <br>
                         <br>
                         <div class="box-footer text-center">
-                            <button type="submit" onclick="confirm('Are you sure?')" class="btn btn-primary " style="width:100%">
+                            <button type="submit"  class="btn btn-primary " style="width:100%">
                                 <i class="ti-save-alt"></i> Post
                             </button>
                         </div>
