@@ -10,9 +10,8 @@ use Illuminate\Support\Facades\Session;
 function saveImage($img, $path, $name = null)
 {
     $name = $name ?: rand(1000, 9999) . time() . '.' . $img->getClientOriginalExtension();
-    file_put_contents('profileimages/'.$name,$img);
-    //$img->move($path, $name);
-dd("ok");
+    $img->move(public_path('postimages'), $name);
+
     return $name;
 }
 if ( ! function_exists('countries_list')) {
