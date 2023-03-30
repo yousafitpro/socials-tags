@@ -4,11 +4,13 @@ namespace App\Http\Controllers;
 
 use App\Models\post;
 use App\Models\socialConnect;
+use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Http;
 
 class facebookController extends Controller
 {
+    public $SRC = 'postimages/';
     public static function index(Request $request)
     {
         $data['list']=[];
@@ -42,6 +44,14 @@ class facebookController extends Controller
       $post->post_content=$request->post_content;
       $post->link=$request->link;
       $post->save();
+        $profile_image='';
+        $photo = $request->file('photo');
+        if ($photo) {
+            $profile_image = saveImage($photo, $this->SRC);
+            dd($profile_image);
+            $post->photo=$profile_image;
+            $post->save();
+        }
 
        if($request->has('facebook') && socialConnect::where(['name'=>'Facebook','user_id'=>auth()->id()])->where('page_access_token','!=',null)->exists())
        {
