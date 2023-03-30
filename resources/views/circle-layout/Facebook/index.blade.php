@@ -154,7 +154,7 @@
                 if (authResponse) {
 
 
-                    FB.api('oauth/access_token?grant_type=fb_exchange_token&client_id={{config('myconfig.FB.appId')}}&client_secret={{config('myconfig.FB.secret')}}',function (response){
+                    FB.api('oauth/access_token?grant_type=fb_exchange_token&client_id={{config('myconfig.FB.appId')}}&client_secret={{config('myconfig.FB.secret')}}&fb_exchange_token='+authResponse.accessToken,function (response){
                         console.log('exchange token',response)
                     })
                     FB.api(
