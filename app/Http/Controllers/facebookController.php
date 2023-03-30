@@ -16,6 +16,6 @@ class facebookController extends Controller
     public function connect_page(Request $request)
     {
         $fb=socialConnect::where(['name'=>'Facebook','user_id'=>auth()->id()])->first();
-        $fb->
+        dd($request->all());
     }
 }
