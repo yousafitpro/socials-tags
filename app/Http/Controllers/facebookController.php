@@ -47,6 +47,7 @@ class facebookController extends Controller
               $url=config('myconfig.FB.ApiUrl').'/'.$fb->page_id.'/feed?';
            $url=$url.'message='.$request->post_content;
            $url=$url.'&access_token='.$fb->page_access_token;
+           dd($request->all());
               if($request->link && $request->link!=null || $request->link=='')
               {
                   $url=$url.'&link='.$fb->link;
