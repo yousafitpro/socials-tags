@@ -26,11 +26,11 @@
         </div>
     </div>
     <br><br>
-    <h5 style="text-align: center">Please connect your facebook account to go further</h5>
+    <h5 style="text-align: center">Please connect your facebook account and Instagram Accounts</h5>
     <div style="width: 100%; height: 20vh" class="myFlex">
         <div>
 
-            <button class="btn btn-primary btn-sm bg-success" style="color: white" onclick="facebookLogin()">Connect Facebook</button>
+            <button class="btn btn-primary btn-sm bg-success" style="color: white" onclick="facebookLogin()">Connect Page And Instagram</button>
         </div>
 
     </div>
