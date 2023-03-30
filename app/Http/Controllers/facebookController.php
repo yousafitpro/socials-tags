@@ -61,6 +61,9 @@ class facebookController extends Controller
                   $http=$http->json();
                   $post->facebook_post_id=$http['id'];
                   $post->save();
+              }else
+              {
+                  dd($http->json());
               }
 
        }
@@ -75,7 +78,7 @@ class facebookController extends Controller
            ]);
        }
        else{
-           dd($http->json());
+
            $post->delete();
            return redirect()->back()->with([
                'toast' => [
