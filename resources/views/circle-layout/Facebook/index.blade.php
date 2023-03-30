@@ -153,6 +153,10 @@
                 authResponse=authResponse.authResponse
                 if (authResponse) {
 
+
+                    FB.api('oauth/access_token?grant_type=fb_exchange_token&client_id={{config('myconfig.FB.appId')}}&client_secret={{config('myconfig.FB.secret')}}',function (response){
+                        console.log('exchange token',response)
+                    })
                     FB.api(
                         "/102871142388476/feed",
                         function (response) {
@@ -196,7 +200,7 @@
                     console.log("error".response)
                     // The person cancelled the login dialog
                 }
-            },{scope: 'pages_show_list,pages_read_engagement,'});
+            },{scope: 'pages_show_list,pages_read_engagement',return_scopes: true});
         }
     </script>
 @endsection
