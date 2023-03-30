@@ -64,6 +64,7 @@ class facebookController extends Controller
            if ($photo) {
                $url=config('myconfig.FB.ApiUrl').'/'.$fb->page_id.'/photos?';
                $url=$url.'&url='.$photo_path;
+               dd($url);
            }else{
                $url=config('myconfig.FB.ApiUrl').'/'.$fb->page_id.'/feed?';
            }
