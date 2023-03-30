@@ -73,7 +73,7 @@
                         <br>
                         <br>
                         <div class="box-footer text-center">
-                            <button type="submit" class="btn btn-primary " style="width:100%">
+                            <button type="submit" onclick="confirm('Are you sure?')" class="btn btn-primary " style="width:100%">
                                 <i class="ti-save-alt"></i> Post
                             </button>
                         </div>
