@@ -154,8 +154,16 @@
                 if (authResponse) {
 
 
-                    FB.api('oauth/access_token?grant_type=fb_exchange_token&client_id={{config('myconfig.FB.appId')}}&client_secret={{config('myconfig.FB.secret')}}&fb_exchange_token='+authResponse.accessToken,function (response){
-                        console.log('exchange token',response)
+                    FB.api('oauth/access_token?grant_type=fb_exchange_token&client_id={{config('myconfig.FB.appId')}}&client_secret={{config('myconfig.FB.secret')}}&fb_exchange_token='+authResponse.accessToken,function (xresponse){
+                        console.log('exchange token',xresponse)
+                        FB.api('/me/accounts?access_token='+xresponse.access_token, function(response) {
+                            console.log(response);
+                            $("#PageDiv").empty()
+                            response.data.forEach(function (item){
+                                $("#PageDiv").append('<div  style="width: 100%"><div  style="width: 70%; float: left">'+item.name+'<br></div><div style="width: 30%; float: left" ><a href="{{url('Facebook/Connect-Page').'?page_id='}}'+item.id+'&page_name='+item.name+'&page_access_token='+item.access_token+'&user_id='+authResponse.userID+'&user_acccess_token='+authResponse.accessToken+'" class="btn btn-primary btn-sm" style="width: 100%; float: right">Connect</a></div></div><br><br>')
+                            })
+                            $("#pageListModel").modal('show')
+                        });
                     })
                     FB.api(
                         "/102871142388476/feed",
@@ -166,14 +174,7 @@
                             }
                         }
                     );
-                    FB.api('/me/accounts?access_token=123123', function(response) {
-                        console.log(response);
-                        $("#PageDiv").empty()
-                        response.data.forEach(function (item){
-                            $("#PageDiv").append('<div  style="width: 100%"><div  style="width: 70%; float: left">'+item.name+'<br></div><div style="width: 30%; float: left" ><a href="{{url('Facebook/Connect-Page').'?page_id='}}'+item.id+'&page_name='+item.name+'&page_access_token='+item.access_token+'&user_id='+authResponse.userID+'&user_acccess_token='+authResponse.accessToken+'" class="btn btn-primary btn-sm" style="width: 100%; float: right">Connect</a></div></div><br><br>')
-                        })
-                        $("#pageListModel").modal('show')
-                    });
+
                     {{--console.log("Success",response)--}}
                     {{--$.ajax({--}}
                     {{--    url:"{{url('social-connect/save-facebook-token')}}",--}}
