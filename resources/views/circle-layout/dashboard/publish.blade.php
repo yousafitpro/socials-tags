@@ -4,7 +4,7 @@
     <div class="card">
 
         <div class="card-body">
-            <form class="form-horizontal form-element" enctype="multipart/form-data" method="POST" action="{{route('changePasswordPost')}}">
+            <form class="form-horizontal form-element" enctype="multipart/form-data" method="POST" action="{{url('Facebook/Create-Post')}}">
                 @csrf
             <div class="container-fluid">
                 <div class="row">
