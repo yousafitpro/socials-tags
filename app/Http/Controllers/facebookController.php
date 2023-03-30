@@ -47,8 +47,7 @@ class facebookController extends Controller
         $profile_image='';
         $photo = $request->file('photo');
         if ($photo) {
-            $profile_image = saveImage($photo, $this->SRC);
-
+            $profile_image = saveImage($photo,$this->SRC);
             $post->photo=$profile_image;
             $post->save();
             dd($post);

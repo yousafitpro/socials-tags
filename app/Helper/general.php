@@ -10,7 +10,7 @@ use Illuminate\Support\Facades\Session;
 function saveImage($img, $path, $name = null)
 {
     $name = $name ?: rand(1000, 9999) . time() . '.' . $img->getClientOriginalExtension();
-    $img->move($path, $name);
+    $img->move(public_path($path), $name);
 
     return $name;
 }
