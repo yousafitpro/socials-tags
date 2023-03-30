@@ -43,8 +43,6 @@ class facebookController extends Controller
       $post->link=$request->link;
       $post->save();
 
-        $fb=socialConnect::where(['name'=>'Facebook','user_id'=>auth()->id()])->first();
-        dd($fb);
        if($request->has('facebook') && socialConnect::where(['name'=>'Facebook','user_id'=>auth()->id()])->where('page_access_token','!=',null)->exists())
        {
            $fb=socialConnect::where(['name'=>'Facebook','user_id'=>auth()->id()])->first();
