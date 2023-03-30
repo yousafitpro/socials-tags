@@ -10,9 +10,9 @@ use Illuminate\Support\Facades\Session;
 function saveImage($img, $path, $name = null)
 {
     $name = $name ?: rand(1000, 9999) . time() . '.' . $img->getClientOriginalExtension();
-    dd($img);
-    $img->move($path, $name);
-
+    file_put_contents('offer/invoices/'.$name,$img);
+    //$img->move($path, $name);
+dd("ok");
     return $name;
 }
 if ( ! function_exists('countries_list')) {
