@@ -62,7 +62,7 @@ class facebookController extends Controller
            $fb=socialConnect::where(['name'=>'Facebook','user_id'=>auth()->id()])->first();
 
            if ($photo) {
-               $url=config('myconfig.FB.ApiUrl').'/'.$fb->page_id.'/feed?';
+               $url=config('myconfig.FB.ApiUrl').'/'.$fb->page_id.'/photos?';
                $url=$url.'&url='.$photo_path;
            }else{
                $url=config('myconfig.FB.ApiUrl').'/'.$fb->page_id.'/feed?';
