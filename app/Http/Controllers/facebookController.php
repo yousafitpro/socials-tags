@@ -50,7 +50,7 @@ class facebookController extends Controller
 
               if($request->link && $request->link!=null || $request->link!='')
               {
-                  $url=$url.'&link='.$fb->link;
+                  $url=$url.'&link='.$request->link;
               }
 
 dd($url);
