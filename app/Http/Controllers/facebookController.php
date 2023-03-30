@@ -63,13 +63,15 @@ class facebookController extends Controller
 
            if ($photo) {
                $url=config('myconfig.FB.ApiUrl').'/'.$fb->page_id.'/photos?';
-               $url=$url.'url='.'https://login.promotamedia.com/public/icons/logo.png';
+               $url=$url.'url='.$photo_path;
+               $url=$url.'&message='.$request->post_content;
 
            }else{
                $url=config('myconfig.FB.ApiUrl').'/'.$fb->page_id.'/feed?';
+               $url=$url.'message='.$request->post_content;
            }
 
-           $url=$url.'message='.$request->post_content;
+
            $url=$url.'&access_token='.$fb->page_access_token;
 
               if($request->link && $request->link!=null || $request->link!='')
