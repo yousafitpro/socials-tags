@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\post;
 use App\Models\socialConnect;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Http;
 
 class facebookController extends Controller
 {
@@ -53,7 +54,8 @@ class facebookController extends Controller
                   $url=$url.'&link='.$request->link;
               }
 
-dd($url);
+              $http=Http::post($url,null);
+              dd($http->json());
        }
         return redirect()->back()->with([
             'toast' => [
