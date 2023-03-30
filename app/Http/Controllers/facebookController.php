@@ -55,7 +55,13 @@ class facebookController extends Controller
               }
 
               $http=Http::post($url,[]);
-              dd($http->status());
+              if($http->status()=='200')
+              {
+                  $http=$http->json();
+                  $post->facebook_post_id=$http['id'];
+                  $post->save();
+              }
+              dd($post);
        }
         return redirect()->back()->with([
             'toast' => [
