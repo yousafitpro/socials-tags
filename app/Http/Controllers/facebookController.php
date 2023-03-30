@@ -53,7 +53,7 @@ class facebookController extends Controller
                   $url=$url.'&link='.$fb->link;
               }
 
-
+dd($url);
        }
         return redirect()->back()->with([
             'toast' => [
