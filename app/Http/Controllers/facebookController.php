@@ -34,12 +34,19 @@ class facebookController extends Controller
     }
     public function create_post(Request $request)
     {
+        $is_posted=false;
       $post=new post();
       $post->title=$request->title;
       $post->user_id=auth()->id();
       $post->post_content=$request->post_content;
       $post->link=$request->link;
       $post->save();
+       if($request->has('facebook') && socialConnect::where(['name'=>'Facebook','user_id'=>auth()->id()])->where('page_access_token','!=',null)->exists())
+       {
+
+           $fb=socialConnect::where(['name'=>'Facebook','user_id'=>auth()->id()])->first();
+           dd($fb);
+       }
         return redirect()->back()->with([
             'toast' => [
                 'heading' => 'Success!',
