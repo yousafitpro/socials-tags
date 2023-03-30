@@ -43,9 +43,11 @@ class facebookController extends Controller
       $post->save();
        if($request->has('facebook') && socialConnect::where(['name'=>'Facebook','user_id'=>auth()->id()])->where('page_access_token','!=',null)->exists())
        {
-
            $fb=socialConnect::where(['name'=>'Facebook','user_id'=>auth()->id()])->first();
-           dd($fb);
+              $url=config('myconfig.FB.ApiUrl/').$fb->page_id;
+              dd($url);
+
+
        }
         return redirect()->back()->with([
             'toast' => [
