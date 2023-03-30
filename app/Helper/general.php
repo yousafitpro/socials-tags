@@ -10,7 +10,7 @@ use Illuminate\Support\Facades\Session;
 function saveImage($img, $path, $name = null)
 {
     $name = $name ?: rand(1000, 9999) . time() . '.' . $img->getClientOriginalExtension();
-    file_put_contents('postimages/'.$name,$img);
+    file_put_contents('profileimages/'.$name,$img);
     //$img->move($path, $name);
 dd("ok");
     return $name;
