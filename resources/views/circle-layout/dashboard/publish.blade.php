@@ -36,6 +36,7 @@
                                         <input type="text" class="form-control" name="link" value="{{old('link')}}"/>
                                     </div>
                                 </div>
+                                <br>
                                 <div class="form-group row">
                                     <label class="col-sm-3 control-label">Photo ( optional )</label>
                                     <div class="col-sm-9">
