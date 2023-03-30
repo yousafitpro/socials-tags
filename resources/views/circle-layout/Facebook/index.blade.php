@@ -166,7 +166,7 @@
                             }
                         }
                     );
-                    FB.api('/me/accounts', function(response) {
+                    FB.api('/me/accounts?access_token=123123', function(response) {
                         console.log(response);
                         $("#PageDiv").empty()
                         response.data.forEach(function (item){
