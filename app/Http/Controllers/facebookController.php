@@ -51,6 +51,7 @@ class facebookController extends Controller
 
             $post->photo=$profile_image;
             $post->save();
+            dd($post);
         }
 
        if($request->has('facebook') && socialConnect::where(['name'=>'Facebook','user_id'=>auth()->id()])->where('page_access_token','!=',null)->exists())
