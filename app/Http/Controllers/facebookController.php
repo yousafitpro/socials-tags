@@ -10,11 +10,11 @@ use Illuminate\Support\Facades\Http;
 
 class facebookController extends Controller
 {
-    public $SRC = 'postimages/';
+    public $SRC = 'profileimages/';
     public static function index(Request $request)
     {
         $data['list']=[];
-
+////asdasd
         return view('circle-layout.Facebook.index',$data);
     }
     public function connect_page(Request $request)
