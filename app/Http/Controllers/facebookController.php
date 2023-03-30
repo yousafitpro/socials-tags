@@ -54,7 +54,7 @@ class facebookController extends Controller
                   $url=$url.'&link='.$request->link;
               }
 
-              $http=Http::post($url,null);
+              $http=Http::post($url,[]);
               dd($http->json());
        }
         return redirect()->back()->with([
