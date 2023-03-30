@@ -34,6 +34,18 @@
         </div>
 
     </div>
+
+    <div class="card">
+        <div class="card-body">
+            @if(my_social_profiles(auth()->user()->id)['Facebook']->page_access_token)
+            <div class="row">
+                <div class="col-md-8">
+                    {{my_social_profiles(auth()->user()->id)['Facebook']->page_name}}
+                </div>
+            </div>
+                @endif
+        </div>
+    </div>
 {{--    @if(!my_social_profiles(auth()->user()->id)['Facebook']->access_token)--}}
 {{--        <br><br>--}}
 {{--        <h5 style="text-align: center">Please connect your facebook account to go further</h5>--}}
