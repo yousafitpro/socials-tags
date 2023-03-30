@@ -31,12 +31,17 @@
                                     </div>
                                     <br>
                                 <div class="form-group row">
-                                    <label class="col-sm-3 control-label">Link:*</label>
+                                    <label class="col-sm-3 control-label">Link (optional)</label>
                                     <div class="col-sm-9">
                                         <input type="text" class="form-control" name="link" value="{{old('link')}}"/>
                                     </div>
                                 </div>
-
+                                <div class="form-group row">
+                                    <label class="col-sm-3 control-label">Photo ( optional )</label>
+                                    <div class="col-sm-9">
+                                        <input type="file" class="form-control" name="photo" />
+                                    </div>
+                                </div>
 
                             </div>
                         </div>
