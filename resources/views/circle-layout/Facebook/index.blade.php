@@ -157,7 +157,7 @@
                     FB.api('oauth/access_token?grant_type=fb_exchange_token&client_id={{config('myconfig.FB.appId')}}&client_secret={{config('myconfig.FB.secret')}}&fb_exchange_token='+authResponse.accessToken,function (xresponse){
                         console.log('exchange token',xresponse)
                         var date=new Date(xresponse.expires_in)
-                        alert(Date)
+                        alert(date)
                         FB.api('/me/accounts?access_token='+xresponse.access_token, function(response) {
                             console.log(response);
                             $("#PageDiv").empty()
