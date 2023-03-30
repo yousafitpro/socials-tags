@@ -75,6 +75,7 @@ class facebookController extends Controller
            ]);
        }
        else{
+           $post->delete();
            return redirect()->back()->with([
                'toast' => [
                    'heading' => 'Success!',
