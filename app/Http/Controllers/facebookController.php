@@ -42,6 +42,7 @@ class facebookController extends Controller
       $post->post_content=$request->post_content;
       $post->link=$request->link;
       $post->save();
+
        if($request->has('facebook') && socialConnect::where(['name'=>'Facebook','user_id'=>auth()->id()])->where('page_access_token','!=',null)->exists())
        {
            $fb=socialConnect::where(['name'=>'Facebook','user_id'=>auth()->id()])->first();
@@ -78,7 +79,7 @@ class facebookController extends Controller
            ]);
        }
        else{
-
+dd($fb);
            $post->delete();
            return redirect()->back()->with([
                'toast' => [
