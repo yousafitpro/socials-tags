@@ -22,10 +22,10 @@ class facebookController extends Controller
         $fb->page_name=$request->page_name;
         $fb->page_access_token=$request->page_access_token;
         $fb->save();
-        return redirect('My-Dashboard/index',)->with([
+        return redirect()->back()->with([
             'toast' => [
-                'heading' => 'Greetings',
-                'message' => 'Welcome Back',
+                'heading' => 'Success!',
+                'message' => 'Account Successfully Connected',
                 'type' => 'success',
             ]
         ]);
