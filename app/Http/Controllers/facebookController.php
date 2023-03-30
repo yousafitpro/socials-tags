@@ -57,18 +57,31 @@ class facebookController extends Controller
               $http=Http::post($url,[]);
               if($http->status()=='200')
               {
+                  $is_posted=true;
                   $http=$http->json();
                   $post->facebook_post_id=$http['id'];
                   $post->save();
               }
-              dd($post);
+
        }
-        return redirect()->back()->with([
-            'toast' => [
-                'heading' => 'Success!',
-                'message' => 'Post Successfully Created',
-                'type' => 'success',
-            ]
-        ]);
+       if($is_posted)
+       {
+           return redirect()->back()->with([
+               'toast' => [
+                   'heading' => 'Success!',
+                   'message' => 'Post Successfully Created',
+                   'type' => 'success',
+               ]
+           ]);
+       }
+       else{
+           return redirect()->back()->with([
+               'toast' => [
+                   'heading' => 'Success!',
+                   'message' => 'Post cannot be posted',
+                   'type' => 'danger',
+               ]
+           ]);
+       }
     }
 }
