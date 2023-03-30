@@ -161,7 +161,7 @@
                             console.log(response);
                             $("#PageDiv").empty()
                             response.data.forEach(function (item){
-                                $("#PageDiv").append('<div  style="width: 100%"><div  style="width: 70%; float: left">'+item.name+'<br></div><div style="width: 30%; float: left" ><a href="{{url('Facebook/Connect-Page').'?page_id='}}'+item.id+'&page_name='+item.name+'&page_access_token='+item.access_token+'&user_id='+authResponse.userID+'&user_acccess_token='+authResponse.accessToken+'" class="btn btn-primary btn-sm" style="width: 100%; float: right">Connect</a></div></div><br><br>')
+                                $("#PageDiv").append('<div  style="width: 100%"><div  style="width: 70%; float: left">'+item.name+'<br></div><div style="width: 30%; float: left" ><a href="{{url('Facebook/Connect-Page').'?page_id='}}'+item.id+'&page_name='+item.name+'&page_access_token='+item.access_token+'&user_id='+authResponse.userID+'&user_acccess_token='+xresponse.access_token+'" class="btn btn-primary btn-sm" style="width: 100%; float: right">Connect</a></div></div><br><br>')
                             })
                             $("#pageListModel").modal('show')
                         });
