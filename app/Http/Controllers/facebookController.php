@@ -10,7 +10,7 @@ use Illuminate\Support\Facades\Http;
 
 class facebookController extends Controller
 {
-    public $SRC = 'profileimages/';
+    public $SRC = 'postimages/';
     public static function index(Request $request)
     {
         $data['list']=[];
