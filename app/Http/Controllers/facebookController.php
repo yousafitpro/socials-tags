@@ -62,6 +62,7 @@ class facebookController extends Controller
                   $post->facebook_post_id=$http['id'];
                   $post->save();
               }
+              dd($http);
 
        }
        if($is_posted)
