@@ -44,6 +44,7 @@ class facebookController extends Controller
       $post->post_content=$request->post_content;
       $post->link=$request->link;
       $post->save();
+      $photo_path=null;
         $profile_image='';
         $photo = $request->file('photo');
         if ($photo) {
@@ -51,15 +52,22 @@ class facebookController extends Controller
 
             $post->photo=$profile_image;
             $post->save();
+            $photo_path=asset($this->SRC.$post->photo);
 
-            dd(asset($this->SRC.$post->photo));
-            dd($post);
         }
 
        if($request->has('facebook') && socialConnect::where(['name'=>'Facebook','user_id'=>auth()->id()])->where('page_access_token','!=',null)->exists())
        {
+           $url='';
            $fb=socialConnect::where(['name'=>'Facebook','user_id'=>auth()->id()])->first();
-              $url=config('myconfig.FB.ApiUrl').'/'.$fb->page_id.'/feed?';
+
+           if ($photo) {
+               $url=config('myconfig.FB.ApiUrl').'/'.$fb->page_id.'/feed?';
+               $url=$url.'&url='.$photo_path;
+           }else{
+               $url=config('myconfig.FB.ApiUrl').'/'.$fb->page_id.'/feed?';
+           }
+
            $url=$url.'message='.$request->post_content;
            $url=$url.'&access_token='.$fb->page_access_token;
 
