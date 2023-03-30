@@ -52,7 +52,7 @@ class facebookController extends Controller
             $post->photo=$profile_image;
             $post->save();
 
-            dd(public_path($this->SRC.$post->photo));
+            dd(asset($this->SRC.$post->photo));
             dd($post);
         }
 
