@@ -34,8 +34,9 @@ return [
         'secret'=>env('Paypal_secret', 'none')
     ],
     'FB' =>[
-    'app_id'=>env('FB_app_id', 'none'),
-    'api_version'=>env('FB_api_version', 'none')
+    'appId'=>env('FB_App_Id', 'none'),
+    'secret'=>env('FB_Secret', 'none'),
+    'ApiVersion'=>env('FB_Api_Version', 'none')
 ],
     'TripeAdvisor' =>[
         'key'=>env('TripeAdvisor_Key', 'none'),

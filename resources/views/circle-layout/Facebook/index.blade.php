@@ -120,7 +120,7 @@
 
         window.fbAsyncInit = function() {
             FB.init({
-                appId      : '191326023654222',
+                appId      : '{{config('myconfig.FB.appId')}}',
                 cookie     : true,
                 xfbml      : true,
                 version    : 'v16.0'
