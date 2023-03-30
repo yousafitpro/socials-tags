@@ -16,6 +16,12 @@ class facebookController extends Controller
     public function connect_page(Request $request)
     {
         $fb=socialConnect::where(['name'=>'Facebook','user_id'=>auth()->id()])->first();
-        dd($request->all());
+        $fb->access_token=$request->user_acccess_token;
+        $fb->user_id=$request->user_id;
+        $fb->page_id=$request->page_id;
+        $fb->page_name=$request->page_name;
+        $fb->page_access_token=$request->page_access_token;
+        $fb->save();
+        dd($fb);
     }
 }
