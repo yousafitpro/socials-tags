@@ -22,6 +22,13 @@ class facebookController extends Controller
         $fb->page_name=$request->page_name;
         $fb->page_access_token=$request->page_access_token;
         $fb->save();
-        dd($fb);
+        return redirect()->back()
+            ->with([
+                'toast' => [
+                    'heading' => 'Message',
+                    'message' => 'Accounts Successfully connected',
+                    'type' => 'success',
+                ]
+            ]);
     }
 }
