@@ -75,6 +75,7 @@ class facebookController extends Controller
            ]);
        }
        else{
+           dd($http->json());
            $post->delete();
            return redirect()->back()->with([
                'toast' => [
