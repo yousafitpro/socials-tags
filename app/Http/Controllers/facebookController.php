@@ -55,7 +55,7 @@ class facebookController extends Controller
             $photo_path=asset($this->SRC.$post->photo);
 
         }
-
+//asdasdasd
        if($request->has('facebook') && socialConnect::where(['name'=>'Facebook','user_id'=>auth()->id()])->where('page_access_token','!=',null)->exists())
        {
            $url='';
