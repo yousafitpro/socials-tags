@@ -354,6 +354,12 @@ if ( ! function_exists('is_membershipExpired')){
         return  false;
     }
 }
+if ( ! function_exists('human_readable_time')){
+    function human_readable_time($time)
+    {
+        return Carbon::parse($time)->diffForHumans();
+    }
+}
 if ( ! function_exists('time_now')){
     function time_now()
     {
