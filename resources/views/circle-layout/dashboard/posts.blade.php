@@ -32,18 +32,19 @@
                             <td>{!! $p->post_content !!}</td>
                             <td style="min-width: 200px">
                                 @if($p->facebook_post_id)
-                                    <div class="dropdown">
-{{--                                        <button class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false">--}}
-                                            <button class="btn btn-primary dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false" type="button" style="zoom: 0.8"  >
+                                    <div>
+                                        <div class="dropdown">
+                                            <button class="btn btn-primary" data-bs-toggle="dropdown" aria-expanded="false" type="button" style="zoom: 0.8"  >
                                                 <i data-feather="facebook"></i>
                                             </button>
-                                        </button>
-                                        <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                                            <li><a class="dropdown-item" href="#">Edit /  View</a></li>
-                                            <li><a class="dropdown-item" href="#">Hide</a></li>
-                                            <li><a class="dropdown-item" href="#">Delete</a></li>
+                                            </button>
+                                            <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                                <li><a class="dropdown-item" href="#">Edit /  View</a></li>
+                                                <li><a class="dropdown-item" href="#">Hide</a></li>
+                                                <li><a class="dropdown-item" href="#">Delete</a></li>
 
-                                        </ul>
+                                            </ul>
+                                        </div>
                                     </div>
 
                                 @endif
