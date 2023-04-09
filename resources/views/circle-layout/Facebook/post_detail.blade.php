@@ -79,12 +79,14 @@
                              <div class="row">
                                  <div class="col-sm-12">
                                      {{--                                     <small style="float: right">{{human_readable_time($p['created_time'])}}</small>--}}
-                                     <a href="https://web.facebook.com/profile.php?id={{$p['id']}}" target="_blank"><h5>{{$p['name']}}</h5></a>
+                                     <a href="https://web.facebook.com/profile.php?id={{$p['id']}}" target="_blank"><h5>{{$p['name']}}
+                                             @if($p['type']=='LIKE')
+                                                 <i data-feather="thumbs-up" style="float: right"></i>
+                                             @endif
+                                         </h5></a>
 
 
-                                     @if($p['type']=='LIKE')
-                                         <button class="btn btn-primary btn-sm" style="float: right"><i data-feather="thumbs-up"></i></button>
-                                         @endif
+
 
 
                                      {{--                                     <small>{{$p['message']}}</small>--}}
