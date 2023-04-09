@@ -122,6 +122,7 @@ class facebookController extends Controller
         $url=$url.'&access_token='.$fb->page_access_token;
 
         $res=Http::get($url);
-        dd($res->json());
+        $data['data']=$res->json();
+        return view('circle-layout.Facebook.ajax.comments',$data);
     }
 }

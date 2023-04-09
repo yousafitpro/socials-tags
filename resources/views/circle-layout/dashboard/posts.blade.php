@@ -118,7 +118,7 @@
                   // $(".products__btn").text("Loading...")
                },
                success:function(response){
-
+                   $("#PageDiv"+id).empty()
                    $("#PageDiv"+id).append(response)
 
                },
