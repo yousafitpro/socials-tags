@@ -123,6 +123,8 @@ class facebookController extends Controller
 
         $res=Http::get($url);
         $data['data']=$res->json();
+        $data['data']=$data['data']['data'];
+        dd($data['data']);
         return view('circle-layout.Facebook.ajax.comments',$data);
     }
 }
