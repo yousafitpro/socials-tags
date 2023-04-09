@@ -34,7 +34,7 @@
                                 @if($p->facebook_post_id)
 
 
-                                          <a href="{{url('Facebook/Post-Detail',$p->facebook_post_id)}}">
+                                          <a href="{{url('Facebook/Post-Detail',$p->facebook_post_id)}}" target="_blank">
                                               <button class="btn btn-primary"  type="button"  >
                                                   <i data-feather="facebook"></i>
                                               </button>
