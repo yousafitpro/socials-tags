@@ -82,6 +82,11 @@
                                      <a href="https://web.facebook.com/profile.php?id={{$p['id']}}" target="_blank"><h5>{{$p['name']}}</h5></a>
 
 
+                                     @if($p['type']=='LIKE')
+                                         <button class="btn btn-primary"><i data-feather="like"></i></button>
+                                         @endif
+
+
                                      {{--                                     <small>{{$p['message']}}</small>--}}
                                  </div>
                              </div>
