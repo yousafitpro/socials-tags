@@ -111,7 +111,7 @@
        {
             $("#commentBox"+id).modal('show')
            $.ajax({
-               url:"{{url('Facebook/Comments/')}}"+post_id,
+               url:"{{url('Facebook/Comments')}}/"+post_id,
                method:'get',
                data: {"_token": "{{ csrf_token() }}"},
                beforeSend:function(){
