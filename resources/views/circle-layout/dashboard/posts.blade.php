@@ -60,7 +60,7 @@
                                     <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
                                         <li><a class="dropdown-item" href="#">Edit /  View</a></li>
                                         <li><a class="dropdown-item" href="#">Hide</a></li>
-                                        <li><a class="dropdown-item" href="#" onclick="DeletePost('{{url('Facebook/Post-Delete',$p->id)}}')">Delete</a></li>
+                                        <li><a class="dropdown-item" href="#" onclick="DeletePost('{{url('Facebook/Post-Delete',app_encrypt($p->id))}}')">Delete</a></li>
 
                                     </ul>
                                 </div>
