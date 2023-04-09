@@ -136,5 +136,32 @@
                }
            })
        }
+       function loadLikes(id,post_id)
+       {
+           $("#commentBox"+id).modal('show')
+           $("#PageDiv"+id).empty()
+           $("#PageDiv"+id).append('<br><h4 style="text-align: center">Loading...</h4><br>')
+           $.ajax({
+               url:"{{url('Facebook/Likes')}}/"+post_id,
+               method:'get',
+               data: {"_token": "{{ csrf_token() }}"},
+               beforeSend:function(){
+                   // $(".products__btn").text("Loading...")
+               },
+               success:function(response){
+                   $("#PageDiv"+id).empty()
+
+                   $("#PageDiv"+id).append(response)
+
+               },
+               error: function (jqXHR, textStatus, errorThrown) {
+
+
+               },
+               complete:function(data){
+                   //   $(".products__btn").text("Load More")
+               }
+           })
+       }
     </script>
 @endsection

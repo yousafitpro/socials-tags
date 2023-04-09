@@ -127,4 +127,17 @@ class facebookController extends Controller
 
         return view('circle-layout.Facebook.ajax.comments',$data);
     }
+    public function get_likes(Request $request,$id)
+    {
+        $fb=socialConnect::where(['name'=>'Facebook','user_id'=>auth()->id()])->first();
+        $url=config('myconfig.FB.ApiUrl').'/'.$id.'/likes?';
+
+        $url=$url.'&access_token='.$fb->page_access_token;
+
+        $res=Http::get($url);
+        $data['data']=$res->json();
+        $data['data']=$data['data']['data'];
+
+        return view('circle-layout.Facebook.ajax.comments',$data);
+    }
 }
