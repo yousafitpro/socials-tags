@@ -112,6 +112,8 @@
        function loadComments(id,post_id)
        {
             $("#commentBox"+id).modal('show')
+           $("#PageDiv"+id).empty()
+           $("#PageDiv"+id).append('<br><h4 style="text-align: center">Loading...</h4><br>')
            $.ajax({
                url:"{{url('Facebook/Comments')}}/"+post_id,
                method:'get',
@@ -121,6 +123,7 @@
                },
                success:function(response){
                    $("#PageDiv"+id).empty()
+
                    $("#PageDiv"+id).append(response)
 
                },
