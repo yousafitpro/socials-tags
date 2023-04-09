@@ -360,6 +360,18 @@ if ( ! function_exists('human_readable_time')){
         return Carbon::parse($time)->diffForHumans();
     }
 }
+if ( ! function_exists('app_encrypt')){
+    function app_encrypt($number)
+    {
+        return 1234567*$number;
+    }
+}
+if ( ! function_exists('app_decrypt')){
+    function app_decrypt($number)
+    {
+        return 1234567/$number;
+    }
+}
 if ( ! function_exists('time_now')){
     function time_now()
     {
