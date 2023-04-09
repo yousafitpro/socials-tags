@@ -4,7 +4,7 @@
 <div class="card">
 
     <div class="card-body">
-        <h4>{{$post->title}}</h4>
+        <a class="nav-link" id="sidebar-toggle" href="#"><i data-feather="arrow-left"></i></a>   <h4>{{$post->title}}</h4>
         <br>
         <br>
         <br>
