@@ -83,6 +83,9 @@
                                              @if($p['type']=='LIKE')
                                                  <i data-feather="thumbs-up" style="float: right"></i>
                                              @endif
+                                             @if($p['type']=='LOVE')
+                                                 <i data-feather="heart"  style="float: right; color: darkred"></i>
+                                             @endif
                                          </h5></a>
 
 
