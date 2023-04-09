@@ -42,8 +42,9 @@
                                                     </button>
                                                 </div>
                                                 <div class="modal-body">
-                                                    <div id="PageDiv" class="container-fluid">
 
+                                                    <div id="PageDiv{{$p->id}}" class="container-fluid">
+                                                       <h4 style="text-align: center">Loading...</h4>
                                                     </div>
                                                 </div>
                                                 {{--                <div class="modal-footer">--}}
@@ -107,6 +108,26 @@
        function loadComments(id,post_id)
        {
             $("#commentBox"+id).modal('show')
+           $.ajax({
+               url:"{{url('Facebook/Comments/')}}"+post_id,
+               method:'get',
+               data: {"_token": "{{ csrf_token() }}"},
+               beforeSend:function(){
+                  // $(".products__btn").text("Loading...")
+               },
+               success:function(response){
+
+                   $("#PageDiv"+id).append(response)
+
+               },
+               error: function (jqXHR, textStatus, errorThrown) {
+
+
+               },
+               complete:function(data){
+                //   $(".products__btn").text("Load More")
+               }
+           })
        }
     </script>
 @endsection
