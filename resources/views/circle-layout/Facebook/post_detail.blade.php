@@ -35,6 +35,8 @@
                      @endif
                  </div>
                  <div class="col-md-3">
+                 </div>
+                 <div class="col-md-3">
                      <h5 style="color: lightgrey">Liked By ( {{count($likes)}} )</h5>
                      <hr>
                      <br>
@@ -44,7 +46,7 @@
                          @foreach($likes as $p)
                              <div class="row">
                                  <div class="col-sm-12">
-                                   //  <small style="float: right">{{human_readable_time($p['created_time'])}}</small>
+{{--                                     <small style="float: right">{{human_readable_time($p['created_time'])}}</small>--}}
                                      <a href="https://web.facebook.com/profile.php?id={{$p['id']}}" target="_blank"><h5>{{$p['name']}}</h5></a>
 
 
