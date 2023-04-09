@@ -12,6 +12,8 @@
              <div class="row">
                  <div class="col-md-6">
                      <h5 style="color: lightgrey">Comments ( {{count($comments)}} )</h5>
+                     <hr>
+<br>
 
 
                      @if(count($comments)>0)
