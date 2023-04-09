@@ -39,9 +39,8 @@
                                             </button>
                                             </button>
                                             <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                                                <li><a class="dropdown-item" href="#">Edit /  View</a></li>
-                                                <li><a class="dropdown-item" href="#">Hide</a></li>
-                                                <li><a class="dropdown-item" href="#">Delete</a></li>
+
+                                                <li><a class="dropdown-item" href="#">Comments</a></li>
 
                                             </ul>
                                         </div>
