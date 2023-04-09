@@ -7,7 +7,7 @@
         <a   href="{{url('My-Dashboard/posts')}}"><i data-feather="arrow-left" style="zoom: 1.4"></i> Go Back</a>
         <br>
         <br>
-        <span style="font-size: 25px; margin-left: 10px">{{$post->title}}</span>
+        <img src="{{asset('social-icons/fb.png')}}"  style="width: 30px; margin-top: -7px"> <span style="font-size: 25px; margin-left: 10px">{{$post->title}}</span>
         <br>
         <br>
         <br>
