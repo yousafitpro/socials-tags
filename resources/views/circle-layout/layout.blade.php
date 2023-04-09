@@ -51,6 +51,9 @@
 
 <script>
     $("#zero-conf").DataTable();
+    function CloseModel(id){
+        $(id).modal("hide")
+    }
 </script>
 @php
     $toast=session('toast');
