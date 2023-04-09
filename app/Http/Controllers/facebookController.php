@@ -143,6 +143,9 @@ class facebookController extends Controller
     public function post_detail(Request $request,$id)
     {
 
+        $data['reactions']=[];
+        $data['likes']=[];
+        $data['comments']=[];
         $post=post::find(app_decrypt($id));
         $id=$post->facebook_post_id;
         $fb=socialConnect::where(['name'=>'Facebook','user_id'=>auth()->id()])->first();
@@ -174,7 +177,7 @@ class facebookController extends Controller
             ///sdasdasd
             $data['data']=$res->json();
             $data['reactions']=$data['data']['data'];
-            dd($data['reactions']);
+
         }
         $data['post']=$post;
        // return view('circle-layout.Facebook.ajax.likes',$data);
