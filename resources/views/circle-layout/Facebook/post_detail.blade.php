@@ -4,6 +4,7 @@
 <div class="card">
 
     <div class="card-body">
+        <h4>{{$post->title}}</h4>
          <div class="container-fluid">
              <div class="row">
                  <div class="col-md-6">
