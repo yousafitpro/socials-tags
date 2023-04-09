@@ -1,7 +1,7 @@
 
 
 
-@foreach($data['data'] as $d)
+@foreach($data as $d)
     <h4>{{$p['from']['name']}}</h4>
     <br>
 @endforeach
