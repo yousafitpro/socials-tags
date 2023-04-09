@@ -138,6 +138,6 @@ class facebookController extends Controller
         $data['data']=$res->json();
         $data['data']=$data['data']['data'];
 
-        return view('circle-layout.Facebook.ajax.comments',$data);
+        return view('circle-layout.Facebook.ajax.likes',$data);
     }
 }
