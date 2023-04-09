@@ -142,6 +142,8 @@ class facebookController extends Controller
     }
     public function post_detail(Request $request,$id)
     {
+        $post=post::find(app_decrypt($id));
+        $id=$post->facebook_post_id;
         $fb=socialConnect::where(['name'=>'Facebook','user_id'=>auth()->id()])->first();
         $url=config('myconfig.FB.ApiUrl').'/'.$id.'/likes?';
         $url=$url.'&access_token='.$fb->page_access_token;
