@@ -15,7 +15,7 @@
         <br>
     @endforeach
 @else
-    <h3 style="text-align: center; color: lightgrey">Empty</h3>
+    <h5 style="text-align: center; color: lightgrey">Empty</h5>
 @endif
 
 
