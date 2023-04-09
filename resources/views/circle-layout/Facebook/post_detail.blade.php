@@ -83,7 +83,7 @@
 
 
                                      @if($p['type']=='LIKE')
-                                         <button class="btn btn-primary"><i data-feather="thumbs-up"></i></button>
+                                         <button class="btn btn-primary btn-sm" style="float: right"><i data-feather="thumbs-up"></i></button>
                                          @endif
 
 
