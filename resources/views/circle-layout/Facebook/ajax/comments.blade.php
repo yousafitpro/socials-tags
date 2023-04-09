@@ -2,8 +2,8 @@
 
 
 @foreach($data as $p)
-    <h4>{{$p['from']['name']}}</h4>
-    <br>
+    <h5>{{$p['from']['name']}}</h5>
+
     <small>{{$p['message']}}</small>
     <br>
 @endforeach
