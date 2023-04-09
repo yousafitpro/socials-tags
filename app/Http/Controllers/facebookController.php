@@ -151,7 +151,7 @@ class facebookController extends Controller
         $res=Http::delete($url);
         $data['data']=$res->json();
 
-        if($res->status()=='200' && $data['data']['data']['success']==true)
+        if($res->status()=='200' && $data['data']['success']==true)
         {
 
             $post->facebook_post_id=null;
