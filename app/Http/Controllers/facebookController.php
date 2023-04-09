@@ -153,10 +153,21 @@ class facebookController extends Controller
 
         if($res->status()=='200' && $data['data']['data']['success']==true)
         {
-            $data['data']=$res->json();
+
+            $post->facebook_post_id=null;
+            $post->save();
+            return redirect()->back()->with([
+                'toast' => [
+                    'heading' => 'Success!',
+                    'message' => 'Account Successfully Deleted',
+                    'type' => 'success',
+                ]
+            ]);
 
         }else{
             $data['data']=$res->json();
+            $post->facebook_post_id=null;
+            $post->save();
             dd($data);
         }
     }
