@@ -153,6 +153,9 @@ class facebookController extends Controller
         {
             $data['data']=$res->json();
             dd($data);
+        }else{
+            $data['data']=$res->json();
+            dd($data);
         }
     }
     public function post_detail(Request $request,$id)
