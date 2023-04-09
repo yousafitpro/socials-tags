@@ -82,9 +82,10 @@
                                      <a href="https://web.facebook.com/profile.php?id={{$p['id']}}" target="_blank"><h5>{{$p['name']}}
                                              @if($p['type']=='LIKE')
                                                  <i data-feather="thumbs-up" style="float: right"></i>
-                                             @endif
-                                             @if($p['type']=='LOVE')
+                                             @elseif($p['type']=='LOVE')
                                                  <i data-feather="heart"  style="float: right; color: darkred"></i>
+                                             @else
+                                                 <small style="float: right;">{{$p['type']}}</small>
                                              @endif
                                          </h5></a>
 
