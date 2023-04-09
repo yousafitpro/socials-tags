@@ -5,7 +5,7 @@
 
     <div class="card-body">
         <a   href="{{url('My-Dashboard/posts')}}"><i data-feather="arrow-left" style="zoom: 1.4"></i> Go Back</a>
-        <a   href="#" onclick="DeletePost('{{url('Facebook/Post-Delete',app_encrypt($p->id))}}')"><i data-feather="arrow-left" style="zoom: 1.4"></i> Delete</a>
+        <a   href="#" onclick="DeletePost('{{url('Facebook/Post-Delete',app_encrypt($post->id))}}')"><i data-feather="arrow-left" style="zoom: 1.4"></i> Delete</a>
         <br>
         <br>
         <img src="{{asset('social-icons/fb.png')}}"  style="width: 30px; margin-top: -7px"> <span style="font-size: 25px; margin-left: 10px">{{$post->title}}</span>
