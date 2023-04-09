@@ -147,7 +147,7 @@ class facebookController extends Controller
         $fb=socialConnect::where(['name'=>'Facebook','user_id'=>auth()->id()])->first();
         $url=config('myconfig.FB.ApiUrl').'/'.$id;
         $url=$url.'?access_token='.$fb->page_access_token;
-        dd($url);
+
         $res=Http::delete($url);
 
 
