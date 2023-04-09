@@ -156,7 +156,7 @@ class facebookController extends Controller
 
             $post->facebook_post_id=null;
             $post->save();
-            return redirect()->back()->with([
+            return redirect(url('My-Dashboard/posts'))->with([
                 'toast' => [
                     'heading' => 'Success!',
                     'message' => 'Account Successfully Deleted',

@@ -28,7 +28,12 @@ class SocialTagDashbaord extends Controller
     }
     public function posts(Request $request)
     {
-        $data['posts']=post::where(['deleted_at'=>null,'user_id'=>auth()->id()])->get();
+        $data['posts']=post::where(['deleted_at'=>null,'user_id'=>auth()->id()])->where(function ($q){
+                $q->orWhere('facebook_post_id','!=',null)
+                  ->orWhere('instagram_post_id','!=',null)
+                  ->orWhere('linked_post_id','!=',null)
+                  ->orWhere('twitter_post_id','!=',null);
+        })->latest()->get();
         return view('circle-layout.dashboard.posts',$data);
     }
     public function social_profiles(Request $request)
