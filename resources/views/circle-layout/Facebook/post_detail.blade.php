@@ -69,13 +69,13 @@
                  <div class="col-md-9">
                  </div>
                  <div class="col-md-3">
-                     <h5 style="color: lightgrey">Reacted By ( {{count($reations)}} )</h5>
+                     <h5 style="color: lightgrey">Reacted By ( {{count($reactions)}} )</h5>
                      <hr>
                      <br>
 
 
-                     @if(count($reations)>0)
-                         @foreach($reations as $p)
+                     @if(count($reactions)>0)
+                         @foreach($reactions as $p)
                              <div class="row">
                                  <div class="col-sm-12">
                                      {{--                                     <small style="float: right">{{human_readable_time($p['created_time'])}}</small>--}}
