@@ -62,7 +62,7 @@
                                             </button>
                                             <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
 
-                                                <li><a class="dropdown-item" href="#" data-toggle="modal" data-target="#commentBox{{$p->id}}">Comments</a></li>
+                                                <li><a class="dropdown-item" href="#" onclick="loadComments('{{$p->id}}','{{$p->facebook_post_id}}')">Comments</a></li>
 
                                             </ul>
                                         </div>
@@ -103,4 +103,10 @@
             </div>
         </div>
     </div>
+    <script>
+       function loadComments(id,post_id)
+       {
+            $("#commentBox"+id).modal('show')
+       }
+    </script>
 @endsection

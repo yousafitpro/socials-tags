@@ -114,4 +114,14 @@ class facebookController extends Controller
            ]);
        }
     }
+    public function get_comments(Request $request,$id)
+    {
+        $fb=socialConnect::where(['name'=>'Facebook','user_id'=>auth()->id()])->first();
+        $url=config('myconfig.FB.ApiUrl').'/'.$id.'/comments?';
+
+        $url=$url.'&access_token='.$fb->page_access_token;
+
+        $res=Http::get($url);
+        dd($res);
+    }
 }
