@@ -171,8 +171,10 @@ class facebookController extends Controller
         $res=Http::get($url);
         if($res->status()=='200')
         {
+            ///sdasdasd
             $data['data']=$res->json();
             $data['reactions']=$data['data']['data'];
+            dd($data['reactions']);
         }
         $data['post']=$post;
        // return view('circle-layout.Facebook.ajax.likes',$data);
