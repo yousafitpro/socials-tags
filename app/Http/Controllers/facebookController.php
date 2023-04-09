@@ -146,7 +146,7 @@ class facebookController extends Controller
         $id=$post->facebook_post_id;
         $fb=socialConnect::where(['name'=>'Facebook','user_id'=>auth()->id()])->first();
         $url=config('myconfig.FB.ApiUrl').'/'.$id;
-        $url=$url.'&access_token='.$fb->page_access_token;
+        $url=$url.'?access_token='.$fb->page_access_token;
         $res=Http::get($url);
 
         if($res->status()=='200')
