@@ -122,6 +122,6 @@ class facebookController extends Controller
         $url=$url.'&access_token='.$fb->page_access_token;
 
         $res=Http::get($url);
-        dd($res);
+        dd($res->json());
     }
 }
