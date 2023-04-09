@@ -68,6 +68,7 @@
                                             <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
 
                                                 <li><a class="dropdown-item" href="#" onclick="loadComments('{{$p->id}}','{{$p->facebook_post_id}}')">Comments</a></li>
+                                                <li><a class="dropdown-item" href="#" onclick="loadLikes('{{$p->id}}','{{$p->facebook_post_id}}')">likes</a></li>
 
                                             </ul>
                                         </div>
