@@ -40,8 +40,9 @@
                                               </button>
                                           </a>
 
-                                            </button>
-{{--
+
+
+
 
                                 @endif
                                     @if($p->twitter_post_id)
