@@ -64,6 +64,7 @@
                      @endif
                  </div>
              </div>
+             <br>
              <div class="row">
 
                  <div class="col-md-9">
@@ -76,7 +77,7 @@
 
                      @if(count($reactions)>0)
                          @foreach($reactions as $p)
-                             <br>
+
                              <div class="row">
                                  <div class="col-sm-12">
                                      {{--                                     <small style="float: right">{{human_readable_time($p['created_time'])}}</small>--}}
