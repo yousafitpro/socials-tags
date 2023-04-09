@@ -34,7 +34,7 @@
                      <br>
                      @endforeach
                      @else
-                     <h5 style="text-align: center; color: lightgrey">Empty</h5>
+                     <h5 style="text-align: center; color: lightgrey">No Comments</h5>
                      @endif
                  </div>
                  <div class="col-md-3">
@@ -60,7 +60,7 @@
                              <br>
                          @endforeach
                      @else
-                         <h5 style="text-align: center; color: lightgrey">Empty</h5>
+                         <h5 style="text-align: center; color: lightgrey">None</h5>
                      @endif
                  </div>
              </div>
