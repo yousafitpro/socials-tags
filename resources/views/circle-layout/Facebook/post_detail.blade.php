@@ -64,6 +64,35 @@
                      @endif
                  </div>
              </div>
+             <div class="row">
+
+                 <div class="col-md-9">
+                 </div>
+                 <div class="col-md-3">
+                     <h5 style="color: lightgrey">Reacted By ( {{count($reations)}} )</h5>
+                     <hr>
+                     <br>
+
+
+                     @if(count($reations)>0)
+                         @foreach($reations as $p)
+                             <div class="row">
+                                 <div class="col-sm-12">
+                                     {{--                                     <small style="float: right">{{human_readable_time($p['created_time'])}}</small>--}}
+                                     <a href="https://web.facebook.com/profile.php?id={{$p['id']}}" target="_blank"><h5>{{$p['name']}}</h5></a>
+
+
+                                     {{--                                     <small>{{$p['message']}}</small>--}}
+                                 </div>
+                             </div>
+
+                             <br>
+                         @endforeach
+                     @else
+                         <h5 style="text-align: center; color: lightgrey">None</h5>
+                     @endif
+                 </div>
+             </div>
          </div>
     </div>
 </div>
