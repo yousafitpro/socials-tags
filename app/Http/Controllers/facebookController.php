@@ -149,12 +149,12 @@ class facebookController extends Controller
         $url=$url.'?access_token='.$fb->page_access_token;
 
         $res=Http::delete($url);
+        $data['data']=$res->json();
 
-
-        if($res->status()=='200')
+        if($res->status()=='200' && $data['data']['data']['success']==true)
         {
             $data['data']=$res->json();
-            dd($data);
+
         }else{
             $data['data']=$res->json();
             dd($data);
