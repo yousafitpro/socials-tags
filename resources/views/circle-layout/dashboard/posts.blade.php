@@ -32,47 +32,16 @@
                             <td>{!! $p->post_content !!}</td>
                             <td style="min-width: 200px">
                                 @if($p->facebook_post_id)
-                                    <div class="modal fade" id="commentBox{{$p->id}}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                                        <div class="modal-dialog modal-lg" role="document">
-                                            <div class="modal-content">
-                                                <div class="modal-header">
-                                                    <h5 class="modal-title" id="exampleModalLabel">Post Comments</h5>
-                                                    <button type="button" onclick="CloseModel('#commentBox{{$p->id}}')" class="close" data-dismiss="modal" aria-label="Close">
-                                                        <span aria-hidden="true">&times;</span>
-                                                    </button>
-                                                </div>
-                                                <div class="modal-body">
 
-                                                    <div id="PageDiv{{$p->id}}" class="container-fluid">
-                                                        <br>
-                                                       <h4 style="text-align: center">Loading...</h4>
-                                                        <br>
-                                                    </div>
-                                                    <br>
-                                                    <br>
-                                                </div>
-                                                {{--                <div class="modal-footer">--}}
-                                                {{--                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>--}}
-                                                {{--                    <button type="button" class="btn btn-primary">Save changes</button>--}}
-                                                {{--                </div>--}}
-                                            </div>
-                                        </div>
-                                    </div>
 
-                                    <div >
-                                        <div class="dropdown">
-                                            <button class="btn btn-primary" data-bs-toggle="dropdown" aria-expanded="false" type="button"  >
-                                                <i data-feather="facebook"></i>
+                                          <a href="{{url('Facebook/Post-Detail',$p->facebook_post_id)}}">
+                                              <button class="btn btn-primary"  type="button"  >
+                                                  <i data-feather="facebook"></i>
+                                              </button>
+                                          </a>
+
                                             </button>
-                                            </button>
-                                            <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-
-                                                <li><a class="dropdown-item" href="#" onclick="loadComments('{{$p->id}}','{{$p->facebook_post_id}}')">Comments</a></li>
-                                                <li><a class="dropdown-item" href="#" onclick="loadLikes('{{$p->id}}','{{$p->facebook_post_id}}')">likes</a></li>
-
-                                            </ul>
-                                        </div>
-                                    </div>
+{{--
 
                                 @endif
                                     @if($p->twitter_post_id)
