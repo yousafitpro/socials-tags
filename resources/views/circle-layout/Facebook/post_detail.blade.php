@@ -5,13 +5,14 @@
 
     <div class="card-body">
         <h4>{{$post->title}}</h4>
+        <br>
+        <br>
+        <br>
          <div class="container-fluid">
              <div class="row">
                  <div class="col-md-6">
                      <h5 style="color: lightgrey">Comments ( {{count($comments)}} )</h5>
-                     <br>
-                     <br>
-                     <br>
+
 
                      @if(count($comments)>0)
                      @foreach($comments as $p)
