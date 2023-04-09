@@ -4,7 +4,8 @@
 <div class="card">
 
     <div class="card-body">
-        <a   href="{{url('My-Dashboard/posts')}}"><i data-feather="arrow-left" style="zoom: 1.4"></i></a>   <span style="font-size: 25px; margin-left: 10px">{{$post->title}}</span>
+        <a   href="{{url('My-Dashboard/posts')}}"><i data-feather="arrow-left" style="zoom: 1.4"></i> Go Back</a> <br>
+        <span style="font-size: 25px; margin-left: 10px">{{$post->title}}</span>
         <br>
         <br>
         <br>
