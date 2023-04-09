@@ -32,9 +32,9 @@
                             <td>{!! $p->post_content !!}</td>
                             <td style="min-width: 200px">
                                 @if($p->facebook_post_id)
-                                    <div style="width: 100px ; height: 300px">
+                                    <div >
                                         <div class="dropdown">
-                                            <button class="btn btn-primary" data-bs-toggle="dropdown" aria-expanded="false" type="button" style="zoom: 0.8"  >
+                                            <button class="btn btn-primary" data-bs-toggle="dropdown" aria-expanded="false" type="button"  >
                                                 <i data-feather="facebook"></i>
                                             </button>
                                             </button>
