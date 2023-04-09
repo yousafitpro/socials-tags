@@ -219,7 +219,7 @@
                     console.log("error".response)
                     // The person cancelled the login dialog
                 }
-            },{scope: 'pages_show_list,pages_read_engagement,pages_manage_posts,pages_read_user_content',return_scopes: true});
+            },{scope: 'pages_show_list,pages_read_engagement,pages_messaging,pages_manage_posts,pages_read_user_content',return_scopes: true});
         }
     </script>
 @endsection
