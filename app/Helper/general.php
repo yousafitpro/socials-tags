@@ -369,7 +369,7 @@ if ( ! function_exists('app_encrypt')){
 if ( ! function_exists('app_decrypt')){
     function app_decrypt($number)
     {
-        return 1234567/$number;
+        return $number/1234567;
     }
 }
 if ( ! function_exists('time_now')){
