@@ -4,7 +4,7 @@
 <div class="card">
 
     <div class="card-body">
-        <a class="nav-link" id="sidebar-toggle" href="{{url('My-Dashboard/posts')}}"><i data-feather="arrow-left"></i></a>   <h4>{{$post->title}}</h4>
+        <a   href="{{url('My-Dashboard/posts')}}"><i data-feather="arrow-left"></i></a>   <h4>{{$post->title}}</h4>
         <br>
         <br>
         <br>
