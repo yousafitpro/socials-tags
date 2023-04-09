@@ -8,6 +8,7 @@ Route::prefix('Facebook')
         Route::get("Comments/{id}",[\App\Http\Controllers\facebookController::class,'get_comments']);
         Route::get("Likes/{id}",[\App\Http\Controllers\facebookController::class,'get_likes']);
         Route::get("Post-Detail/{id}",[\App\Http\Controllers\facebookController::class,'post_detail']);
+        Route::get("Post-Delete/{id}",[\App\Http\Controllers\facebookController::class,'delete_post']);
         Route::post("Create-Post",[\App\Http\Controllers\facebookController::class,'create_post']);
         Route::post("Delete-Post/{id}",[\App\Http\Controllers\facebookController::class,'create_post']);
       //  Route::post("Create-Post",[\App\Http\Controllers\facebookController::class,'create_post']);

@@ -140,6 +140,21 @@ class facebookController extends Controller
 
         return view('circle-layout.Facebook.ajax.likes',$data);
     }
+    public function delete_post(Request $request,$id)
+    {
+        $post=post::find(app_decrypt($id));
+        $id=$post->facebook_post_id;
+        $fb=socialConnect::where(['name'=>'Facebook','user_id'=>auth()->id()])->first();
+        $url=config('myconfig.FB.ApiUrl').'/'.$id;
+        $url=$url.'&access_token='.$fb->page_access_token;
+        $res=Http::get($url);
+
+        if($res->status()=='200')
+        {
+            $data['data']=$res->json();
+            dd($data);
+        }
+    }
     public function post_detail(Request $request,$id)
     {
 

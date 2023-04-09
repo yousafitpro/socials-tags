@@ -60,7 +60,7 @@
                                     <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
                                         <li><a class="dropdown-item" href="#">Edit /  View</a></li>
                                         <li><a class="dropdown-item" href="#">Hide</a></li>
-                                        <li><a class="dropdown-item" href="#">Delete</a></li>
+                                        <li><a class="dropdown-item" href="#" onclick="DeletePost('{{url('Facebook/Post-Delete',$p->id)}}')">Delete</a></li>
 
                                     </ul>
                                 </div>
@@ -106,6 +106,13 @@
                 //   $(".products__btn").text("Load More")
                }
            })
+       }
+       function DeletePost(url)
+       {
+           if(confirm("Are you sure?"))
+           {
+               window.location.href=url;
+           }
        }
        function loadLikes(id,post_id)
        {
