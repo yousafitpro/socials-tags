@@ -68,11 +68,12 @@ class createInstagramPost
             $url=$url.'access_token='.$fb->page_access_token;
             $url=$url.'&creation_id='.$http['id'];
             $http=Http::post($url,[]);
-dd($http->status());
+
             if($http->status()=='200')
             {
                 $is_posted=true;
                 $http=$http->json();
+                dd($http);
                 $post->insta_post_id=$http['id'];
                 $post->save();
                 dd($post);
