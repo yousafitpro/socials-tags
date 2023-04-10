@@ -25,7 +25,7 @@
                      <div class="row">
                          <div class="col-sm-12">
                              <small style="float: right">{{human_readable_time($p['timestamp'])}}</small>
-                             <a href="https://web.facebook.com/profile.php?id={{$p['id']}}" target="_blank"><h5>{{$p['username']}}</h5></a>
+                             <a href="https://www.instagram.com/{{$p['username']}}" target="_blank"><h5>{{$p['username']}}</h5></a>
 
 
                              <h6>{{$p['text']}}</h6>
