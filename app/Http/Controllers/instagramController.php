@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\socialConnect;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Http;
 
 class instagramController extends Controller
 {
@@ -26,6 +27,11 @@ class instagramController extends Controller
                 ]
             ]);
         }
-        dd($fb);
+        $url=config('myconfig.FB.ApiUrl').'/'.$fb->page_id.'/instagram_accounts';
+        $url=$url.'?access_token='.$fb->page_access_token;
+
+        $res=Http::delete($url);
+        $data['data']=$res->json();
+        dd($data);
     }
 }
