@@ -28,7 +28,7 @@
 {{--                             <a href="https://web.facebook.com/profile.php?id={{$p['from']['id']}}" target="_blank"><h5>{{$p['from']['name']}}</h5></a>--}}
 
 
-                             <small>{{$p['text']}}</small>
+                             <h6>{{$p['text']}}</h6>
                          </div>
                      </div>
 
