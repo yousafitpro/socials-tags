@@ -3,7 +3,7 @@
 Route::prefix('Instagram')
     ->middleware('auth')
     ->group(function () {
-        Route::any('/',[\App\Http\Controllers\facebookController::class,'index']);
+        Route::any('/',[\App\Http\Controllers\instagramController::class,'index']);
 //        Route::get("Connect-Page",[\App\Http\Controllers\facebookController::class,'connect_page']);
 //        Route::get("Comments/{id}",[\App\Http\Controllers\facebookController::class,'get_comments']);
 //        Route::get("Likes/{id}",[\App\Http\Controllers\facebookController::class,'get_likes']);

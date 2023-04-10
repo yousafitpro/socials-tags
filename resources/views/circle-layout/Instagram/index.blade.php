@@ -26,7 +26,7 @@
 {{--        </div>--}}
 {{--    </div>--}}
 {{--    <br><br>--}}
-    <h5 style="text-align: center">Please connect your facebook account and Instagram Accounts</h5>
+    <h5 style="text-align: center">Please connect your </h5>
     <div style="width: 100%; height: 20vh" class="myFlex">
         <div>
 
