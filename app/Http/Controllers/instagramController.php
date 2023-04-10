@@ -35,8 +35,8 @@ class instagramController extends Controller
         $data['data']=$res->json();
         if ($res->status()=='200')
         {
-            dd($data['data']);
-            $data['data']=$data['data']['data'][0];
+
+            $data['data']=$data['data']['instagram_business_account']['id'];
             $fb->insta_id=$data['data']['id'];
             $fb->save();
             return redirect()->back()->with([
