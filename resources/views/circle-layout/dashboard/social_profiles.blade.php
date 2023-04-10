@@ -34,7 +34,7 @@
 
                     <div class="myFlex">
                         <button class="btn btn-primary" type="button"  style="zoom: 1.2; margin-top: 5px"  >
-                            <img style="width: 40px" src="{{asset('icon-images/insta.png')}}">
+                            <img style="width: 35px" src="{{asset('icon-images/insta.png')}}">
                         </button>
                     </div>
                     <br>
