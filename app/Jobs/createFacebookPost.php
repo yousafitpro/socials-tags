@@ -37,24 +37,24 @@ class createFacebookPost implements ShouldQueue
     {
         $post=post::find($this->post->id);
         $url='';
-        $fb=socialConnect::where(['name'=>'Facebook','user_id'=>auth()->id()])->first();
+        $fb=socialConnect::where(['name'=>'Facebook','user_id'=>$post->user_id])->first();
 
         if ($this->photo_path) {
             $url=config('myconfig.FB.ApiUrl').'/'.$fb->page_id.'/photos?';
             $url=$url.'url='.$this->photo_path;
-            $url=$url.'&message='.$this->post->post_content;
+            $url=$url.'&message='.$post->post_content;
 
         }else{
             $url=config('myconfig.FB.ApiUrl').'/'.$fb->page_id.'/feed?';
-            $url=$url.'message='.$this->post->post_content;
+            $url=$url.'message='.$post->post_content;
         }
 
 
         $url=$url.'&access_token='.$fb->page_access_token;
 
-        if($this->post->link && $this->post->link!=null || $this->post->link!='')
+        if($post->link && $post->link!=null || $post->link!='')
         {
-            $url=$url.'&link='.$this->post->link;
+            $url=$url.'&link='.$post->link;
         }
 
         $http=Http::post($url,[]);
