@@ -31,12 +31,19 @@
     <div style="width: 100%; height: 20vh" class="myFlex">
         <div>
 
-            <a class="btn btn-primary btn-sm bg-success" href="{{url('Instagram/Connect-To-Facebook')}}" style="color: white" >Connect Page And Instagram</a>
+            <a class="btn btn-primary btn-sm bg-success" href="{{url('Instagram/Connect-To-Facebook')}}" style="color: white" >Connect Instagram Account</a>
         </div>
 
     </div>
     @endif
     @if(my_social_profiles(auth()->user()->id)['Facebook']->insta_id)
+        <div style="width: 100%; height: 20vh" class="myFlex">
+            <div>
+
+                <a class="btn btn-primary btn-sm bg-success" href="{{url('Instagram/Connect-To-Facebook')}}" style="color: white" >Reconnect Instagram Account</a>
+            </div>
+
+        </div>
         <br>
         <br>
     <div class="card">
