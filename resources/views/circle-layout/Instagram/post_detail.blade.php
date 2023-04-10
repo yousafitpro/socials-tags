@@ -8,7 +8,7 @@
         <a   href="#" onclick="DeletePost('{{url('Facebook/Post-Delete',app_encrypt($post->id))}}')" style="float: right; color: darkred"><i data-feather="trash-2" style="zoom: 1.4; color: darkred"></i> Delete</a>
         <br>
         <br>
-        <img src="{{asset('social-icons/fb.png')}}"  style="width: 30px; margin-top: -7px"> <span style="font-size: 25px; margin-left: 10px">{{$post->title}}</span>
+        <img src="{{asset('social-icons/insta.png')}}"  style="width: 30px; margin-top: -7px"> <span style="font-size: 25px; margin-left: 10px">{{$post->title}}</span>
         <br>
         <br>
         <br>
