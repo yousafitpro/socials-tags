@@ -40,7 +40,7 @@
                                 <div class="form-group row">
                                     <label class="col-sm-3 control-label">Photo ( optional )</label>
                                     <div class="col-sm-9">
-                                        <input type="file" class="form-control" name="photo" />
+                                        <input type="file" class="form-control" name="photo" accept="image/x-png" />
                                     </div>
                                 </div>
 
