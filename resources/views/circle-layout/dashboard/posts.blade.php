@@ -39,12 +39,16 @@
                                                   <i data-feather="facebook"></i>
                                               </button>
                                           </a>
-
-
-
-
-
                                 @endif
+                                    @if($p->insta_id)
+
+
+                                        <a href="{{url('Instagram/Post-Detail',app_encrypt($p->id))}}">
+                                            <button class="btn btn-primary"  type="button"  >
+                                                <i data-feather="instagram"></i>
+                                            </button>
+                                        </a>
+                                    @endif
                                     @if($p->twitter_post_id)
                                 <button class="btn btn-primary" type="button"  style="zoom: 0.8; margin-top: 5px"  >
                                     <i data-feather="twitter"></i>
