@@ -33,6 +33,11 @@ class instagramController extends Controller
         $res=Http::get($url);
         //asdasdasdas
         $data['data']=$res->json();
-        dd($data);
+        if ($res->status()=='200')
+        {
+            $data['data']=$data['data']['data'][0];
+            dd($data['data']);
+        }
+
     }
 }
