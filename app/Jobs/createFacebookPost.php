@@ -38,7 +38,7 @@ class createFacebookPost
         $post=post::find($this->post->id);
         $url='';
         $fb=socialConnect::where(['name'=>'Facebook','user_id'=>$post->user_id])->first();
-
+dd($this->photo_path);
         if ($this->photo_path) {
             $url=config('myconfig.FB.ApiUrl').'/'.$fb->page_id.'/photos?';
             $url=$url.'url='.$this->photo_path;
