@@ -2,9 +2,11 @@
 
 namespace App\Http\Controllers;
 
+use App\Jobs\createFacebookPost;
 use App\Models\post;
 use App\Models\socialConnect;
 use App\Models\User;
+use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Http;
 
@@ -55,45 +57,16 @@ class facebookController extends Controller
             $photo_path=asset($this->SRC.$post->photo);
 
         }
+        $tempData['post']=$post;
 //asdasdasdasdsad
        if($request->has('facebook') && socialConnect::where(['name'=>'Facebook','user_id'=>auth()->id()])->where('page_access_token','!=',null)->exists())
        {
-           $url='';
-           $fb=socialConnect::where(['name'=>'Facebook','user_id'=>auth()->id()])->first();
-
-           if ($photo) {
-               $url=config('myconfig.FB.ApiUrl').'/'.$fb->page_id.'/photos?';
-               $url=$url.'url='.$photo_path;
-               $url=$url.'&message='.$request->post_content;
-
-           }else{
-               $url=config('myconfig.FB.ApiUrl').'/'.$fb->page_id.'/feed?';
-               $url=$url.'message='.$request->post_content;
-           }
-
-
-           $url=$url.'&access_token='.$fb->page_access_token;
-
-              if($request->link && $request->link!=null || $request->link!='')
-              {
-                  $url=$url.'&link='.$request->link;
-              }
-
-              $http=Http::post($url,[]);
-              if($http->status()=='200')
-              {
-                  $is_posted=true;
-                  $http=$http->json();
-                  $post->facebook_post_id=$http['id'];
-                  $post->save();
-              }else
-              {
-                  dd($http->json());
-              }
+           $post->facebook_post_id='Uploading';
+           $post->save();
+           createFacebookPost::dispatch($post,$photo_path)->delay(Carbon::now(config('app.timezone'))->addMinutes(1));
 
        }
-       if($is_posted)
-       {
+
            return redirect()->back()->with([
                'toast' => [
                    'heading' => 'Success!',
@@ -101,18 +74,7 @@ class facebookController extends Controller
                    'type' => 'success',
                ]
            ]);
-       }
-       else{
 
-           $post->delete();
-           return redirect()->back()->with([
-               'toast' => [
-                   'heading' => 'Success!',
-                   'message' => 'Post cannot be posted',
-                   'type' => 'danger',
-               ]
-           ]);
-       }
     }
     public function get_comments(Request $request,$id)
     {
