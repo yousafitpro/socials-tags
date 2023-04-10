@@ -15,6 +15,7 @@ class instagramController extends Controller
         $data['reactions']=[];
         $data['likes']=[];
         $data['comments']=[];
+        //assad
         $post=post::find(app_decrypt($id));
         $id=$post->instagram_post_id;
 //        $fb=socialConnect::where(['name'=>'Facebook','user_id'=>auth()->id()])->first();
@@ -38,17 +39,17 @@ class instagramController extends Controller
             $data['data']=$res->json();
             $data['comments']=$data['data']['data'];
         }
-        $fb=socialConnect::where(['name'=>'Facebook','user_id'=>auth()->id()])->first();
-        $url=config('myconfig.FB.ApiUrl').'/'.$id.'/reactions?';
-        $url=$url.'&access_token='.$fb->page_access_token;
-        $res=Http::get($url);
-        if($res->status()=='200')
-        {
-            ///sdasdasd
-            $data['data']=$res->json();
-            $data['reactions']=$data['data']['data'];
-
-        }
+//        $fb=socialConnect::where(['name'=>'Facebook','user_id'=>auth()->id()])->first();
+//        $url=config('myconfig.FB.ApiUrl').'/'.$id.'/reactions?';
+//        $url=$url.'&access_token='.$fb->page_access_token;
+//        $res=Http::get($url);
+//        if($res->status()=='200')
+//        {
+//            ///sdasdasd
+//            $data['data']=$res->json();
+//            $data['reactions']=$data['data']['data'];
+//
+//        }
         $data['post']=$post;
         // return view('circle-layout.Facebook.ajax.likes',$data);
         return view('circle-layout.Facebook.post_detail',$data);
