@@ -74,7 +74,7 @@ class createInstagramPost
                 $is_posted=true;
                 $http=$http->json();
                 dd($http);
-                $post->insta_post_id=$http['id'];
+                $post->instagram_post_id=$http['id'];
                 $post->save();
                 dd($post);
 
