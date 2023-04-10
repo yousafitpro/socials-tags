@@ -31,6 +31,7 @@ class instagramController extends Controller
         $url=$url.'?access_token='.$fb->page_access_token;
 
         $res=Http::delete($url);
+        dd($url);
         $data['data']=$res->json();
         dd($data);
     }
