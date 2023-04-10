@@ -63,9 +63,12 @@ class createInstagramPost
 
         if($http->status()=='200')
         {
+            $http=$http->json();
             $url=config('myconfig.FB.ApiUrl').'/v16.0/'.$fb->insta_id.'/media_publish?';
             $url=$url.'access_token='.$fb->page_access_token;
+            $url=$url.'&creation_id='.$http['id'];
             $http=Http::post($url,[]);
+            dd($http->json());
             if($http->status()=='200')
             {
                 $is_posted=true;
