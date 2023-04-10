@@ -36,9 +36,12 @@
 
     </div>
     @endif
+    @if(my_social_profiles(auth()->user()->id)['Facebook']->insta_id)
+        <br>
+        <br>
     <div class="card">
         <div class="card-body">
-            @if(my_social_profiles(auth()->user()->id)['Facebook']->insta_id)
+
             <div class="row">
                 <div class="col-md-12">
                     <div style="float: right; color: green">
@@ -49,9 +52,10 @@
 
                 </div>
             </div>
-                @endif
+
         </div>
     </div>
+    @endif
 {{--    @if(!my_social_profiles(auth()->user()->id)['Facebook']->access_token)--}}
 {{--        <br><br>--}}
 {{--        <h5 style="text-align: center">Please connect your facebook account to go further</h5>--}}
