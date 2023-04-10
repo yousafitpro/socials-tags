@@ -37,7 +37,7 @@ class instagramController extends Controller
         {
 
             $data['data']=$data['data']['instagram_business_account']['id'];
-            $fb->insta_id=$data['data']['id'];
+            $fb->insta_id=$data['data']['instagram_business_account']['id'];
             $fb->save();
             return redirect()->back()->with([
                 'toast' => [
