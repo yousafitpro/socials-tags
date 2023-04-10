@@ -64,9 +64,12 @@ class facebookController extends Controller
        {
            $post->facebook_post_id='Uploading';
            $post->save();
-        //   createFacebookPost::dispatch($post,$photo_path)->delay(Carbon::now(config('app.timezone'))->addMinutes(1));
+           createFacebookPost::dispatch($post,$photo_path)->delay(Carbon::now(config('app.timezone'))->addMinutes(1));
 
-        if (socialConnect::where(['name'=>'Facebook','user_id'=>auth()->id()])->where('insta_id','!=',null)->exists())
+
+
+       }
+        if ($request->has('instagram') && socialConnect::where(['name'=>'Facebook','user_id'=>auth()->id()])->where('insta_id','!=',null)->exists())
         {
             //SasAS
             $post->instagram_post_id='Uploading';
@@ -74,9 +77,9 @@ class facebookController extends Controller
             createInstagramPost::dispatch($post,$photo_path)->delay(Carbon::now(config('app.timezone'))->addMinutes(1));
 
         }
-       }
 
-           return redirect()->back()->with([
+
+        return redirect()->back()->with([
                'toast' => [
                    'heading' => 'Success!',
                    'message' => 'Post Successfully Created',
