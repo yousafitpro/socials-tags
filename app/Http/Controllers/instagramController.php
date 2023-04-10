@@ -30,7 +30,7 @@ class instagramController extends Controller
 
         // comments
         $fb=socialConnect::where(['name'=>'Facebook','user_id'=>auth()->id()])->first();
-        $url=config('myconfig.FB.ApiUrl').'/'.$id.'/comments?';
+        $url=config('myconfig.FB.ApiUrl').'/'.$id.'/comments?fields=id,timestamp,username,text';
         $url=$url.'&access_token='.$fb->page_access_token;
         $res=Http::get($url);
 
