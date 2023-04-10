@@ -23,9 +23,10 @@ class createFacebookPost
      */
     public $post=null;
     public $photo_path=null;
-    public function __construct($post)
+    public function __construct($post,$photo_path)
     {
         $this->post=$post;
+        $this->photo_path=$photo_path;
     }
 
     /**
