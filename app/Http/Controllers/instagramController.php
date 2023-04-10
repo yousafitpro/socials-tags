@@ -30,7 +30,7 @@ class instagramController extends Controller
         $url=config('myconfig.FB.ApiUrl').'/'.$fb->page_id.'/instagram_accounts';
         $url=$url.'?access_token='.$fb->page_access_token;
 
-        $res=Http::delete($url);
+        $res=Http::get($url);
         dd($url);
         $data['data']=$res->json();
         dd($data);
