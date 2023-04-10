@@ -32,7 +32,7 @@ class instagramController extends Controller
         $url=config('myconfig.FB.ApiUrl').'/'.$id.'/comments?';
         $url=$url.'&access_token='.$fb->page_access_token;
         $res=Http::get($url);
-        dd($res->json());
+
         if($res->status()=='200')
         {
             $data['data']=$res->json();
