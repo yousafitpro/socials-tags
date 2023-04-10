@@ -52,7 +52,7 @@ class instagramController extends Controller
 //        }
         $data['post']=$post;
         // return view('circle-layout.Facebook.ajax.likes',$data);
-        return view('circle-layout.Facebook.post_detail',$data);
+        return view('circle-layout.Instagram.post_detail',$data);
     }
     public static function index(Request $request)
     {
