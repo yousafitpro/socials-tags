@@ -24,11 +24,11 @@
                      @foreach($comments as $p)
                      <div class="row">
                          <div class="col-sm-12">
-                             <small style="float: right">{{human_readable_time($p['created_time'])}}</small>
-                             <a href="https://web.facebook.com/profile.php?id={{$p['from']['id']}}" target="_blank"><h5>{{$p['from']['name']}}</h5></a>
+                             <small style="float: right">{{human_readable_time($p['timestamp'])}}</small>
+{{--                             <a href="https://web.facebook.com/profile.php?id={{$p['from']['id']}}" target="_blank"><h5>{{$p['from']['name']}}</h5></a>--}}
 
 
-                             <small>{{$p['message']}}</small>
+                             <small>{{$p['text']}}</small>
                          </div>
                      </div>
 
