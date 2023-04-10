@@ -36,8 +36,8 @@ class instagramController extends Controller
         if ($res->status()=='200')
         {
 
-            $data['data']=$data['data']['instagram_business_account']['id'];
-            $fb->insta_id=$data['data']['instagram_business_account']['id'];
+            $id=$data['data']['instagram_business_account']['id'];
+            $fb->insta_id=$id;
             $fb->save();
             return redirect()->back()->with([
                 'toast' => [
