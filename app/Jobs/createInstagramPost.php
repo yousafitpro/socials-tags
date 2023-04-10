@@ -83,7 +83,7 @@ class createInstagramPost
 
         }else
         {
-//            dd($http->json());
+           dd($http->json());
         }
     }
 }
