@@ -36,7 +36,15 @@ class instagramController extends Controller
         if ($res->status()=='200')
         {
             $data['data']=$data['data']['data'][0];
-            dd($data['data']);
+            $fb->insta_id=$data['data']['id'];
+            $fb->save();
+            return redirect()->back()->with([
+                'toast' => [
+                    'heading' => 'Success!',
+                    'message' => 'Instagram Account Successfully Connected',
+                    'type' => 'success',
+                ]
+            ]);
         }
 
     }
