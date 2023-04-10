@@ -45,7 +45,7 @@
 
                                         <a href="{{url('Instagram/Post-Detail',app_encrypt($p->id))}}">
                                             <button class="btn btn-primary"  type="button"  >
-                                                <img src="{{asset('social-icons/insta.png')}}" style="width: 20px; margin-top: -7px">
+                                                Instagram
                                             </button>
                                         </a>
                                     @endif
