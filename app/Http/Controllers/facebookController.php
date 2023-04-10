@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Jobs\createFacebookPost;
+use App\Jobs\createInstagramPost;
 use App\Models\post;
 use App\Models\socialConnect;
 use App\Models\User;
@@ -63,8 +64,15 @@ class facebookController extends Controller
        {
            $post->facebook_post_id='Uploading';
            $post->save();
-           createFacebookPost::dispatch($post,$photo_path)->delay(Carbon::now(config('app.timezone'))->addMinutes(1));
+        //   createFacebookPost::dispatch($post,$photo_path)->delay(Carbon::now(config('app.timezone'))->addMinutes(1));
 
+        if (socialConnect::where(['name'=>'Facebook','user_id'=>auth()->id()])->where('insta_id','!=',null)->exists())
+        {
+            $post->instagram_post_id='Uploading';
+            $post->save();
+            createInstagramPost::dispatch($post,$photo_path)->delay(Carbon::now(config('app.timezone'))->addMinutes(1));
+
+        }
        }
 
            return redirect()->back()->with([
