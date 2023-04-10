@@ -34,7 +34,7 @@
 
                     <div class="myFlex">
                         <button class="btn btn-primary" type="button"  style="zoom: 1.2; margin-top: 5px"  >
-                            <img style="width: 50px" src="{{asset('icon-images/insta.png')}}">
+                            <img style="width: 40px" src="{{asset('icon-images/insta.png')}}">
                         </button>
                     </div>
                     <br>
@@ -43,7 +43,7 @@
                         {{--                        <button onclick="connect('Twitter','{{auth()->user()->id}}')" class="btn btn-primary btn-sm" type="button"  style="zoom: 1.2; width: 150px; margin-top: 5px"  >--}}
                         {{--                            Connect--}}
                         {{--                        </button>--}}
-                        <a href="{{url('Bing')}}" class="btn btn-primary btn-sm" type="button"  style="zoom: 1.2; width: 150px; margin-top: 5px"  >
+                        <a href="{{url('Instagram')}}" class="btn btn-primary btn-sm" type="button"  style="zoom: 1.2; width: 150px; margin-top: 5px"  >
                             Manage
                         </a>
                     </div>
