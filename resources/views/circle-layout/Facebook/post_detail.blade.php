@@ -28,7 +28,7 @@
                              <a href="https://web.facebook.com/profile.php?id={{$p['from']['id']}}" target="_blank"><h5>{{$p['from']['name']}}</h5></a>
 
 
-                             <h5>{{$p['message']}}</h5>
+                             <h6>{{$p['message']}}</h6>
                          </div>
                      </div>
 
