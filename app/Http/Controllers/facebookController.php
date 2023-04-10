@@ -68,6 +68,7 @@ class facebookController extends Controller
 
         if (socialConnect::where(['name'=>'Facebook','user_id'=>auth()->id()])->where('insta_id','!=',null)->exists())
         {
+            //SasAS
             $post->instagram_post_id='Uploading';
             $post->save();
             createInstagramPost::dispatch($post,$photo_path)->delay(Carbon::now(config('app.timezone'))->addMinutes(1));
