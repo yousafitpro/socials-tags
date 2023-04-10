@@ -26,25 +26,26 @@
 {{--        </div>--}}
 {{--    </div>--}}
 {{--    <br><br>--}}
+    @if(!my_social_profiles(auth()->user()->id)['Facebook']->insta_id)
     <h5 style="text-align: center">Please connect your </h5>
     <div style="width: 100%; height: 20vh" class="myFlex">
         <div>
 
-            <button class="btn btn-primary btn-sm bg-success" style="color: white" onclick="facebookLogin()">Connect Page And Instagram</button>
+            <a class="btn btn-primary btn-sm bg-success" href="{{url('Instagram/Connect-To-Facebook')}}" style="color: white" >Connect Page And Instagram</a>
         </div>
 
     </div>
-
+    @endif
     <div class="card">
         <div class="card-body">
-            @if(my_social_profiles(auth()->user()->id)['Facebook']->page_access_token)
+            @if(my_social_profiles(auth()->user()->id)['Facebook']->insta_id)
             <div class="row">
                 <div class="col-md-12">
                     <div style="float: right; color: green">
-                        <small>Page ID: {{my_social_profiles(auth()->user()->id)['Facebook']->page_id}}</small>
+                        <small>Insta ID: {{my_social_profiles(auth()->user()->id)['Facebook']->insta_id}}</small>
                     </div>
                     <h3>{{my_social_profiles(auth()->user()->id)['Facebook']->page_name}}</h3>
-                    <small>Your Page is connected Now!</small>
+                    <small>Your Account is connected Now!</small>
 
                 </div>
             </div>
