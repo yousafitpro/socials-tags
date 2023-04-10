@@ -34,6 +34,28 @@
 
                     <div class="myFlex">
                         <button class="btn btn-primary" type="button"  style="zoom: 1.2; margin-top: 5px"  >
+                            <img style="width: 50px" src="{{asset('icon-images/insta.png')}}">
+                        </button>
+                    </div>
+                    <br>
+                    <h5 class="card-title" style="text-align: center">Instagram</h5>
+                    <div class="myFlex">
+                        {{--                        <button onclick="connect('Twitter','{{auth()->user()->id}}')" class="btn btn-primary btn-sm" type="button"  style="zoom: 1.2; width: 150px; margin-top: 5px"  >--}}
+                        {{--                            Connect--}}
+                        {{--                        </button>--}}
+                        <a href="{{url('Bing')}}" class="btn btn-primary btn-sm" type="button"  style="zoom: 1.2; width: 150px; margin-top: 5px"  >
+                            Manage
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6 col-xl-3">
+            <div class="card stat-widget">
+                <div class="card-body">
+
+                    <div class="myFlex">
+                        <button class="btn btn-primary" type="button"  style="zoom: 1.2; margin-top: 5px"  >
                             <img style="width: 50px" src="{{asset('icon-images/binglogo.png')}}">
                         </button>
                     </div>
