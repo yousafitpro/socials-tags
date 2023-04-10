@@ -43,6 +43,7 @@ class createInstagramPost
         if ($this->photo_path) {
             $url=config('myconfig.FB.ApiUrl').'/v16.0/'.$fb->insta_id.'/media?';
             $url=$url.'image_url='.$this->photo_path;
+            $url=$url.'&caption='.$post->post_content;
             $url=$url.'&message='.$post->post_content;
 
         }
