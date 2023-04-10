@@ -27,14 +27,15 @@ class instagramController extends Controller
                 ]
             ]);
         }
-        $url=config('myconfig.FB.ApiUrl').'/'.$fb->page_id.'/instagram_accounts';
-        $url=$url.'?access_token='.$fb->page_access_token;
+        $url=config('myconfig.FB.ApiUrl').'/'.$fb->page_id.'?fields=instagram_business_account';
+        $url=$url.'&access_token='.$fb->page_access_token;
 
         $res=Http::get($url);
         //asdasdasdas
         $data['data']=$res->json();
         if ($res->status()=='200')
         {
+            dd($data['data']);
             $data['data']=$data['data']['data'][0];
             $fb->insta_id=$data['data']['id'];
             $fb->save();
