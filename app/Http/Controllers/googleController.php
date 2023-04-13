@@ -13,8 +13,7 @@ class googleController extends Controller
     private function getClient():\Google_Client
     {
         // load our config.json that contains our credentials for accessing google's api as a json string
-        $configJson = asset('Google/client_secret.json');
-
+        $configJson = '../Google/client_secret.json';
 
         // define an application name
         $applicationName = 'My App';
@@ -72,7 +71,7 @@ class googleController extends Controller
 //      dd($response);
 //       dd($client);
        $data['list']=[];
-
+////asdasd
        return view('circle-layout.Google-My-Business.index',$data);
 
    }
