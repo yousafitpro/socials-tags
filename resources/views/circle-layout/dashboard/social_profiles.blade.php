@@ -90,7 +90,7 @@
 {{--                        </button>--}}
 
 
-                        <a href="{{url('google-my-business')}}" class="btn btn-primary btn-sm" type="button"  style="zoom: 1.2; width: 150px; margin-top: 5px"  >
+                        <a href="{{url('Google')}}" class="btn btn-primary btn-sm" type="button"  style="zoom: 1.2; width: 150px; margin-top: 5px"  >
                             Manage
                         </a>
                     </div>

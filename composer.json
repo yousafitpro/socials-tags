@@ -6,8 +6,10 @@
     "license": "MIT",
     "require": {
         "php": "^7.3|^8.0",
+        "facebook/php-business-sdk": "^8.0.3",
         "fideloper/proxy": "^4.4",
         "fruitcake/laravel-cors": "^2.0",
+        "google/apiclient": "^2.12.1",
         "guzzlehttp/guzzle": "^7.4",
         "laravel/framework": "^8.40",
         "laravel/tinker": "^2.5",
@@ -17,8 +19,7 @@
         "nyholm/psr7": "^1.4",
         "spatie/laravel-permission": "^5.8",
         "symfony/http-client": "^5.3",
-        "tymon/jwt-auth": "^1.0.0-rc.2",
-        "facebook/php-business-sdk": "^8.0.3"
+        "tymon/jwt-auth": "^1.0.0-rc.2"
     },
     "require-dev": {
         "beyondcode/laravel-er-diagram-generator": "^1.5",
@@ -37,7 +38,10 @@
             "App\\": "app/",
             "Database\\Factories\\": "database/factories/",
             "Database\\Seeders\\": "database/seeders/"
-        }
+        },
+        "classmap": [
+            "vendor/google/apiclient/src/Google"
+        ]
     },
     "autoload-dev": {
         "psr-4": {
@@ -45,6 +49,7 @@
         }
     },
     "scripts": {
+        "pre-autoload-dump": "Google\\Task\\Composer::cleanup",
         "post-autoload-dump": [
             "Illuminate\\Foundation\\ComposerScripts::postAutoloadDump",
             "@php artisan package:discover --ansi"
@@ -59,7 +64,11 @@
     "extra": {
         "laravel": {
             "dont-discover": []
-        }
+        },
+        "google/apiclient-services": [
+            "Drive",
+            "YouTube"
+        ]
     },
     "config": {
         "optimize-autoloader": true,

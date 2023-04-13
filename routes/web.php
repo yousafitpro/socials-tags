@@ -58,6 +58,7 @@ include('social-tag/web/google-my-business.php');
 include('social-tag/social-connect.php');
 include('social-tag/web/Users.php');
 include('social-tag/web/Instagram.php');
+include('social-tag/web/google.php');
 
 
 Route::any('test',function (){

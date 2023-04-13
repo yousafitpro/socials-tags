@@ -2,6 +2,7 @@
 /public/hot
 /public/storage
 /public/src
+/Google
 /bootstrap/cache
 /storage/*.key
 /vendor
