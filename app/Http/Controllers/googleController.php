@@ -61,7 +61,7 @@ class googleController extends Controller
    public function index(Request $request)
    {
 
-
+dd("ok");
 
 //       $google=my_social_profiles(auth()->user()->id)['Google'];
 //       $client=$this->getClient();
