@@ -1,72 +1,34 @@
 @extends('circle-layout.layout')
 @section('content')
-    <div class="row">
-        <div class="col-md-12"  >
-            <small style="color: gray">Tripe Advisor</small>
-           <form action="{{url('Tripe-Advisor')}}" method="post">
-               @csrf
-               <div class="input-group" style="height: 40px">
-                   <input type="text" name="searchKeywords" style="text-align: center" placeholder="Enter keywords here..." class="form-control" aria-label="Text input with segmented  button">
-                   <div class="input-group-append">
-                       <button type="submit" style="border-bottom-left-radius: 0px; border-top-left-radius: 0px" class="btn btn-outline-secondary">Search</button>
+    <br><br>
+    <h5 style="text-align: center">Please connect your google account</h5>
+    <div style="width: 100%; height: 20vh" class="myFlex">
+        <div>
 
-                   </div>
-           </form>
+            <a class="btn btn-primary btn-sm bg-success" href="{{url('Google/Login')}}" style="color: white">Connect</a>
         </div>
+
     </div>
-        <br>
-        <br>
-        <br>
-        <br>
-    <div class="row">
-        <div class="col">
-            <div class="card">
-                <div class="card-body">
-                    <h5 class="card-title">Customers</h5>
+    <div class="card">
+        <div class="card-body">
+            @if(my_social_profiles(auth()->user()->id)['Google']->access_token)
+                <div class="row">
+                    <div class="col-md-12">
+                        <div style="float: right; color: green">
+                            <small>Page ID: {{my_social_profiles(auth()->user()->id)['Google']->userid}}</small>
+                        </div>
+                        <div>
 
-                    <table id="zero-conf" class="display" style="width:100%">
-                        <thead>
-                        <tr>
-                            <th>Name</th>
-                            <th>Email / Phone</th>
-                            <th>Platform</th>
-                            <th>date</th>
-                            <th>Actions</th>
+                            <h3>{{my_social_profiles(auth()->user()->id)['Google']->given_name}}</h3>
+                            <small>Your Account is connected Now!</small>
+                            <a href="{{url('Google/Manage-Business')}}" class="btn btn-outline-primary pull-right"> Manage </a>
+                        </div>
 
-                        </tr>
-                        </thead>
-                        <tbody>
-                        <tr>
-                            <td>Muhamamd Yousaf</td>
-                            <td>yousaf.itpro@gmail.com</td>
-                            <td>Facebook</td>
-                            <td>12-12-2023</td>
-                            <td>
-                                <div class="dropdown">
-                                    <button class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false">
-                                    </button>
-                                    <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                                        <li><a class="dropdown-item" href="#">Delete</a></li>
-                                        <li><a class="dropdown-item" href="#">Comlete Detail</a></li>
 
-                                    </ul>
-                                </div>
-                            </td>
 
-                        </tr>
-
-                        </tbody>
-                        <tfoot>
-                        <tr>
-                            <th>Name</th>
-                            <th>Email / Phone</th>
-                            <th>Platform</th>
-                            <th>date</th>
-                        </tr>
-                        </tfoot>
-                    </table>
+                    </div>
                 </div>
-            </div>
+            @endif
         </div>
     </div>
 @endsection

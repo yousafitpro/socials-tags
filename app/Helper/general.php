@@ -289,7 +289,16 @@ if ( ! function_exists('my_social_profiles')) {
         }else{
             $data['Facebook']=\App\Models\socialConnect::where(['name'=>'Facebook','user_id'=>$user_id])->first();
         }
-
+        if(!\App\Models\socialConnect::where(['name'=>'Google','user_id'=>$user_id])->exists())
+        {
+            $data['Google']=\App\Models\socialConnect::create([
+                'name'=>'Google',
+                'platform'=>'Google',
+                'user_id'=>auth()->user()->id
+            ]);
+        }else{
+            $data['Google']=\App\Models\socialConnect::where(['name'=>'Google','user_id'=>$user_id])->first();
+        }
         return $data;
 
     }

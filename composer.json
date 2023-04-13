@@ -9,7 +9,7 @@
         "facebook/php-business-sdk": "^8.0.3",
         "fideloper/proxy": "^4.4",
         "fruitcake/laravel-cors": "^2.0",
-        "google/apiclient": "^2.12.1",
+        "google/apiclient": "^2.13",
         "guzzlehttp/guzzle": "^7.4",
         "laravel/framework": "^8.40",
         "laravel/tinker": "^2.5",
@@ -40,7 +40,7 @@
             "Database\\Seeders\\": "database/seeders/"
         },
         "classmap": [
-            "vendor/google/apiclient/src/Google"
+            "vendor/google/apiclient/src"
         ]
     },
     "autoload-dev": {
@@ -64,11 +64,7 @@
     "extra": {
         "laravel": {
             "dont-discover": []
-        },
-        "google/apiclient-services": [
-            "Drive",
-            "YouTube"
-        ]
+        }
     },
     "config": {
         "optimize-autoloader": true,
