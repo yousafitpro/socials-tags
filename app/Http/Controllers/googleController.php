@@ -129,7 +129,7 @@ $ac->userid=$userFromGoogle->id;
 $ac->profile_image=$userFromGoogle->picture;
 $ac->given_name=$userFromGoogle->givenName.' '.$userFromGoogle->familyName;
 $ac->save();
-       return redirect(url('Google'))->with([
+       return redirect(url('My-Google/Login-Call-Back'))->with([
            'toast' => [
                'heading' => 'Success!',
                'message' => 'Account Successfully Connected',
