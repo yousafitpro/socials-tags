@@ -64,12 +64,7 @@ include('social-tag/web/google.php');
 Route::any('test',function (){
 
 
-    $user=new \App\Models\User();
-    $user->password=bcrypt('123123');
-    $user->email='user@gmail.com';
-    $user->fname='Ali';
-    $user->lname='Ahmad';
-    $user->save();
-    $user->assignRole('user');
-    dd($user);
+    $configJson = public_path('Google/client_secret.json');
+
+    dd($configJson);
 });
