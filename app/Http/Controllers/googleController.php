@@ -123,7 +123,7 @@ else{
         'user_id'=>auth()->id()
     ]);
 }
-
+///asdasd
 $ac->access_token=$accessToken['access_token'];
 $ac->userid=$userFromGoogle->id;
 $ac->profile_image=$userFromGoogle->picture;

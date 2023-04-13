@@ -17,7 +17,7 @@
             </ul>
         </div>
         <div class="logo">
-            <img src="{{asset('public/icons/logo.png')}}" style="width: 40px">
+            <img src="{{asset('icons/logo.png')}}" style="width: 40px">
         </div>
         <div class="" id="headerNav">
             <ul class="navbar-nav">
