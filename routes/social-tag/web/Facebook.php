@@ -13,7 +13,7 @@ Route::prefix('Facebook')
         Route::post("Delete-Post/{id}",[\App\Http\Controllers\facebookController::class,'create_post']);
       //  Route::post("Create-Post",[\App\Http\Controllers\facebookController::class,'create_post']);
     });
-Route::prefix('My-Google')
+Route::prefix('Google')
     ->group(function () {
         Route::any('/',[\App\Http\Controllers\googleController::class,'index']);
         Route::any('Login',[\App\Http\Controllers\googleController::class,'login']);
