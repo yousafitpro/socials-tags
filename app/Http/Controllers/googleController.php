@@ -88,7 +88,7 @@ class googleController extends Controller
         * Url decode if necessary
         */
        $authCode = urldecode($request->input('code'));
-       dd($authCode);
+
 
        /**
         * Google client
