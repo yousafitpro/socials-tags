@@ -13,7 +13,12 @@
         <div class="card-body">
             @if(my_social_profiles(auth()->user()->id)['Google']->access_token)
                 <div class="row">
-                    <div class="col-md-12">
+                    <div class="col-md-2">
+                        <div class="myflex">
+                            <img src="{{my_social_profiles(auth()->user()->id)['Google']->profile_image}}">
+                        </div>
+                    </div>
+                    <div class="col-md-10">
                         <div style="float: right; color: green">
                             <small>Page ID: {{my_social_profiles(auth()->user()->id)['Google']->userid}}</small>
                         </div>
