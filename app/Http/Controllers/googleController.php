@@ -61,7 +61,7 @@ class googleController extends Controller
    public function index(Request $request)
    {
 
-dd("ok");
+
 
 //       $google=my_social_profiles(auth()->user()->id)['Google'];
 //       $client=$this->getClient();
@@ -72,7 +72,7 @@ dd("ok");
 //      dd($response);
 //       dd($client);
        $data['list']=[];
-dd("ok");
+
        return view('circle-layout.Google-My-Business.index',$data);
 
    }
