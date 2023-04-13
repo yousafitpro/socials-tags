@@ -35,6 +35,7 @@ class googleController extends Controller
                 \Google\Service\Drive::DRIVE_METADATA_READONLY // allows reading of google drive metadata
             ]
         );
+        ///asdasdasd
         $client->setIncludeGrantedScopes(true);
 
         return $client;
