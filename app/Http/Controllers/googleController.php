@@ -72,7 +72,7 @@ class googleController extends Controller
 //      dd($response);
 //       dd($client);
        $data['list']=[];
-////asdasd
+dd("ok");
        return view('circle-layout.Google-My-Business.index',$data);
 
    }
