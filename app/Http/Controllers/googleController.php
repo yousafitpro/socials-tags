@@ -14,7 +14,7 @@ class googleController extends Controller
     {
         // load our config.json that contains our credentials for accessing google's api as a json string
         $configJson = app_path('Google/client_secret.json');
-dd($configJson);
+
         // define an application name
         $applicationName = 'My App';
 
