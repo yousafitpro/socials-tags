@@ -5,7 +5,7 @@
     <div style="width: 100%; height: 20vh" class="myFlex">
         <div>
 
-            <a class="btn btn-primary btn-sm bg-success" href="{{url('Google/Login')}}" style="color: white">Connect</a>
+            <a class="btn btn-primary btn-sm bg-success" href="{{url('My-Google/Login')}}" style="color: white">Connect</a>
         </div>
 
     </div>
