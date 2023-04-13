@@ -13,8 +13,8 @@ class googleController extends Controller
     private function getClient():\Google_Client
     {
         // load our config.json that contains our credentials for accessing google's api as a json string
-        $configJson = '../Google/client_secret.json';
-
+        $configJson = app_path('Google/client_secret.json');
+dd($configJson);
         // define an application name
         $applicationName = 'My App';
 
