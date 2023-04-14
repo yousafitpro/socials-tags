@@ -26,7 +26,7 @@
 
                             <h3>{{my_social_profiles(auth()->user()->id)['Google']->given_name}}</h3>
                             <small>Your Account is connected Now!</small>
-                            <a href="{{url('My-Google/Manage-Business')}}" class="btn btn-outline-primary pull-right"> Manage </a>
+{{--                            <a href="{{url('My-Google/Manage-Business')}}" class="btn btn-outline-primary pull-right"> Manage </a>--}}
                         </div>
 
 
