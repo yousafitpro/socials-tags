@@ -105,12 +105,20 @@ class googleController extends Controller
     }
     public function get_location_reviews(Request $request)
     {
-        $data['locations']=[];
+        $data['reviews']=[];
+        $data['averageRating']=[];
+        $data['totalReviewCount']=[];
         try {
 
             $url = "https://mybusiness.googleapis.com/v4/$request->account_name/$request->location_name/reviews";
 
             $response = $this->curl( $url );
+            if($response)
+            {
+                $data['reviews']=$response['reviews'];
+                $data['averageRating']=$response['averageRating'];
+                $data['totalReviewCount']=$response['totalReviewCount'];
+            }
 
 
         }catch (\Exception $e)
