@@ -64,11 +64,11 @@ class googleController extends Controller
        try {
            $url = "https://mybusinessbusinessinformation.googleapis.com/v1/accounts";
            $response = $this->curl( $url );
-dd($response);
+
            $data['accounts'] = $response['accounts'];
        }catch (\Exception $e)
        {
-             dd($e);
+
        }
 
        $data['list']=[];
