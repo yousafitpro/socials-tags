@@ -15,7 +15,7 @@
             <div class="container-fluid">
                 <div class="row">
                     <div class="col-md-6">
-                        <h5 style="color: lightgrey">Comments ( {{count($totalReviewCount)}} )</h5>
+                        <h5 style="color: lightgrey">Comments ( {{$totalReviewCount}} )</h5>
                         <hr>
                         <br>
 
