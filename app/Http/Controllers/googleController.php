@@ -97,7 +97,7 @@ class googleController extends Controller
         {
                dd($e);
         }
-        dd($data);
+
 
         return view('circle-layout.Google-My-Business.locations',$data);
     }
