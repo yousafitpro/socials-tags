@@ -86,8 +86,8 @@ class googleController extends Controller
     {
         $data['locations']=[];
         try {
-            dd($request->account_name);
-            $url = "https://mybusinessbusinessinformation.googleapis.com/v1/'.$request->account_name.'/locations?readMask=title,name";
+
+            $url = "https://mybusinessbusinessinformation.googleapis.com/v1/accounts/114931197500754358515/locations?readMask=title,name";
             dd($url);
             $response = $this->curl( $url );
             dd($response);
