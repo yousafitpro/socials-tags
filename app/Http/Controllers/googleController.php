@@ -107,7 +107,7 @@ class googleController extends Controller
         $data['locations']=[];
         try {
 
-            $url = "https://mybusinessbusinessinformation.googleapis.com/v1/".$request->name."/locations?readMask=title,name";
+            $url = "https://mybusiness.googleapis.com/v4/$request->account_name/$request->location_name/reviews";
 
             $response = $this->curl( $url );
 
@@ -118,7 +118,7 @@ class googleController extends Controller
                dd($e);
         }
 
-
+dd($data);
         return view('circle-layout.Google-My-Business.locations',$data);
     }
    public function Login_Call_Back(Request $request)
