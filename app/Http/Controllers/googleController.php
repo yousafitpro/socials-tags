@@ -84,6 +84,7 @@ class googleController extends Controller
     }
     public function get_locations(Request $request)
     {
+        $response=null;
         $data['locations']=[];
         try {
 
