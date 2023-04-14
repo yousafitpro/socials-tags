@@ -106,8 +106,8 @@ class googleController extends Controller
     public function get_location_reviews(Request $request)
     {
         $data['reviews']=[];
-        $data['averageRating']=[];
-        $data['totalReviewCount']=[];
+        $data['averageRating']=0;
+        $data['totalReviewCount']=0;
         try {
 
             $url = "https://mybusiness.googleapis.com/v4/$request->account_name/$request->location_name/reviews";
