@@ -64,7 +64,7 @@ class googleController extends Controller
        try {
            $url = "https://mybusinessbusinessinformation.googleapis.com/v1/accounts";
            $response = $this->curl( $url );
-           dd($response);
+
            $data['accounts'] = $response['accounts'];
        }catch (\Exception $e)
        {
@@ -205,6 +205,8 @@ $ac->save();
    }
     public function curl( $url ) {
         $google=my_social_profiles(auth()->user()->id)['Google'];
+        dd($google->access_token);
+
         $curler = curl_init();
         curl_setopt( $curler, CURLOPT_URL, $url );
         curl_setopt( $curler, CURLOPT_HTTPHEADER, array( 'Content-Type: application/json', 'Authorization: Bearer ' .$google->access_token ) );
