@@ -134,6 +134,7 @@
                 $('#PageDiv'+oid).empty()
                 console.log(response)
                 $('#PageDiv'+oid).append(response)
+                $("#zero-conf2").DataTable();
 
             },
             error: function (jqXHR, textStatus, errorThrown) {
