@@ -61,15 +61,10 @@ class googleController extends Controller
    {
 
 
+       $url = "https://mybusinessbusinessinformation.googleapis.com/v1/accounts";
+       $response = $this->curl( $url );
+       $data['accounts'] = $response['accounts'];
 
-//       $google=my_social_profiles(auth()->user()->id)['Google'];
-//       $client=$this->getClient();
-//       $client->setAccessToken($google->access_token);
-//       $httpClient=$client->authorize();
-//       $response = $httpClient->get('https://mybusiness.googleapis.com/v4/accounts');
-//      // $reviews = json_decode((string)$response->getBody(), false, 5, JSON_THROW_ON_ERROR)->reviews;
-//      dd($response);
-//       dd($client);
        $data['list']=[];
 ////asdasd
        return view('circle-layout.Google-My-Business.index',$data);
@@ -182,10 +177,19 @@ $ac->save();
        $mybusinessService = new \Google_Service_MyBusinessAccountManagement($client);
        $accounts = $mybusinessService->accounts;
        $accountsList = $accounts->listAccounts();
-dd($accountsList);
-      // dd($accountsList);
-       $res=$httpClient->get('https://mybusinessbusinessinformation.googleapis.com/v1/103332177186528538778/locations');
-       dd($res);
+     $acount=$accountsList->getAccounts()[0];
+
+       $url = "https://mybusinessbusinessinformation.googleapis.com/v1/accounts";
+       $response = $this->curl( $url );
+       $accounts = $response['accounts'];
+       dd($accounts);
+
+       $url = "https://mybusinessbusinessinformation.googleapis.com/v1/$acount->name/locations?readMask=title,name";
+       $response = $this->curl( $url );
+       $locations = $response['locations'];
+       dd($locations);
+       $res=$httpClient->get('https://mybusinessbusinessinformation.googleapis.com/v1/'.$acount->name.'/locations?readMask=title,name');
+       dd($res->getBody());
 //       $mybusinessService = new \Google_Service_MyBusinessAccountManagement($client);
 //       $accounts = $mybusinessService->accounts;
 //       $accountsList = $accounts->listAccounts()->getAccounts();
@@ -193,5 +197,15 @@ dd($accountsList);
 //       $list_accounts_response = $accountsList[0]->accounts_locations->listAccountsLocations("accounts/114893266195214446586", $optParams);
 //       dd($list_accounts_response);
    }
+    public function curl( $url ) {
+        $google=my_social_profiles(auth()->user()->id)['Google'];
+        $curler = curl_init();
+        curl_setopt( $curler, CURLOPT_URL, $url );
+        curl_setopt( $curler, CURLOPT_HTTPHEADER, array( 'Content-Type: application/json', 'Authorization: Bearer ' .$google->access_token ) );
+        curl_setopt( $curler, CURLOPT_RETURNTRANSFER, 1 );
+        $curl_response = curl_exec( $curler );
+        curl_close( $curler );
+        return json_decode( $curl_response, true );
+    }
 }
 //asdasd
