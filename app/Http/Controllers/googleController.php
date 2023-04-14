@@ -60,10 +60,15 @@ class googleController extends Controller
    public function index(Request $request)
    {
 
+       $data['accounts']=[];
+       try {
+           $url = "https://mybusinessbusinessinformation.googleapis.com/v1/accounts";
+           $response = $this->curl( $url );
+           $data['accounts'] = $response['accounts'];
+       }catch (\Exception $e)
+       {
 
-       $url = "https://mybusinessbusinessinformation.googleapis.com/v1/accounts";
-       $response = $this->curl( $url );
-       $data['accounts'] = $response['accounts'];
+       }
 
        $data['list']=[];
 ////asdasd
