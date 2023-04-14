@@ -9,7 +9,9 @@
             <br>
             <br>
             <img src="{{asset('social-icons/google.png')}}"  style="width: 30px; margin-top: -7px"> <span style="font-size: 25px; margin-left: 10px">Reviews</span>
+            @for($i=1; $i<=$averageRating; $i++)
             <img src="{{asset('social-icons/star.png')}}"  style="width: 20px; margin-top: -7px">
+            @endfor
             <br>
             <br>
             <br>
