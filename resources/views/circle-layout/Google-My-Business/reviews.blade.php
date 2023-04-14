@@ -27,7 +27,7 @@
                             @foreach($reviews as $p)
                                 <div class="row">
                                     <div class="col-md-2">
-                                        <img src="{{$p['reviewer']['profilePhotoUrl']}}" style="width: 20px">
+                                        <img src="{{$p['reviewer']['profilePhotoUrl']}}" style="width:100%; max-width: 40px">
                                     </div>
                                     <div class="col-sm-10">
                                         <small style="float: right">{{human_readable_time($p['createTime'])}}</small>
