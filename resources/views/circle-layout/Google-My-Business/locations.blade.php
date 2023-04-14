@@ -51,7 +51,7 @@
 @else
     <br>
     <br>
-    <h3 style="text-align: center">No Record Founds</h3>
+    <h4 style="text-align: center">No Record Founds</h4>
     @endif
 <br>
 <br>
