@@ -92,6 +92,26 @@ class googleController extends Controller
             $response = $this->curl( $url );
 
             $data['locations'] = $response['locations'];
+            $data['account_name'] = $request->account_name;
+
+        }catch (\Exception $e)
+        {
+               dd($e);
+        }
+
+
+        return view('circle-layout.Google-My-Business.locations',$data);
+    }
+    public function get_location_reviews(Request $request)
+    {
+        $data['locations']=[];
+        try {
+
+            $url = "https://mybusinessbusinessinformation.googleapis.com/v1/".$request->name."/locations?readMask=title,name";
+
+            $response = $this->curl( $url );
+
+            $data['locations'] = $response['locations'];
 
         }catch (\Exception $e)
         {
