@@ -86,14 +86,20 @@ class googleController extends Controller
     {
         $response=null;
         $data['locations']=[];
+        $data['account_name'] = $request->account_name;
         try {
 
             $url = "https://mybusinessbusinessinformation.googleapis.com/v1/".$request->account_name."/locations?readMask=title,name";
 
             $response = $this->curl( $url );
 
-            $data['locations'] = $response['locations'];
-            $data['account_name'] = $request->account_name;
+
+            if($response)
+            {
+                $data['locations'] = $response['locations'];
+
+            }
+
 
         }catch (\Exception $e)
         {
