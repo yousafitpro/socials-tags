@@ -35,7 +35,14 @@
                     @endforeach
 
                     </tbody>
-
+                    <tfoot>
+                    <tr>
+                        <th>Name</th>
+                        <th>Email / Phone</th>
+                        <th>Platform</th>
+                        <th>date</th>
+                    </tr>
+                    </tfoot>
                 </table>
 
     </div>
