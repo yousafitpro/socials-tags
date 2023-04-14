@@ -5,7 +5,7 @@
                 <table id="zero-conf" class="display" style="width:100%">
                     <thead>
                     <tr>
-                        <th>Name</th>
+
                         <th>Title</th>
 
                         <th>Actions</th>
@@ -16,7 +16,7 @@
                     @foreach($locations as $l)
 
                         <tr>
-                            <td>{{$l['name']}}</td>
+
                             <td>{{$l['title']}}</td>
 
                             <td>
