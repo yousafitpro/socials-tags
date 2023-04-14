@@ -205,7 +205,7 @@ $ac->save();
        $url = "https://mybusinessbusinessinformation.googleapis.com/v1/accounts";
        $response = $this->curl( $url );
        $accounts = $response['accounts'];
-dd($acount->name);
+
        $url = "https://mybusinessbusinessinformation.googleapis.com/v1/$acount->name/locations?readMask=title,name";
        $response = $this->curl( $url );
        dd($response);
