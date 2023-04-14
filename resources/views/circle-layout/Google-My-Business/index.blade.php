@@ -131,7 +131,7 @@
                 $(".products__btn").text("Loading...")
             },
             success:function(response){
-
+                $('#PageDiv'+oid).empty()
                 console.log(response)
                 $('#PageDiv'+oid).append(response)
 
