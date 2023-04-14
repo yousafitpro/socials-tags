@@ -118,8 +118,8 @@ class googleController extends Controller
                dd($e);
         }
 
-dd($data);
-        return view('circle-layout.Google-My-Business.locations',$data);
+
+        return view('circle-layout.Google-My-Business.reviews',$data);
     }
    public function Login_Call_Back(Request $request)
    {
