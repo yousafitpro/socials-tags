@@ -205,7 +205,7 @@ $ac->save();
    }
     public function curl( $url ) {
         $google=my_social_profiles(auth()->user()->id)['Google'];
-        dd($google->access_token);
+
 
         $curler = curl_init();
         curl_setopt( $curler, CURLOPT_URL, $url );
