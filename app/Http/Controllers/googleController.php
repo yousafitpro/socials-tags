@@ -111,7 +111,7 @@ class googleController extends Controller
             $url = "https://mybusiness.googleapis.com/v4/$request->account_name/$request->location_name/reviews";
 
             $response = $this->curl( $url );
-dd($response);
+
 
         }catch (\Exception $e)
         {
