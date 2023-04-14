@@ -2,7 +2,7 @@
     <div class="col">
 
 
-                <table id="zero-conf" class="display" style="width:100%">
+                <table id="zero-conf2" class="display" style="width:100%">
                     <thead>
                     <tr>
 

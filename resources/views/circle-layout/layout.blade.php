@@ -51,6 +51,7 @@
 
 <script>
     $("#zero-conf").DataTable();
+    $("#zero-conf2").DataTable();
     function CloseModel(id){
         $(id).modal("hide")
     }
