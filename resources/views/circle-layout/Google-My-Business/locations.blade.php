@@ -24,7 +24,7 @@
                                     <button class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false">
                                     </button>
                                     <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                                        <li><a class="dropdown-item" onclick="get_locations('{{$loop->index}}','pageListModel{{$loop->index}}','{{url('My-Google/Get-Locations')}}?account_name=')" href="#">Locations</a></li>
+                                        <li><a class="dropdown-item"href="{{url('My-Google/Location/Reviews').'?name='.$l['name']}}">Locations</a></li>
 
 
                                     </ul>
