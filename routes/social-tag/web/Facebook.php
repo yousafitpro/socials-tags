@@ -19,6 +19,7 @@ Route::prefix('My-Google')
         Route::any('Login',[\App\Http\Controllers\googleController::class,'login']);
         Route::get('Login-Call-Back',[\App\Http\Controllers\googleController::class,'Login_Call_Back']);
         Route::any('Manage-Business',[\App\Http\Controllers\googleController::class,'manage_business']);
+        Route::any('Get-Locations',[\App\Http\Controllers\googleController::class,'get_locations']);
     });
 //Route::any('gmb/Business/index')
     Route::get('gmb/Business/index',[\App\Http\Controllers\googleController::class,'Login_Call_Back']);

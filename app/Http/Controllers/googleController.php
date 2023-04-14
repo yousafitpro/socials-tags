@@ -82,6 +82,23 @@ class googleController extends Controller
         return redirect($this->getAuthUrl($request));
 
     }
+    public function get_locations(Request $request)
+    {
+        $data['locations']=[];
+        try {
+            $url = "https://mybusinessbusinessinformation.googleapis.com/v1/'.$request->account_name.'/locations?readMask=title,name";
+            $response = $this->curl( $url );
+            dd($response);
+            $data['locations'] = $response['locations'];
+
+        }catch (\Exception $e)
+        {
+               dd($e);
+        }
+        dd($data);
+
+        return view('circle-layout.Google-My-Business.locations',$data);
+    }
    public function Login_Call_Back(Request $request)
    {
        /**

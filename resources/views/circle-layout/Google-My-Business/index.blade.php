@@ -58,6 +58,30 @@
                         </thead>
                         <tbody>
                        @foreach($accounts as $a)
+                           <div class="modal fade" id="pageListModel{{$loop->index}}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                               <div class="modal-dialog" role="document">
+                                   <div class="modal-content">
+                                       <div class="modal-header">
+                                           <h5 class="modal-title" id="exampleModalLabel">Locations</h5>
+                                           <button type="button" onclick="CloseModel('#pageListModel{{$loop->index}}')" class="close"  data-dismiss="modal" aria-label="Close">
+                                               <span aria-hidden="true">&times;</span>
+                                           </button>
+                                       </div>
+                                       <div class="modal-body">
+                                           <div id="PageDiv{{$loop->index}}" class="container-fluid">
+                                            <h5 style="text-align: center">Loading Locations... </h5>
+                                               <br>
+                                               <br>
+                                           </div>
+                                       </div>
+                                       {{--                <div class="modal-footer">--}}
+                                       {{--                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>--}}
+                                       {{--                    <button type="button" class="btn btn-primary">Save changes</button>--}}
+                                       {{--                </div>--}}
+                                   </div>
+                               </div>
+                           </div>
+
                            <tr>
                                <td>{{$a['accountName']}}</td>
                                <td>{{$a['type']}}</td>
@@ -68,7 +92,7 @@
                                        <button class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false">
                                        </button>
                                        <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                                           <li><a class="dropdown-item" href="{{url('My-Google/Locations',$a['name'])}}">Locations</a></li>
+                                           <li><a class="dropdown-item" onclick="get_locations('{{$loop->index}}','pageListModel{{$loop->index}}','{{url('My-Google/Get-Locations')}}?account_name={{$a['name']}}')" href="#">Locations</a></li>
 
 
                                        </ul>
@@ -93,4 +117,32 @@
         </div>
     </div>
 
+<script>
+    function get_locations(oid,id,account_name)
+    {
+        $("#"+id).modal("show")
+        $.ajax({
+            url:account_name,
+            method:'get',
+            data: {"_token": "{{ csrf_token() }}"},
+            beforeSend:function(){
+                $(".products__btn").text("Loading...")
+            },
+            success:function(response){
+
+                console.log(response)
+                $('#PageDiv'+oid).append(response)
+
+            },
+            error: function (jqXHR, textStatus, errorThrown) {
+
+
+            },
+            complete:function(data){
+                //console.log(data)
+
+            }
+        })
+    }
+</script>
 @endsection
