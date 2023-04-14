@@ -37,10 +37,9 @@
                     </tbody>
                     <tfoot>
                     <tr>
-                        <th>Name</th>
-                        <th>Email / Phone</th>
-                        <th>Platform</th>
-                        <th>date</th>
+                        <th>Title</th>
+
+                        <th>Actions</th>
                     </tr>
                     </tfoot>
                 </table>

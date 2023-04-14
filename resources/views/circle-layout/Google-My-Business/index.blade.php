@@ -120,6 +120,8 @@
 <script>
     function get_locations(oid,id,account_name)
     {
+        $('#PageDiv'+oid).empty()
+        $('#PageDiv'+oid).append('<h5 style="text-align: center">Loading Locations... </h5>')
         $("#"+id).modal("show")
         $.ajax({
             url:account_name,
