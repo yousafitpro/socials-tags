@@ -87,10 +87,10 @@ class googleController extends Controller
         $data['locations']=[];
         try {
 
-            $url = "https://mybusinessbusinessinformation.googleapis.com/v1/accounts/114931197500754358515/locations?readMask=title,name";
+            $url = "https://mybusinessbusinessinformation.googleapis.com/v1/".$request->account_name."/locations?readMask=title,name";
 
             $response = $this->curl( $url );
-            dd($response);
+
             $data['locations'] = $response['locations'];
 
         }catch (\Exception $e)
