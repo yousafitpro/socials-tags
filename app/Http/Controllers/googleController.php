@@ -115,6 +115,7 @@ class googleController extends Controller
             $response = $this->curl( $url );
             if($response)
             {
+                dd($response);
                 $data['reviews']=$response['reviews'];
                 $data['averageRating']=$response['averageRating'];
                 $data['totalReviewCount']=$response['totalReviewCount'];
