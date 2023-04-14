@@ -24,7 +24,7 @@
                                     <button class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false">
                                     </button>
                                     <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                                        <li><a class="dropdown-item"href="{{url('My-Google/Location/Reviews').'?name='.$l['name']}}">Locations</a></li>
+                                        <li><a class="dropdown-item"href="{{url('My-Google/Location/Reviews').'?name='.$l['name']}}">Reviews</a></li>
 
 
                                     </ul>
